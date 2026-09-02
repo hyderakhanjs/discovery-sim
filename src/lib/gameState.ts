@@ -151,15 +151,14 @@ export function processQuestionChoice(
     }
   }
 
-  // 10. Check if game is complete (all Level 1 stakeholders done for Phase 1)
-  const level1Stakeholders = allStakeholders
-    .filter((s) => s.level === 1)
-    .map((s) => s.id);
-  const allLevel1Done = level1Stakeholders.every((id) =>
-    completedStakeholders.includes(id)
-  );
-  if (allLevel1Done && isClose) {
-    nextPhase = "complete";
+  // 10. Check if game is complete (no unlocked stakeholders remain after this close)
+  if (isClose) {
+    const remainingUnlocked = unlockedStakeholders.filter(
+      (id) => !completedStakeholders.includes(id)
+    );
+    if (remainingUnlocked.length === 0) {
+      nextPhase = "complete";
+    }
   }
 
   const nextState: GameState = {
