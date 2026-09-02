@@ -164,7 +164,7 @@ function StakeholderMap({
 
       {/* Grid with SVG relationship overlay */}
       <div style={{ overflowX: "auto" }}>
-        <div ref={gridRef} style={{ position: "relative", minWidth: "680px" }}>
+        <div ref={gridRef} style={{ position: "relative", minWidth: "820px" }}>
 
           {/* SVG lines — absolutely fills the grid content area */}
           <svg
@@ -603,13 +603,10 @@ export default function Simulation() {
             The migration closes the door on a platform decision in 60 days. Miss this window
             and the opportunity locks out for 18–24 months.
           </p>
-        </div>
-
-        <div className="pt-4 border-t mt-auto" style={{ borderColor: "var(--border)" }}>
           <a
             href="#"
-            className="flex items-center gap-2 text-xs transition-all hover:opacity-80"
-            style={{ color: "var(--accent-blue)" }}>
+            className="flex items-center gap-1.5 transition-all hover:opacity-80"
+            style={{ color: "var(--accent-blue)", fontSize: "13px", fontWeight: 500 }}>
             <span>📄</span>
             <span>Read the Soha Inc. case study →</span>
           </a>
