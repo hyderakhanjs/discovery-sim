@@ -341,6 +341,7 @@ export default function Simulation() {
 
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [lastCompletedName, setLastCompletedName] = useState<string | undefined>(undefined);
+  const [showCaseStudy, setShowCaseStudy] = useState(false);
 
   useEffect(() => {
     const qs = getAvailableQuestions(state.currentStakeholderId, state.availableQuestionIds);
@@ -506,6 +507,102 @@ export default function Simulation() {
         )}
       </main>
 
+      {/* ── Case Study Modal ── */}
+      {showCaseStudy && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.75)" }}
+          onClick={() => setShowCaseStudy(false)}>
+          <div
+            className="relative rounded-2xl border overflow-y-auto max-h-[90vh] w-full max-w-xl p-8"
+            style={{ background: "var(--card)", borderColor: "var(--border)" }}
+            onClick={(e) => e.stopPropagation()}>
+
+            {/* Close */}
+            <button
+              onClick={() => setShowCaseStudy(false)}
+              className="absolute top-4 right-4 text-sm hover:opacity-60 transition-opacity"
+              style={{ color: "var(--muted)" }}>
+              ✕ close
+            </button>
+
+            <div className="text-xs font-semibold uppercase tracking-widest mb-1"
+              style={{ color: "var(--accent-blue)" }}>Case Study</div>
+            <h2 className="text-xl font-bold text-white mb-1">Soha Inc.</h2>
+            <p className="text-xs mb-6" style={{ color: "var(--muted)" }}>
+              Mid-market B2C Retailer · $420M ARR · 1,200 employees
+            </p>
+
+            <section className="mb-6">
+              <h3 className="text-sm font-semibold text-white mb-2">The Situation</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                Soha Inc. is a mid-market B2C retailer in the middle of a multi-year data center migration to AWS.
+                The migration was already behind schedule when a Black Friday outage hit — taking their e-commerce
+                platform offline for six hours and costing over <strong style={{ color: "var(--text)" }}>$1.2M in lost revenue</strong>.
+                The root cause still hasn&apos;t been definitively identified. Engineering blames infrastructure. Ops blames application code.
+                The CFO just wants it fixed before next year.
+              </p>
+            </section>
+
+            <section className="mb-6">
+              <h3 className="text-sm font-semibold text-white mb-2">The Business Context</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                The new CIO, Priya Desai, arrived eight months ago with an 18-month mandate to modernize the data platform
+                and deliver an AI-powered personalization layer for product search. She&apos;s already evaluating three vendors.
+                Meanwhile, the CFO Mark Reynolds is enforcing a 20% cost reduction across all vendor contracts.
+                The migration closes the door on a platform decision in roughly 60 days — miss that window and
+                the opportunity locks out for 18–24 months.
+              </p>
+            </section>
+
+            <section className="mb-6">
+              <h3 className="text-sm font-semibold text-white mb-2">The Technical Landscape</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                Soha runs three separate observability tools — one for infrastructure, one for APM, one for log management —
+                that don&apos;t share a common data model. Security operates a fourth tool in its own silo.
+                The platform engineering team is managing Elasticsearch clusters for product search and recommendations
+                but hasn&apos;t been able to scale cost-effectively. Every team has data. Nobody has a complete picture.
+              </p>
+            </section>
+
+            <section className="mb-6">
+              <h3 className="text-sm font-semibold text-white mb-2">Key Stakeholders</h3>
+              <div className="space-y-2">
+                {[
+                  { name: "Priya Desai", role: "CIO", note: "AI mandate, platform consolidation, 18-month horizon" },
+                  { name: "Mark Reynolds", role: "CFO", note: "20% cost reduction mandate, competitive bake-off if ROI isn't clear" },
+                  { name: "Emily Rivera", role: "VP Digital Revenue", note: "Black Friday outage hit her P&L — she has the exact numbers" },
+                  { name: "Sarah Patel", role: "VP Engineering", note: "Gatekeeper to the C-suite — she&apos;ll test you first" },
+                  { name: "Linda Chen", role: "CISO", note: "Frustrated by three non-integrated security tools" },
+                  { name: "Dev Patel", role: "Search Engineering Lead", note: "Knows where performance breaks under load" },
+                ].map(({ name, role, note }) => (
+                  <div key={name} className="rounded-lg p-3 border"
+                    style={{ background: "var(--bg)", borderColor: "var(--border)" }}>
+                    <div className="flex items-baseline gap-2 mb-0.5">
+                      <span className="text-xs font-semibold text-white">{name}</span>
+                      <span className="text-xs" style={{ color: "var(--accent-blue)" }}>{role}</span>
+                    </div>
+                    <p className="text-xs" style={{ color: "var(--muted)" }}>{note}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h3 className="text-sm font-semibold text-white mb-2">What a Great Discovery Looks Like</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                A rep who navigates this well will connect the Black Friday outage to the platform consolidation story,
+                quantify the cost of the status quo in CFO language, build a champion in Sarah or Emily,
+                and show Priya a path to her AI mandate that only works on a unified data platform.
+                A rep who navigates it poorly will pitch features to engineers, skip the economic buyer,
+                and lose the deal to a competitor who did the discovery right.
+              </p>
+            </section>
+
+          </div>
+        </div>
+      )}
+
       {/* ── Right sidebar: Case study ── */}
       <aside className="hidden xl:flex flex-col w-64 flex-shrink-0 border-l p-6"
         style={{ borderColor: "var(--border)" }}>
@@ -544,13 +641,13 @@ export default function Simulation() {
             The migration closes the door on a platform decision in 60 days. Miss this window
             and the opportunity locks out for 18–24 months.
           </p>
-          <a
-            href="#"
+          <button
+            onClick={() => setShowCaseStudy(true)}
             className="flex items-center gap-1.5 transition-all hover:opacity-80"
-            style={{ color: "var(--accent-blue)", fontSize: "13px", fontWeight: 500 }}>
+            style={{ color: "var(--accent-blue)", fontSize: "13px", fontWeight: 500, background: "none", border: "none", cursor: "pointer", padding: 0 }}>
             <span>📄</span>
             <span>Read the Soha Inc. case study →</span>
-          </a>
+          </button>
         </div>
       </aside>
     </div>
