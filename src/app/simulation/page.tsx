@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import type { GameState, Stakeholder, Question, ContextState } from "@/types";
 import { MEDDPICC_ELEMENTS, MEDDPICC_LABELS } from "@/types";
@@ -58,20 +58,6 @@ const STAKEHOLDER_BACKGROUNDS: Record<string, string> = {
   mark_reynolds:  "Mark is scrutinizing every vendor contract. He wants a 20% cost reduction and will push for a competitive bake-off if he doesn't see a clear ROI story.",
 };
 
-// ─── RELATIONSHIP LINES ───────────────────────────────────────────────────────
-
-// [fromId, toId, strokeColor, dashed?]
-const RELATIONSHIPS: Array<[string, string, string, boolean]> = [
-  ["alex_chen",    "john_miller",   "#00BFB3", false],
-  ["jordan_lee",   "linda_chen",    "#0077CC", false],
-  ["dev_patel",    "emily_rivera",  "#FEC514", false],
-  ["emily_rivera", "maria_torres",  "#FEC514", false],
-  ["john_miller",  "sarah_patel",   "rgba(160,160,160,0.45)", true],
-  ["linda_chen",   "sarah_patel",   "rgba(160,160,160,0.45)", true],
-  ["maria_torres", "sarah_patel",   "rgba(160,160,160,0.45)", true],
-  ["sarah_patel",  "priya_desai",   "#F04E98", false],
-  ["sarah_patel",  "mark_reynolds", "#F04E98", false],
-];
 
 // ─── STAKEHOLDER MAP (2D GRID) ────────────────────────────────────────────────
 
@@ -92,36 +78,6 @@ function StakeholderMap({
 }) {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [showWarning, setShowWarning] = useState(false);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [lines, setLines] = useState<Array<{ x1: number; y1: number; x2: number; y2: number; color: string; dashed: boolean }>>([]);
-
-  // Compute SVG line coordinates from actual DOM positions
-  useEffect(() => {
-    function compute() {
-      const container = gridRef.current;
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      const computed = RELATIONSHIPS.map(([fromId, toId, color, dashed]) => {
-        const fromEl = container.querySelector<HTMLElement>(`[data-sid="${fromId}"]`);
-        const toEl = container.querySelector<HTMLElement>(`[data-sid="${toId}"]`);
-        if (!fromEl || !toEl) return null;
-        const fr = fromEl.getBoundingClientRect();
-        const tr = toEl.getBoundingClientRect();
-        return {
-          x1: fr.left + fr.width / 2 - rect.left,
-          y1: fr.top + fr.height / 2 - rect.top,
-          x2: tr.left + tr.width / 2 - rect.left,
-          y2: tr.top + tr.height / 2 - rect.top,
-          color, dashed,
-        };
-      }).filter(Boolean) as typeof lines;
-      setLines(computed);
-    }
-    compute();
-    const ro = new ResizeObserver(compute);
-    if (gridRef.current) ro.observe(gridRef.current);
-    return () => ro.disconnect();
-  }, []);
 
   const hasTraversedBranch = completedIds.some(
     (id) => (STAKEHOLDERS.find((s) => s.id === id)?.level ?? 0) >= 2
@@ -162,24 +118,9 @@ function StakeholderMap({
         }
       </div>
 
-      {/* Grid with SVG relationship overlay */}
+      {/* Grid */}
       <div>
-        <div ref={gridRef} style={{ position: "relative", width: "100%" }}>
-
-          {/* SVG lines — absolutely fills the grid content area */}
-          <svg
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
-            {lines.map((l, i) => (
-              <line key={i}
-                x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
-                stroke={l.color}
-                strokeWidth={l.dashed ? 1.5 : 2.5}
-                strokeDasharray={l.dashed ? "6 4" : undefined}
-                strokeLinecap="round"
-              />
-            ))}
-          </svg>
-
+        <div style={{ width: "100%" }}>
           {/* CSS grid: level col + 4 track cols */}
           <div style={{
             display: "grid",
