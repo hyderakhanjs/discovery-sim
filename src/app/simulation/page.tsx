@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import type { GameState, Stakeholder, Question, ContextState } from "@/types";
 import { MEDDPICC_ELEMENTS, MEDDPICC_LABELS } from "@/types";
@@ -132,10 +132,6 @@ function StakeholderMap({
     else onEnd(false);
   }
 
-  // SVG dimensions from container
-  const svgWidth = gridRef.current?.offsetWidth ?? 520;
-  const svgHeight = gridRef.current?.offsetHeight ?? 380;
-
   return (
     <div className="fade-in">
       {completedName && (
@@ -152,7 +148,7 @@ function StakeholderMap({
 
       {!completedName && (
         <div className="mb-4">
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
+          <p className="text-sm font-medium" style={{ color: "#00BFB3" }}>
             Start anywhere — top-down, bottom-up, or lateral.
           </p>
         </div>
@@ -167,85 +163,76 @@ function StakeholderMap({
       </div>
 
       {/* Grid with SVG relationship overlay */}
-      <div ref={gridRef} className="relative overflow-x-auto" style={{ minWidth: "480px" }}>
+      <div style={{ overflowX: "auto" }}>
+        <div ref={gridRef} style={{ position: "relative", minWidth: "540px" }}>
 
-        {/* SVG lines layer */}
-        <svg
-          width={svgWidth} height={svgHeight}
-          style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "visible" }}>
-          {lines.map((l, i) => (
-            <line key={i}
-              x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
-              stroke={l.color}
-              strokeWidth={l.dashed ? 1.5 : 2}
-              strokeDasharray={l.dashed ? "5 4" : undefined}
-              strokeLinecap="round"
-            />
-          ))}
-        </svg>
+          {/* SVG lines — absolutely fills the grid content area */}
+          <svg
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
+            {lines.map((l, i) => (
+              <line key={i}
+                x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
+                stroke={l.color}
+                strokeWidth={l.dashed ? 1.5 : 2}
+                strokeDasharray={l.dashed ? "6 4" : undefined}
+                strokeLinecap="round"
+              />
+            ))}
+          </svg>
 
-        {/* CSS grid: 5 cols (level label + 4 tracks), 4 rows */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "32px 1fr 1fr 1fr 1fr",
-          gridTemplateRows: "repeat(4, auto)",
-          gap: "8px",
-          position: "relative",
-        }}>
-          {[1, 2, 3, 4].map((level) => (
-            <>
-              {/* Level label */}
-              <div key={`lbl-${level}`} style={{
-                display: "flex", alignItems: "center",
-                fontSize: "11px", fontWeight: 700, color: "var(--muted)",
-              }}>
-                L{level}
-              </div>
-
-              {/* Track cells */}
-              {TRACKS.map((track) => {
-                const stakeholdersInCell = STAKEHOLDERS.filter(
-                  (st) => st.level === level && st.track === track.id
-                );
-                if (stakeholdersInCell.length === 0) {
-                  return <div key={`${level}-${track.id}`} />;
-                }
-                return (
-                  <div key={`${level}-${track.id}`} className={stakeholdersInCell.length > 1 ? "flex gap-1" : ""}>
-                    {stakeholdersInCell.map((s) => {
-                      const isCompleted = completedIds.includes(s.id);
-                      const isCurrent = s.id === currentId && !isCompleted;
-                      const ctx = contextStates[s.id] ?? "cold";
-                      return (
-                        <button
-                          key={s.id}
-                          data-sid={s.id}
-                          onClick={() => !isCompleted && onChoose(s.id)}
-                          onMouseEnter={() => setHoveredId(s.id)}
-                          onMouseLeave={() => setHoveredId(null)}
-                          disabled={isCompleted}
-                          className="w-full text-left rounded-lg p-2.5 border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
-                          style={{
-                            background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
-                            borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
-                            opacity: isCompleted ? 0.65 : 1,
-                            position: "relative",
-                          }}>
-                          <div className="font-semibold leading-tight mb-0.5"
-                            style={{ fontSize: "11px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
-                            {s.name}{isCompleted && " ✓"}
-                          </div>
-                          <div style={{ fontSize: "10px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                            {s.title}
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                );
-              })}
-            </>
-          ))}
+          {/* CSS grid: level col + 4 track cols */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "32px 1fr 1fr 1fr 1fr",
+            gap: "8px",
+            position: "relative",
+          }}>
+            {[1, 2, 3, 4].map((level) => (
+              <React.Fragment key={level}>
+                <div style={{ display: "flex", alignItems: "center", fontSize: "11px", fontWeight: 700, color: "var(--muted)" }}>
+                  L{level}
+                </div>
+                {TRACKS.map((track) => {
+                  const stakeholdersInCell = STAKEHOLDERS.filter(
+                    (st) => st.level === level && st.track === track.id
+                  );
+                  if (stakeholdersInCell.length === 0) return <div key={`${level}-${track.id}`} />;
+                  return (
+                    <div key={`${level}-${track.id}`} style={{ display: "flex", gap: "4px" }}>
+                      {stakeholdersInCell.map((s) => {
+                        const isCompleted = completedIds.includes(s.id);
+                        const isCurrent = s.id === currentId && !isCompleted;
+                        const ctx = contextStates[s.id] ?? "cold";
+                        return (
+                          <button
+                            key={s.id}
+                            data-sid={s.id}
+                            onClick={() => !isCompleted && onChoose(s.id)}
+                            onMouseEnter={() => setHoveredId(s.id)}
+                            onMouseLeave={() => setHoveredId(null)}
+                            disabled={isCompleted}
+                            className="text-left rounded-lg border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
+                            style={{
+                              flex: 1, padding: "10px",
+                              background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
+                              borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
+                              opacity: isCompleted ? 0.65 : 1,
+                            }}>
+                            <div style={{ fontSize: "11px", fontWeight: 600, lineHeight: 1.3, marginBottom: "2px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
+                              {s.name}{isCompleted && " ✓"}
+                            </div>
+                            <div style={{ fontSize: "10px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                              {s.title}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
 
