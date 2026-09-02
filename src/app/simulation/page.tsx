@@ -164,7 +164,7 @@ function StakeholderMap({
 
       {/* Grid with SVG relationship overlay */}
       <div style={{ overflowX: "auto" }}>
-        <div ref={gridRef} style={{ position: "relative", minWidth: "1100px" }}>
+        <div ref={gridRef} style={{ position: "relative", minWidth: "1400px" }}>
 
           {/* SVG lines — absolutely fills the grid content area */}
           <svg
