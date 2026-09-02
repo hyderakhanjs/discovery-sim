@@ -1,0 +1,631 @@
+[
+  {
+    "id": "john_miller",
+    "name": "John Miller",
+    "title": "Infrastructure Director",
+    "level": 2,
+    "unlocks": ["sarah_patel"],
+    "insider_briefing_for_next": "Sarah Patel is juggling three things simultaneously: the June migration, platform modernization inside that window, and Mark Reynolds' 20 percent cost reduction mandate. She does not want a vendor pitch — she wants a partner who can help her build a steering committee business case. Come in connecting the platform investment to all three pressures in one frame. Ask how you can co-develop the case rather than present one. She responds to questions more than presentations.",
+    "questions": [
+      {
+        "id": "jm_t1_A",
+        "turn": 1,
+        "question_text": "Alex gave me a clear picture of what happened during the outage from the ground level. I would love to hear how you saw it from your seat and where your head is now on what needs to change.",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "champion", "decision_process"],
+        "points": 5,
+        "response_text": "Alex is a good kid. He lived it more directly than I did that night but I will tell you what it looked like from my seat. I am watching three dashboards that are all telling me something different and my phone is going off from two directions at once. By the time we correlated what was actually happening, the damage was done. What frustrates me is that this was not a surprise. I had been making the case for a unified observability platform for two years. The ask kept getting deprioritized because we did not have a business case that landed at the right level. Now we have one. The outage is the business case. What I am trying to do now is make sure we use this moment to actually fix the architecture and not just put a band-aid on it. We have a data center migration with a hard deadline of mid-next year. That is my window. If I am going to change the observability stack, it has to happen inside that migration or it does not happen at all.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t2_A1", "jm_t2_A2", "jm_t2_A3"]
+      },
+      {
+        "id": "jm_t1_B",
+        "turn": 1,
+        "question_text": "Tell me about your observability strategy. Where are you today and where are you trying to get to?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["identify_pain"],
+        "points": 1,
+        "response_text": "Today we are running Datadog for infrastructure, Splunk for security logs, and Nagios for some legacy workloads we have not migrated yet. The goal is to consolidate. Priya Desai, our CIO, has been clear that tool sprawl is not acceptable going forward. We are in the middle of a data center migration so there is a natural window to make changes.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t2_B1", "jm_t2_B2", "jm_t2_B3"]
+      },
+      {
+        "id": "jm_t1_C",
+        "turn": 1,
+        "question_text": "We work with a lot of infrastructure teams dealing with tool sprawl. Is that something you are experiencing here?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Every vendor leads with that question. Yes, we have tool sprawl. What specifically do you do about it?",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t2_C1", "jm_t2_C2", "jm_t2_C3"]
+      },
+
+      {
+        "id": "jm_t2_A1",
+        "turn": 2,
+        "question_text": "You said the migration is your window. What happens to the observability conversation if a vendor cannot fit into that timeline?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "metrics"],
+        "points": 5,
+        "response_text": "If a vendor cannot fit into the migration timeline they are out. Simple as that. Priya Desai has been clear. Any platform we bring in has to be deployable and stable before the final cutover in June. That means we need a decision in the next 60 days, a pilot running within the migration workstream, and full deployment before customer-facing systems go live in Q1. That is not negotiable. The migration is happening with or without a new observability platform. But if we do not change the platform now, we are rebuilding on the same broken foundation and I am not willing to do that.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+      {
+        "id": "jm_t2_A2",
+        "turn": 2,
+        "question_text": "You mentioned you had been making the case for two years and not getting traction. What was missing from that conversation that the outage changed?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process", "metrics"],
+        "points": 4,
+        "response_text": "What was missing was a dollar figure attached to the risk. I was making a technical argument and it was landing with technical people but not with Mark Reynolds or even Sarah. The outage gave us the number. Seven figures in one day. That is the kind of number that gets a CFO's attention. What I need now is someone who can help me translate the technical solution into a financial one. If I go to Sarah with a platform proposal I need to be able to say: here is what another outage costs us, here is what this platform costs, here is the payback period. That is the conversation I need to have.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A2a", "jm_t3_A2b", "jm_t3_A2c"]
+      },
+      {
+        "id": "jm_t2_A3",
+        "turn": 2,
+        "question_text": "When you say you do not want a band-aid, what does the right architecture actually look like to you on the other side of this migration?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "identify_pain"],
+        "points": 4,
+        "response_text": "A single pane of glass across the entire stack. Infrastructure metrics, application performance, logs, and security signals all in one place with real correlation built in. Not three tools with an API integration duct-taped between them. I want my on-call engineer to open one screen and know within five minutes whether something is a real incident or noise. Right now that takes 40 minutes and three tools and a phone call. The other piece is AI-assisted correlation. I do not want my team doing manual triage. I want the platform to surface what matters and suppress what does not. That is what I should have had two years ago.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A3a", "jm_t3_A3b", "jm_t3_A3c"]
+      },
+      {
+        "id": "jm_t2_B1",
+        "turn": 2,
+        "question_text": "You mentioned a natural window with the migration. What does that window actually look like in terms of timing and what it would take to make a platform change inside it?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["decision_process"],
+        "points": 2,
+        "response_text": "The cutover is June. To make a platform change inside the migration we need a decision in roughly 60 days, a pilot running in Q1, and full deployment before the customer-facing systems go live. That is tight but doable. The risk is scope creep — introducing a new platform in parallel with an active migration adds variables. Priya Desai is watching the timeline closely and she will not tolerate any delay on the primary cutover. So the platform work has to run clean and parallel, not on the critical path.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+      {
+        "id": "jm_t2_B2",
+        "turn": 2,
+        "question_text": "When Priya Desai says tool sprawl is not acceptable, has she defined what consolidation looks like or is that still being worked out?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_criteria"],
+        "points": 1,
+        "response_text": "She has been clear on the direction: fewer vendors, lower total cost, better integration. She has not dictated specific platforms. The definition of success is probably fewer than three monitoring and security tools instead of five or six. What that looks like in practice is still being worked out at the technical level.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+      {
+        "id": "jm_t2_B3",
+        "turn": 2,
+        "question_text": "How many tools are you actually running across the stack right now?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Five or six depending on how you count the legacy Nagios footprint. Datadog, Splunk, Nagios, a network monitoring tool, and a custom dashboard layer we built internally. The number is not really the problem. The integration between them is the problem.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+      {
+        "id": "jm_t2_C1",
+        "turn": 2,
+        "question_text": "Fair enough. Let me ask it differently. When your team is dealing with an incident, what does the first 30 minutes look like and where does the process break down?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["identify_pain"],
+        "points": 2,
+        "response_text": "The first 30 minutes is chaos management. Everyone pulls up their respective dashboards, we open a Slack war room, and we start manually correlating what we are each seeing. The breakdown happens almost immediately because infrastructure is in Datadog, application logs are in Splunk, and the legacy systems are still on Nagios. Nobody has a shared view. On a good day we correlate in 15 minutes. On Black Friday we could not get there for 40 minutes. The fix is not better processes on top of broken tooling. It is better tooling.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+      {
+        "id": "jm_t2_C2",
+        "turn": 2,
+        "question_text": "What specific capabilities are you evaluating vendors on?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_criteria"],
+        "points": 1,
+        "response_text": "Real-time correlation across infrastructure, application, and security data. Scalability to handle the log volume we are generating, which is going to increase significantly after the migration. Ease of operation — my team are SREs, not data engineers. And total cost of ownership that fits inside a cost reduction mandate. Those are the criteria at a high level.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+      {
+        "id": "jm_t2_C3",
+        "turn": 2,
+        "question_text": "What would it take to get a pilot started before the end of the quarter?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "A lot more conversation before we get there. I am not running a pilot for a vendor I have not vetted. I have 15 years of experience with infrastructure decisions that looked good in demos and fell apart in production. What would it take? Start by convincing me you understand our problem well enough to have an opinion about the solution.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t3_A1a", "jm_t3_A1b", "jm_t3_A1c"]
+      },
+
+      {
+        "id": "jm_t3_A1a",
+        "turn": 3,
+        "question_text": "60 days to a decision is tight. Who else besides you is involved in making that call and what does each of them need to see?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer"],
+        "points": 4,
+        "response_text": "The decision committee is Sarah Patel, Priya Desai, and Mark Reynolds. Sarah needs a migration-compatible implementation plan and a business case she can present to the steering committee. Priya needs to see alignment with the AI roadmap and vendor consolidation strategy. Mark needs the numbers to work: current state cost versus future state cost, payback period under 18 months, and risk-adjusted ROI. Those three people have different needs and the proposal has to address all of them simultaneously. If it only lands with one or two of them it does not move.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A1b",
+        "turn": 3,
+        "question_text": "With that kind of timeline, what does a pilot or proof of concept need to look like to give you enough confidence to go to Sarah and Priya with a recommendation?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "decision_process"],
+        "points": 5,
+        "response_text": "The POC has to run against our actual data, not a demo environment. I need to see ingestion from our existing Datadog, Splunk, and Nagios sources in one place with real correlation. I want to run a Black Friday simulation — take the actual log data from that night and see whether the platform would have caught the issue faster. If it surfaces the cascading failure in under 10 minutes with real data, I have something I can take to Sarah. If it looks good on synthetic data but struggles with ours, I have nothing.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A1c",
+        "turn": 3,
+        "question_text": "Is the 60-day timeline something that has been communicated to vendors already or is that internal?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "It is mostly internal at this point. We have not put out a formal RFP. The conversations have been exploratory. You are one of a few vendors who have had any substantive conversation with the team. The timeline is real whether it has been communicated or not.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A2a",
+        "turn": 3,
+        "question_text": "If you had that business case today — a clear ROI tied to outage prevention and cost consolidation — do you think Sarah would move on it?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "champion"],
+        "points": 4,
+        "response_text": "Yes, I think she would. Sarah has been waiting for me to come back with something that can survive a CFO review. The challenge has always been that I am better at the technical argument than the financial one. She has been supportive of the direction but she cannot take a technical vision document to Mark Reynolds. If someone helped me translate the MTTR improvement and the cost consolidation into a payback model she can defend, I think she moves quickly. She is motivated. She just needs the right ammunition.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A2b",
+        "turn": 3,
+        "question_text": "When you say Mark Reynolds needs a payback period, do you have a sense of what that number needs to look like for him to say yes?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "Under 18 months is the threshold I have heard. He has a 20 percent cost reduction mandate from the board and every proposal gets stress-tested against that. The way to get to him is to show that the platform replaces multiple existing contracts at a lower total cost, and that the MTTR improvement prevents enough revenue loss to make the net investment positive in year one. If the numbers tell that story and they are well-sourced, he will engage. If the case relies on optimistic assumptions he will find the hole and the conversation will stall.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A2c",
+        "turn": 3,
+        "question_text": "Have you worked with any vendors who have helped you build that kind of business case before?",
+        "question_type": "mediocre",
+        "meddpicc_tags": [],
+        "points": 1,
+        "response_text": "Not really. Most vendors bring me a slide deck and a demo. The ones who offer to build a business case usually do it in a way that is obviously favorable to their product and Mark sees through it immediately. What I need is something built from our own data with transparent assumptions. If you help me build it using our numbers I own the narrative and Mark will take it more seriously.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A3a",
+        "turn": 3,
+        "question_text": "When you describe AI-assisted correlation, has your team defined what good looks like — a specific reduction in MTTR or alert noise that would count as success?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "decision_criteria"],
+        "points": 4,
+        "response_text": "Yes. Alex and I talked about this. Current MTTR for a cross-system incident is 40 minutes on a bad day, 15 minutes on a good one. The target is under 10 minutes for anything a unified platform would have visibility into. Alert noise is the other metric — right now maybe 70 percent of what my team investigates turns out to be a false positive or a known benign event. If a platform can get that below 30 percent that is a meaningful productivity gain. Those are the two numbers I would use to define success in a POC.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A3b",
+        "turn": 3,
+        "question_text": "That vision you just described — has it been written down anywhere or is it still in your head waiting for the right moment?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "champion"],
+        "points": 4,
+        "response_text": "It is mostly in my head. I have a technical architecture diagram that is incomplete and a few notes from team discussions but nothing that would survive a steering committee review. Part of the problem is that I have been waiting for the right partner to help me formalize it. If I write the requirements document alone it reads like a technical wish list. What I need is something that connects the technical requirements to the business outcomes Sarah and Mark care about. If you can help me build that document we are in a much stronger position.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+      {
+        "id": "jm_t3_A3c",
+        "turn": 3,
+        "question_text": "Are there specific vendors you are already evaluating against that vision?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["competition"],
+        "points": 1,
+        "response_text": "We have had conversations with a couple of others but nothing formal yet. Splunk has been pushing hard for us to expand our relationship with them. Datadog is also in the mix. Neither of them has come in with a unified story that addresses both the observability and the security side. That is actually the gap in the market from where I sit.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t4_A", "jm_t4_B", "jm_t4_C"]
+      },
+
+      {
+        "id": "jm_t4_A",
+        "turn": 4,
+        "question_text": "John, it sounds like you are carrying two things at once here — you are trying to solve a technical problem and you are trying to build an organizational case for change. Which one is harder right now?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Honestly the organizational case is harder. The technical problem I could solve tomorrow if someone gave me the budget and the runway. The organizational challenge is that I need to get Sarah to prioritize this above about fifteen other things on her plate right now, and I need to do it before the migration window closes. She trusts my technical judgment but she needs a business case that she can walk into a steering committee meeting with. That is the piece I have not been able to build alone. I know what the platform needs to do. I do not always speak CFO.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t5_A", "jm_t5_B", "jm_t5_C"]
+      },
+      {
+        "id": "jm_t4_B",
+        "turn": 4,
+        "question_text": "If this migration goes well and the observability platform is right, what does your life look like 12 months from now?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "identify_pain"],
+        "points": 4,
+        "response_text": "Quieter nights. Seriously. I want my team sleeping through the night. I want on-call to be boring. And professionally, I want to stop being the person who has to explain outages to the executive team and start being the person who prevented them. That is a very different conversation to be having in a review.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t5_A", "jm_t5_B", "jm_t5_C"]
+      },
+      {
+        "id": "jm_t4_C",
+        "turn": 4,
+        "question_text": "What is your biggest concern about making a platform change inside an active migration?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "identify_pain"],
+        "points": 4,
+        "response_text": "Timing and scope creep. Every time you introduce a new platform into an active migration you are adding variables. My concern is that we start the observability migration in parallel and it bleeds into the main migration timeline. Priya Desai will not tolerate a delay on the primary cutover for any reason. So whatever we bring in has to have a clean implementation path that does not create dependencies on the critical path.",
+        "triggers_briefing": false,
+        "next_question_ids": ["jm_t5_A", "jm_t5_B", "jm_t5_C"]
+      },
+
+      {
+        "id": "jm_t5_A",
+        "turn": 5,
+        "question_text": "John, it sounds like Sarah Patel is the right next conversation — specifically around building the business case. Would you be comfortable making that introduction?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Yes. Sarah is the right person. I will set it up. I will tell her that you came in, did your homework, talked to the team, and that you understand what we are trying to do. That is the best intro I can give you. She is busy and protective of her time so come in with a point of view, not a slide deck.",
+        "close_type": "full_context",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "jm_t5_B",
+        "turn": 5,
+        "question_text": "Before I talk to Sarah, I want to make sure I walk in with the right framing. From your perspective, what is the single most important thing she needs to hear to move this forward?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "champion", "decision_process"],
+        "points": 5,
+        "response_text": "The thing Sarah needs to hear is that this is not a technology decision, it is a revenue protection decision. She thinks in terms of business outcomes. If you can connect the platform to outage prevention — which connects to revenue — and cost consolidation — which connects to Mark Reynolds' 20 percent cost reduction mandate — you will have her full attention. The migration deadline is your friend in that conversation too. It creates urgency without you having to manufacture it. And one more thing: do not come in with a pitch. Come in with questions. She will respect that a lot more.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "jm_t5_C",
+        "turn": 5,
+        "question_text": "This has been great John. I think we have a strong story here. Would it make sense to set up a demo for you and Sarah together so we can show her what this could look like?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Let me introduce you first and see where she wants to take it. I would not lead with a demo. She will want to understand the business case before she sits through a product presentation.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  },
+
+  {
+    "id": "linda_chen",
+    "name": "Linda Chen",
+    "title": "SOC Lead",
+    "level": 2,
+    "unlocks": ["sarah_patel"],
+    "insider_briefing_for_next": "Sarah Patel already knows the near-miss story and the analyst retention risk — both landed with her. What has not landed yet is the financial case. She is waiting for someone to show her the numbers. Come in with the TCO analysis started: Splunk doubling from $400K to $800K, analyst time cost, and the $3M retail breach benchmark. The other thing to know: Sarah manages up to both Mark Reynolds and Priya Desai simultaneously. Whatever you bring her needs to be pressure-tested against the CFO's objections before it gets to the steering committee.",
+    "questions": [
+      {
+        "id": "lc_t1_A",
+        "turn": 1,
+        "question_text": "Jordan gave me a really honest picture of what analyst life looks like day to day. I wanted to come to you to understand how you are seeing the bigger picture and where you are trying to take the team.",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "champion", "metrics"],
+        "points": 5,
+        "response_text": "Jordan is one of my best analysts and what she described to you is exactly right. And honestly it is worse than what she probably told you because she tends to understate things. We are not just dealing with alert fatigue. We are dealing with a fundamental mismatch between the volume and complexity of what we need to monitor and what our current tooling was built to handle. Splunk made sense three years ago. Since the acquisition our log volume has more than doubled and Splunk's pricing model means our costs have gone up proportionally. I have been trying to have a conversation with leadership about replacing it but it keeps getting framed as a cost reduction exercise instead of a risk management one. Those are very different conversations. The Splunk renewal is in February. That is my window and I intend to use it.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t2_A1", "lc_t2_A2", "lc_t2_A3"]
+      },
+      {
+        "id": "lc_t1_B",
+        "turn": 1,
+        "question_text": "Tell me about your security operations setup today and what your biggest challenges are.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["identify_pain"],
+        "points": 1,
+        "response_text": "We run Splunk as our SIEM, Datadog handles some of the infrastructure side, and we have Nagios for legacy workloads. The main challenges are alert volume, false positive rate, and Splunk costs. The acquisition doubled our log volume and Splunk's pricing went up accordingly. We are evaluating options ahead of the February renewal.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t2_B1", "lc_t2_B2", "lc_t2_B3"]
+      },
+      {
+        "id": "lc_t1_C",
+        "turn": 1,
+        "question_text": "We work with a lot of SOC teams that are struggling with Splunk costs. Is that something you are dealing with?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Who told you to lead with that? Yes, Splunk costs are a concern but that is not the whole story. What specifically are you here to talk about?",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t2_C1", "lc_t2_C2", "lc_t2_C3"]
+      },
+
+      {
+        "id": "lc_t2_A1",
+        "turn": 2,
+        "question_text": "You said cost reduction and risk management are very different conversations. How have you been trying to reframe it and where has that gotten stuck?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process", "identify_pain"],
+        "points": 5,
+        "response_text": "The way I have been trying to frame it is: what is the cost of a breach? Not the cost of the tooling, but the cost of the event we are trying to prevent. After the outage, that argument has more weight. But even now when I sit down with Sarah, the first question is always what does this cost and can we do it cheaper. Mark Reynolds has a 20 percent cost reduction mandate across IT. Every conversation eventually goes there. What I need is someone who can help me connect the platform cost to the risk exposure in a way that even a CFO cannot dismiss. If I can show that the current tooling creates a measurable risk of a breach that costs 10 times the platform fee, that is a different conversation.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+      {
+        "id": "lc_t2_A2",
+        "turn": 2,
+        "question_text": "When you say the log volume doubled and costs went up proportionally, do you have a rough sense of what Splunk is costing you now versus two years ago?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "competition", "economic_buyer"],
+        "points": 5,
+        "response_text": "I do not have the exact renewal number in front of me but it has roughly doubled. We were paying somewhere around $400K a year before the acquisition. I expect the renewal to come in close to $800K, maybe higher depending on how they price the new log sources. Mark Reynolds already knows this number is coming and he is not happy. That is actually creating some openness to alternatives that did not exist before. The CFO's discomfort with the Splunk bill is working in my favor for once.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A2a", "lc_t3_A2b", "lc_t3_A2c"]
+      },
+      {
+        "id": "lc_t2_A3",
+        "turn": 2,
+        "question_text": "You said the Splunk renewal is your window. What happens if you go into that renewal without a credible alternative?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "identify_pain", "competition"],
+        "points": 4,
+        "response_text": "We sign another three-year deal at double the cost and nothing changes. My analysts keep burning out, the false positive rate stays where it is, and the next time we have a near-miss we might not get lucky. The February renewal is the forcing function. If I do not have a credible alternative in front of the steering committee before then, the path of least resistance is to renew. And once we renew we are locked in for three more years. I cannot let that happen.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A3a", "lc_t3_A3b", "lc_t3_A3c"]
+      },
+      {
+        "id": "lc_t2_B1",
+        "turn": 2,
+        "question_text": "The February renewal — how much time does that actually give you to evaluate alternatives and get a decision through the steering committee?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["decision_process", "metrics"],
+        "points": 2,
+        "response_text": "It is tight. I need to have a credible alternative identified and the business case in front of Sarah by early January at the latest. That means starting the evaluation now. The good news is the outage created some urgency that did not exist three months ago. Mark Reynolds is already uncomfortable with the renewal number. If I can get in front of him with an alternative that is both better and cheaper before he defaults to renewal, there is a window. But that window is maybe 60 days.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+      {
+        "id": "lc_t2_B2",
+        "turn": 2,
+        "question_text": "When Splunk comes back with the renewal number, does your team have input into the evaluation or does procurement handle that?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "I have input on the technical evaluation. Procurement handles the commercial negotiation and Daniel Foster manages that process. But the decision to stay or switch starts with me. If I bring a credible alternative to Sarah with a recommendation to switch, that carries weight. If I just let the renewal happen by default, Daniel Foster will renew it without a second thought.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+      {
+        "id": "lc_t2_B3",
+        "turn": 2,
+        "question_text": "What does your current Splunk deployment cover in terms of data sources and use cases?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Security logs, network traffic, some application logs. We use it for SIEM, threat hunting, and compliance reporting. Why — what are you trying to understand about the deployment?",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+      {
+        "id": "lc_t2_C1",
+        "turn": 2,
+        "question_text": "Let me reframe the question. You said it is not just about costs — it is about risk management. What is the risk you are most worried about that the current tooling is not managing well?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["identify_pain", "metrics"],
+        "points": 2,
+        "response_text": "The risk I am most worried about is a sophisticated attack that we do not catch because the signals are spread across too many systems. We had a near-miss six weeks ago where an analyst caught lateral movement behavior almost by accident while investigating something else. If that analyst had been busy with the noise queue — which is where most of her time goes — we might not have caught it at all. That kind of threat is not going to be detected by better Splunk rules. It requires cross-source correlation that our current stack cannot do automatically.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+      {
+        "id": "lc_t2_C2",
+        "turn": 2,
+        "question_text": "How are you prioritizing the Splunk replacement project relative to everything else the security team is working on?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "It is my top priority outside of day-to-day operations. The renewal deadline makes it urgent and the near-miss made it critical. The challenge is that my team is still running at full capacity on the Black Friday investigation and the normal alert queue. I have limited bandwidth to run a formal vendor evaluation. I need a partner who can do a lot of the heavy lifting on the business case while I keep the lights on.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+      {
+        "id": "lc_t2_C3",
+        "turn": 2,
+        "question_text": "Would it make sense to set up a technical evaluation with your team to walk through our security capabilities?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Not yet. I need to understand whether you have a credible story before I bring you in front of my team. They are stretched and their time is valuable. Come back with the business case first and then we can talk about a technical evaluation.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t3_A1a", "lc_t3_A1b", "lc_t3_A1c"]
+      },
+
+      {
+        "id": "lc_t3_A1a",
+        "turn": 3,
+        "question_text": "You mentioned the outage gave the risk argument more weight. Was there anything specifically in the security dimension of the outage that you were able to point to?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "metrics"],
+        "points": 4,
+        "response_text": "The root cause of the outage is still officially undetermined. That is the part that scares me. It could have been a systems failure under peak load. It could have been something else. We do not know. I flagged that ambiguity to Sarah as a near-miss from a security perspective. The fact that we could not definitively rule out a security intrusion in a timely way is itself a gap. A real attacker would have used that 40-minute window very effectively. I think that landed with her but I am not sure how high it went.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A1b",
+        "turn": 3,
+        "question_text": "When you say you need to connect platform cost to risk exposure in a way a CFO cannot dismiss — have you tried quantifying what a breach would actually cost Soha at this point?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer"],
+        "points": 5,
+        "response_text": "I have started building it. The numbers are sobering. Average cost of a retail data breach is north of $3 million based on industry benchmarks, not counting regulatory exposure under PCI DSS which for a retailer of our size could be significant on top of that. If I can get those numbers in front of Mark Reynolds in the right context I think the Splunk renewal conversation changes completely. I just need the platform side of the equation to be credible.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A1c",
+        "turn": 3,
+        "question_text": "Does Sarah Patel understand the security risk at a technical level or does she need it translated into business terms?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Sarah is smart and she learns fast but she is not a security person by background. She thinks in terms of business risk and business outcomes. If you tell her your MTTD is 4 hours she will nod politely and not know what to do with it. If you tell her that a 4-hour detection gap during the outage meant we could not rule out a breach, and that the average cost of a retail breach is $3 million, she will write it down. That is the translation you need to do. Business risk, business cost, business outcome.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A2a",
+        "turn": 3,
+        "question_text": "You said Mark Reynolds' discomfort with the Splunk bill is working in your favor. Is he approaching the renewal as a cost reduction exercise or is he open to a different platform entirely?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "competition"],
+        "points": 4,
+        "response_text": "He is approaching it as a cost reduction exercise first. His default assumption is that we can negotiate a better rate on Splunk rather than replace it. What will shift that is showing him that the total cost of Splunk — including analyst productivity loss and the risk exposure it leaves on the table — is actually higher than the sticker price. If I can show him that the alternative is both cheaper and reduces the risk he is carrying on his balance sheet, he becomes more open. He is not ideological about Splunk. He is ideological about numbers.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A2b",
+        "turn": 3,
+        "question_text": "If an alternative platform could consolidate some of the Splunk and Datadog functions and come in at a lower total cost — is that a story that would get traction with the steering committee?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "decision_criteria"],
+        "points": 5,
+        "response_text": "Yes, and I will tell you why. Mark Reynolds has a 20 percent cost reduction mandate and he is running out of places to find it without cutting headcount. If someone shows him that one platform can replace two or three contracts at a lower combined cost, that is a meaningful contribution to his mandate. Priya Desai also wants to reduce vendor complexity. The story that plays best in that room is: one platform, fewer contracts, lower total cost, better security posture. All four things together is a very strong case. The question is whether the platform can actually deliver all four.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A2c",
+        "turn": 3,
+        "question_text": "When does the formal renewal process kick off with procurement?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "Daniel Foster manages the Splunk relationship and he typically starts renewal conversations 90 days before the contract end date. That window opens in November. If I have not put a credible alternative in front of the steering committee by then, Daniel will default to renewing and it will be very hard to stop.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A3a",
+        "turn": 3,
+        "question_text": "You mentioned a near-miss. Jordan gave me a version of that story but I suspect you have more context on how close it actually was and what it meant organizationally. Can you walk me through it?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "metrics"],
+        "points": 5,
+        "response_text": "About six weeks ago one of my senior analysts was investigating what looked like an unusual login pattern and she noticed — almost as a side observation — that the same source IP had attempted lateral movement to three different systems in a short window. She caught it. But she only caught it because she happened to be looking at logs from multiple systems at the same time. If she had been working a different ticket she never would have seen it. We have no automated detection for that pattern because it requires correlating across three separate systems simultaneously. That is the gap. We got lucky. The next time we may not.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A3b",
+        "turn": 3,
+        "question_text": "If you had a credible alternative in front of the steering committee tomorrow, do you think you have the votes to move forward or is there a specific obstacle you are still navigating?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "champion"],
+        "points": 4,
+        "response_text": "Sarah is a yes if the business case is solid. Priya Desai has been clear about reducing vendor complexity so she is directionally aligned. The obstacle is Mark Reynolds. He will engage seriously only if the financial case is airtight. If I go in with a directional argument he will push back and we stall. If I go in with actual numbers — current Splunk cost, projected alternative cost, analyst productivity gain, risk reduction value — I think we can get him to a serious maybe that becomes a yes in the working session.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+      {
+        "id": "lc_t3_A3c",
+        "turn": 3,
+        "question_text": "What would you need from a vendor to feel confident going into that steering committee presentation?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "champion"],
+        "points": 4,
+        "response_text": "Three things. A total cost of ownership comparison that is built from our actual numbers, not vendor-provided benchmarks — I need to own the methodology. A migration plan that fits inside the timeline we are working with. And a reference from a retailer of comparable size who has made a similar move and has the before-and-after numbers. Those three things together give me a steering committee presentation I can defend.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t4_A", "lc_t4_B", "lc_t4_C"]
+      },
+
+      {
+        "id": "lc_t4_A",
+        "turn": 4,
+        "question_text": "Linda, it sounds like you have done a lot of the analytical work already. What is the piece that is missing that would make you feel like you have a complete case?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "The piece that is missing is a credible total cost of ownership comparison. I can tell the risk story. I can tell the analyst productivity story. What I cannot do is walk into a room with Mark Reynolds and say here is what we are paying Splunk, here is what an alternative would cost, here is the net savings, and here is the risk reduction on top of that. I need that to be airtight because the first thing he will do is poke holes in it. If you can help me build that analysis I think we have something that actually moves.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t5_A", "lc_t5_B", "lc_t5_C"]
+      },
+      {
+        "id": "lc_t4_B",
+        "turn": 4,
+        "question_text": "If this works out the way you want it to, what does your SOC look like 18 months from now?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "identify_pain"],
+        "points": 4,
+        "response_text": "Proactive. That is the one word answer. Right now my team is entirely reactive. We are always responding to something that has already happened or almost happened. Where I want to get to is a SOC that is hunting for threats before they materialize. Analysts who are doing creative, skilled security work instead of clicking through noise all day. A platform that handles the routine so my people can focus on the sophisticated. I have analysts who are genuinely talented who are being wasted on triage. That bothers me more than the Splunk bill honestly.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t5_A", "lc_t5_B", "lc_t5_C"]
+      },
+      {
+        "id": "lc_t4_C",
+        "turn": 4,
+        "question_text": "How burned out is your team right now — on a scale that you would be comfortable sharing?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "champion"],
+        "points": 4,
+        "response_text": "I have two analysts who I think are six months away from leaving if things do not change. One of them is the person who caught the lateral movement attempt. If she walks out the door we lose someone irreplaceable and nobody above me fully appreciates what that means until it happens. I have been pretty direct with Sarah about this but I do not think it has landed with the weight it deserves.",
+        "triggers_briefing": false,
+        "next_question_ids": ["lc_t5_A", "lc_t5_B", "lc_t5_C"]
+      },
+
+      {
+        "id": "lc_t5_A",
+        "turn": 5,
+        "question_text": "Linda, you have given me everything I need to have a meaningful conversation at the next level. It sounds like Sarah Patel is the right person and the framing needs to be risk and cost together, not separately. Would you be comfortable setting up that introduction?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Yes. Sarah is the right person and you have the framing right. Risk and cost together. Not one or the other. I will set it up and I will tell her that you came in, talked to the team, understand the Splunk situation, and that you have something worth hearing. Come in with the TCO analysis started and she will take you seriously.",
+        "close_type": "full_context",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "lc_t5_B",
+        "turn": 5,
+        "question_text": "Before I meet with Sarah, I want to make sure I am walking in as an extension of the case you have already been building, not starting over. What has already landed with her and what has not?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "economic_buyer", "decision_process"],
+        "points": 5,
+        "response_text": "What has landed with Sarah is the near-miss story and the analyst retention risk. She took both of those seriously. What has not landed yet is the financial case. She keeps waiting for me to show her the numbers and I have not had the full picture to do that. The other thing to know about Sarah is that she is managing up to Mark Reynolds and Priya Desai simultaneously. Whatever you bring her needs to be something she can walk into the steering committee with confidence. She does not want to be surprised. If you can give her something that is already pressure-tested against the CFO's objections she will love you for it.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "lc_t5_C",
+        "turn": 5,
+        "question_text": "This has been fantastic Linda. I think there is a really compelling story here around a Splunk replacement. Should we set up a technical deep dive with your team?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Sure, we can do a technical review. But I would encourage you to have the business conversation with Sarah first. The technical evaluation is not the bottleneck here.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,880 @@
+[
+  {
+    "id": "emily_rivera",
+    "name": "Emily Rivera",
+    "title": "Ecommerce Director",
+    "level": 2,
+    "unlocks": ["maria_torres"],
+    "insider_briefing_for_next": "Maria Torres is a visual thinker who moves fast. Lead with business outcome, not the problem — she already knows the problem. Frame it as a choice: here is what we capture if we act, here is what we leave on the table if we do not. Connect everything to David Lee's AI agenda on the earnings call — she presents to him monthly and that connection makes her a champion. One-page summary she can look at while you talk. She has real influence with the CEO.",
+    "questions": [
+      {
+        "id": "er_t1_A",
+        "turn": 1,
+        "question_text": "Dev walked me through the technical side of the search problem in detail. I wanted to come to you because I suspect you see the business impact of it more clearly than anyone. What does the search experience cost you in real terms?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "metrics", "economic_buyer"],
+        "points": 5,
+        "response_text": "Dev is great and I am glad he walked you through it. The honest answer to your question is that I do not have a precise number but I know it is significant. What I can tell you is that our mobile conversion rate is running about 40 percent below our desktop rate. Industry benchmarks say that gap should be around 15 to 20 percent for a retailer our size. The excess gap — that extra 20 percent or so — is what I attribute substantially to search. When customers cannot find what they want quickly on mobile they abandon. They do not call customer service and they do not try again later. They just leave. I have been trying to translate that into a dollar figure for Maria Torres but I have not had the analytical support to make it airtight. If our mobile conversion even partially closed that gap, we are talking about a meaningful eight-figure revenue opportunity annually. That is the number I need to be able to defend.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t2_A1", "er_t2_A2", "er_t2_A3"]
+      },
+      {
+        "id": "er_t1_B",
+        "turn": 1,
+        "question_text": "Tell me about the ecommerce experience you are trying to build and where search fits into that.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["identify_pain"],
+        "points": 1,
+        "response_text": "The vision is a seamless, personalized experience across every touchpoint. Search is central to that because it is how most customers navigate the catalog. Right now search is a weak point, especially on mobile. We are working on improving it but it is a priority and resource question at this point.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t2_B1", "er_t2_B2", "er_t2_B3"]
+      },
+      {
+        "id": "er_t1_C",
+        "turn": 1,
+        "question_text": "I understand mobile search performance has been an issue. Can you walk me through what you are seeing?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Where did you hear that? Yes it has been an issue. What specifically are you here to discuss?",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t2_C1", "er_t2_C2", "er_t2_C3"]
+      },
+
+      {
+        "id": "er_t2_A1",
+        "turn": 2,
+        "question_text": "You said eight-figure revenue opportunity. Have you taken that number to Maria Torres and if so how did she respond?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "champion", "decision_process"],
+        "points": 5,
+        "response_text": "I have raised it but not with a number I was fully confident in. I told her search was underperforming on mobile and that I believed there was a significant revenue opportunity in fixing it. She was interested but she asked me for the quantified business case and I told her I was working on it. That was about six weeks ago and I have not gone back yet because I do not have the analysis done. Maria is data-driven and she will not prioritize something based on a directional argument. She needs a number she can take to David Lee. If I go back without the number I lose credibility. If I go back with the right number I think this moves fast.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+      {
+        "id": "er_t2_A2",
+        "turn": 2,
+        "question_text": "You mentioned you have not had the analytical support to make the number airtight. What would a defensible version of that analysis need to look like for it to land with Maria?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria", "metrics"],
+        "points": 5,
+        "response_text": "It needs to answer three questions that Maria will ask. First, what is the revenue at stake if we do nothing? Second, what does it cost to fix it and how long does it take? Third, what is the payback period? She will also ask whether this is a one-time fix or a platform that enables ongoing improvement. The personalization angle matters to her too because David Lee talked about AI-driven personalization on the last earnings call. If I can connect search improvement to the AI strategy Maria is going to be much more receptive than if it is just a technical upgrade.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A2a", "er_t3_A2b", "er_t3_A2c"]
+      },
+      {
+        "id": "er_t2_A3",
+        "turn": 2,
+        "question_text": "When customers cannot find what they want and leave — do you have any data on what repeat visit rates look like for customers who hit a zero results page?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "identify_pain"],
+        "points": 4,
+        "response_text": "Our zero-result rate is around 8 percent of mobile queries. Industry standard is closer to 2 to 3 percent. But the more damaging metric is what I call the pogo effect — where a customer searches, does not find what they want, clicks on something irrelevant, immediately comes back, and then leaves entirely. That sequence is a strong predictor of cart abandonment and it happens more on mobile than any other channel. I have not been able to get a clean dollar figure on it but it is a real and measurable behavior.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A3a", "er_t3_A3b", "er_t3_A3c"]
+      },
+      {
+        "id": "er_t2_B1",
+        "turn": 2,
+        "question_text": "You mentioned it is a priority and resource question. What would need to be true for search improvement to get prioritized and funded this quarter?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 2,
+        "response_text": "Maria Torres needs a quantified business case that she can take to David Lee. That has been the missing piece. I have been making the argument qualitatively — search is underperforming, customers are abandoning, we are leaving money on the table — but Maria runs on data. If I could walk in with a credible eight-figure revenue opportunity tied to a specific investment and timeline, this moves from the wishlist to the priority list immediately. That is the gap I have not been able to close on my own.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+      {
+        "id": "er_t2_B2",
+        "turn": 2,
+        "question_text": "How does search performance factor into your KPIs and how often does leadership review those metrics?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["metrics"],
+        "points": 1,
+        "response_text": "Conversion rate and average order value are reviewed weekly. I track search-influenced conversion separately but it is not a top-line metric that Maria reviews directly. The Black Friday data brought it into sharper focus because the search degradation was visible in the conversion numbers. But connecting it to a specific investment case has been harder.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+      {
+        "id": "er_t2_B3",
+        "turn": 2,
+        "question_text": "What other ecommerce initiatives are competing for the same budget this year?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Several. Loyalty program enhancements, mobile app redesign, checkout optimization. Search is one of many. The question is always which initiative has the best ROI story and that is where search has been at a disadvantage — the revenue impact has been directional rather than quantified.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+      {
+        "id": "er_t2_C1",
+        "turn": 2,
+        "question_text": "Let me step back. When a customer searches on your mobile site today, what does the experience look like and where does it fall short relative to what you want it to be?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["identify_pain"],
+        "points": 2,
+        "response_text": "The current experience is functional but not good. Keyword search returns results by match score, which means a customer searching for something specific using natural language often gets irrelevant results. On mobile the screen real estate is limited so the first few results matter enormously. If those results miss the intent, the customer is gone. We also have a recommendations layer that is supposed to personalize the top results but the integration is slow and the relevance is not great. The total experience is not bad enough to generate complaints but it is bad enough to cost us conversion points every day.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+      {
+        "id": "er_t2_C2",
+        "turn": 2,
+        "question_text": "What search tools are you running today and how long have you been on them?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["competition"],
+        "points": 1,
+        "response_text": "We are on an older version of Elasticsearch that Dev's team has heavily customized, plus a third-party recommendations vendor that adds personalization on top of search. The recommendations vendor contract is up in April. We have been unhappy with the performance but we have not formally opened an evaluation. Maria Torres has been asking questions about it.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+      {
+        "id": "er_t2_C3",
+        "turn": 2,
+        "question_text": "I think we should get a demo on the calendar so Maria Torres can see what modern AI-powered search looks like.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Maria is not going to sit through a demo before she has a business case. She will ask me what the ROI is before she agrees to spend an hour on a vendor presentation. Let us build the case first.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t3_A1a", "er_t3_A1b", "er_t3_A1c"]
+      },
+
+      {
+        "id": "er_t3_A1a",
+        "turn": 3,
+        "question_text": "You said Maria needs a number she can take to David Lee. What does David Lee care about most when it comes to ecommerce investment — top line growth, margin, or customer retention?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "David Lee is a top line person. He talks about conversion and average order value on every earnings call. Maria mirrors that. She is not going to lead with margin or retention even though those matter. The frame that gets David Lee's attention is: here is how much more revenue we can generate from the customers we already have. That is a very efficient growth story. You are not spending more on acquisition, you are just converting better. For a company growing at 30 percent that story is very attractive because it tells investors the growth is high quality.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A1b",
+        "turn": 3,
+        "question_text": "When Maria asks for a quantified business case, does she have a specific ROI threshold or payback period she is looking for, or is it more about the story being credible?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria"],
+        "points": 4,
+        "response_text": "Maria has not given me a specific threshold but I know from watching her that she responds to payback periods under 18 months. If you can show her that the investment pays back in a year and then generates ongoing upside, that is her sweet spot. She is also influenced by competitive context. If I can show her that our mobile conversion gap versus industry benchmark represents X dollars, and that closing even half of it pays for the platform in 12 months, that is a compelling frame.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A1c",
+        "turn": 3,
+        "question_text": "Has IT been looped into the search improvement conversation, or has it stayed on the business side?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "champion"],
+        "points": 3,
+        "response_text": "Mostly it has stayed on the business side which is probably a gap. Sarah Patel knows there is a search initiative but I do not think she has been pulled into the business case conversation. Dev's team is doing the technical work but they are not in the room when we talk about revenue impact. I have been meaning to bridge that but there are always more urgent things. If there is a natural way to connect those conversations I would welcome it.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A2a",
+        "turn": 3,
+        "question_text": "You mentioned the AI personalization angle and the CEO's earnings call comments. How seriously is the organization taking that as an initiative versus it being aspirational talk?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 5,
+        "response_text": "It is serious but underfunded. David Lee committed publicly to AI-driven personalization as a growth lever and Priya Desai has been tasked with making it real. The challenge is that the data infrastructure required does not exist yet. The search platform and the recommendations layer are both preconditions for the AI personalization vision and neither is in a state to deliver it. If someone connected the search platform decision to the AI mandate in a credible way, that would accelerate things significantly. Maria presents to David Lee monthly and she needs something to put on that slide.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A2b",
+        "turn": 3,
+        "question_text": "If you had the quantified business case ready today, how quickly do you think Maria would move?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 4,
+        "response_text": "Fast. Maria is not someone who sits on decisions when the data is clear. She has been waiting for me to come back with the analysis for six weeks. If I walked in tomorrow with a defensible eight-figure revenue opportunity and a 12-month payback, she would put it on the agenda for her next steering committee conversation. The question is whether the analysis is credible enough to withstand David Lee's questions. He will push on the assumptions.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A2c",
+        "turn": 3,
+        "question_text": "Who else on Maria's team would weigh in on a search platform decision?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "The Chief Product Officer would have input on the product experience side. Dev's team would have input on the technical implementation. Maria would also loop in Sarah Patel for the IT infrastructure conversation. It is not a simple decision but Maria is the one who drives it. If she is convinced, the others follow.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A3a",
+        "turn": 3,
+        "question_text": "That pogo effect you described is a really precise way to characterize the problem. Have you ever used that framing with Maria or with David Lee?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "metrics"],
+        "points": 3,
+        "response_text": "I have used it with Maria informally and she responded to it. It is concrete and visual in a way that conversion rate alone is not. She understood immediately what it means for the customer experience and for revenue. I have not used it with David Lee. It might actually be a stronger frame in that room than conversion rate percentages because it describes a real customer behavior rather than an abstraction.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A3b",
+        "turn": 3,
+        "question_text": "If you could close the mobile conversion gap by half in the next 12 months, what would that mean for Emily Rivera professionally?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "metrics"],
+        "points": 4,
+        "response_text": "It would mean a lot. I have been working on this problem for two years and I have been close but never quite gotten it over the line. A concrete win on mobile conversion would validate everything I have been arguing for and open the door to the bigger personalization investments I want to make. It would also give me a seat at the table for the AI agenda conversation, which right now is happening above my level. I want to be part of that conversation and closing the search gap is the fastest path to earning it.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+      {
+        "id": "er_t3_A3c",
+        "turn": 3,
+        "question_text": "Is the 8 percent zero results rate something Maria is aware of?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["metrics"],
+        "points": 1,
+        "response_text": "I have mentioned it but in passing. I do not think it has landed as a concrete business problem. If I framed it as: our zero results rate is 4 times the industry benchmark and each zero result is a lost sale, and here is what that costs annually at our search volume — that would land differently than saying our zero results rate is 8 percent.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t4_A", "er_t4_B", "er_t4_C"]
+      },
+
+      {
+        "id": "er_t4_A",
+        "turn": 4,
+        "question_text": "Emily, if you could walk into Maria Torres' office tomorrow with one piece of analysis that would make her move on this immediately — what would that be?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics", "champion"],
+        "points": 5,
+        "response_text": "The one piece of analysis would be this: here is our mobile conversion gap versus industry benchmark, here is what closing half of that gap is worth in annual revenue, and here is a credible path to getting there in 12 months. If I walk in with that and the numbers are defensible, Maria moves. She has been waiting for me to come back with that for six weeks. The reason I have not is that I do not have the technical side of the equation. I know the revenue opportunity. I do not know what it costs to capture it and how long it takes. If you can help me build the cost and timeline side I think we have something that closes fast.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t5_A", "er_t5_B", "er_t5_C"]
+      },
+      {
+        "id": "er_t4_B",
+        "turn": 4,
+        "question_text": "You mentioned the data center migration. Is there a view inside the business that the migration is an opportunity to modernize the search platform at the same time, or is search being treated as a separate track?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "decision_criteria"],
+        "points": 4,
+        "response_text": "It has been two separate conversations so far and I think that is a missed opportunity. The migration is creating a forcing function on the IT side anyway. If we are rebuilding infrastructure, rebuilding the search architecture at the same time makes sense from an integration standpoint. I have not had that conversation with Sarah or Priya but I suspect if someone connected those two tracks it would strengthen both cases. The migration deadline creates urgency that my search conversation currently lacks.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t5_A", "er_t5_B", "er_t5_C"]
+      },
+      {
+        "id": "er_t4_C",
+        "turn": 4,
+        "question_text": "What would it mean for your loyalty program and repeat purchase rates if personalization actually worked the way the CEO described on the earnings call?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "identify_pain"],
+        "points": 5,
+        "response_text": "It would be significant. Our loyalty program is our most valuable asset. Members spend on average three times more than non-members and they have a much higher lifetime value. But right now when a loyalty member comes to the site the search experience does not know anything about them. We are treating a loyal customer who has been with us for five years the same way we treat a first-time visitor. If personalized search could increase repeat purchase rate by even a few percentage points across our loyalty base, the revenue impact compounds dramatically because those are our highest value customers.",
+        "triggers_briefing": false,
+        "next_question_ids": ["er_t5_A", "er_t5_B", "er_t5_C"]
+      },
+
+      {
+        "id": "er_t5_A",
+        "turn": 5,
+        "question_text": "Emily, you have given me everything I need to build a business case that I think will land with Maria. The revenue opportunity, the AI personalization angle, and the migration timing is a strong story. Would you be comfortable introducing me?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Yes, absolutely. Maria has been waiting for this conversation to come back with substance. I will set it up and I will tell her that you have been talking to Dev's team and to me, that you understand both the technical and business side, and that you have a framework for the business case she asked for. Come in ready to discuss numbers not features and you will be fine.",
+        "close_type": "full_context",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "er_t5_B",
+        "turn": 5,
+        "question_text": "Before I meet with Maria, I want to make sure I am walking in with a perspective she will find credible. How does she like to receive information and what would make her take this seriously from the first five minutes?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "champion", "decision_process"],
+        "points": 5,
+        "response_text": "Maria is a visual thinker. She likes a one-page summary she can look at while you talk. Lead with the business outcome, not the problem. She already knows the problem. What she needs is the opportunity framed as a choice: here is what we capture if we act, here is what we leave on the table if we do not. She responds to that framing. And one more thing — connect it to David Lee's AI agenda. She presents to him monthly and if she can walk out of your meeting with something that connects to his strategic narrative she will be your champion. She has real influence with him.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "er_t5_C",
+        "turn": 5,
+        "question_text": "This has been incredibly helpful Emily. I think we should get a demo on the calendar with Maria so she can see what AI-powered search looks like in practice.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I would hold off on the demo for now. Maria is going to want to see the business case before she sits through a product presentation. Let me set up an introductory conversation first.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  },
+
+  {
+    "id": "maria_torres",
+    "name": "Maria Torres",
+    "title": "Chief Commercial Officer",
+    "level": 3,
+    "unlocks": ["sarah_patel"],
+    "insider_briefing_for_next": "Sarah Patel is the convergence point for all IT and business tracks. She is building the steering committee case with Mark Reynolds and Priya Desai. Come in with the unified story: platform investment as revenue protection plus cost consolidation plus AI foundation. She responds to co-development rather than vendor pitches — ask her how you can build the business case together, not how you can present one to her.",
+    "questions": [
+      {
+        "id": "mt_t1_A",
+        "turn": 1,
+        "question_text": "Emily walked me through the mobile conversion gap and the quantified revenue opportunity. I want to understand from your seat — if we closed that gap, how does that change the growth story you tell David Lee?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics", "identify_pain"],
+        "points": 5,
+        "response_text": "It changes it significantly. David Lee has been public about AI-driven personalization as our next growth lever and right now I cannot show him progress on that front. The search platform is the foundation that makes personalization possible. If I can walk into my next monthly with a credible path to meaningful conversion improvement — tied to an AI-enabled search and personalization platform — that is the story he has been waiting for. Emily has the revenue analysis almost ready. What I have been waiting for is the cost and implementation side so I can do the full ROI picture.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t2_A1", "mt_t2_A2", "mt_t2_A3"]
+      },
+      {
+        "id": "mt_t1_B",
+        "turn": 1,
+        "question_text": "Tell me about your commercial priorities for this year and where search fits into that.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["economic_buyer"],
+        "points": 1,
+        "response_text": "Top priorities are conversion improvement, loyalty program growth, and delivering on the AI personalization vision David Lee has been talking about publicly. Search is central to all three but it has been harder to fund than it should be because the business case has been directional rather than quantified.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t2_B1", "mt_t2_B2", "mt_t2_B3"]
+      },
+      {
+        "id": "mt_t1_C",
+        "turn": 1,
+        "question_text": "I have put together some thoughts on how AI-powered search could improve Soha's conversion rates. Would it be helpful if I walked you through what I have seen work for other retailers?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I appreciate the preparation but I am more interested in understanding our specific situation than in a general market overview. What have you learned from talking to Emily and Dev?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t2_C1", "mt_t2_C2", "mt_t2_C3"]
+      },
+
+      {
+        "id": "mt_t2_A1",
+        "turn": 2,
+        "question_text": "You said you have been waiting for the cost and implementation side. How quickly do you move once you have a complete picture?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer"],
+        "points": 4,
+        "response_text": "Fast. I have a quarterly planning cycle and the next one is in six weeks. If the full business case is on my desk before then I can put it on the agenda. The decision to proceed would involve Sarah Patel on the IT side and ultimately Priya Desai and Mark Reynolds at the steering committee level. But the commercial case starts with me and I can move quickly when the numbers are right.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_A2",
+        "turn": 2,
+        "question_text": "The recommendations vendor contract is up in April. Is that a separate decision from the search platform or are you thinking about them together?",
+        "question_type": "good",
+        "meddpicc_tags": ["competition", "decision_process", "metrics"],
+        "points": 5,
+        "response_text": "That is exactly the right question. I have been thinking about them as one decision. The recommendations vendor is underperforming and the search stack is inadequate. If there is a platform that does both search and personalization in an integrated way, the combined replacement cost might be lower than renewing the recommendations vendor alone plus investing separately in search modernization. Dev and Emily have been trying to get me to see that frame and I think they are right. The vendor knows their contract is at risk — they have been pushing for early renewal which tells me something.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_A3",
+        "turn": 2,
+        "question_text": "When you present to David Lee monthly, what does the ecommerce section of that conversation look like and what question does he always ask?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "champion"],
+        "points": 4,
+        "response_text": "The ecommerce section focuses on conversion, average order value, and loyalty program growth. David always asks the same question at the end: what is the AI story? He has been asked about it by investors and analysts and he needs to show progress. Right now I do not have a concrete AI win to show him, only a roadmap. If I can walk in with a platform decision that enables personalized AI search and has a clear timeline to conversion improvement, that changes the nature of that conversation completely.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_B1",
+        "turn": 2,
+        "question_text": "You mentioned the AI personalization vision — what specifically has David Lee asked you to deliver and by when?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["economic_buyer", "metrics"],
+        "points": 2,
+        "response_text": "He wants to show measurable conversion improvement driven by AI personalization within 18 months. That is what he has committed publicly. I need to be able to demonstrate that we are on track for that when I present to the board in Q1. The search platform is the foundational piece. Without it the AI personalization work cannot happen at the scale he is describing.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_B2",
+        "turn": 2,
+        "question_text": "What does the loyalty program look like today and how does search personalization connect to it?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["metrics"],
+        "points": 1,
+        "response_text": "Loyalty members are about 40 percent of our active customer base and they spend three times more than non-members. The program is strong on rewards but weak on personalization. We are not using what we know about loyalty members to surface relevant products in search. That is a significant missed opportunity — the customers we know best are getting the same generic search experience as first-time visitors.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_B3",
+        "turn": 2,
+        "question_text": "What other technology investments are competing for the same budget this year?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Several. The data center migration is the largest single IT investment. Loyalty platform enhancements are on the commercial side. This is why the business case needs to be quantified — everything is competing and the strongest ROI story wins the allocation.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_C1",
+        "turn": 2,
+        "question_text": "From Emily and Dev I learned that mobile conversion is running 40 percent below desktop when the gap should be closer to 20 percent — and that the excess gap is substantially driven by search quality. Does that match your understanding?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["metrics", "identify_pain"],
+        "points": 2,
+        "response_text": "That matches what I have heard directionally from Emily. The exact number I have been waiting for is the revenue value of closing that gap. If you can help me get from the percentage gap to an annual dollar figure that I can defend to David Lee, that is what I have been missing. Emily has been working on it but she said she needed the cost side of the equation to complete the analysis.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_C2",
+        "turn": 2,
+        "question_text": "Tell me how you typically evaluate technology investments in the commercial space.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "Revenue impact, payback period under 18 months, and strategic alignment. For anything material I bring it to the steering committee with Sarah Patel and the finance team. The commercial case starts with me but the investment decision is collaborative at the executive level.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+      {
+        "id": "mt_t2_C3",
+        "turn": 2,
+        "question_text": "I would love to set up a demo of AI-powered search so you can see what good looks like.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I would rather see the business case first. Demos are useful once I know why I am watching one. Get me the numbers and then we can talk about next steps.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t3_A1a", "mt_t3_A1b", "mt_t3_A1c"]
+      },
+
+      {
+        "id": "mt_t3_A1a",
+        "turn": 3,
+        "question_text": "Maria, the IT side of this story — the migration, the observability platform, the security work — and the commercial side — search, personalization, conversion — are all pointing at the same data platform decision. Has anyone connected those two tracks explicitly?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer", "decision_criteria"],
+        "points": 5,
+        "response_text": "No, and that is exactly the right observation. Sarah Patel and I have been talking about the migration and we have been talking about ecommerce separately. Nobody has put those two conversations in the same room. If a unified data platform addresses both the IT resilience and observability requirements on Sarah's side and the search and personalization requirements on my side, the combined business case is much more powerful than either argument alone. And the combined investment might be more efficient than two separate platform decisions. I would like to have that conversation with Sarah.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t4_A", "mt_t4_B", "mt_t4_C"]
+      },
+      {
+        "id": "mt_t3_A1b",
+        "turn": 3,
+        "question_text": "If the search and personalization platform also needed to fit inside Sarah Patel's migration timeline, does that create a constraint or an opportunity from your perspective?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "decision_criteria"],
+        "points": 4,
+        "response_text": "An opportunity. Right now my search initiative lacks a hard deadline and that makes it easy to defer. If the migration creates a forcing function — a natural window where making the platform change is easier and cheaper than doing it separately — that is urgency I do not have to manufacture. Sarah's timeline becomes my timeline and that actually helps me get the investment approved faster. The migration makes this a now decision rather than a someday decision.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t4_A", "mt_t4_B", "mt_t4_C"]
+      },
+      {
+        "id": "mt_t3_A1c",
+        "turn": 3,
+        "question_text": "Who from your side would need to be in the room when this goes to the steering committee — is it you alone or does David Lee get involved?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer"],
+        "points": 4,
+        "response_text": "I would represent the commercial case. David Lee is not in the steering committee for operational decisions but he will hear about it from me and from Priya Desai. If the proposal shows progress on his AI personalization agenda, I will make sure he knows about it in my next monthly. That is actually a more effective path than trying to get him into a steering committee meeting — let the committee approve it and then let me connect it to his agenda.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t4_A", "mt_t4_B", "mt_t4_C"]
+      },
+
+      {
+        "id": "mt_t4_A",
+        "turn": 4,
+        "question_text": "Maria, what is the single most important thing I can do to make this move from a good conversation to an actual decision?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer", "champion"],
+        "points": 5,
+        "response_text": "Connect the IT and commercial tracks in one business case and get it in front of Sarah Patel and me together. Right now I am running one conversation and Sarah is running another. If you can bring those together with a unified ROI story — search and personalization revenue upside plus IT cost consolidation plus risk reduction — and a migration-aligned timeline, I think this moves to a steering committee conversation within four weeks. That is the thing nobody has done yet.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t5_A", "mt_t5_B", "mt_t5_C"]
+      },
+      {
+        "id": "mt_t4_B",
+        "turn": 4,
+        "question_text": "If this goes forward and you are standing in front of David Lee 12 months from now with measurable conversion improvement driven by AI personalization — what does that mean for you?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "economic_buyer"],
+        "points": 4,
+        "response_text": "It means I delivered on the commitment he made publicly. That is not a small thing. David Lee does not forget when someone delivers what they said they would. And it opens the door to the next phase of the AI roadmap — supply chain optimization, dynamic pricing, demand prediction. If I can point to personalized search as proof that the AI vision is real and not just a talking point, the rest of the agenda gets a lot more traction.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t5_A", "mt_t5_B", "mt_t5_C"]
+      },
+      {
+        "id": "mt_t4_C",
+        "turn": 4,
+        "question_text": "How does the recommendations vendor renewal in April interact with this timeline? Is there a risk that renewal locks you in before a better decision gets made?",
+        "question_type": "good",
+        "meddpicc_tags": ["competition", "decision_process", "metrics"],
+        "points": 4,
+        "response_text": "That is a real risk. The vendor has been pushing for early renewal and if we sign another multi-year deal we lose leverage and we lock in an underperforming system. The window to avoid that is the next 60 days. If we have a credible alternative in front of the steering committee before the April renewal window, I can instruct procurement to pause the renewal conversation. That timeline actually aligns well with the migration forcing function. Both decisions want to be made in the next two months.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mt_t5_A", "mt_t5_B", "mt_t5_C"]
+      },
+
+      {
+        "id": "mt_t5_A",
+        "turn": 5,
+        "question_text": "Maria, the most valuable next step seems to be connecting your conversation with Sarah Patel's — one unified business case that covers both tracks. Would you be comfortable facilitating that joint conversation?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Yes. I will reach out to Sarah and suggest we set up a joint session. Tell her I sent you and that I think the IT and commercial platform decisions should be looked at together. That framing will get her attention. She is always looking for ways to make the migration investment tell a bigger story.",
+        "close_type": "full_context",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "mt_t5_B",
+        "turn": 5,
+        "question_text": "Before I go to Sarah, is there anything about how she operates or what she is carrying right now that would help me open that conversation well?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process", "economic_buyer"],
+        "points": 5,
+        "response_text": "Sarah is excellent but she is under real pressure right now. The migration, the outage fallout, the cost reduction mandate — she is managing all of it simultaneously. The best way to open with her is to make her life easier, not add to her plate. Come in with the unified story already structured and offer to co-develop the business case rather than hand her a vendor pitch. She will respond to a partner, not a salesperson. And make sure the story addresses Mark Reynolds' financial objections before they arise — she will be pre-thinking those the moment you walk in.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "mt_t5_C",
+        "turn": 5,
+        "question_text": "This has been incredibly valuable Maria. Let me put together a proposal and circulate it for everyone's review.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "A proposal is fine but make sure you talk to Sarah first. A document that arrives without context tends to get filed rather than acted on. Do the conversation first, then follow up with the document.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  },
+
+  {
+    "id": "sarah_patel",
+    "name": "Sarah Patel",
+    "title": "VP of IT",
+    "level": 3,
+    "unlocks": ["priya_desai", "mark_reynolds"],
+    "insider_briefing_for_next": "Priya Desai is the architect of Soha's AI vision and she has already made the connection between the platform decision and the AI mandate. Lead with the AI agenda — ask her what she has been asked to deliver specifically and how the platform decision connects to it. She will tell you the three use cases all require the same foundation. Then offer to help her build the two-page executive summary connecting platform investment to migration, AI roadmap, and cost mandate. That is the document she needs for her board conversation in six weeks.",
+    "questions": [
+      {
+        "id": "sp_t1_A",
+        "turn": 1,
+        "question_text": "Sarah, I have spent time with John, Linda, and the teams below them. Rather than walk you through what I heard, I would rather ask: from your seat, what is the single most important thing that needs to change in the next 12 months for IT to be seen as a business enabler rather than a cost center?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "economic_buyer", "decision_process"],
+        "points": 5,
+        "response_text": "That is the right question and I appreciate that you framed it that way. The honest answer is that IT needs to stop being the team that explains outages and start being the team that prevents them. What happened on Black Friday was a failure of visibility. Not a failure of people. My team did everything right given the tools they had. The tools were not good enough. That is on me for not winning the budget argument sooner. Now I have the business case I did not have before and I intend to use it. What I am managing right now is three things simultaneously: the migration which has a hard June deadline and cannot slip, the platform modernization which needs to happen inside the migration window or it does not happen at all, and a cost reduction mandate from Mark Reynolds that means every dollar I spend has to come with a clear ROI story. If you can help me connect those three things into a coherent case for the steering committee you will have my full attention.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t2_A1", "sp_t2_A2", "sp_t2_A3"]
+      },
+      {
+        "id": "sp_t1_B",
+        "turn": 1,
+        "question_text": "Tell me about the IT priorities you are managing right now and where you are spending most of your energy.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["identify_pain"],
+        "points": 1,
+        "response_text": "Right now the big three are the data center migration, the outage response and infrastructure resilience work, and the cost reduction mandate from the CFO. Everything else is subordinate to those. Oh and Splunk renewal is coming in February which is creating its own pressure.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t2_B1", "sp_t2_B2", "sp_t2_B3"]
+      },
+      {
+        "id": "sp_t1_C",
+        "turn": 1,
+        "question_text": "I have put together a summary of what I heard from your team. Would it be helpful if I walked you through it?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I appreciate the preparation but I am short on time. What is the one thing you think I need to know and what are you asking for?",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t2_C1", "sp_t2_C2", "sp_t2_C3"]
+      },
+
+      {
+        "id": "sp_t2_A1",
+        "turn": 2,
+        "question_text": "You said you now have the business case you did not have before. How far along are you in building it and what is the piece that is still missing?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process", "metrics"],
+        "points": 5,
+        "response_text": "I have the problem statement. I have the outage impact number. I have a rough picture of what Splunk is going to cost us at renewal. What I am missing is the other side of the equation: what does the right platform cost, what does migration to it look like inside an active data center migration, and what is the credible ROI story that ties the investment to outage prevention and cost reduction in numbers that Mark Reynolds cannot dismiss. That is the piece I need help building. I am not looking for a vendor to pitch me a product. I am looking for a partner who can help me build a case that survives a CFO's scrutiny.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+      {
+        "id": "sp_t2_A2",
+        "turn": 2,
+        "question_text": "When you say the steering committee — who is in that room and what does each of them need to walk out feeling confident about?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer"],
+        "points": 5,
+        "response_text": "It is myself, Priya Desai, and Mark Reynolds. Priya is the CIO and she will evaluate this on strategic fit: does it align with the migration plan, does it reduce vendor complexity, does it set us up for the AI agenda the CEO has been public about. Mark is the CFO and he will evaluate it on one thing: the numbers. He has a 20 percent cost reduction mandate and every proposal that comes in front of him gets stress-tested against that. The dynamic between them is that Priya tends to be more visionary and Mark tends to be more skeptical. If they are both nodding that is when things move. If Priya is excited and Mark is not, it stalls. Getting Mark to the yes is the harder problem.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A2a", "sp_t3_A2b", "sp_t3_A2c"]
+      },
+      {
+        "id": "sp_t2_A3",
+        "turn": 2,
+        "question_text": "You mentioned the migration, the platform modernization, and the cost reduction mandate as three separate things. Is there a version of this where one decision addresses all three?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "That is exactly the frame I need. Right now they are three separate conversations in three separate workstreams and nobody has connected them. If there is a platform decision that simultaneously reduces the observability and security tool sprawl, fits inside the migration timeline, and comes in at a lower TCO than the Splunk and Datadog renewals combined, that is a story I can walk into a steering committee meeting with. The migration creates the urgency, the outage creates the justification, and the cost mandate creates the budget logic. Those three things together are a very strong case. I just have not had the help to put it together in a way that is airtight.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A3a", "sp_t3_A3b", "sp_t3_A3c"]
+      },
+      {
+        "id": "sp_t2_B1",
+        "turn": 2,
+        "question_text": "You mentioned the migration and the cost reduction mandate. Is there a version of the platform decision that addresses both of those simultaneously?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["decision_criteria", "economic_buyer"],
+        "points": 2,
+        "response_text": "That is the version I have been trying to build. The migration creates a natural window to make a platform change without doing it twice. The cost mandate means any new platform has to come in at a lower TCO than what we are currently paying for Splunk and Datadog combined. If those two conditions can be met simultaneously the story writes itself. The challenge is finding a platform that actually delivers on both without creating implementation risk that bleeds into the migration timeline.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+      {
+        "id": "sp_t2_B2",
+        "turn": 2,
+        "question_text": "Where does the formal platform evaluation process stand today — is it in pre-proposal phase or have you issued an RFP?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "Pre-proposal. We have been having exploratory conversations. No RFP issued. The decision timeline is tighter than the process might suggest — we need a vendor decision in roughly 60 days to fit inside the migration workstream. The formal process has not caught up to the actual urgency.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+      {
+        "id": "sp_t2_B3",
+        "turn": 2,
+        "question_text": "Which vendors are you currently evaluating?",
+        "question_type": "trap",
+        "meddpicc_tags": ["competition"],
+        "points": 0,
+        "response_text": "We have had conversations with a few but nothing formal. Splunk and Datadog are the incumbents and they are both angling for expanded relationships. I am not going to run an evaluation of the obvious choices without pressure-testing whether there is a better option. That is why I am having this conversation.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+      {
+        "id": "sp_t2_C1",
+        "turn": 2,
+        "question_text": "Let me give you the one thing. Your team is carrying three connected problems — operational visibility, security posture, and platform cost — that all point at the same decision. The value of getting that decision right inside your migration window is significant. What would it take to make that case airtight for the steering committee?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["decision_criteria", "economic_buyer", "metrics"],
+        "points": 2,
+        "response_text": "That is actually a very useful frame. The way you described it — three connected problems, one decision, migration window as the forcing function — is the structure I have been trying to build. What makes it airtight is numbers. Current state total cost, future state total cost, implementation plan that does not touch the critical path, and payback under 18 months. If those four things are in the document I can defend it to Mark Reynolds and he will engage.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+      {
+        "id": "sp_t2_C2",
+        "turn": 2,
+        "question_text": "What does your timeline look like for making the platform decision?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "Real decision deadline is about 60 days. The migration says June but the actual gate is end of this quarter. If we do not have a vendor selected by then we miss the window to run a pilot inside the Q1 migration workstream. That would mean making the platform decision after the migration is done, which is the worst possible time.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+      {
+        "id": "sp_t2_C3",
+        "turn": 2,
+        "question_text": "Could we set up a meeting with your full team to present our solution?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Not yet. I need to understand whether there is a business case worth presenting before I spend my team's time on a vendor presentation. Build the case first.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t3_A1a", "sp_t3_A1b", "sp_t3_A1c"]
+      },
+
+      {
+        "id": "sp_t3_A1a",
+        "turn": 3,
+        "question_text": "If I could help you build that ROI story in a way that is pressure-tested against the CFO's objections before you walk into the steering committee — what would that process need to look like from your side?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "It would need to start with a current state cost analysis. What are we actually paying for Splunk, Datadog, and Nagios combined, including the hidden costs: analyst time lost to manual triage, MTTR during incidents, estimated revenue impact of another outage. Then a future state picture: what does the right platform cost, what are the implementation risks inside the migration, and what is the net delta. If that delta is positive and the payback is under 18 months, Mark will engage seriously. If it is not airtight he will find the hole and the conversation will stall. I need it to be airtight before it goes in front of him.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A1b",
+        "turn": 3,
+        "question_text": "When you say Mark Reynolds cannot dismiss it — what does his standard playbook look like when he pushes back on a technology investment?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 5,
+        "response_text": "Mark has three standard moves. The first is: can we do this cheaper with what we have? His default assumption is that the problem can be solved with better configuration of existing tools. You need to pre-empt that with evidence that the problem is structural not configurational. The second move is: what is the payback period? He wants a number under 18 months and he will challenge the assumptions behind it. The third move is: what happens if we do nothing? He actually responds well to that question if you answer it with a dollar figure. The outage gave us that number. Seven figures in one day. That is the do nothing cost and it is very hard to argue against.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A1c",
+        "turn": 3,
+        "question_text": "What is the timeline pressure on this from your perspective — is June the real deadline or is there an earlier gate you need to hit?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "metrics"],
+        "points": 4,
+        "response_text": "The real gate is before the end of this quarter. If we do not have a vendor decision by then we cannot get a pilot running inside the Q1 migration workstream, which means we miss the window entirely and end up making the decision after the migration is done, which is the worst possible time. So the calendar says June but the real decision deadline is closer to 60 days from now. John probably told you the same thing.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A2a",
+        "turn": 3,
+        "question_text": "You said getting Mark to yes is the harder problem. Has he given any signal since the outage that his appetite for resilience investment has changed?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics"],
+        "points": 4,
+        "response_text": "He has softened somewhat. The $1.2M direct revenue impact from the outage is a number he calculated himself and he knows what another one would cost. He is also uncomfortable with the Splunk renewal estimate coming in near $900K. Those two things together have opened a door that was not open three months ago. He is not a yes — he is a serious listener right now. That is a meaningful change from where he was before Black Friday.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A2b",
+        "turn": 3,
+        "question_text": "When Priya evaluates strategic fit, how much weight does she put on the AI agenda the CEO mentioned on the earnings call versus the immediate migration and resilience priorities?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "economic_buyer"],
+        "points": 4,
+        "response_text": "Priya sees the AI agenda and the platform decision as the same thing. She has been saying for months that the AI roadmap requires a unified data platform as its foundation. If the observability and security platform also handles the search and data infrastructure the AI work needs, that is a much more compelling story for her than a pure infrastructure play. She will ask specifically whether the platform is AI-ready and what that means in concrete terms.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A2c",
+        "turn": 3,
+        "question_text": "Has the steering committee had a formal conversation about the observability and security platform yet or is this still in the pre-proposal stage?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "Pre-proposal. The steering committee knows the topic is on the agenda but we have not had a formal review. I have been waiting to bring it until I had something worth reviewing. A directional recommendation without numbers would not get a good reception from Mark.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A3a",
+        "turn": 3,
+        "question_text": "If that unified story held together, what would you need to see from a vendor to feel confident bringing it to the steering committee as a recommendation rather than just an option?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "decision_process"],
+        "points": 5,
+        "response_text": "Four things. A current state cost analysis built from our actual data that I can defend. A migration plan that does not put the primary cutover at risk. A POC result against our real data showing the platform works the way it says it does. And a reference customer — a retailer who has made a similar move with verifiable results. Those four things together give me a recommendation I can stand behind with Mark and Priya. Without all four I have an interesting option, not a recommendation.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A3b",
+        "turn": 3,
+        "question_text": "Is there anyone else in the organization who needs to be part of this conversation before it goes to the steering committee? I am thinking about whether the commercial side — Maria Torres, Emily Rivera — has been looped in.",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "champion"],
+        "points": 4,
+        "response_text": "That is actually something I have been meaning to address. Maria Torres and I have talked about the migration but not about the ecommerce and search angle. If the same platform that solves the IT problems also addresses the search and personalization opportunity Emily and Maria are working on, the combined business case is much stronger. I would want Maria in the room when this goes to the steering committee. She has influence with David Lee and that matters even at the steering committee level.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+      {
+        "id": "sp_t3_A3c",
+        "turn": 3,
+        "question_text": "What does the formal vendor evaluation process look like from here — does it go through procurement or does the steering committee move first?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process"],
+        "points": 3,
+        "response_text": "The steering committee approves the direction first. Then Daniel Foster in procurement runs the commercial process. Given the timeline pressure, I want to move those in parallel rather than sequentially. If the steering committee gives a directional go I can have Daniel start the commercial process simultaneously rather than waiting for full approval. That saves three to four weeks which matters a lot given the 60-day window.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t4_A", "sp_t4_B", "sp_t4_C"]
+      },
+
+      {
+        "id": "sp_t4_A",
+        "turn": 4,
+        "question_text": "Sarah, if this goes well and you are standing in front of the steering committee six weeks from now with a strong proposal — what is the version of that conversation you are most worried about and what is the version you feel best about?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "champion", "economic_buyer"],
+        "points": 5,
+        "response_text": "The version I am most worried about is Mark Reynolds asking a question I cannot answer. Specifically around the implementation risk of making a platform change inside an active migration. That is a legitimate concern and if I do not have a crisp answer it creates doubt. The version I feel best about is one where I walk in with a current state cost, a future state cost, a payback period under 18 months, and a migration plan that does not touch the critical path. If those four things are solid, I think Priya is a yes and Mark is a serious maybe who becomes a yes when he sees the do nothing cost.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t5_A", "sp_t5_B", "sp_t5_C"]
+      },
+      {
+        "id": "sp_t4_B",
+        "turn": 4,
+        "question_text": "You have been managing the pressure from above and below for a while now. What would it mean for you personally if this migration went well and the platform modernization happened the way you are envisioning it?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "identify_pain"],
+        "points": 4,
+        "response_text": "Honestly? It would mean that the outage becomes the turning point rather than the low point. Right now when people think about IT at Soha they think about Black Friday. I want them to think about this migration as the moment IT became a real strategic asset. That matters to me beyond the career stuff. I have a good team and they deserve to be known for what they build, not what broke.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t5_A", "sp_t5_B", "sp_t5_C"]
+      },
+      {
+        "id": "sp_t4_C",
+        "turn": 4,
+        "question_text": "Is there a version of this where you would want to bring in a reference customer or third-party validation before going to the steering committee?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "decision_process"],
+        "points": 3,
+        "response_text": "A reference customer would help. Specifically a retailer who has gone through a similar migration and platform consolidation. Mark Reynolds respects peer evidence. If I can point to a comparable company that made this move and has the numbers to prove it worked, that pre-empts a lot of his skepticism. It is not a requirement but it would strengthen the case.",
+        "triggers_briefing": false,
+        "next_question_ids": ["sp_t5_A", "sp_t5_B", "sp_t5_C"]
+      },
+
+      {
+        "id": "sp_t5_A",
+        "turn": 5,
+        "question_text": "Sarah, based on everything we have covered, the right next step is to get in front of Mark Reynolds and Priya Desai together with a business case that ties the platform investment to the migration, the outage, and the cost mandate. Would you be comfortable facilitating that introduction when the time is right?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 4,
+        "response_text": "Yes. Get me the business case in a form I can put in front of them and I will set it up. I want to review it before it goes to Mark so I can anticipate his questions and make sure the numbers are solid. Give me something I can defend and I will get you in the room.",
+        "close_type": "full_context",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "sp_t5_B",
+        "turn": 5,
+        "question_text": "Before we go to the steering committee, I want to make sure we are building something together rather than me bringing you a proposal to react to. What would it look like for us to co-develop the business case over the next two to three weeks?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process", "economic_buyer"],
+        "points": 5,
+        "response_text": "I would actually prefer that. The last thing I want is to be handed a vendor proposal and asked to sign off on it. If we build this together I own the narrative and I can present it as my recommendation, not as something a vendor brought me. That is a much stronger position going into the steering committee. Let us set up a working session.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": true,
+        "next_question_ids": []
+      },
+      {
+        "id": "sp_t5_C",
+        "turn": 5,
+        "question_text": "This has been a really productive conversation Sarah. I think the next step is to put together a proposal and bring it back to the steering committee for a formal review.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I think we are getting ahead of ourselves. The steering committee is not going to sit through a demo until they have seen the business case. Let me think about the right next step and get back to you.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  }
+]

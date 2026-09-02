@@ -1,0 +1,631 @@
+[
+  {
+    "id": "priya_desai",
+    "name": "Priya Desai",
+    "title": "Chief Information Officer",
+    "level": 4,
+    "unlocks": [],
+    "insider_briefing_for_next": null,
+    "questions": [
+      {
+        "id": "pd_t1_A",
+        "turn": 1,
+        "question_text": "Priya, Sarah has given me a lot of context on the migration, the platform modernization, and the cost mandate. I want to use the time with you differently. I would love to understand the AI agenda you have been asked to deliver and how the platform decisions we are discussing connect to that.",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria", "identify_pain"],
+        "points": 5,
+        "response_text": "That is the right question and almost nobody asks it that way. The AI mandate is real and it is specific. David Lee told the board that AI will be central to Soha's growth story within 18 months. My job is to make that true. The three areas are: personalized search and product recommendations to drive conversion, AI-assisted supply chain and inventory optimization to drive margin, and intelligent security operations to reduce risk. All three require the same foundation: a unified data platform that can ingest, index, and query data at scale with low latency. Right now we do not have that. We have Splunk for security data, Datadog for infrastructure data, a search stack that was never built for scale, and a data warehouse that is not connected to any of it in real time. The AI vision and the platform modernization are the same problem. I do not think that connection has been made clearly enough in the conversations happening below me.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t2_A1", "pd_t2_A2", "pd_t2_A3"]
+      },
+      {
+        "id": "pd_t1_B",
+        "turn": 1,
+        "question_text": "Tell me about your technology vision for Soha and where you are in executing against it.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_criteria"],
+        "points": 1,
+        "response_text": "The vision is to transform IT from a cost center into a growth enabler. Three pillars: resilience and operational excellence, AI-driven business capabilities, and vendor consolidation to reduce complexity and cost. The migration is the foundation. Everything else builds on top of it.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t2_B1", "pd_t2_B2", "pd_t2_B3"]
+      },
+      {
+        "id": "pd_t1_C",
+        "turn": 1,
+        "question_text": "I understand you are evaluating options for observability and security platform consolidation. What are your key criteria?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Consolidation, scalability, and AI readiness. Those are the three criteria. What specifically are you proposing?",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t2_C1", "pd_t2_C2", "pd_t2_C3"]
+      },
+
+      {
+        "id": "pd_t2_A1",
+        "turn": 2,
+        "question_text": "You said the AI vision and the platform modernization are the same problem. Has that connection been made in any formal proposal or planning document yet, or is it still in your head?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "decision_criteria", "economic_buyer"],
+        "points": 5,
+        "response_text": "It has not been formalized and that is a gap I have been meaning to close. The migration planning and the AI roadmap are in two separate workstreams with different owners. Sarah is running the migration and the platform consolidation. The AI roadmap sits with me and my direct reports. Nobody has written the document that connects them. That document would be very useful for the board conversation I have coming up in six weeks. If someone could help me articulate why the platform decision is not just an IT infrastructure choice but the foundation for the AI capabilities the CEO has committed to, that would change the nature of the conversation at the steering committee level.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+      {
+        "id": "pd_t2_A2",
+        "turn": 2,
+        "question_text": "When you say a unified data platform that can ingest, index, and query at scale — are you thinking one platform that does everything or a best-of-breed approach with strong integration?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "competition"],
+        "points": 4,
+        "response_text": "My strong preference is a unified platform. Best of breed sounds good in theory but in practice it creates integration complexity, data latency, and vendor management overhead that a company in our situation cannot afford. If one platform can handle security data, infrastructure observability, and search and personalization at scale, that is a dramatically simpler architecture and a dramatically simpler vendor conversation. The question is whether a single platform can actually do all of that well enough.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A2a", "pd_t3_A2b", "pd_t3_A2c"]
+      },
+      {
+        "id": "pd_t2_A3",
+        "turn": 2,
+        "question_text": "You mentioned three AI use cases. If you could only land one of them in the next 12 months, which one moves the needle most for David Lee's agenda?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics", "decision_criteria"],
+        "points": 5,
+        "response_text": "Personalized search. Without question. It connects directly to the revenue growth story David Lee tells every quarter. Conversion improvement is visible, measurable, and directly tied to shareholder value. The supply chain and security work is important but it is harder to put on a slide for the board. Search and personalization is the one that makes the CEO look like the AI vision is real and not just a talking point. If I can show meaningful conversion lift in the next 12 months the rest of the AI roadmap gets a lot easier to fund.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A3a", "pd_t3_A3b", "pd_t3_A3c"]
+      },
+      {
+        "id": "pd_t2_B1",
+        "turn": 2,
+        "question_text": "You mentioned AI-driven business capabilities as a pillar. What specifically has David Lee asked you to deliver on that front?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria"],
+        "points": 2,
+        "response_text": "He wants measurable AI capabilities in production within 18 months. The three areas are personalized search, supply chain intelligence, and intelligent security operations. All three require the same foundational data platform. That is the connection I have been trying to make internally — we are not making three separate AI investments, we are making one platform investment that enables all three. If that framing gets made clearly enough in the business case it changes the ROI calculation completely.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+      {
+        "id": "pd_t2_B2",
+        "turn": 2,
+        "question_text": "How do you define vendor consolidation success — fewer contracts, lower total cost, or both?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_criteria", "metrics"],
+        "points": 1,
+        "response_text": "Both, in that order. Fewer contracts reduces complexity and management overhead. Lower total cost satisfies Mark Reynolds' mandate. If we can get to a state where one platform handles what three currently do and the combined cost is lower, that is the definition of success from my perspective.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+      {
+        "id": "pd_t2_B3",
+        "turn": 2,
+        "question_text": "What is the current state of the data infrastructure? Are there significant gaps between where you are and where you need to be for AI?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Significant gaps. Data is siloed across multiple systems with no unified layer. The AI work requires real-time data access across security, infrastructure, and application layers simultaneously. We cannot do that today. That is the foundational problem the platform decision needs to solve.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+      {
+        "id": "pd_t2_C1",
+        "turn": 2,
+        "question_text": "Let me reframe. From what I have learned across the organization, the platform decision is not just an IT infrastructure choice — it is the foundation for the AI capabilities David Lee has committed to publicly. Has that connection been made explicitly in your planning?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["decision_criteria", "economic_buyer"],
+        "points": 2,
+        "response_text": "It has not been made explicitly and that is the gap. The migration workstream and the AI roadmap are running separately. If someone connected those two in a coherent document I could take to the board, the nature of the platform investment changes from an IT cost to a strategic enabler. That document does not exist yet. If you can help me build it, that is more valuable than any vendor evaluation.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+      {
+        "id": "pd_t2_C2",
+        "turn": 2,
+        "question_text": "What is your migration timeline and what constraints does it create for a platform decision?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "Migration completes in June. Any platform decision that needs to run inside the migration workstream has to be decided in the next 60 days. After that the window closes and we end up doing the platform change after the migration, which means doing it twice effectively. That is a timeline constraint that vendors either fit into or they do not.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+      {
+        "id": "pd_t2_C3",
+        "turn": 2,
+        "question_text": "Let me walk you through what our platform can do and how it addresses your consolidation criteria.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I would rather understand the problem fully before hearing about solutions. What specifically have you learned from the organization that makes you think you understand our situation?",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t3_A1a", "pd_t3_A1b", "pd_t3_A1c"]
+      },
+
+      {
+        "id": "pd_t3_A1a",
+        "turn": 3,
+        "question_text": "That board conversation is six weeks out. What would the ideal version of that document look like and who would need to sign off on it internally before it goes to that level?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "Ideally it is a two-page executive summary that connects the platform investment to three things: the migration, the AI roadmap, and the cost reduction mandate. It needs to have numbers. Not directional ranges, actual numbers with clear assumptions. It needs to show that the platform decision is not just an IT cost but an enabler of the revenue growth the CEO has committed to publicly. Sarah would need to review it, I would need to approve it, and Mark Reynolds would need to have seen the financial logic before it goes to the board. If that document existed I could walk into that board conversation with a much stronger story.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A1b",
+        "turn": 3,
+        "question_text": "If the platform decision and the AI roadmap were connected in one proposal — how does that change the conversation with Mark Reynolds? Does it make the financial case easier or more complex?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics", "decision_process"],
+        "points": 5,
+        "response_text": "It makes it easier actually. Mark's default frame is cost. If you show him a platform investment that reduces the Splunk and Datadog TCO and also enables AI capabilities that drive revenue growth, the ROI calculation changes completely. He is not just approving a cost reduction, he is approving a growth enabler. That is a much easier yes for him. The risk is that it makes the proposal bigger and more complex and Mark tends to scrutinize bigger proposals more carefully. You need the numbers to be airtight.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A1c",
+        "turn": 3,
+        "question_text": "Who on your team is closest to both the migration workstream and the AI roadmap? Is there someone who could be the internal champion for connecting those two threads?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process"],
+        "points": 3,
+        "response_text": "There is a program manager named David Okonkwo who has been sitting across both workstreams. He does not have authority but he has context. If you need someone to facilitate the internal alignment work between the migration team and the AI roadmap team, he is the person. Sarah knows him.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A2a",
+        "turn": 3,
+        "question_text": "The question of whether a single platform can do all of that well enough — what would proof of that look like in your mind?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "metrics"],
+        "points": 4,
+        "response_text": "A POC against our actual data across all three use cases: infrastructure observability, security operations, and search. Not in sequence. Simultaneously. The integration between those three data streams is where unified platforms typically fall down. If a platform can ingest all three sources, correlate across them in real time, and surface AI-assisted insights across all three domains in one interface, that is the proof I need. A demo environment will not convince me. Our data will.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A2b",
+        "turn": 3,
+        "question_text": "Are the incumbents — Splunk, Datadog — positioning themselves as the AI-ready platform or are they still selling the same story?",
+        "question_type": "good",
+        "meddpicc_tags": ["competition", "decision_criteria"],
+        "points": 3,
+        "response_text": "They are both claiming AI readiness but neither has shown me a coherent story for all three use cases. Splunk is strong on security but weak on search and personalization. Datadog is strong on infrastructure observability but it is not a security platform and has no commerce capabilities. They are both pushing for us to expand rather than consolidate, which is the opposite of what I am trying to do. The fact that no incumbent can tell a unified story is actually an opening.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A2c",
+        "turn": 3,
+        "question_text": "How has the migration been going so far and are there any risks to the June timeline?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["decision_process"],
+        "points": 1,
+        "response_text": "The migration is on track so far. The primary risk is scope creep from parallel workstreams. Every add-on initiative creates potential dependencies on the critical path. I manage that tightly. The platform decision needs to run clean and parallel without creating blockers for the main migration.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A3a",
+        "turn": 3,
+        "question_text": "If personalized search is the AI win you need to show the board in 12 months — what does a credible timeline to meaningful conversion improvement look like?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "decision_criteria", "economic_buyer"],
+        "points": 5,
+        "response_text": "A platform decision in the next 60 days. Data migration and catalog indexing in Q1. Model training and relevance tuning in Q2. A/B testing against the current stack in Q3. Measurable conversion improvement by Q4. That is 12 months and it is tight but achievable if the platform decision happens now. Every month we delay is a month off the end of that timeline. The board conversation in six weeks is actually a useful forcing function — I can use it to drive urgency internally.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A3b",
+        "turn": 3,
+        "question_text": "You mentioned the security operations use case as one of the three AI areas. How does that connect to the Splunk renewal conversation Linda and Sarah have been having?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "competition", "metrics"],
+        "points": 4,
+        "response_text": "It is the same conversation. Intelligent security operations requires the same unified data platform as the other two AI use cases. If we replace Splunk with a platform that handles security data as part of a broader unified layer, we get the security capability we need, the AI-readiness we need, and we do not renew Splunk at $900K. Those three things happen in one decision. Linda Chen understands this but she has been making it as a security argument rather than as part of the AI agenda. Framing it as an AI infrastructure decision actually makes the security case stronger.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+      {
+        "id": "pd_t3_A3c",
+        "turn": 3,
+        "question_text": "Are there other CIOs or technology leaders you have talked to who have made a similar platform consolidation move?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["competition"],
+        "points": 1,
+        "response_text": "I have a few peer relationships I have tapped informally but I have not found someone who has made the exact move we are considering — consolidating observability, security, and search onto one platform in the context of a major migration. If you have a reference customer who has done something comparable I would want to talk to them.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t4_A", "pd_t4_B", "pd_t4_C"]
+      },
+
+      {
+        "id": "pd_t4_A",
+        "turn": 4,
+        "question_text": "Priya, if you fast forward 18 months and the AI agenda is on track and the migration is behind you — what does the technology organization look like and what did you have to get right to get there?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_criteria", "economic_buyer", "metrics"],
+        "points": 5,
+        "response_text": "The technology organization looks like this: one unified data platform handling security, observability, and search. Two fewer vendor contracts. A migration that is done and behind us. And a data science team that is shipping AI features into production rather than spending all their time on data pipeline work. The thing I had to get right to get there was making the platform decision early enough to execute inside the migration window. That is the decision we are having right now. If we get this right in the next 60 days everything else follows. If we get it wrong or delay it, we spend the next two years cleaning up the mess.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t5_A", "pd_t5_B", "pd_t5_C"]
+      },
+      {
+        "id": "pd_t4_B",
+        "turn": 4,
+        "question_text": "What is the version of this that keeps you up at night — not the technical risks but the organizational ones?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "identify_pain"],
+        "points": 4,
+        "response_text": "The thing that keeps me up at night is the people dynamic. John Miller has been here for 15 years. Linda Chen has built a team that is deeply loyal to how they do things. Any platform change touches their daily work and their identity. If they do not feel like partners in the decision they will find ways to slow it down without ever explicitly opposing it. I have seen it happen before. The way you prevent it is to make sure the people who live with the platform every day feel like they helped choose it. John and Linda need to own this decision, not just accept it.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t5_A", "pd_t5_B", "pd_t5_C"]
+      },
+      {
+        "id": "pd_t4_C",
+        "turn": 4,
+        "question_text": "You have moved fast since joining Soha. Is the pace of change creating any organizational friction that could affect a platform decision like this?",
+        "question_type": "good",
+        "meddpicc_tags": ["identify_pain", "decision_process"],
+        "points": 3,
+        "response_text": "Yes, and I am managing it carefully. I came in with a change agenda and the team has been receptive but there is a pace-of-change tolerance that I have to respect. I am trying to sequence the changes so that each one delivers a visible win before the next one starts. The migration is the foundation. The platform consolidation is the next layer. The AI capabilities are the layer after that. If I try to do all three simultaneously I risk losing the team.",
+        "triggers_briefing": false,
+        "next_question_ids": ["pd_t5_A", "pd_t5_B", "pd_t5_C"]
+      },
+
+      {
+        "id": "pd_t5_A",
+        "turn": 5,
+        "question_text": "Priya, I think the most valuable thing I can do right now is help you build the document that connects the platform investment to the migration, the AI roadmap, and the cost mandate. Would it be useful to work on that together before we bring Mark into it?",
+        "question_type": "good",
+        "meddpicc_tags": ["champion", "decision_process", "economic_buyer"],
+        "points": 4,
+        "response_text": "Yes. That is exactly what I need. Let us work on that together. I want Sarah involved too because she owns the migration numbers. If the three of us can get aligned on the document before it goes to Mark, I think we go into that conversation in a very strong position. Set up the working session and let us get started.",
+        "close_type": "full_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      },
+      {
+        "id": "pd_t5_B",
+        "turn": 5,
+        "question_text": "Before I meet with Mark Reynolds, I want to make sure I understand his world as well as I understand yours. From your perspective, what is the most important thing I need to appreciate about how he thinks and what will make him a yes?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 5,
+        "response_text": "Mark is a first principles thinker. He will ignore the narrative and go straight to the numbers. The questions he will ask in order are: what does the status quo cost us including the risk exposure, what does the proposed platform cost including implementation, what is the net delta, and what is the payback period. If you can answer those four questions with numbers that are well-sourced and clearly assumed, you have a chance. The thing that trips people up with Mark is vague assumptions. If you say approximately or roughly he will push until you have a real number or you lose credibility. Come in with a point estimate and a clear methodology, not a range.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      },
+      {
+        "id": "pd_t5_C",
+        "turn": 5,
+        "question_text": "This has been incredibly valuable Priya. I think the next step is to put together a formal proposal and bring it to the steering committee for review.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "I would hold off on a formal proposal until we have aligned on the strategic framing. Let me think about the right process and get back to Sarah.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  },
+
+  {
+    "id": "mark_reynolds",
+    "name": "Mark Reynolds",
+    "title": "Chief Financial Officer",
+    "level": 4,
+    "unlocks": [],
+    "insider_briefing_for_next": null,
+    "questions": [
+      {
+        "id": "mr_t1_A",
+        "turn": 1,
+        "question_text": "Mark, I am going to skip the narrative and go straight to the numbers because I understand that is how you think about these decisions. I have been working with Sarah and Priya on a cost analysis and I want to pressure-test my assumptions with you before we formalize anything.",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics", "decision_process"],
+        "points": 5,
+        "response_text": "Good. That is the right approach. What are the numbers?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t2_A1", "mr_t2_A2", "mr_t2_A3"]
+      },
+      {
+        "id": "mr_t1_B",
+        "turn": 1,
+        "question_text": "Mark, thank you for the time. I wanted to share what I have learned about the platform opportunity here and get your perspective on the financial case.",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["economic_buyer"],
+        "points": 1,
+        "response_text": "What specifically have you learned and what are you proposing?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t2_B1", "mr_t2_B2", "mr_t2_B3"]
+      },
+      {
+        "id": "mr_t1_C",
+        "turn": 1,
+        "question_text": "Mark, I think there is a really compelling ROI story here and I wanted to walk you through it.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Who told you it was compelling and why should I believe you? What are the numbers?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t2_C1", "mr_t2_C2", "mr_t2_C3"]
+      },
+
+      {
+        "id": "mr_t2_A1",
+        "turn": 2,
+        "question_text": "Current state cost first. Based on what I have learned from the team, you are looking at roughly $800K to $900K for the Splunk renewal, around $400K to $500K for Datadog, and a legacy Nagios footprint. Combined somewhere between $1.2M and $1.5M in annual platform spend, not counting the analyst time being consumed by manual triage. Does that picture match what you are seeing?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "competition"],
+        "points": 5,
+        "response_text": "The Splunk number is going to be higher than $800K. I have seen the preliminary renewal estimate and it is closer to $900K based on the new log sources from the acquisition. Datadog is about right. The analyst time cost is something I have not fully quantified but I take Linda's estimate seriously. She does not exaggerate. So yes, you are in the right ballpark. What is the proposed alternative?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+      {
+        "id": "mr_t2_A2",
+        "turn": 2,
+        "question_text": "The outage cost somewhere in the seven figures in a single day. The root cause is still undetermined which means there is a non-zero probability it was a security event. The average cost of a retail breach at Soha's scale is north of $3M not counting PCI DSS regulatory exposure. I want to understand how you are thinking about that risk cost in the context of the platform investment.",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "identify_pain"],
+        "points": 5,
+        "response_text": "The outage number was $1.2M in direct revenue impact. We have not disclosed that publicly but that is the internal figure. The security ambiguity bothers me more than the direct cost. If we cannot definitively rule out a breach and we have a second incident, the regulatory and reputational cost could be multiples of that. PCI DSS non-compliance at our transaction volume is a meaningful exposure. I have been thinking about this more than I have let on. What does the platform cost?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A2a", "mr_t3_A2b", "mr_t3_A2c"]
+      },
+      {
+        "id": "mr_t2_A3",
+        "turn": 2,
+        "question_text": "Before I share a proposed future state cost, I want to make sure I understand your threshold. What does the payback period need to look like for this to be a serious conversation?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "metrics", "decision_criteria"],
+        "points": 5,
+        "response_text": "Under 18 months. That is the threshold for a technology investment of this size. And I want to see the assumptions clearly laid out because I will challenge them. If the payback depends on a 20 percent MTTR improvement or a 5 percent conversion lift, I want to understand how confident you are in those numbers and what they are based on.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A3a", "mr_t3_A3b", "mr_t3_A3c"]
+      },
+      {
+        "id": "mr_t2_B1",
+        "turn": 2,
+        "question_text": "The current state cost — Splunk renewal near $900K, Datadog around $400K to $500K, plus analyst productivity loss — puts the status quo cost at over $1.3M annually in hard platform spend alone, before accounting for incident cost. Does that match your data?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["metrics", "economic_buyer"],
+        "points": 2,
+        "response_text": "The Splunk number is accurate. Datadog is in the right range. I have not fully quantified the analyst cost but Linda's estimate of 20 percent of team time going to noise triage translates to a meaningful number at fully loaded analyst cost. Yes, the total is over $1.3M and that is before the incident risk exposure. What are you proposing as the alternative?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+      {
+        "id": "mr_t2_B2",
+        "turn": 2,
+        "question_text": "You have a 20 percent cost reduction mandate. What is the target dollar amount that represents and how much of it remains unaccounted for?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["economic_buyer", "metrics"],
+        "points": 1,
+        "response_text": "I am not going to share the specific target publicly but the mandate is real and it applies to every proposal that comes across my desk. The question I ask every time is: does this investment contribute to the mandate or does it add to the cost base? A platform that replaces multiple existing contracts at lower total cost contributes. A new platform on top of existing ones does not.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+      {
+        "id": "mr_t2_B3",
+        "turn": 2,
+        "question_text": "What other IT investments are you evaluating this quarter that would compete with this one for budget?",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "That is not the right framing. The question is not whether this competes for budget. The question is whether it has a better return than the alternatives. If the numbers are right, this funds itself through cost reduction. What are the numbers?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+      {
+        "id": "mr_t2_C1",
+        "turn": 2,
+        "question_text": "Let me start with the do-nothing cost. The outage cost $1.2M in direct revenue impact. The Splunk renewal is coming in near $900K — roughly double what you paid two years ago. And there is a non-zero security risk exposure that could be multiples of the outage cost if it materializes. Does that picture of the status quo match your internal view?",
+        "question_type": "recovery",
+        "meddpicc_tags": ["metrics", "economic_buyer", "identify_pain"],
+        "points": 2,
+        "response_text": "The $1.2M is accurate. The Splunk renewal number is in the right range — I have seen the preliminary estimate. The security exposure is harder to quantify but I take it seriously. You are describing the problem accurately. What is the solution and what does it cost?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+      {
+        "id": "mr_t2_C2",
+        "turn": 2,
+        "question_text": "What would a compelling ROI story need to include for you to take it seriously?",
+        "question_type": "mediocre",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria"],
+        "points": 1,
+        "response_text": "Current state cost accurately represented, future state cost credibly estimated, implementation risk honestly assessed, and payback math that works under conservative assumptions. Four things. If all four are present and the numbers hold up to scrutiny, I will engage seriously.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+      {
+        "id": "mr_t2_C3",
+        "turn": 2,
+        "question_text": "I think there is a strategic opportunity here that goes beyond cost. The platform also enables the AI agenda Priya has been tasked with delivering.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Strategic narratives are fine but they do not fund themselves. Show me the cost and return on that AI agenda in concrete terms and I will factor it in. Otherwise it is a nice-to-have attached to a cost proposal.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t3_A1a", "mr_t3_A1b", "mr_t3_A1c"]
+      },
+
+      {
+        "id": "mr_t3_A1a",
+        "turn": 3,
+        "question_text": "If the platform could consolidate Splunk, Datadog, and Nagios into one contract and come in at a lower total cost while also delivering the AI search capabilities the CEO has been talking about publicly — how does that change the conversation for you?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "decision_criteria", "competition"],
+        "points": 5,
+        "response_text": "It changes it significantly. The consolidation story is actually more compelling to me than the resilience story right now. Not because resilience does not matter, it does, but because consolidation is a direct cost reduction with a clear mechanism. If one platform replaces three and comes in at a lower TCO, that is a straightforward calculation. The AI angle is interesting but I will want to see a conservative estimate of the conversion impact, not an optimistic one. What is the proposed platform cost?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A1b",
+        "turn": 3,
+        "question_text": "Linda estimates 20 percent of her team's time is lost to manual triage. At fully loaded analyst cost that is a meaningful number annually. Is analyst productivity something you factor into platform ROI calculations or do you keep it separate?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer"],
+        "points": 4,
+        "response_text": "I count it as a secondary benefit, not a primary one. The reason is that analyst productivity gains are real but they are hard to audit after the fact. I will include it as a supporting data point but the primary case needs to stand on hard costs: platform fees, renewal avoidance, and quantifiable risk reduction. Does the hard cost case work without the soft savings?",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A1c",
+        "turn": 3,
+        "question_text": "The Datadog renewal is in April and Splunk is in February. If we could get a decision before the February renewal window, what does that do to the negotiating position on the Splunk contract?",
+        "question_type": "good",
+        "meddpicc_tags": ["competition", "decision_process", "metrics"],
+        "points": 5,
+        "response_text": "That is a good point. If we are seriously evaluating alternatives we should not be renewing Splunk on a three-year term. I can instruct procurement to start the renewal conversation on a shorter term or month to month basis while the evaluation is underway. Daniel Foster handles that. I will talk to him.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A2a",
+        "turn": 3,
+        "question_text": "If we run the three-year status quo cost — Splunk at $900K, Datadog at $450K, analyst time loss, and one more Black Friday level incident — what is the number you are carrying on your balance sheet?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "identify_pain"],
+        "points": 5,
+        "response_text": "I have done that math. Three more years of Splunk at the new rate is roughly $2.7M. Datadog on top of that is another $1.5M. That is over $4M in platform spend that does not include the analyst productivity loss or the risk exposure. And that is assuming no more incidents. Another Black Friday level event changes that number dramatically. The status quo is expensive. I know that. What I need to know is whether the alternative is better and by how much.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A2b",
+        "turn": 3,
+        "question_text": "The security ambiguity from the outage — if it turns out to be a confirmed breach, what is the exposure range you are carrying?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "identify_pain", "economic_buyer"],
+        "points": 4,
+        "response_text": "PCI DSS fine range depends on the severity and duration of non-compliance but for a retailer of our transaction volume it is meaningful, potentially seven figures on its own. GDPR applies to our European customer records and the exposure there is a percentage of global revenue under a worst-case scenario. I do not want to put a specific number on it publicly but I can tell you that the ambiguity itself is a liability. I cannot certify to our auditors that there was no breach. That creates ongoing legal and regulatory exposure until the investigation is closed.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A2c",
+        "turn": 3,
+        "question_text": "On the search and personalization side, Emily Rivera estimates an eight-figure annual revenue opportunity from closing the mobile conversion gap. How does that factor into your ROI view?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer"],
+        "points": 4,
+        "response_text": "I want to see a conservative version of that estimate, not the upside case. Emily tends to be optimistic. If closing half the mobile conversion gap conservatively represents a meaningful revenue uplift with a credible mechanism, I will include it in the ROI calculation as an upside scenario. That changes the payback calculation materially. I would want the search revenue case and the IT cost case in the same model so I can see the total picture.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A3a",
+        "turn": 3,
+        "question_text": "Under 18 months means the case needs to work on cost avoidance alone before counting conversion improvement. If the platform replaces Splunk and Datadog at a lower combined cost and the implementation fits inside the migration budget, do those two conditions get you to 18 months?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "decision_criteria"],
+        "points": 5,
+        "response_text": "In principle yes. If the platform comes in at less than the combined renewal cost of Splunk and Datadog and the implementation cost amortizes over three years at a manageable figure, the hard cost case can work on renewal avoidance alone. The conversion improvement becomes upside that shortens the payback further. That is the model I want to see. Show me it works on cost avoidance and the AI upside is bonus.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A3b",
+        "turn": 3,
+        "question_text": "The assumption I want to pressure test is the implementation cost and migration risk. What is the budget tolerance for implementation and what happens to the payback if it overruns?",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "decision_process", "economic_buyer"],
+        "points": 4,
+        "response_text": "Implementation overruns are the thing that kill payback calculations most often. I want to see the implementation cost estimated with contingency built in, not the best case. And I want to understand the mitigation if the migration timeline slips — what does that cost and does the payback still work? Show me the case with a 20 percent implementation overrun and a 30-day migration delay and if it still works under those assumptions I will be comfortable.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+      {
+        "id": "mr_t3_A3c",
+        "turn": 3,
+        "question_text": "Is there a budget mechanism available for this — existing renewal budget being redirected, or does this require a new budget cycle?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 4,
+        "response_text": "If the platform replaces Splunk and Datadog at a lower combined cost, the renewal budgets fund the switch. There is no new budget cycle required — it is a reallocation of existing spend. The implementation cost would need to come from the migration budget or from a separate capital allocation but that is a much smaller conversation than a full budget cycle. That is actually one of the more attractive aspects of this decision from a funding mechanics standpoint.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t4_A", "mr_t4_B", "mr_t4_C"]
+      },
+
+      {
+        "id": "mr_t4_A",
+        "turn": 4,
+        "question_text": "Mark, you have been doing this long enough to know when a technology investment is real and when it is theater. What would make this one real in your mind?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria", "metrics"],
+        "points": 5,
+        "response_text": "What makes it real is a proposal where I cannot find a better alternative. I am not looking for reasons to say no. I am looking for a proposal that survives my scrutiny. If the current state cost is accurately represented, the future state cost is credibly estimated with clear assumptions, the implementation risk is honestly assessed, and the payback math works under conservative assumptions, I will support it. What I will not support is a proposal that gets to the right answer by using optimistic assumptions. Show me a case that works under pessimistic assumptions and I will take it to the board myself.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t5_A", "mr_t5_B", "mr_t5_C"]
+      },
+      {
+        "id": "mr_t4_B",
+        "turn": 4,
+        "question_text": "Is there a version of this where you and Priya are aligned and this moves quickly, and a version where you are not and it stalls? What is the difference between those two versions?",
+        "question_type": "good",
+        "meddpicc_tags": ["decision_process", "economic_buyer", "champion"],
+        "points": 4,
+        "response_text": "Priya and I are generally aligned on the direction. Where we sometimes diverge is on pace and risk tolerance. She moves fast and I move carefully. The difference between the two versions is usually the quality of the financial case. When the numbers are solid we move together. When they are not she wants to proceed anyway and I want to wait. In this situation I think we both have enough motivation from the outage and the Splunk bill to move. The question is whether the proposal is good enough to move on.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t5_A", "mr_t5_B", "mr_t5_C"]
+      },
+      {
+        "id": "mr_t4_C",
+        "turn": 4,
+        "question_text": "What is the cost of doing nothing? Not the outage cost — the full cost of running the same infrastructure with the same tool sprawl for another three years.",
+        "question_type": "good",
+        "meddpicc_tags": ["metrics", "economic_buyer", "identify_pain"],
+        "points": 5,
+        "response_text": "I have done that math. Three more years of Splunk at the new rate is roughly $2.7M. Datadog on top of that is another $1.5M. That is over $4M in platform spend that does not include the analyst productivity loss or the risk exposure. And that is assuming no more incidents. Another Black Friday level event changes that number dramatically. The status quo is expensive. I know that. What I need to know is whether the alternative is better and by how much.",
+        "triggers_briefing": false,
+        "next_question_ids": ["mr_t5_A", "mr_t5_B", "mr_t5_C"]
+      },
+
+      {
+        "id": "mr_t5_A",
+        "turn": 5,
+        "question_text": "Mark, based on everything we have discussed, I want to propose a working session with you, Priya, and Sarah where we build the financial case together using the numbers we have developed in this conversation. The goal is to walk out with a proposal that you have already stress-tested so there are no surprises at the steering committee. Would that be a useful use of two hours?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_process"],
+        "points": 4,
+        "response_text": "Yes. Set it up with Sarah. Two hours, numbers only, no slide decks. If we can get to a proposal that I have already reviewed the assumptions on before it goes to the steering committee, that is a much cleaner process. I will come in skeptical but I will come in engaged. That is the best I can offer.",
+        "close_type": "full_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      },
+      {
+        "id": "mr_t5_B",
+        "turn": 5,
+        "question_text": "Before I put the formal proposal together, what are the three things I need to get right to make sure you are a yes at the steering committee?",
+        "question_type": "good",
+        "meddpicc_tags": ["economic_buyer", "decision_criteria", "metrics"],
+        "points": 5,
+        "response_text": "Three things. First, the current state cost needs to be accurate and complete — not just the platform licenses but the total cost including hidden costs. Second, the implementation plan needs to show me that you can execute inside the migration timeline without putting the primary cutover at risk. That is the thing that would kill this proposal faster than any financial argument. Third, the payback calculation needs to work under conservative assumptions. If it only works if everything goes right, I am not interested. Show me it works when things go wrong and I will be a yes.",
+        "close_type": "full_context_exceptional",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      },
+      {
+        "id": "mr_t5_C",
+        "turn": 5,
+        "question_text": "I appreciate your time Mark. I will put together a formal proposal and send it over for your review.",
+        "question_type": "trap",
+        "meddpicc_tags": [],
+        "points": 0,
+        "response_text": "Fine. Send it over and I will have someone review it.",
+        "close_type": "partial_context",
+        "triggers_briefing": false,
+        "next_question_ids": []
+      }
+    ]
+  }
+]
