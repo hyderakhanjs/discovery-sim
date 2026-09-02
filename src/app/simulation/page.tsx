@@ -435,7 +435,7 @@ export default function Simulation() {
       </aside>
 
       {/* ── Main content ── */}
-      <main className="flex-1 flex flex-col w-full px-6 py-8" style={{ maxWidth: "none" }}>
+      <main className="flex-1 flex flex-col max-w-2xl mx-auto px-4 py-8">
 
         {/* Show stakeholder header only when in a conversation */}
         {(state.phase === "question" || state.phase === "response" || state.phase === "briefing") && (
