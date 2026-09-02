@@ -164,7 +164,7 @@ function StakeholderMap({
 
       {/* Grid with SVG relationship overlay */}
       <div style={{ overflowX: "auto" }}>
-        <div ref={gridRef} style={{ position: "relative", minWidth: "820px" }}>
+        <div ref={gridRef} style={{ position: "relative", minWidth: "1100px" }}>
 
           {/* SVG lines — absolutely fills the grid content area */}
           <svg
@@ -183,8 +183,8 @@ function StakeholderMap({
           {/* CSS grid: level col + 4 track cols */}
           <div style={{
             display: "grid",
-            gridTemplateColumns: "36px 1fr 1fr 1fr 1fr",
-            gap: "12px",
+            gridTemplateColumns: "40px 1fr 1fr 1fr 1fr",
+            gap: "16px",
             position: "relative",
           }}>
             {[1, 2, 3, 4].map((level) => (
@@ -213,15 +213,15 @@ function StakeholderMap({
                             disabled={isCompleted}
                             className="text-left rounded-lg border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
                             style={{
-                              flex: 1, padding: "12px 10px",
+                              flex: 1, padding: "16px 14px",
                               background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
                               borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
                               opacity: isCompleted ? 0.65 : 1,
                             }}>
-                            <div style={{ fontSize: "12px", fontWeight: 600, lineHeight: 1.3, marginBottom: "3px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
+                            <div style={{ fontSize: "14px", fontWeight: 600, lineHeight: 1.3, marginBottom: "4px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
                               {s.name}{isCompleted && " ✓"}
                             </div>
-                            <div style={{ fontSize: "11px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            <div style={{ fontSize: "12px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                               {s.title}
                             </div>
                           </button>
