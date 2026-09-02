@@ -5,9 +5,6 @@
       "name": "Alex Chen",
       "title": "Senior SRE",
       "level": 1,
-      "unlocks": [
-        "john_miller"
-      ],
       "insider_briefing_for_next": "John Miller has been pushing for infrastructure modernization for two years but keeps losing the budget argument. He will be receptive to a cost and reliability story if you walk in with Alex's numbers already in hand.",
       "questions": [
         {
@@ -427,16 +424,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "observability",
+      "context_sources": {
+        "warm": [
+          "john_miller"
+        ],
+        "primed": [
+          "john_miller",
+          "jordan_lee"
+        ]
+      }
     },
     {
       "id": "jordan_lee",
       "name": "Jordan Lee",
       "title": "SOC Analyst",
       "level": 1,
-      "unlocks": [
-        "linda_chen"
-      ],
       "insider_briefing_for_next": "Linda Chen has been building a case for a unified security data platform for 18 months. She will engage seriously if you arrive with Jordan's threat data quantified. She is skeptical of vendors who lead with product. Lead with the problem.",
       "questions": [
         {
@@ -746,16 +750,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "security",
+      "context_sources": {
+        "warm": [
+          "linda_chen"
+        ],
+        "primed": [
+          "linda_chen",
+          "alex_chen"
+        ]
+      }
     },
     {
       "id": "dev_patel",
       "name": "Dev Patel",
       "title": "Search Developer",
       "level": 1,
-      "unlocks": [
-        "emily_rivera"
-      ],
       "insider_briefing_for_next": "Emily Rivera is under direct pressure from Maria Torres to improve search conversion. She has been told the current search stack is a competitive liability. She will engage seriously if you arrive with Dev's performance data in hand. She thinks in business metrics, not engineering metrics. Translate everything.",
       "questions": [
         {
@@ -1069,16 +1080,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "search",
+      "context_sources": {
+        "warm": [
+          "emily_rivera"
+        ],
+        "primed": [
+          "emily_rivera",
+          "alex_chen"
+        ]
+      }
     },
     {
       "id": "john_miller",
       "name": "John Miller",
       "title": "Infrastructure Director",
       "level": 2,
-      "unlocks": [
-        "sarah_patel"
-      ],
       "insider_briefing_for_next": "Sarah Patel is juggling three things simultaneously: the June migration, platform modernization inside that window, and Mark Reynolds' 20 percent cost reduction mandate. She does not want a vendor pitch \u2014 she wants a partner who can help her build a steering committee business case. Come in connecting the platform investment to all three pressures in one frame. Ask how you can co-develop the case rather than present one. She responds to questions more than presentations.",
       "questions": [
         {
@@ -1539,16 +1557,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "observability",
+      "context_sources": {
+        "warm": [
+          "alex_chen"
+        ],
+        "primed": [
+          "alex_chen",
+          "linda_chen"
+        ]
+      }
     },
     {
       "id": "linda_chen",
       "name": "Linda Chen",
       "title": "SOC Lead",
       "level": 2,
-      "unlocks": [
-        "sarah_patel"
-      ],
       "insider_briefing_for_next": "Sarah Patel already knows the near-miss story and the analyst retention risk \u2014 both landed with her. What has not landed yet is the financial case. She is waiting for someone to show her the numbers. Come in with the TCO analysis started: Splunk doubling from $400K to $800K, analyst time cost, and the $3M retail breach benchmark. The other thing to know: Sarah manages up to both Mark Reynolds and Priya Desai simultaneously. Whatever you bring her needs to be pressure-tested against the CFO's objections before it gets to the steering committee.",
       "questions": [
         {
@@ -2019,16 +2044,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "security",
+      "context_sources": {
+        "warm": [
+          "jordan_lee"
+        ],
+        "primed": [
+          "jordan_lee",
+          "john_miller"
+        ]
+      }
     },
     {
       "id": "emily_rivera",
       "name": "Emily Rivera",
       "title": "Ecommerce Director",
       "level": 2,
-      "unlocks": [
-        "maria_torres"
-      ],
       "insider_briefing_for_next": "Maria Torres is a visual thinker who moves fast. Lead with business outcome, not the problem \u2014 she already knows the problem. Frame it as a choice: here is what we capture if we act, here is what we leave on the table if we do not. Connect everything to David Lee's AI agenda on the earnings call \u2014 she presents to him monthly and that connection makes her a champion. One-page summary she can look at while you talk. She has real influence with the CEO.",
       "questions": [
         {
@@ -2496,16 +2528,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "search",
+      "context_sources": {
+        "warm": [
+          "dev_patel"
+        ],
+        "primed": [
+          "dev_patel",
+          "john_miller"
+        ]
+      }
     },
     {
       "id": "maria_torres",
       "name": "Maria Torres",
       "title": "Chief Commercial Officer",
       "level": 3,
-      "unlocks": [
-        "sarah_patel"
-      ],
       "insider_briefing_for_next": "Sarah Patel is the convergence point for all IT and business tracks. She is building the steering committee case with Mark Reynolds and Priya Desai. Come in with the unified story: platform investment as revenue protection plus cost consolidation plus AI foundation. She responds to co-development rather than vendor pitches \u2014 ask her how you can build the business case together, not how you can present one to her.",
       "questions": [
         {
@@ -2868,17 +2907,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "search",
+      "context_sources": {
+        "warm": [
+          "emily_rivera"
+        ],
+        "primed": [
+          "emily_rivera",
+          "sarah_patel"
+        ]
+      }
     },
     {
       "id": "sarah_patel",
       "name": "Sarah Patel",
       "title": "VP of IT",
       "level": 3,
-      "unlocks": [
-        "priya_desai",
-        "mark_reynolds"
-      ],
       "insider_briefing_for_next": "Priya Desai is the architect of Soha's AI vision and she has already made the connection between the platform decision and the AI mandate. Lead with the AI agenda \u2014 ask her what she has been asked to deliver specifically and how the platform decision connects to it. She will tell you the three use cases all require the same foundation. Then offer to help her build the two-page executive summary connecting platform investment to migration, AI roadmap, and cost mandate. That is the document she needs for her board conversation in six weeks.",
       "questions": [
         {
@@ -3350,14 +3395,25 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "platform",
+      "context_sources": {
+        "warm": [
+          "john_miller",
+          "linda_chen",
+          "emily_rivera"
+        ],
+        "primed": [
+          "john_miller",
+          "linda_chen"
+        ]
+      }
     },
     {
       "id": "priya_desai",
       "name": "Priya Desai",
       "title": "Chief Information Officer",
       "level": 4,
-      "unlocks": [],
       "insider_briefing_for_next": null,
       "questions": [
         {
@@ -3830,14 +3886,23 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "platform",
+      "context_sources": {
+        "warm": [
+          "sarah_patel"
+        ],
+        "primed": [
+          "sarah_patel",
+          "mark_reynolds"
+        ]
+      }
     },
     {
       "id": "mark_reynolds",
       "name": "Mark Reynolds",
       "title": "Chief Financial Officer",
       "level": 4,
-      "unlocks": [],
       "insider_briefing_for_next": null,
       "questions": [
         {
@@ -4320,7 +4385,17 @@
           "triggers_briefing": false,
           "next_question_ids": []
         }
-      ]
+      ],
+      "track": "platform",
+      "context_sources": {
+        "warm": [
+          "sarah_patel"
+        ],
+        "primed": [
+          "sarah_patel",
+          "priya_desai"
+        ]
+      }
     }
   ],
   "meddpicc_elements": [

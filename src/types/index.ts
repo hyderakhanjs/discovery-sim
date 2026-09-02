@@ -44,6 +44,9 @@ export const MEDDPICC_MAX: Record<MeddpiccElement, number> = {
 export type QuestionType = "good" | "mediocre" | "trap" | "recovery";
 export type CloseType = "full_context_exceptional" | "full_context" | "partial_context";
 
+// Context state for a stakeholder based on prior conversations
+export type ContextState = "cold" | "warm" | "primed";
+
 export interface Question {
   id: string;
   turn: number;
@@ -62,10 +65,23 @@ export interface Stakeholder {
   name: string;
   title: string;
   level: number;
-  unlocks: string[];
+  track: "observability" | "security" | "search" | "platform";
+  // context_sources defines what prior conversations make this stakeholder warm/primed
+  context_sources: {
+    warm: string[];   // completing ANY ONE of these → warm
+    primed: string[]; // completing ALL of these → primed
+  };
   insider_briefing_for_next?: string;
   questions: Question[];
 }
+
+// ─── CONTEXT MULTIPLIERS ─────────────────────────────────────────────────────
+
+export const CONTEXT_MULTIPLIERS: Record<ContextState, number> = {
+  cold: 0.65,
+  warm: 1.0,
+  primed: 1.2,
+};
 
 // ─── GAME STATE ──────────────────────────────────────────────────────────────
 
@@ -85,7 +101,8 @@ export interface GameState {
   currentStakeholderId: string;
   currentTurn: number;
   completedStakeholders: string[];
-  unlockedStakeholders: string[];
+  // Context state for every stakeholder (cold/warm/primed)
+  stakeholderContextStates: Record<string, ContextState>;
 
   // Scores
   meddpiccScores: MeddpiccScores;
@@ -107,10 +124,10 @@ export interface GameState {
   lastResponseText: string;
   lastQuestionType: QuestionType | null;
   briefingText: string | null;
-  insiderBriefing: string | null; // shown before next stakeholder
+  insiderBriefing: string | null;
 
   // Final outcome
-  outcomeId: number | null; // 1-6
+  outcomeId: number | null;
   dqi: number | null;
 }
 

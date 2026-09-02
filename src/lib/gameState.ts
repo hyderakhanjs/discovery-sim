@@ -3,10 +3,10 @@ import type {
   Question,
   Stakeholder,
   MeddpiccElement,
-  CloseType,
+  ContextState,
   TurnRecord,
 } from "@/types";
-import { INITIAL_MEDDPICC_SCORES, MEDDPICC_MAX } from "@/types";
+import { INITIAL_MEDDPICC_SCORES, MEDDPICC_MAX, CONTEXT_MULTIPLIERS } from "@/types";
 import {
   applyMeddpiccPoints,
   applyNarrativeScore,
@@ -16,14 +16,46 @@ import {
 } from "./scoring";
 import { resolveOutcome } from "./narrative";
 
+// ─── CONTEXT STATE COMPUTATION ───────────────────────────────────────────────
+
+/**
+ * Compute the context state (cold/warm/primed) for every stakeholder
+ * based on who has been completed so far.
+ *
+ * - primed: ALL of context_sources.primed are in completedIds
+ * - warm:   ANY ONE of context_sources.warm is in completedIds
+ * - cold:   neither condition met
+ */
+export function computeContextStates(
+  allStakeholders: Stakeholder[],
+  completedIds: string[]
+): Record<string, ContextState> {
+  const result: Record<string, ContextState> = {};
+  for (const s of allStakeholders) {
+    const { warm, primed } = s.context_sources;
+    if (primed.length > 0 && primed.every((id) => completedIds.includes(id))) {
+      result[s.id] = "primed";
+    } else if (warm.some((id) => completedIds.includes(id))) {
+      result[s.id] = "warm";
+    } else {
+      result[s.id] = "cold";
+    }
+  }
+  return result;
+}
+
 // ─── INITIAL STATE ───────────────────────────────────────────────────────────
 
-export function createInitialState(firstStakeholderId: string, firstTurnQuestionIds: string[]): GameState {
+export function createInitialState(
+  firstStakeholderId: string,
+  firstTurnQuestionIds: string[],
+  allStakeholders: Stakeholder[]
+): GameState {
   return {
     currentStakeholderId: firstStakeholderId,
     currentTurn: 1,
     completedStakeholders: [],
-    unlockedStakeholders: [firstStakeholderId],
+    stakeholderContextStates: computeContextStates(allStakeholders, []),
 
     meddpiccScores: { ...INITIAL_MEDDPICC_SCORES },
     narrativeScore: 0,
@@ -48,17 +80,19 @@ export function createInitialState(firstStakeholderId: string, firstTurnQuestion
 
 // ─── CHOOSE QUESTION ─────────────────────────────────────────────────────────
 
-export interface TurnResult {
-  nextState: GameState;
-}
-
 export function processQuestionChoice(
   state: GameState,
   question: Question,
   allStakeholders: Stakeholder[]
 ): GameState {
-  // 1. Apply MEDDPICC points
-  const newMeddpicc = applyMeddpiccPoints(state.meddpiccScores, question);
+  // 1. Apply MEDDPICC points with context multiplier
+  const contextState = state.stakeholderContextStates[state.currentStakeholderId] ?? "cold";
+  const multiplier = CONTEXT_MULTIPLIERS[contextState];
+  const scaledQuestion: Question = {
+    ...question,
+    points: Math.round(question.points * multiplier),
+  };
+  const newMeddpicc = applyMeddpiccPoints(state.meddpiccScores, scaledQuestion);
 
   // 2. Record turn
   const turnRecord: TurnRecord = {
@@ -67,7 +101,7 @@ export function processQuestionChoice(
     questionId: question.id,
     questionType: question.question_type,
     meddpiccTags: question.meddpicc_tags,
-    pointsEarned: question.points,
+    pointsEarned: scaledQuestion.points,
   };
 
   // 3. Update narrative score if this is a close (turn 5)
@@ -81,7 +115,7 @@ export function processQuestionChoice(
     ? applyNarrativeScore(state.narrativeScore, question.close_type, recoveryUsed)
     : state.narrativeScore;
 
-  // 4. Update momentum if close
+  // 4. Update momentum
   const newMomentum = isClose
     ? updateMomentum(state.momentum, question.close_type, false, recoveryUsed)
     : question.question_type === "trap"
@@ -94,7 +128,6 @@ export function processQuestionChoice(
   let insiderBriefing: string | null = null;
 
   if (isClose) {
-    // Conversation complete — check for insider briefing
     if (question.triggers_briefing) {
       const currentStakeholder = allStakeholders.find(
         (s) => s.id === state.currentStakeholderId
@@ -106,7 +139,7 @@ export function processQuestionChoice(
     }
   }
 
-  // 6. Update access level based on close type
+  // 6. Update access level
   let newAccessLevel = state.accessLevel;
   if (isClose) {
     if (question.close_type === "full_context_exceptional")
@@ -115,14 +148,13 @@ export function processQuestionChoice(
       newAccessLevel = Math.max(state.accessLevel, 1) as 0 | 1 | 2 | 3;
   }
 
-  // 7. Update blind spots: if partial close, record this stakeholder
+  // 7. Update blind spots
   const newBlindSpots = [...state.blindSpots];
   if (isClose && question.close_type === "partial_context") {
     if (!newBlindSpots.includes(state.currentStakeholderId)) {
       newBlindSpots.push(state.currentStakeholderId);
     }
   }
-  // Flag MEDDPICC gaps as blind spots
   if (newMeddpicc.metrics < MEDDPICC_MAX.metrics * 0.25) {
     if (!newBlindSpots.includes("metrics_gap")) newBlindSpots.push("metrics_gap");
   }
@@ -131,37 +163,22 @@ export function processQuestionChoice(
       newBlindSpots.push("economic_buyer_gap");
   }
 
-  // 8. Compute next question IDs (for next turn)
+  // 8. Compute next question IDs
   const nextQuestionIds = isClose ? [] : question.next_question_ids;
 
-  // 9. Handle completed stakeholder and unlocking
+  // 9. Update completed stakeholders and recompute context states
   let completedStakeholders = [...state.completedStakeholders];
-  let unlockedStakeholders = [...state.unlockedStakeholders];
   if (isClose) {
     completedStakeholders = [...completedStakeholders, state.currentStakeholderId];
-    const stakeholder = allStakeholders.find(
-      (s) => s.id === state.currentStakeholderId
-    );
-    if (stakeholder) {
-      for (const id of stakeholder.unlocks) {
-        if (!unlockedStakeholders.includes(id)) {
-          unlockedStakeholders.push(id);
-        }
-      }
-    }
+  }
+  const newContextStates = computeContextStates(allStakeholders, completedStakeholders);
+
+  // 10. Check if game is over (all stakeholders completed or player ends it)
+  if (isClose && completedStakeholders.length === allStakeholders.length) {
+    nextPhase = "complete";
   }
 
-  // 10. Check if game is complete (no unlocked stakeholders remain after this close)
-  if (isClose) {
-    const remainingUnlocked = unlockedStakeholders.filter(
-      (id) => !completedStakeholders.includes(id)
-    );
-    if (remainingUnlocked.length === 0) {
-      nextPhase = "complete";
-    }
-  }
-
-  const nextState: GameState = {
+  return {
     ...state,
     meddpiccScores: newMeddpicc,
     narrativeScore: newNarrative,
@@ -172,7 +189,7 @@ export function processQuestionChoice(
     availableQuestionIds: nextQuestionIds,
     currentTurn: isClose ? 1 : state.currentTurn + 1,
     completedStakeholders,
-    unlockedStakeholders,
+    stakeholderContextStates: newContextStates,
     phase: nextPhase,
     lastResponseText: question.response_text,
     lastQuestionType: question.question_type,
@@ -181,8 +198,6 @@ export function processQuestionChoice(
     outcomeId: nextPhase === "complete" ? null : state.outcomeId,
     dqi: null,
   };
-
-  return nextState;
 }
 
 // ─── ADVANCE TO NEXT STAKEHOLDER ─────────────────────────────────────────────
@@ -208,6 +223,12 @@ export function advanceToStakeholder(
     briefingText: null,
     insiderBriefing: null,
   };
+}
+
+// ─── END SIMULATION EARLY ────────────────────────────────────────────────────
+
+export function endSimulationEarly(state: GameState): GameState {
+  return { ...state, phase: "complete", dqi: null };
 }
 
 // ─── FINALIZE GAME ───────────────────────────────────────────────────────────
