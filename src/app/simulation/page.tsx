@@ -163,8 +163,8 @@ function StakeholderMap({
       </div>
 
       {/* Grid with SVG relationship overlay */}
-      <div style={{ overflowX: "auto" }}>
-        <div ref={gridRef} style={{ position: "relative", minWidth: "1400px" }}>
+      <div>
+        <div ref={gridRef} style={{ position: "relative", width: "100%" }}>
 
           {/* SVG lines — absolutely fills the grid content area */}
           <svg
@@ -494,7 +494,7 @@ export default function Simulation() {
       </aside>
 
       {/* ── Main content ── */}
-      <main className="flex-1 flex flex-col max-w-2xl mx-auto px-4 py-8">
+      <main className="flex-1 flex flex-col w-full px-6 py-8" style={{ maxWidth: "none" }}>
 
         {/* Show stakeholder header only when in a conversation */}
         {(state.phase === "question" || state.phase === "response" || state.phase === "briefing") && (
