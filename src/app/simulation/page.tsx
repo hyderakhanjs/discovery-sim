@@ -164,7 +164,7 @@ function StakeholderMap({
 
       {/* Grid with SVG relationship overlay */}
       <div style={{ overflowX: "auto" }}>
-        <div ref={gridRef} style={{ position: "relative", minWidth: "540px" }}>
+        <div ref={gridRef} style={{ position: "relative", minWidth: "680px" }}>
 
           {/* SVG lines — absolutely fills the grid content area */}
           <svg
@@ -173,7 +173,7 @@ function StakeholderMap({
               <line key={i}
                 x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
                 stroke={l.color}
-                strokeWidth={l.dashed ? 1.5 : 2}
+                strokeWidth={l.dashed ? 1.5 : 2.5}
                 strokeDasharray={l.dashed ? "6 4" : undefined}
                 strokeLinecap="round"
               />
@@ -183,8 +183,8 @@ function StakeholderMap({
           {/* CSS grid: level col + 4 track cols */}
           <div style={{
             display: "grid",
-            gridTemplateColumns: "32px 1fr 1fr 1fr 1fr",
-            gap: "8px",
+            gridTemplateColumns: "36px 1fr 1fr 1fr 1fr",
+            gap: "12px",
             position: "relative",
           }}>
             {[1, 2, 3, 4].map((level) => (
@@ -213,15 +213,15 @@ function StakeholderMap({
                             disabled={isCompleted}
                             className="text-left rounded-lg border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
                             style={{
-                              flex: 1, padding: "10px",
+                              flex: 1, padding: "12px 10px",
                               background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
                               borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
                               opacity: isCompleted ? 0.65 : 1,
                             }}>
-                            <div style={{ fontSize: "11px", fontWeight: 600, lineHeight: 1.3, marginBottom: "2px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
+                            <div style={{ fontSize: "12px", fontWeight: 600, lineHeight: 1.3, marginBottom: "3px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
                               {s.name}{isCompleted && " ✓"}
                             </div>
-                            <div style={{ fontSize: "10px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            <div style={{ fontSize: "11px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                               {s.title}
                             </div>
                           </button>
@@ -599,10 +599,20 @@ export default function Simulation() {
             style={{ color: "var(--accent-yellow)" }}>
             What&apos;s at Stake
           </div>
-          <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
+          <p className="text-xs leading-relaxed mb-4" style={{ color: "var(--muted)" }}>
             The migration closes the door on a platform decision in 60 days. Miss this window
             and the opportunity locks out for 18–24 months.
           </p>
+        </div>
+
+        <div className="pt-4 border-t mt-auto" style={{ borderColor: "var(--border)" }}>
+          <a
+            href="#"
+            className="flex items-center gap-2 text-xs transition-all hover:opacity-80"
+            style={{ color: "var(--accent-blue)" }}>
+            <span>📄</span>
+            <span>Read the Soha Inc. case study →</span>
+          </a>
         </div>
       </aside>
     </div>
