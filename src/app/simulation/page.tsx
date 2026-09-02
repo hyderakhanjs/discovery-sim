@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import type { GameState, Stakeholder, Question, ContextState } from "@/types";
 import { MEDDPICC_ELEMENTS, MEDDPICC_LABELS } from "@/types";
@@ -43,22 +43,35 @@ function shuffleArray<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
-// ─── CONTEXT STATE BADGE ──────────────────────────────────────────────────────
+// ─── STAKEHOLDER BACKGROUNDS ─────────────────────────────────────────────────
 
-function ContextBadge({ state }: { state: ContextState }) {
-  const cfg = {
-    cold:   { label: "cold",   color: "var(--muted)",   dot: "var(--border)" },
-    warm:   { label: "warm",   color: "#FEC514",        dot: "#FEC514" },
-    primed: { label: "primed", color: "#F04E98",        dot: "#F04E98" },
-  };
-  const { label, color, dot } = cfg[state];
-  return (
-    <span className="flex items-center gap-1">
-      <span className="w-1.5 h-1.5 rounded-full" style={{ background: dot }} />
-      <span className="text-xs" style={{ color }}>{label}</span>
-    </span>
-  );
-}
+const STAKEHOLDER_BACKGROUNDS: Record<string, string> = {
+  alex_chen:      "Alex manages production deployments and on-call rotations. He filed the Black Friday incident report and has the raw logs.",
+  jordan_lee:     "Jordan monitors security alerts and handles incident response. She recently flagged unusual data exfiltration patterns no one has acted on.",
+  dev_patel:      "Dev built Soha's product search and recommendation engine. He knows exactly where performance breaks under load — and what it costs.",
+  john_miller:    "John owns the data center migration timeline. He's under pressure to cut costs while the new CIO reshapes the entire roadmap.",
+  linda_chen:     "Linda is building the case for a security platform consolidation. She's frustrated that three separate tools don't talk to each other.",
+  emily_rivera:   "Emily owns revenue for digital channels. The Black Friday outage hit her P&L directly — she has the exact numbers and the board wants answers.",
+  maria_torres:   "Maria is connecting search performance to customer lifetime value. She needs a story that resonates at the board level.",
+  sarah_patel:    "Sarah is the broker between engineering and the C-suite. She controls access to Priya and Mark — and she'll test you before she lets you in.",
+  priya_desai:    "Priya has an 18-month AI mandate and a migration to close. She needs one platform that can do it all — and she's already talking to competitors.",
+  mark_reynolds:  "Mark is scrutinizing every vendor contract. He wants a 20% cost reduction and will push for a competitive bake-off if he doesn't see a clear ROI story.",
+};
+
+// ─── RELATIONSHIP LINES ───────────────────────────────────────────────────────
+
+// [fromId, toId, strokeColor, dashed?]
+const RELATIONSHIPS: Array<[string, string, string, boolean]> = [
+  ["alex_chen",    "john_miller",   "#00BFB3", false],
+  ["jordan_lee",   "linda_chen",    "#0077CC", false],
+  ["dev_patel",    "emily_rivera",  "#FEC514", false],
+  ["emily_rivera", "maria_torres",  "#FEC514", false],
+  ["john_miller",  "sarah_patel",   "rgba(160,160,160,0.45)", true],
+  ["linda_chen",   "sarah_patel",   "rgba(160,160,160,0.45)", true],
+  ["maria_torres", "sarah_patel",   "rgba(160,160,160,0.45)", true],
+  ["sarah_patel",  "priya_desai",   "#F04E98", false],
+  ["sarah_patel",  "mark_reynolds", "#F04E98", false],
+];
 
 // ─── STAKEHOLDER MAP (2D GRID) ────────────────────────────────────────────────
 
@@ -75,12 +88,58 @@ function StakeholderMap({
   currentId: string;
   completedName?: string;
   onChoose: (id: string) => void;
-  onEnd: () => void;
+  onEnd: (penalized: boolean) => void;
 }) {
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [showWarning, setShowWarning] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [lines, setLines] = useState<Array<{ x1: number; y1: number; x2: number; y2: number; color: string; dashed: boolean }>>([]);
+
+  // Compute SVG line coordinates from actual DOM positions
+  useEffect(() => {
+    function compute() {
+      const container = gridRef.current;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      const computed = RELATIONSHIPS.map(([fromId, toId, color, dashed]) => {
+        const fromEl = container.querySelector<HTMLElement>(`[data-sid="${fromId}"]`);
+        const toEl = container.querySelector<HTMLElement>(`[data-sid="${toId}"]`);
+        if (!fromEl || !toEl) return null;
+        const fr = fromEl.getBoundingClientRect();
+        const tr = toEl.getBoundingClientRect();
+        return {
+          x1: fr.left + fr.width / 2 - rect.left,
+          y1: fr.top + fr.height / 2 - rect.top,
+          x2: tr.left + tr.width / 2 - rect.left,
+          y2: tr.top + tr.height / 2 - rect.top,
+          color, dashed,
+        };
+      }).filter(Boolean) as typeof lines;
+      setLines(computed);
+    }
+    compute();
+    const ro = new ResizeObserver(compute);
+    if (gridRef.current) ro.observe(gridRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  const hasTraversedBranch = completedIds.some(
+    (id) => (STAKEHOLDERS.find((s) => s.id === id)?.level ?? 0) >= 2
+  );
+
+  function handleReadyToSolution() {
+    if (!hasTraversedBranch) setShowWarning(true);
+    else onEnd(false);
+  }
+
+  // SVG dimensions from container
+  const svgWidth = gridRef.current?.offsetWidth ?? 520;
+  const svgHeight = gridRef.current?.offsetHeight ?? 380;
+
   return (
     <div className="fade-in">
       {completedName && (
-        <div className="rounded-xl p-4 border mb-6"
+        <div className="rounded-xl p-4 border mb-4"
           style={{ background: "rgba(0,191,179,0.08)", borderColor: "#00BFB3" }}>
           <div className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "#00BFB3" }}>
             Conversation Complete
@@ -92,116 +151,137 @@ function StakeholderMap({
       )}
 
       {!completedName && (
-        <div className="mb-6">
-          <div className="text-xs font-semibold uppercase tracking-wider mb-1"
-            style={{ color: "var(--muted)" }}>
-            Choose your starting point
-          </div>
-          <p className="text-sm" style={{ color: "var(--muted)" }}>
-            Start anywhere — top-down, bottom-up, or lateral. Context builds as you go.
+        <div className="mb-4">
+          <p className="text-xs" style={{ color: "var(--muted)" }}>
+            Start anywhere — top-down, bottom-up, or lateral.
           </p>
         </div>
       )}
 
-      {/* Legend */}
-      <div className="flex gap-4 mb-4 text-xs" style={{ color: "var(--muted)" }}>
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--border)" }} /> cold — limited depth
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#FEC514" }} /> warm — full questions
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#F04E98" }} /> primed — bonus points
-        </span>
+      {/* Hover background panel */}
+      <div className="rounded-lg px-4 py-2.5 mb-4 text-xs border" style={{ minHeight: "38px", background: "rgba(255,255,255,0.03)", borderColor: "var(--border)" }}>
+        {hoveredId && STAKEHOLDER_BACKGROUNDS[hoveredId]
+          ? <span style={{ color: "var(--muted)" }}>{STAKEHOLDER_BACKGROUNDS[hoveredId]}</span>
+          : <span style={{ color: "var(--border)" }}>Hover a persona to learn about them</span>
+        }
       </div>
 
-      {/* 2D grid: tracks × levels */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-sm" style={{ minWidth: "480px" }}>
-          <thead>
-            <tr>
-              <th className="text-left pb-2 pr-3 text-xs font-semibold uppercase tracking-wider w-8"
-                style={{ color: "var(--muted)" }}>
-                Lvl
-              </th>
-              {TRACKS.map((t) => (
-                <th key={t.id} className="text-left pb-2 px-2 text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: t.color }}>
-                  {t.label}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {[1, 2, 3, 4].map((level) => (
-              <tr key={level}>
-                <td className="pr-3 py-2 text-xs font-bold" style={{ color: "var(--muted)" }}>
-                  L{level}
-                </td>
-                {TRACKS.map((track) => {
-                  const s = STAKEHOLDERS.find(
-                    (st) => st.level === level && st.track === track.id
-                  );
-                  if (!s) {
-                    return <td key={track.id} className="px-2 py-2" />;
-                  }
-                  const isCompleted = completedIds.includes(s.id);
-                  const isCurrent = s.id === currentId && !completedIds.includes(s.id);
-                  const ctx = contextStates[s.id] ?? "cold";
+      {/* Grid with SVG relationship overlay */}
+      <div ref={gridRef} className="relative overflow-x-auto" style={{ minWidth: "480px" }}>
 
-                  return (
-                    <td key={track.id} className="px-2 py-2">
-                      <button
-                        onClick={() => !isCompleted && onChoose(s.id)}
-                        disabled={isCompleted}
-                        className="w-full text-left rounded-lg p-3 border transition-all duration-200 disabled:cursor-default"
-                        style={{
-                          background: isCompleted
-                            ? "rgba(0,191,179,0.08)"
-                            : isCurrent
-                            ? "rgba(240,78,152,0.1)"
-                            : "var(--card)",
-                          borderColor: isCompleted
-                            ? "#00BFB3"
-                            : isCurrent
-                            ? "#F04E98"
-                            : ctx === "primed"
-                            ? "#F04E98"
-                            : ctx === "warm"
-                            ? track.color
-                            : "var(--border)",
-                          opacity: isCompleted ? 0.6 : 1,
-                        }}>
-                        <div className="flex items-start justify-between gap-1 mb-1">
-                          <span className="font-semibold text-xs leading-tight"
-                            style={{ color: isCompleted ? "#00BFB3" : "var(--text)" }}>
-                            {s.name}
-                            {isCompleted && " ✓"}
-                          </span>
-                        </div>
-                        <div className="text-xs truncate mb-1.5" style={{ color: "var(--muted)" }}>
-                          {s.title}
-                        </div>
-                        {!isCompleted && <ContextBadge state={ctx} />}
-                      </button>
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {/* SVG lines layer */}
+        <svg
+          width={svgWidth} height={svgHeight}
+          style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "visible" }}>
+          {lines.map((l, i) => (
+            <line key={i}
+              x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
+              stroke={l.color}
+              strokeWidth={l.dashed ? 1.5 : 2}
+              strokeDasharray={l.dashed ? "5 4" : undefined}
+              strokeLinecap="round"
+            />
+          ))}
+        </svg>
+
+        {/* CSS grid: 5 cols (level label + 4 tracks), 4 rows */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "32px 1fr 1fr 1fr 1fr",
+          gridTemplateRows: "repeat(4, auto)",
+          gap: "8px",
+          position: "relative",
+        }}>
+          {[1, 2, 3, 4].map((level) => (
+            <>
+              {/* Level label */}
+              <div key={`lbl-${level}`} style={{
+                display: "flex", alignItems: "center",
+                fontSize: "11px", fontWeight: 700, color: "var(--muted)",
+              }}>
+                L{level}
+              </div>
+
+              {/* Track cells */}
+              {TRACKS.map((track) => {
+                const stakeholdersInCell = STAKEHOLDERS.filter(
+                  (st) => st.level === level && st.track === track.id
+                );
+                if (stakeholdersInCell.length === 0) {
+                  return <div key={`${level}-${track.id}`} />;
+                }
+                return (
+                  <div key={`${level}-${track.id}`} className={stakeholdersInCell.length > 1 ? "flex gap-1" : ""}>
+                    {stakeholdersInCell.map((s) => {
+                      const isCompleted = completedIds.includes(s.id);
+                      const isCurrent = s.id === currentId && !isCompleted;
+                      const ctx = contextStates[s.id] ?? "cold";
+                      return (
+                        <button
+                          key={s.id}
+                          data-sid={s.id}
+                          onClick={() => !isCompleted && onChoose(s.id)}
+                          onMouseEnter={() => setHoveredId(s.id)}
+                          onMouseLeave={() => setHoveredId(null)}
+                          disabled={isCompleted}
+                          className="w-full text-left rounded-lg p-2.5 border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
+                          style={{
+                            background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
+                            borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
+                            opacity: isCompleted ? 0.65 : 1,
+                            position: "relative",
+                          }}>
+                          <div className="font-semibold leading-tight mb-0.5"
+                            style={{ fontSize: "11px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
+                            {s.name}{isCompleted && " ✓"}
+                          </div>
+                          <div style={{ fontSize: "10px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            {s.title}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </>
+          ))}
+        </div>
       </div>
 
-      {/* End simulation */}
-      {completedIds.length > 0 && (
-        <div className="mt-6 pt-5 border-t" style={{ borderColor: "var(--border)" }}>
-          <button
-            onClick={onEnd}
-            className="w-full py-3 rounded-xl font-semibold border transition-all hover:opacity-80 text-sm"
-            style={{ borderColor: "var(--border)", color: "var(--muted)", background: "var(--card)" }}>
-            End Simulation & See Results →
+      {/* Early exit warning */}
+      {showWarning && (
+        <div className="mt-5 rounded-xl p-5 border"
+          style={{ background: "rgba(240,78,152,0.08)", borderColor: "#F04E98" }}>
+          <div className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#F04E98" }}>
+            Discovery Incomplete
+          </div>
+          <p className="text-sm mb-4" style={{ color: "var(--text)" }}>
+            You haven&apos;t explored any vertical branches yet. Going to solution now will cost you
+            <strong style={{ color: "#F04E98" }}> −20 DQI points</strong> in your final score. Are you sure?
+          </p>
+          <div className="flex gap-3">
+            <button onClick={() => setShowWarning(false)}
+              className="flex-1 py-2.5 rounded-xl text-sm border transition-all hover:opacity-80"
+              style={{ borderColor: "var(--border)", color: "var(--text)", background: "var(--card)" }}>
+              Keep Discovering
+            </button>
+            <button onClick={() => onEnd(true)}
+              className="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all hover:opacity-90"
+              style={{ background: "#F04E98", color: "white" }}>
+              Proceed Anyway
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Ready to Solution */}
+      {completedIds.length > 0 && !showWarning && (
+        <div className="mt-5 pt-5 border-t" style={{ borderColor: "var(--border)" }}>
+          <button onClick={handleReadyToSolution}
+            className="w-full py-3 rounded-xl font-semibold transition-all hover:opacity-90 text-sm"
+            style={{ background: "var(--accent-pink)", color: "white" }}>
+            Ready to Solution! →
           </button>
           <p className="text-xs text-center mt-2" style={{ color: "var(--muted)" }}>
             {completedIds.length} of {STAKEHOLDERS.length} stakeholders completed
@@ -243,7 +323,6 @@ function StakeholderHeader({ stakeholder, turn, contextState }: { stakeholder: S
       <div className="flex-1 min-w-0">
         <div className="font-semibold text-white">{stakeholder.name}</div>
         <div className="text-sm" style={{ color: "var(--muted)" }}>{stakeholder.title}</div>
-        <ContextBadge state={contextState} />
       </div>
       <div className="text-right">
         <div className="text-xs font-mono" style={{ color: "var(--muted)" }}>Turn {turn} of 5</div>
@@ -384,8 +463,16 @@ export default function Simulation() {
     setState(next);
   }
 
-  function handleEndSimulation() {
-    const ended = endSimulationEarly(state);
+  function handleEndCall() {
+    setLastCompletedName(undefined);
+    setState((s) => ({ ...s, phase: "handoff" }));
+  }
+
+  function handleEndSimulation(penalized: boolean) {
+    const base = penalized
+      ? { ...state, narrativeScore: Math.max(0, state.narrativeScore - 20) }
+      : state;
+    const ended = endSimulationEarly(base);
     setState(ended);
   }
 
@@ -435,6 +522,14 @@ export default function Simulation() {
           <div className="fade-in">
             <div className="text-sm mb-5" style={{ color: "var(--muted)" }}>Choose your next question:</div>
             <QuestionOptions questions={shuffledQuestions} onChoose={handleQuestionChoice} disabled={false} />
+            <div className="mt-5">
+              <button
+                onClick={handleEndCall}
+                className="w-full py-2.5 rounded-xl text-sm border transition-all hover:opacity-80"
+                style={{ borderColor: "var(--border)", color: "var(--muted)", background: "var(--card)" }}>
+                End Call
+              </button>
+            </div>
           </div>
         )}
 
@@ -482,6 +577,47 @@ export default function Simulation() {
           </div>
         )}
       </main>
+
+      {/* ── Right sidebar: Case study ── */}
+      <aside className="hidden xl:flex flex-col w-64 flex-shrink-0 border-l p-6"
+        style={{ borderColor: "var(--border)" }}>
+        <div className="text-xs font-semibold uppercase tracking-wider mb-4"
+          style={{ color: "var(--accent-blue)" }}>
+          The Situation
+        </div>
+
+        <p className="text-xs leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
+          Soha Inc. is a mid-market B2C retailer in the middle of a data center migration.
+          Their Black Friday outage cost <strong style={{ color: "var(--text)" }}>seven figures in a single day</strong>.
+          The root cause is still unclear.
+        </p>
+
+        <div className="space-y-3 mb-5">
+          {[
+            { label: "CFO Mandate", value: "20% cost reduction" },
+            { label: "CIO Agenda", value: "AI platform in 18 months" },
+            { label: "Decision Window", value: "60 days" },
+            { label: "Trigger Event", value: "Black Friday outage" },
+          ].map(({ label, value }) => (
+            <div key={label} className="rounded-lg p-3 border"
+              style={{ background: "var(--card)", borderColor: "var(--border)" }}>
+              <div className="text-xs mb-0.5" style={{ color: "var(--muted)" }}>{label}</div>
+              <div className="text-xs font-semibold" style={{ color: "var(--text)" }}>{value}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="pt-4 border-t" style={{ borderColor: "var(--border)" }}>
+          <div className="text-xs font-semibold uppercase tracking-wider mb-3"
+            style={{ color: "var(--accent-yellow)" }}>
+            What&apos;s at Stake
+          </div>
+          <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
+            The migration closes the door on a platform decision in 60 days. Miss this window
+            and the opportunity locks out for 18–24 months.
+          </p>
+        </div>
+      </aside>
     </div>
   );
 }
