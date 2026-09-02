@@ -589,13 +589,13 @@ export default function Simulation() {
             </section>
 
             <section>
-              <h3 className="text-sm font-semibold text-white mb-2">What a Great Discovery Looks Like</h3>
+              <h3 className="text-sm font-semibold text-white mb-2">What Great Discovery Looks Like</h3>
               <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
-                A rep who navigates this well will connect the Black Friday outage to the platform consolidation story,
-                quantify the cost of the status quo in CFO language, build a champion in Sarah or Emily,
-                and show Priya a path to her AI mandate that only works on a unified data platform.
-                A rep who navigates it poorly will pitch features to engineers, skip the economic buyer,
-                and lose the deal to a competitor who did the discovery right.
+                Strong technical discovery here connects the Black Friday outage to the platform consolidation story,
+                quantifies the cost of the status quo in CFO language, builds a champion in Sarah or Emily,
+                and shows Priya a path to her AI mandate that only works on a unified data platform.
+                Weak discovery pitches features to engineers, skips the economic buyer,
+                and cedes the technical narrative to a competitor who asked better questions.
               </p>
             </section>
 
