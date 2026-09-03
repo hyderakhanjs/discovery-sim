@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { GameState, MeddpiccElement } from "@/types";
+import type { GameState, MeddpiccElement, TurnRecord } from "@/types";
 import { MEDDPICC_ELEMENTS, MEDDPICC_LABELS, MEDDPICC_MAX } from "@/types";
 import { dqiTier, meddpiccCoverage } from "@/lib/scoring";
 import { getOutcomeById } from "@/lib/narrative";
+import seedData from "@/data/question_content_seed.json";
 
 // ─── MEDDPICC COVERAGE BAR ───────────────────────────────────────────────────
 
@@ -40,6 +41,102 @@ function DebriefBar({ element, score }: { element: MeddpiccElement; score: numbe
       <div className="text-xs mt-1" style={{ color: "var(--muted)" }}>
         {score} / {MEDDPICC_MAX[element]} pts
       </div>
+    </div>
+  );
+}
+
+// ─── HELPERS ─────────────────────────────────────────────────────────────────
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ALL_STAKEHOLDERS: any[] = (seedData as any).stakeholders;
+
+function lookupQuestion(stakeholderId: string, questionId: string) {
+  const s = ALL_STAKEHOLDERS.find((st: { id: string }) => st.id === stakeholderId);
+  return s?.questions?.find((q: { id: string }) => q.id === questionId) ?? null;
+}
+
+function lookupStakeholderName(id: string): string {
+  return ALL_STAKEHOLDERS.find((s: { id: string }) => s.id === id)?.name ?? id;
+}
+
+// ─── TURN FEEDBACK ───────────────────────────────────────────────────────────
+
+const TYPE_STYLES: Record<string, { label: string; color: string; bg: string }> = {
+  good:     { label: "High Yield",  color: "#00BFB3", bg: "rgba(0,191,179,0.08)" },
+  mediocre: { label: "Mediocre",    color: "#FEC514", bg: "rgba(254,197,20,0.08)" },
+  trap:     { label: "Low Yield",   color: "#F04E98", bg: "rgba(240,78,152,0.08)" },
+  recovery: { label: "Recovery",    color: "#0077CC", bg: "rgba(0,119,204,0.08)" },
+};
+
+function TurnFeedback({ history }: { history: TurnRecord[] }) {
+  const [open, setOpen] = useState<string | null>(null);
+
+  // Group by stakeholder in order of first appearance
+  const grouped: { stakeholderId: string; turns: TurnRecord[] }[] = [];
+  for (const t of history) {
+    const last = grouped[grouped.length - 1];
+    if (last && last.stakeholderId === t.stakeholderId) {
+      last.turns.push(t);
+    } else {
+      grouped.push({ stakeholderId: t.stakeholderId, turns: [t] });
+    }
+  }
+
+  return (
+    <div className="space-y-3">
+      {grouped.map(({ stakeholderId, turns }) => (
+        <div key={stakeholderId + turns[0].turnNumber}
+          className="rounded-xl border overflow-hidden"
+          style={{ borderColor: "var(--border)" }}>
+          <button
+            className="w-full flex items-center justify-between px-4 py-3 text-left"
+            style={{ background: "var(--card)" }}
+            onClick={() => setOpen(open === stakeholderId ? null : stakeholderId)}>
+            <span className="text-sm font-semibold text-white">
+              {lookupStakeholderName(stakeholderId)}
+            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs" style={{ color: "var(--muted)" }}>
+                {turns.length} question{turns.length !== 1 ? "s" : ""}
+              </span>
+              <span style={{ color: "var(--muted)", fontSize: "12px" }}>
+                {open === stakeholderId ? "▲" : "▼"}
+              </span>
+            </div>
+          </button>
+
+          {open === stakeholderId && (
+            <div className="divide-y" style={{ borderColor: "var(--border)" }}>
+              {turns.map((t) => {
+                const q = lookupQuestion(t.stakeholderId, t.questionId);
+                const style = TYPE_STYLES[t.questionType] ?? TYPE_STYLES.mediocre;
+                return (
+                  <div key={t.questionId} className="px-4 py-4"
+                    style={{ background: style.bg }}>
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                        style={{ background: "var(--card)", color: style.color, border: `1px solid ${style.color}` }}>
+                        {style.label}
+                      </span>
+                      <span className="text-xs font-mono" style={{ color: style.color }}>
+                        +{t.pointsEarned} pts
+                      </span>
+                    </div>
+                    <p className="text-sm mb-2" style={{ color: "var(--text)" }}>
+                      &ldquo;{q?.question_text ?? t.questionId}&rdquo;
+                    </p>
+                    {q?.rationale && (
+                      <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
+                        {q.rationale}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
@@ -191,6 +288,19 @@ export default function Debrief() {
             <span className="text-white font-medium">{state.accessLevel} / 3</span>
           </div>
         </div>
+      </section>
+
+      {/* Turn-by-turn feedback */}
+      <section className="mb-8 rounded-xl p-6 border"
+        style={{ background: "var(--card)", borderColor: "var(--border)" }}>
+        <div className="text-xs font-semibold uppercase tracking-wider mb-5"
+          style={{ color: "var(--accent-blue)" }}>
+          Question Feedback
+        </div>
+        <p className="text-xs mb-5 leading-relaxed" style={{ color: "var(--muted)" }}>
+          Click a stakeholder to see every question you asked, why it scored the way it did, and what a stronger choice would have looked like.
+        </p>
+        <TurnFeedback history={state.turnHistory} />
       </section>
 
       {/* CTA */}

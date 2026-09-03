@@ -361,6 +361,98 @@ function BriefingCard({ text, onContinue }: { text: string; onContinue: () => vo
   );
 }
 
+// ─── MEETING DEBRIEF ──────────────────────────────────────────────────────────
+
+const TURN_TYPE_STYLES: Record<string, { label: string; color: string; bg: string }> = {
+  good:     { label: "High Yield",  color: "#00BFB3", bg: "rgba(0,191,179,0.06)"  },
+  mediocre: { label: "Mediocre",    color: "#FEC514", bg: "rgba(254,197,20,0.06)" },
+  trap:     { label: "Low Yield",   color: "#F04E98", bg: "rgba(240,78,152,0.06)" },
+  recovery: { label: "Recovery",    color: "#0077CC", bg: "rgba(0,119,204,0.06)"  },
+};
+
+function MeetingDebrief({
+  stakeholder,
+  turnHistory,
+  insiderBriefing,
+  onContinue,
+}: {
+  stakeholder: Stakeholder;
+  turnHistory: GameState["turnHistory"];
+  insiderBriefing: string | null;
+  onContinue: () => void;
+}) {
+  const myTurns = turnHistory.filter((t) => t.stakeholderId === stakeholder.id);
+  const trackColor = TRACKS.find((t) => t.id === stakeholder.track)?.color ?? "#F04E98";
+
+  return (
+    <div className="fade-in">
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold flex-shrink-0"
+          style={{ background: trackColor, color: stakeholder.track === "search" ? "#000" : "#fff" }}>
+          {stakeholder.name.charAt(0)}
+        </div>
+        <div>
+          <div className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "var(--accent-blue)" }}>
+            Meeting Debrief
+          </div>
+          <div className="font-semibold text-white">{stakeholder.name} · {stakeholder.title}</div>
+        </div>
+      </div>
+
+      {/* Question-by-question breakdown */}
+      <div className="space-y-3 mb-5">
+        {myTurns.map((t) => {
+          const q = getQuestion(t.stakeholderId, t.questionId);
+          const style = TURN_TYPE_STYLES[t.questionType] ?? TURN_TYPE_STYLES.mediocre;
+          return (
+            <div key={t.questionId} className="rounded-xl border p-4"
+              style={{ background: style.bg, borderColor: "var(--border)" }}>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full border"
+                  style={{ color: style.color, borderColor: style.color, background: "var(--card)" }}>
+                  {style.label}
+                </span>
+                <span className="text-xs font-mono" style={{ color: style.color }}>
+                  +{t.pointsEarned} pts
+                </span>
+              </div>
+              <p className="text-sm mb-2 leading-relaxed" style={{ color: "var(--text)" }}>
+                &ldquo;{q?.question_text ?? t.questionId}&rdquo;
+              </p>
+              {q?.rationale && (
+                <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
+                  {q.rationale}
+                </p>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Insider briefing (if unlocked) */}
+      {insiderBriefing && (
+        <div className="rounded-xl border p-5 mb-5"
+          style={{ background: "rgba(254,197,20,0.06)", borderColor: "#FEC514" }}>
+          <div className="flex items-center gap-2 mb-3">
+            <span style={{ color: "#FEC514" }}>★</span>
+            <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#FEC514" }}>
+              Insider Briefing Unlocked
+            </span>
+          </div>
+          <p className="text-sm leading-relaxed" style={{ color: "var(--text)" }}>{insiderBriefing}</p>
+        </div>
+      )}
+
+      <button onClick={onContinue}
+        className="w-full py-3 rounded-xl font-semibold transition-all hover:opacity-90"
+        style={{ background: "var(--accent-pink)", color: "white" }}>
+        Choose Next Meeting →
+      </button>
+    </div>
+  );
+}
+
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
 export default function Simulation() {
@@ -406,18 +498,14 @@ export default function Simulation() {
     const lastTurn = state.turnHistory[state.turnHistory.length - 1];
     const q = getQuestion(state.currentStakeholderId, lastTurn?.questionId ?? "");
     if (q?.close_type) {
-      if (q.triggers_briefing && currentStakeholder?.insider_briefing_for_next) {
-        setState((s) => ({ ...s, phase: "briefing", insiderBriefing: currentStakeholder.insider_briefing_for_next ?? null }));
-      } else {
-        setLastCompletedName(currentStakeholder?.name);
-        setState((s) => ({ ...s, phase: "handoff" }));
-      }
+      // Always route through meeting_debrief — insiderBriefing already set in state by gameState.ts
+      setState((s) => ({ ...s, phase: "meeting_debrief" }));
     } else {
       setState((s) => ({ ...s, phase: "question" }));
     }
   }
 
-  function handleBriefingContinue() {
+  function handleMeetingDebriefContinue() {
     setLastCompletedName(currentStakeholder?.name);
     setState((s) => ({ ...s, phase: "handoff" }));
   }
@@ -506,15 +594,13 @@ export default function Simulation() {
           />
         )}
 
-        {state.phase === "briefing" && state.insiderBriefing && (
-          <>
-            <ResponseDisplay
-              responseText={state.lastResponseText}
-              questionType={state.lastQuestionType}
-              onContinue={() => {}}
-            />
-            <BriefingCard text={state.insiderBriefing} onContinue={handleBriefingContinue} />
-          </>
+        {state.phase === "meeting_debrief" && currentStakeholder && (
+          <MeetingDebrief
+            stakeholder={currentStakeholder}
+            turnHistory={state.turnHistory}
+            insiderBriefing={state.insiderBriefing}
+            onContinue={handleMeetingDebriefContinue}
+          />
         )}
 
         {state.phase === "handoff" && (

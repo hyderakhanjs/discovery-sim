@@ -58,6 +58,7 @@ export interface Question {
   triggers_briefing: boolean;
   next_question_ids: string[];
   close_type?: CloseType;
+  rationale?: string; // why this question scores the way it does — shown in debrief
 }
 
 export interface Stakeholder {
@@ -120,7 +121,7 @@ export interface GameState {
   availableQuestionIds: string[];
 
   // UI state
-  phase: "question" | "response" | "briefing" | "handoff" | "complete";
+  phase: "question" | "response" | "briefing" | "meeting_debrief" | "handoff" | "complete";
   lastResponseText: string;
   lastQuestionType: QuestionType | null;
   briefingText: string | null;

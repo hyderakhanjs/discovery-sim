@@ -23,7 +23,8 @@
             "alex_t2_A1",
             "alex_t2_A2",
             "alex_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "alex_t1_B",
@@ -40,7 +41,8 @@
             "alex_t2_B1",
             "alex_t2_B2",
             "alex_t2_recover"
-          ]
+          ],
+          "rationale": "Mediocre — asking what tools they run tells you something you could have researched. It does not tell you where those tools fail or what they cost in time and money."
         },
         {
           "id": "alex_t1_C",
@@ -55,7 +57,8 @@
             "alex_t2_recover",
             "alex_t2_B1",
             "alex_t2_B2"
-          ]
+          ],
+          "rationale": "Low yield — offering a fix before understanding the problem signals you stopped listening. This closes down disclosure and positions you as someone who came in with an answer."
         },
         {
           "id": "alex_t2_A1",
@@ -73,7 +76,8 @@
             "alex_t3_A1a",
             "alex_t3_A1b",
             "alex_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "alex_t2_A2",
@@ -90,7 +94,8 @@
             "alex_t3_A2a",
             "alex_t3_A2b",
             "alex_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — opens a specific, unfiltered account of what's actually broken. Practitioners tell you the real problem, not the postmortem version."
         },
         {
           "id": "alex_t2_A3",
@@ -108,7 +113,8 @@
             "alex_t3_A3a",
             "alex_t3_A3b",
             "alex_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "alex_t2_B1",
@@ -126,7 +132,8 @@
             "alex_t3_A1a",
             "alex_t3_A1b",
             "alex_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "alex_t2_B2",
@@ -145,7 +152,8 @@
             "alex_t3_A1a",
             "alex_t3_A1b",
             "alex_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "alex_t2_recover",
@@ -162,7 +170,8 @@
             "alex_t3_A1a",
             "alex_t3_A1b",
             "alex_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "alex_t3_A1a",
@@ -180,7 +189,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "alex_t3_A1b",
@@ -198,7 +208,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — secures internal advocacy. The champion is who carries the deal when you are not in the building. Identifying and strengthening them is as important as the discovery itself."
         },
         {
           "id": "alex_t3_A1c",
@@ -217,7 +228,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — establishes the evaluation criteria from the customer's own perspective. This shapes the rest of the conversation around what they actually need to see."
         },
         {
           "id": "alex_t3_A2a",
@@ -236,7 +248,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "alex_t3_A2b",
@@ -255,7 +268,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "alex_t3_A2c",
@@ -274,7 +288,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "alex_t3_A3a",
@@ -293,7 +308,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "alex_t3_A3b",
@@ -312,7 +328,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "alex_t3_A3c",
@@ -330,7 +347,8 @@
             "alex_t4_B",
             "alex_t4_C",
             "alex_t4_D"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "alex_t4_A",
@@ -348,7 +366,8 @@
             "alex_t5_A",
             "alex_t5_B",
             "alex_t5_C"
-          ]
+          ],
+          "rationale": "High yield — establishes the evaluation criteria from the customer's own perspective. This shapes the rest of the conversation around what they actually need to see."
         },
         {
           "id": "alex_t4_B",
@@ -365,7 +384,8 @@
             "alex_t5_A",
             "alex_t5_B",
             "alex_t5_C"
-          ]
+          ],
+          "rationale": "High yield — secures internal advocacy. The champion is who carries the deal when you are not in the building. Identifying and strengthening them is as important as the discovery itself."
         },
         {
           "id": "alex_t4_C",
@@ -383,7 +403,8 @@
             "alex_t5_A",
             "alex_t5_B",
             "alex_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "alex_t5_A",
@@ -397,7 +418,8 @@
           "response_text": "Yes. I will send him a note today. I will tell him you understand the technical situation and that you asked the right questions. That will matter to him — he is tired of vendors who come in with a slide deck before they have done the work.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "alex_t5_B",
@@ -412,7 +434,8 @@
           "response_text": "The MTTR improvement number. John loves operational metrics. If you can show him that a unified platform cuts mean time to resolution from 40 minutes to under 10 for a Black Friday-class incident, and then attach a revenue-per-minute number to that delta, you have a business case he can defend to anyone. The tool sprawl cost and the analyst time cost are supporting evidence. The MTTR story is the headline.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "alex_t5_C",
@@ -424,7 +447,8 @@
           "response_text": "Sure. I can give you his email. Just so you know, John gets a lot of vendor outreach. It might help to mention you talked to me — or it might not. Good luck.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — going around your contact rather than through them signals you are optimising for access over trust. It cuts off future referrals."
         },
         {
           "id": "alex_t4_D",
@@ -443,7 +467,8 @@
             "alex_t5_A",
             "alex_t5_B",
             "alex_t5_C"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         }
       ],
       "track": "observability",
@@ -480,7 +505,8 @@
             "jordan_t2_A1",
             "jordan_t2_A2",
             "jordan_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "jordan_t1_B",
@@ -497,7 +523,8 @@
             "jordan_t2_B1",
             "jordan_t2_B2",
             "jordan_t2_recover"
-          ]
+          ],
+          "rationale": "Mediocre — asking what tools they run tells you something you could have researched. It does not tell you where those tools fail or what they cost in time and money."
         },
         {
           "id": "jordan_t1_C",
@@ -512,7 +539,8 @@
             "jordan_t2_recover",
             "jordan_t2_B1",
             "jordan_t2_B2"
-          ]
+          ],
+          "rationale": "Low yield — offering a fix before understanding the problem signals you stopped listening. This closes down disclosure and positions you as someone who came in with an answer."
         },
         {
           "id": "jordan_t2_A1",
@@ -530,7 +558,8 @@
             "jordan_t3_A1a",
             "jordan_t3_A1b",
             "jordan_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "jordan_t2_A2",
@@ -548,7 +577,8 @@
             "jordan_t3_A1a",
             "jordan_t3_A1b",
             "jordan_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "jordan_t2_A3",
@@ -566,7 +596,8 @@
             "jordan_t3_A1a",
             "jordan_t3_A1b",
             "jordan_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "jordan_t2_B1",
@@ -584,7 +615,8 @@
             "jordan_t3_A1a",
             "jordan_t3_A1b",
             "jordan_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "jordan_t2_B2",
@@ -602,7 +634,8 @@
             "jordan_t3_A1a",
             "jordan_t3_A1b",
             "jordan_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "jordan_t2_recover",
@@ -619,7 +652,8 @@
             "jordan_t3_A1a",
             "jordan_t3_A1b",
             "jordan_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "jordan_t3_A1a",
@@ -638,7 +672,8 @@
             "jordan_t4_B",
             "jordan_t4_C",
             "jordan_t4_D"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "jordan_t3_A1b",
@@ -657,7 +692,8 @@
             "jordan_t4_B",
             "jordan_t4_C",
             "jordan_t4_D"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "jordan_t3_A1c",
@@ -676,7 +712,8 @@
             "jordan_t4_B",
             "jordan_t4_C",
             "jordan_t4_D"
-          ]
+          ],
+          "rationale": "High yield — establishes the evaluation criteria from the customer's own perspective. This shapes the rest of the conversation around what they actually need to see."
         },
         {
           "id": "jordan_t4_A",
@@ -694,7 +731,8 @@
             "jordan_t5_A",
             "jordan_t5_B",
             "jordan_t5_C"
-          ]
+          ],
+          "rationale": "High yield — builds the champion's internal case. Giving your advocate a number they can defend means they can carry the story credibly without you in the room."
         },
         {
           "id": "jordan_t4_B",
@@ -711,7 +749,8 @@
             "jordan_t5_A",
             "jordan_t5_B",
             "jordan_t5_C"
-          ]
+          ],
+          "rationale": "High yield — secures internal advocacy. The champion is who carries the deal when you are not in the building. Identifying and strengthening them is as important as the discovery itself."
         },
         {
           "id": "jordan_t4_C",
@@ -729,7 +768,8 @@
             "jordan_t5_A",
             "jordan_t5_B",
             "jordan_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "jordan_t5_A",
@@ -743,7 +783,8 @@
           "response_text": "Yes. I will tell her you spent real time understanding the investigation and the tooling gap. That will get her attention. She has had a lot of vendor conversations that go nowhere. A referral from someone on the team is different.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "jordan_t5_B",
@@ -758,7 +799,8 @@
           "response_text": "Off the record — and I mean that — the probability estimate I gave you of 30 to 40 percent for malicious involvement is conservative. Some of the access patterns were very specific to high-value customer records. It may have been targeted. Linda knows this. She has not put that in writing because it changes the disclosure calculus dramatically. If you can help her close this investigation cleanly, you will have an ally for life.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "jordan_t5_C",
@@ -770,7 +812,8 @@
           "response_text": "Sure. Good luck.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "jordan_t4_D",
@@ -789,7 +832,8 @@
             "jordan_t5_A",
             "jordan_t5_B",
             "jordan_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         }
       ],
       "track": "security",
@@ -826,7 +870,8 @@
             "dev_t2_A1",
             "dev_t2_A2",
             "dev_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "dev_t1_B",
@@ -843,7 +888,8 @@
             "dev_t2_B1",
             "dev_t2_B2",
             "dev_t2_recover"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "dev_t1_C",
@@ -858,7 +904,8 @@
             "dev_t2_recover",
             "dev_t2_B1",
             "dev_t2_B2"
-          ]
+          ],
+          "rationale": "Low yield — offering a fix before understanding the problem signals you stopped listening. This closes down disclosure and positions you as someone who came in with an answer."
         },
         {
           "id": "dev_t2_A1",
@@ -876,7 +923,8 @@
             "dev_t3_A1a",
             "dev_t3_A1b",
             "dev_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "dev_t2_A2",
@@ -894,7 +942,8 @@
             "dev_t3_A1a",
             "dev_t3_A1b",
             "dev_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "dev_t2_A3",
@@ -912,7 +961,8 @@
             "dev_t3_A1a",
             "dev_t3_A1b",
             "dev_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "dev_t2_B1",
@@ -929,7 +979,8 @@
             "dev_t3_A1a",
             "dev_t3_A1b",
             "dev_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — opens a specific, unfiltered account of what's actually broken. Practitioners tell you the real problem, not the postmortem version."
         },
         {
           "id": "dev_t2_B2",
@@ -946,7 +997,8 @@
             "dev_t3_A1a",
             "dev_t3_A1b",
             "dev_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — opens a specific, unfiltered account of what's actually broken. Practitioners tell you the real problem, not the postmortem version."
         },
         {
           "id": "dev_t2_recover",
@@ -963,7 +1015,8 @@
             "dev_t3_A1a",
             "dev_t3_A1b",
             "dev_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "dev_t3_A1a",
@@ -981,7 +1034,8 @@
             "dev_t4_A",
             "dev_t4_B",
             "dev_t4_C"
-          ]
+          ],
+          "rationale": "High yield — builds the champion's internal case. Giving your advocate a number they can defend means they can carry the story credibly without you in the room."
         },
         {
           "id": "dev_t3_A1b",
@@ -998,7 +1052,8 @@
             "dev_t4_A",
             "dev_t4_B",
             "dev_t4_C"
-          ]
+          ],
+          "rationale": "High yield — secures internal advocacy. The champion is who carries the deal when you are not in the building. Identifying and strengthening them is as important as the discovery itself."
         },
         {
           "id": "dev_t3_A1c",
@@ -1016,7 +1071,8 @@
             "dev_t4_A",
             "dev_t4_B",
             "dev_t4_C"
-          ]
+          ],
+          "rationale": "High yield — quantifies the cost of staying with the incumbent. This is the number that makes the status quo expensive rather than comfortable."
         },
         {
           "id": "dev_t4_A",
@@ -1034,7 +1090,8 @@
             "dev_t5_A",
             "dev_t5_B",
             "dev_t5_C"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "dev_t4_B",
@@ -1052,7 +1109,8 @@
             "dev_t5_A",
             "dev_t5_B",
             "dev_t5_C"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "dev_t4_C",
@@ -1069,7 +1127,8 @@
             "dev_t5_A",
             "dev_t5_B",
             "dev_t5_C"
-          ]
+          ],
+          "rationale": "High yield — secures internal advocacy. The champion is who carries the deal when you are not in the building. Identifying and strengthening them is as important as the discovery itself."
         },
         {
           "id": "dev_t5_A",
@@ -1084,7 +1143,8 @@
           "response_text": "Yes. I can help you build that translation. I know what the technical numbers are. You help me frame them in the language Emily responds to and I will be in that meeting with you if you want me there. Having a developer in the room who can answer the technical questions while you handle the business conversation would be useful.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "dev_t5_B",
@@ -1098,7 +1158,8 @@
           "response_text": "It is a default renewal right now but Maria Torres has been asking questions. If someone put a compelling alternative in front of Emily before the renewal window closes, there is a real chance the evaluation gets opened. The vendor knows the contract is not locked and they have been pushing for early renewal. That is actually a signal that they are nervous. The window to insert yourself into that conversation is in the next 60 days.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "dev_t5_C",
@@ -1110,7 +1171,8 @@
           "response_text": "Sure. She is pretty busy. Good luck getting on her calendar.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — going around your contact rather than through them signals you are optimising for access over trust. It cuts off future referrals."
         }
       ],
       "track": "search",
@@ -1148,7 +1210,8 @@
             "jm_t2_A1",
             "jm_t2_A2",
             "jm_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "jm_t1_B",
@@ -1165,7 +1228,8 @@
             "jm_t2_B1",
             "jm_t2_B2",
             "jm_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "jm_t1_C",
@@ -1180,7 +1244,8 @@
             "jm_t2_C1",
             "jm_t2_C2",
             "jm_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "jm_t2_A1",
@@ -1198,7 +1263,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "jm_t2_A2",
@@ -1217,7 +1283,8 @@
             "jm_t3_A2a",
             "jm_t3_A2b",
             "jm_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "jm_t2_A3",
@@ -1235,7 +1302,8 @@
             "jm_t3_A3a",
             "jm_t3_A3b",
             "jm_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "jm_t2_B1",
@@ -1252,7 +1320,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "jm_t2_B2",
@@ -1269,7 +1338,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "jm_t2_B3",
@@ -1284,7 +1354,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "jm_t2_C1",
@@ -1301,7 +1372,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "jm_t2_C2",
@@ -1318,7 +1390,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "jm_t2_C3",
@@ -1333,7 +1406,8 @@
             "jm_t3_A1a",
             "jm_t3_A1b",
             "jm_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "jm_t3_A1a",
@@ -1351,7 +1425,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "jm_t3_A1b",
@@ -1369,7 +1444,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "High yield — establishes both what they are evaluating and how the decision will be made. Knowing the criteria without the process is a plan with no path."
         },
         {
           "id": "jm_t3_A1c",
@@ -1386,7 +1462,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — gets a date without understanding the forcing function behind it. Dates without pressure are often estimates, not commitments."
         },
         {
           "id": "jm_t3_A2a",
@@ -1404,7 +1481,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces who controls the budget and who will carry the internal case. Both are required for a deal to close."
         },
         {
           "id": "jm_t3_A2b",
@@ -1422,7 +1500,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "jm_t3_A2c",
@@ -1437,7 +1516,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "jm_t3_A3a",
@@ -1455,7 +1535,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "jm_t3_A3b",
@@ -1473,7 +1554,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "High yield — establishes the evaluation criteria from the customer's own perspective. This shapes the rest of the conversation around what they actually need to see."
         },
         {
           "id": "jm_t3_A3c",
@@ -1490,7 +1572,8 @@
             "jm_t4_A",
             "jm_t4_B",
             "jm_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "jm_t4_A",
@@ -1508,7 +1591,8 @@
             "jm_t5_A",
             "jm_t5_B",
             "jm_t5_C"
-          ]
+          ],
+          "rationale": "High yield — maps the internal path forward while identifying who will walk it. A deal without a champion carrying it internally stalls the moment you leave."
         },
         {
           "id": "jm_t4_B",
@@ -1526,7 +1610,8 @@
             "jm_t5_A",
             "jm_t5_B",
             "jm_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "jm_t4_C",
@@ -1544,7 +1629,8 @@
             "jm_t5_A",
             "jm_t5_B",
             "jm_t5_C"
-          ]
+          ],
+          "rationale": "High yield — advances the discovery by surfacing a specific insight that cannot be found in a deck or a website. Each answer here changes what you do next."
         },
         {
           "id": "jm_t5_A",
@@ -1559,7 +1645,8 @@
           "response_text": "Yes. Sarah is the right person. I will set it up. I will tell her that you came in, did your homework, talked to the team, and that you understand what we are trying to do. That is the best intro I can give you. She is busy and protective of her time so come in with a point of view, not a slide deck.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "jm_t5_B",
@@ -1575,7 +1662,8 @@
           "response_text": "The thing Sarah needs to hear is that this is not a technology decision, it is a revenue protection decision. She thinks in terms of business outcomes. If you can connect the platform to outage prevention — which connects to revenue — and cost consolidation — which connects to Mark Reynolds' 20 percent cost reduction mandate — you will have her full attention. The migration deadline is your friend in that conversation too. It creates urgency without you having to manufacture it. And one more thing: do not come in with a pitch. Come in with questions. She will respect that a lot more.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "jm_t5_C",
@@ -1587,7 +1675,8 @@
           "response_text": "Let me introduce you first and see where she wants to take it. I would not lead with a demo. She will want to understand the business case before she sits through a product presentation.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — proposing a demo before the business case is built puts you in vendor mode. The stakeholder has no reason to invest time in a presentation yet."
         }
       ],
       "track": "observability",
@@ -1625,7 +1714,8 @@
             "lc_t2_A1",
             "lc_t2_A2",
             "lc_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "lc_t1_B",
@@ -1642,7 +1732,8 @@
             "lc_t2_B1",
             "lc_t2_B2",
             "lc_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "lc_t1_C",
@@ -1657,7 +1748,8 @@
             "lc_t2_C1",
             "lc_t2_C2",
             "lc_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "lc_t2_A1",
@@ -1676,7 +1768,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "lc_t2_A2",
@@ -1695,7 +1788,8 @@
             "lc_t3_A2a",
             "lc_t3_A2b",
             "lc_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "lc_t2_A3",
@@ -1714,7 +1808,8 @@
             "lc_t3_A3a",
             "lc_t3_A3b",
             "lc_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — gets competitive intelligence from the person who lives with the incumbent tools every day. The most unfiltered view of where they fail."
         },
         {
           "id": "lc_t2_B1",
@@ -1732,7 +1827,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "lc_t2_B2",
@@ -1749,7 +1845,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "lc_t2_B3",
@@ -1764,7 +1861,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "lc_t2_C1",
@@ -1782,7 +1880,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "lc_t2_C2",
@@ -1799,7 +1898,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "lc_t2_C3",
@@ -1814,7 +1914,8 @@
             "lc_t3_A1a",
             "lc_t3_A1b",
             "lc_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — jumping to a technical evaluation before the business case is established. The stakeholder has not committed enough to invest their team's time."
         },
         {
           "id": "lc_t3_A1a",
@@ -1832,7 +1933,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "lc_t3_A1b",
@@ -1850,7 +1952,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "lc_t3_A1c",
@@ -1868,7 +1971,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the internal path forward while identifying who will walk it. A deal without a champion carrying it internally stalls the moment you leave."
         },
         {
           "id": "lc_t3_A2a",
@@ -1886,7 +1990,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — gets to the economic buyer's actual criteria. At this level the conversation shifts from features to financial accountability."
         },
         {
           "id": "lc_t3_A2b",
@@ -1905,7 +2010,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "lc_t3_A2c",
@@ -1922,7 +2028,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — gets the official process rather than the informal decision-making that actually moves things. The real process rarely matches the org chart."
         },
         {
           "id": "lc_t3_A3a",
@@ -1940,7 +2047,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "lc_t3_A3b",
@@ -1958,7 +2066,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the internal path forward while identifying who will walk it. A deal without a champion carrying it internally stalls the moment you leave."
         },
         {
           "id": "lc_t3_A3c",
@@ -1976,7 +2085,8 @@
             "lc_t4_A",
             "lc_t4_B",
             "lc_t4_C"
-          ]
+          ],
+          "rationale": "High yield — establishes the evaluation criteria from the customer's own perspective. This shapes the rest of the conversation around what they actually need to see."
         },
         {
           "id": "lc_t4_A",
@@ -1995,7 +2105,8 @@
             "lc_t5_A",
             "lc_t5_B",
             "lc_t5_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "lc_t4_B",
@@ -2013,7 +2124,8 @@
             "lc_t5_A",
             "lc_t5_B",
             "lc_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "lc_t4_C",
@@ -2031,7 +2143,8 @@
             "lc_t5_A",
             "lc_t5_B",
             "lc_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "lc_t5_A",
@@ -2046,7 +2159,8 @@
           "response_text": "Yes. Sarah is the right person and you have the framing right. Risk and cost together. Not one or the other. I will set it up and I will tell her that you came in, talked to the team, understand the Splunk situation, and that you have something worth hearing. Come in with the TCO analysis started and she will take you seriously.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "lc_t5_B",
@@ -2062,7 +2176,8 @@
           "response_text": "What has landed with Sarah is the near-miss story and the analyst retention risk. She took both of those seriously. What has not landed yet is the financial case. She keeps waiting for me to show her the numbers and I have not had the full picture to do that. The other thing to know about Sarah is that she is managing up to Mark Reynolds and Priya Desai simultaneously. Whatever you bring her needs to be something she can walk into the steering committee with confidence. She does not want to be surprised. If you can give her something that is already pressure-tested against the CFO's objections she will love you for it.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "lc_t5_C",
@@ -2074,7 +2189,8 @@
           "response_text": "Sure, we can do a technical review. But I would encourage you to have the business conversation with Sarah first. The technical evaluation is not the bottleneck here.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — jumping to a technical evaluation before the business case is established. The stakeholder has not committed enough to invest their team's time."
         }
       ],
       "track": "security",
@@ -2112,7 +2228,8 @@
             "er_t2_A1",
             "er_t2_A2",
             "er_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "er_t1_B",
@@ -2129,7 +2246,8 @@
             "er_t2_B1",
             "er_t2_B2",
             "er_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "er_t1_C",
@@ -2144,7 +2262,8 @@
             "er_t2_C1",
             "er_t2_C2",
             "er_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "er_t2_A1",
@@ -2163,7 +2282,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "er_t2_A2",
@@ -2182,7 +2302,8 @@
             "er_t3_A2a",
             "er_t3_A2b",
             "er_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "er_t2_A3",
@@ -2200,7 +2321,8 @@
             "er_t3_A3a",
             "er_t3_A3b",
             "er_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "er_t2_B1",
@@ -2218,7 +2340,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "er_t2_B2",
@@ -2235,7 +2358,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — surface-level metric framing. Generates a list of KPIs rather than revealing the specific number that is most exposed right now."
         },
         {
           "id": "er_t2_B3",
@@ -2250,7 +2374,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "er_t2_C1",
@@ -2267,7 +2392,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "er_t2_C2",
@@ -2286,7 +2412,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "er_t2_C3",
@@ -2301,7 +2428,8 @@
             "er_t3_A1a",
             "er_t3_A1b",
             "er_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — proposing a demo before the business case is built puts you in vendor mode. The stakeholder has no reason to invest time in a presentation yet."
         },
         {
           "id": "er_t3_A1a",
@@ -2319,7 +2447,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "er_t3_A1b",
@@ -2337,7 +2466,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — gets to the economic buyer's actual criteria. At this level the conversation shifts from features to financial accountability."
         },
         {
           "id": "er_t3_A1c",
@@ -2355,7 +2485,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the internal path forward while identifying who will walk it. A deal without a champion carrying it internally stalls the moment you leave."
         },
         {
           "id": "er_t3_A2a",
@@ -2373,7 +2504,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "er_t3_A2b",
@@ -2391,7 +2523,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "er_t3_A2c",
@@ -2408,7 +2541,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — surfaces names without understanding their roles in the decision. A list of stakeholders is not a map of influence."
         },
         {
           "id": "er_t3_A3a",
@@ -2426,7 +2560,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "er_t3_A3b",
@@ -2444,7 +2579,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "High yield — builds the champion's internal case. Giving your advocate a number they can defend means they can carry the story credibly without you in the room."
         },
         {
           "id": "er_t3_A3c",
@@ -2461,7 +2597,8 @@
             "er_t4_A",
             "er_t4_B",
             "er_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "er_t4_A",
@@ -2480,7 +2617,8 @@
             "er_t5_A",
             "er_t5_B",
             "er_t5_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "er_t4_B",
@@ -2498,7 +2636,8 @@
             "er_t5_A",
             "er_t5_B",
             "er_t5_C"
-          ]
+          ],
+          "rationale": "High yield — establishes both what they are evaluating and how the decision will be made. Knowing the criteria without the process is a plan with no path."
         },
         {
           "id": "er_t4_C",
@@ -2517,7 +2656,8 @@
             "er_t5_A",
             "er_t5_B",
             "er_t5_C"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "er_t5_A",
@@ -2532,7 +2672,8 @@
           "response_text": "Yes, absolutely. Maria has been waiting for this conversation to come back with substance. I will set it up and I will tell her that you have been talking to Dev's team and to me, that you understand both the technical and business side, and that you have a framework for the business case she asked for. Come in ready to discuss numbers not features and you will be fine.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "er_t5_B",
@@ -2548,7 +2689,8 @@
           "response_text": "Maria is a visual thinker. She likes a one-page summary she can look at while you talk. Lead with the business outcome, not the problem. She already knows the problem. What she needs is the opportunity framed as a choice: here is what we capture if we act, here is what we leave on the table if we do not. She responds to that framing. And one more thing — connect it to David Lee's AI agenda. She presents to him monthly and if she can walk out of your meeting with something that connects to his strategic narrative she will be your champion. She has real influence with him.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "er_t5_C",
@@ -2560,7 +2702,8 @@
           "response_text": "I would hold off on the demo for now. Maria is going to want to see the business case before she sits through a product presentation. Let me set up an introductory conversation first.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — proposing a demo before the business case is built puts you in vendor mode. The stakeholder has no reason to invest time in a presentation yet."
         }
       ],
       "track": "search",
@@ -2598,7 +2741,8 @@
             "mt_t2_A1",
             "mt_t2_A2",
             "mt_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "mt_t1_B",
@@ -2615,7 +2759,8 @@
             "mt_t2_B1",
             "mt_t2_B2",
             "mt_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — too broad. Invites a corporate summary rather than a specific ownable problem. You get the official version, not the real one."
         },
         {
           "id": "mt_t1_C",
@@ -2630,7 +2775,8 @@
             "mt_t2_C1",
             "mt_t2_C2",
             "mt_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "mt_t2_A1",
@@ -2648,7 +2794,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "mt_t2_A2",
@@ -2667,7 +2814,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — quantifies the cost of staying with the incumbent. This is the number that makes the status quo expensive rather than comfortable."
         },
         {
           "id": "mt_t2_A3",
@@ -2685,7 +2833,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — surfaces who controls the budget and who will carry the internal case. Both are required for a deal to close."
         },
         {
           "id": "mt_t2_B1",
@@ -2703,7 +2852,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "mt_t2_B2",
@@ -2720,7 +2870,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "mt_t2_B3",
@@ -2735,7 +2886,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "mt_t2_C1",
@@ -2753,7 +2905,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "mt_t2_C2",
@@ -2770,7 +2923,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "mt_t2_C3",
@@ -2785,7 +2939,8 @@
             "mt_t3_A1a",
             "mt_t3_A1b",
             "mt_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — proposing a demo before the business case is built puts you in vendor mode. The stakeholder has no reason to invest time in a presentation yet."
         },
         {
           "id": "mt_t3_A1a",
@@ -2804,7 +2959,8 @@
             "mt_t4_A",
             "mt_t4_B",
             "mt_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "mt_t3_A1b",
@@ -2822,7 +2978,8 @@
             "mt_t4_A",
             "mt_t4_B",
             "mt_t4_C"
-          ]
+          ],
+          "rationale": "High yield — establishes both what they are evaluating and how the decision will be made. Knowing the criteria without the process is a plan with no path."
         },
         {
           "id": "mt_t3_A1c",
@@ -2840,7 +2997,8 @@
             "mt_t4_A",
             "mt_t4_B",
             "mt_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "mt_t4_A",
@@ -2859,7 +3017,8 @@
             "mt_t5_A",
             "mt_t5_B",
             "mt_t5_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "mt_t4_B",
@@ -2877,7 +3036,8 @@
             "mt_t5_A",
             "mt_t5_B",
             "mt_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces who controls the budget and who will carry the internal case. Both are required for a deal to close."
         },
         {
           "id": "mt_t4_C",
@@ -2896,7 +3056,8 @@
             "mt_t5_A",
             "mt_t5_B",
             "mt_t5_C"
-          ]
+          ],
+          "rationale": "High yield — quantifies the cost of staying with the incumbent. This is the number that makes the status quo expensive rather than comfortable."
         },
         {
           "id": "mt_t5_A",
@@ -2911,7 +3072,8 @@
           "response_text": "Yes. I will reach out to Sarah and suggest we set up a joint session. Tell her I sent you and that I think the IT and commercial platform decisions should be looked at together. That framing will get her attention. She is always looking for ways to make the migration investment tell a bigger story.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "mt_t5_B",
@@ -2927,7 +3089,8 @@
           "response_text": "Sarah is excellent but she is under real pressure right now. The migration, the outage fallout, the cost reduction mandate — she is managing all of it simultaneously. The best way to open with her is to make her life easier, not add to her plate. Come in with the unified story already structured and offer to co-develop the business case rather than hand her a vendor pitch. She will respond to a partner, not a salesperson. And make sure the story addresses Mark Reynolds' financial objections before they arise — she will be pre-thinking those the moment you walk in.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "mt_t5_C",
@@ -2939,7 +3102,8 @@
           "response_text": "A proposal is fine but make sure you talk to Sarah first. A document that arrives without context tends to get filed rather than acted on. Do the conversation first, then follow up with the document.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — handing over a proposal without an internal champion means it dies in an inbox. Nobody is carrying your story when you leave the room."
         }
       ],
       "track": "search",
@@ -2977,7 +3141,8 @@
             "sp_t2_A1",
             "sp_t2_A2",
             "sp_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "sp_t1_B",
@@ -2994,7 +3159,8 @@
             "sp_t2_B1",
             "sp_t2_B2",
             "sp_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — too broad. Invites a corporate summary rather than a specific ownable problem. You get the official version, not the real one."
         },
         {
           "id": "sp_t1_C",
@@ -3009,7 +3175,8 @@
             "sp_t2_C1",
             "sp_t2_C2",
             "sp_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — leading with your experience or pre-packaged material rather than their situation shuts down disclosure before it starts."
         },
         {
           "id": "sp_t2_A1",
@@ -3028,7 +3195,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "sp_t2_A2",
@@ -3046,7 +3214,8 @@
             "sp_t3_A2a",
             "sp_t3_A2b",
             "sp_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "sp_t2_A3",
@@ -3065,7 +3234,8 @@
             "sp_t3_A3a",
             "sp_t3_A3b",
             "sp_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "sp_t2_B1",
@@ -3083,7 +3253,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "sp_t2_B2",
@@ -3100,7 +3271,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — gets the official process rather than the informal decision-making that actually moves things. The real process rarely matches the org chart."
         },
         {
           "id": "sp_t2_B3",
@@ -3117,7 +3289,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — asking about competitors before you have built credibility signals you care more about the competitive landscape than their problem."
         },
         {
           "id": "sp_t2_C1",
@@ -3136,7 +3309,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "sp_t2_C2",
@@ -3153,7 +3327,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — asking what tools they run tells you something you could have researched. It does not tell you where those tools fail or what they cost in time and money."
         },
         {
           "id": "sp_t2_C3",
@@ -3168,7 +3343,8 @@
             "sp_t3_A1a",
             "sp_t3_A1b",
             "sp_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "sp_t3_A1a",
@@ -3187,7 +3363,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "sp_t3_A1b",
@@ -3205,7 +3382,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "sp_t3_A1c",
@@ -3223,7 +3401,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "sp_t3_A2a",
@@ -3241,7 +3420,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "sp_t3_A2b",
@@ -3259,7 +3439,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — gets to the economic buyer's actual criteria. At this level the conversation shifts from features to financial accountability."
         },
         {
           "id": "sp_t3_A2c",
@@ -3276,7 +3457,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "sp_t3_A3a",
@@ -3294,7 +3476,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — establishes both what they are evaluating and how the decision will be made. Knowing the criteria without the process is a plan with no path."
         },
         {
           "id": "sp_t3_A3b",
@@ -3312,7 +3495,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the internal path forward while identifying who will walk it. A deal without a champion carrying it internally stalls the moment you leave."
         },
         {
           "id": "sp_t3_A3c",
@@ -3329,7 +3513,8 @@
             "sp_t4_A",
             "sp_t4_B",
             "sp_t4_C"
-          ]
+          ],
+          "rationale": "High yield — advances the discovery by surfacing a specific insight that cannot be found in a deck or a website. Each answer here changes what you do next."
         },
         {
           "id": "sp_t4_A",
@@ -3348,7 +3533,8 @@
             "sp_t5_A",
             "sp_t5_B",
             "sp_t5_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "sp_t4_B",
@@ -3366,7 +3552,8 @@
             "sp_t5_A",
             "sp_t5_B",
             "sp_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "sp_t4_C",
@@ -3384,7 +3571,8 @@
             "sp_t5_A",
             "sp_t5_B",
             "sp_t5_C"
-          ]
+          ],
+          "rationale": "High yield — establishes both what they are evaluating and how the decision will be made. Knowing the criteria without the process is a plan with no path."
         },
         {
           "id": "sp_t5_A",
@@ -3399,7 +3587,8 @@
           "response_text": "Yes. Get me the business case in a form I can put in front of them and I will set it up. I want to review it before it goes to Mark so I can anticipate his questions and make sure the numbers are solid. Give me something I can defend and I will get you in the room.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "sp_t5_B",
@@ -3415,7 +3604,8 @@
           "response_text": "I would actually prefer that. The last thing I want is to be handed a vendor proposal and asked to sign off on it. If we build this together I own the narrative and I can present it as my recommendation, not as something a vendor brought me. That is a much stronger position going into the steering committee. Let us set up a working session.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "sp_t5_C",
@@ -3427,7 +3617,8 @@
           "response_text": "I think we are getting ahead of ourselves. The steering committee is not going to sit through a demo until they have seen the business case. Let me think about the right next step and get back to you.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — handing over a proposal without an internal champion means it dies in an inbox. Nobody is carrying your story when you leave the room."
         }
       ],
       "track": "observability",
@@ -3466,7 +3657,8 @@
             "pd_t2_A1",
             "pd_t2_A2",
             "pd_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "pd_t1_B",
@@ -3483,7 +3675,8 @@
             "pd_t2_B1",
             "pd_t2_B2",
             "pd_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "pd_t1_C",
@@ -3498,7 +3691,8 @@
             "pd_t2_C1",
             "pd_t2_C2",
             "pd_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "pd_t2_A1",
@@ -3517,7 +3711,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "pd_t2_A2",
@@ -3535,7 +3730,8 @@
             "pd_t3_A2a",
             "pd_t3_A2b",
             "pd_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — surfaces the competitive landscape from an insider perspective. More valuable than any win/loss report because it reflects what the customer actually experiences."
         },
         {
           "id": "pd_t2_A3",
@@ -3554,7 +3750,8 @@
             "pd_t3_A3a",
             "pd_t3_A3b",
             "pd_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "pd_t2_B1",
@@ -3572,7 +3769,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "pd_t2_B2",
@@ -3590,7 +3788,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "pd_t2_B3",
@@ -3605,7 +3804,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "pd_t2_C1",
@@ -3623,7 +3823,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "pd_t2_C2",
@@ -3640,7 +3841,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — asking what tools they run tells you something you could have researched. It does not tell you where those tools fail or what they cost in time and money."
         },
         {
           "id": "pd_t2_C3",
@@ -3655,7 +3857,8 @@
             "pd_t3_A1a",
             "pd_t3_A1b",
             "pd_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — proposing a demo before the business case is built puts you in vendor mode. The stakeholder has no reason to invest time in a presentation yet."
         },
         {
           "id": "pd_t3_A1a",
@@ -3674,7 +3877,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "pd_t3_A1b",
@@ -3693,7 +3897,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "pd_t3_A1c",
@@ -3711,7 +3916,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the internal path forward while identifying who will walk it. A deal without a champion carrying it internally stalls the moment you leave."
         },
         {
           "id": "pd_t3_A2a",
@@ -3729,7 +3935,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — puts a number on the problem. Metrics are the bridge between the technical pain and the CFO's language."
         },
         {
           "id": "pd_t3_A2b",
@@ -3747,7 +3954,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the competitive landscape from an insider perspective. More valuable than any win/loss report because it reflects what the customer actually experiences."
         },
         {
           "id": "pd_t3_A2c",
@@ -3764,7 +3972,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — gets a date without understanding the forcing function behind it. Dates without pressure are often estimates, not commitments."
         },
         {
           "id": "pd_t3_A3a",
@@ -3783,7 +3992,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "pd_t3_A3b",
@@ -3802,7 +4012,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "High yield — quantifies the cost of staying with the incumbent. This is the number that makes the status quo expensive rather than comfortable."
         },
         {
           "id": "pd_t3_A3c",
@@ -3819,7 +4030,8 @@
             "pd_t4_A",
             "pd_t4_B",
             "pd_t4_C"
-          ]
+          ],
+          "rationale": "Mediocre — asking for peer references before you have surfaced the customer's own strategic pain. Benchmark data is more useful once the problem is clearly framed."
         },
         {
           "id": "pd_t4_A",
@@ -3838,7 +4050,8 @@
             "pd_t5_A",
             "pd_t5_B",
             "pd_t5_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "pd_t4_B",
@@ -3856,7 +4069,8 @@
             "pd_t5_A",
             "pd_t5_B",
             "pd_t5_C"
-          ]
+          ],
+          "rationale": "High yield — surfaces the pain and identifies the internal advocate in the same move. You leave knowing both what's broken and who cares enough to fix it."
         },
         {
           "id": "pd_t4_C",
@@ -3874,7 +4088,8 @@
             "pd_t5_A",
             "pd_t5_B",
             "pd_t5_C"
-          ]
+          ],
+          "rationale": "High yield — advances the discovery by surfacing a specific insight that cannot be found in a deck or a website. Each answer here changes what you do next."
         },
         {
           "id": "pd_t5_A",
@@ -3890,7 +4105,8 @@
           "response_text": "Yes. That is exactly what I need. Let us work on that together. I want Sarah involved too because she owns the migration numbers. If the three of us can get aligned on the document before it goes to Mark, I think we go into that conversation in a very strong position. Set up the working session and let us get started.",
           "close_type": "full_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "pd_t5_B",
@@ -3905,7 +4121,8 @@
           "response_text": "Mark is a first principles thinker. He will ignore the narrative and go straight to the numbers. The questions he will ask in order are: what does the status quo cost us including the risk exposure, what does the proposed platform cost including implementation, what is the net delta, and what is the payback period. If you can answer those four questions with numbers that are well-sourced and clearly assumed, you have a chance. The thing that trips people up with Mark is vague assumptions. If you say approximately or roughly he will push until you have a real number or you lose credibility. Come in with a point estimate and a clear methodology, not a range.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "pd_t5_C",
@@ -3917,7 +4134,8 @@
           "response_text": "I would hold off on a formal proposal until we have aligned on the strategic framing. Let me think about the right process and get back to Sarah.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — handing over a proposal without an internal champion means it dies in an inbox. Nobody is carrying your story when you leave the room."
         }
       ],
       "track": "platform",
@@ -3955,7 +4173,8 @@
             "mr_t2_A1",
             "mr_t2_A2",
             "mr_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "mr_t1_B",
@@ -3972,7 +4191,8 @@
             "mr_t2_B1",
             "mr_t2_B2",
             "mr_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — asking what tools they run tells you something you could have researched. It does not tell you where those tools fail or what they cost in time and money."
         },
         {
           "id": "mr_t1_C",
@@ -3987,7 +4207,8 @@
             "mr_t2_C1",
             "mr_t2_C2",
             "mr_t2_C3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "mr_t2_A1",
@@ -4006,7 +4227,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t2_A2",
@@ -4025,7 +4247,8 @@
             "mr_t3_A2a",
             "mr_t3_A2b",
             "mr_t3_A2c"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "mr_t2_A3",
@@ -4044,7 +4267,8 @@
             "mr_t3_A3a",
             "mr_t3_A3b",
             "mr_t3_A3c"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t2_B1",
@@ -4062,7 +4286,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "mr_t2_B2",
@@ -4080,7 +4305,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "mr_t2_B3",
@@ -4095,7 +4321,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "mr_t2_C1",
@@ -4114,7 +4341,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "mr_t2_C2",
@@ -4132,7 +4360,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "mr_t2_C3",
@@ -4147,7 +4376,8 @@
             "mr_t3_A1a",
             "mr_t3_A1b",
             "mr_t3_A1c"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "mr_t3_A1a",
@@ -4167,7 +4397,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t3_A1b",
@@ -4185,7 +4416,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t3_A1c",
@@ -4204,7 +4436,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — quantifies the cost of staying with the incumbent. This is the number that makes the status quo expensive rather than comfortable."
         },
         {
           "id": "mr_t3_A2a",
@@ -4223,7 +4456,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "mr_t3_A2b",
@@ -4242,7 +4476,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "mr_t3_A2c",
@@ -4260,7 +4495,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t3_A3a",
@@ -4279,7 +4515,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t3_A3b",
@@ -4298,7 +4535,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps who approves the money, how the decision gets made, and what number they need to see. Three of the hardest discovery elements in one question."
         },
         {
           "id": "mr_t3_A3c",
@@ -4316,7 +4554,8 @@
             "mr_t4_A",
             "mr_t4_B",
             "mr_t4_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "mr_t4_A",
@@ -4335,7 +4574,8 @@
             "mr_t5_A",
             "mr_t5_B",
             "mr_t5_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "mr_t4_B",
@@ -4354,7 +4594,8 @@
             "mr_t5_A",
             "mr_t5_B",
             "mr_t5_C"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "mr_t4_C",
@@ -4373,7 +4614,8 @@
             "mr_t5_A",
             "mr_t5_B",
             "mr_t5_C"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "mr_t5_A",
@@ -4388,7 +4630,8 @@
           "response_text": "Yes. Set it up with Sarah. Two hours, numbers only, no slide decks. If we can get to a proposal that I have already reviewed the assumptions on before it goes to the steering committee, that is a much cleaner process. I will come in skeptical but I will come in engaged. That is the best I can offer.",
           "close_type": "full_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "mr_t5_B",
@@ -4404,7 +4647,8 @@
           "response_text": "Three things. First, the current state cost needs to be accurate and complete — not just the platform licenses but the total cost including hidden costs. Second, the implementation plan needs to show me that you can execute inside the migration timeline without putting the primary cutover at risk. That is the thing that would kill this proposal faster than any financial argument. Third, the payback calculation needs to work under conservative assumptions. If it only works if everything goes right, I am not interested. Show me it works when things go wrong and I will be a yes.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "mr_t5_C",
@@ -4416,7 +4660,8 @@
           "response_text": "Fine. Send it over and I will have someone review it.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — handing over a proposal without an internal champion means it dies in an inbox. Nobody is carrying your story when you leave the room."
         }
       ],
       "track": "platform",
@@ -4464,7 +4709,8 @@
             "rk_t2_A1",
             "rk_t2_A2",
             "rk_t2_A3"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "rk_t1_B",
@@ -4481,7 +4727,8 @@
             "rk_t2_B1",
             "rk_t2_B2",
             "rk_t2_B3"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "rk_t1_C",
@@ -4496,7 +4743,8 @@
             "rk_t2_B1",
             "rk_t2_B2",
             "rk_t2_B3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "rk_t2_A1",
@@ -4515,7 +4763,8 @@
             "rk_t3_A1",
             "rk_t3_A2",
             "rk_t3_A3"
-          ]
+          ],
+          "rationale": "High yield — connects ground-level pain to a quantified number that reaches the economic buyer. This is the chain that turns a technical problem into a fundable business case."
         },
         {
           "id": "rk_t2_A2",
@@ -4534,7 +4783,8 @@
             "rk_t3_A1",
             "rk_t3_A2",
             "rk_t3_A3"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "rk_t2_A3",
@@ -4553,7 +4803,8 @@
             "rk_t3_A1",
             "rk_t3_A2",
             "rk_t3_A3"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "rk_t2_B1",
@@ -4572,7 +4823,8 @@
             "rk_t3_A1",
             "rk_t3_A2",
             "rk_t3_A3"
-          ]
+          ],
+          "rationale": "Recovery — reorients the conversation after a weak or trap question. Gets partial credit by redirecting toward the core problem, but the -5 narrative penalty reflects the lost momentum from the earlier misstep."
         },
         {
           "id": "rk_t2_B2",
@@ -4590,7 +4842,8 @@
             "rk_t3_A1",
             "rk_t3_A2",
             "rk_t3_A3"
-          ]
+          ],
+          "rationale": "Mediocre — asking what tools they run tells you something you could have researched. It does not tell you where those tools fail or what they cost in time and money."
         },
         {
           "id": "rk_t2_B3",
@@ -4605,7 +4858,8 @@
             "rk_t3_A1",
             "rk_t3_A2",
             "rk_t3_A3"
-          ]
+          ],
+          "rationale": "Low yield — this question moves into solution or process territory before the discovery is complete. It signals the conversation is over before the customer is ready."
         },
         {
           "id": "rk_t3_A1",
@@ -4624,7 +4878,8 @@
             "rk_t4_A",
             "rk_t4_B",
             "rk_t4_C"
-          ]
+          ],
+          "rationale": "High yield — anchors the pain in a measurable number. Even a rough figure gives the business case something concrete to build on and is harder for the CFO to dismiss."
         },
         {
           "id": "rk_t3_A2",
@@ -4643,7 +4898,8 @@
             "rk_t4_A",
             "rk_t4_B",
             "rk_t4_C"
-          ]
+          ],
+          "rationale": "High yield — links what is broken to what good looks like. This builds the criteria for evaluation directly from the practitioner's experience rather than from a vendor checklist."
         },
         {
           "id": "rk_t3_A3",
@@ -4661,7 +4917,8 @@
             "rk_t4_A",
             "rk_t4_B",
             "rk_t4_C"
-          ]
+          ],
+          "rationale": "High yield — connects financial impact to the person who controls the budget. This is the language Mark Reynolds responds to: cost of current state vs cost of doing nothing."
         },
         {
           "id": "rk_t4_A",
@@ -4681,7 +4938,8 @@
             "rk_t5_B",
             "rk_t5_C",
             "rk_t5_D"
-          ]
+          ],
+          "rationale": "High yield — maps the path from problem to approved decision. Understanding both the buyer and the process means you can build toward a yes rather than hoping the proposal finds its way."
         },
         {
           "id": "rk_t4_B",
@@ -4701,7 +4959,8 @@
             "rk_t5_B",
             "rk_t5_C",
             "rk_t5_D"
-          ]
+          ],
+          "rationale": "High yield — surfaces who controls the budget and who will carry the internal case. Both are required for a deal to close."
         },
         {
           "id": "rk_t4_C",
@@ -4720,7 +4979,8 @@
             "rk_t5_B",
             "rk_t5_C",
             "rk_t5_D"
-          ]
+          ],
+          "rationale": "Mediocre — generates useful context but does not advance the discovery significantly. You get background, not insight. Answers here inform without differentiating."
         },
         {
           "id": "rk_t5_A",
@@ -4735,7 +4995,8 @@
           "response_text": "That is exactly the partnership I need. I want to own the narrative, not present someone else's. If we build it together I can defend every number and anticipate every pushback. I am in. Let us get the first working session on the calendar this week.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — co-development close. Positions you as a partner building the case together, not a vendor presenting one. The stakeholder owns the narrative going into the steering committee."
         },
         {
           "id": "rk_t5_B",
@@ -4750,7 +5011,8 @@
           "response_text": "Yes, provided I have a TCO analysis I can stand behind and a clear answer to the implementation risk question. Get me those two things and I will carry the security case into that room.",
           "close_type": "full_context",
           "triggers_briefing": true,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "High yield — secures the stakeholder as an internal champion with a clear next step. They commit to carrying the story forward after you leave the room."
         },
         {
           "id": "rk_t5_C",
@@ -4762,7 +5024,8 @@
           "response_text": "A technical evaluation is premature. My team does not have bandwidth for a vendor evaluation right now and I would not put them through one without a business case in front of the steering committee first. Come back to me with the business case.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — jumping to a technical evaluation before the business case is established. The stakeholder has not committed enough to invest their team's time."
         },
         {
           "id": "rk_t5_D",
@@ -4774,7 +5037,8 @@
           "response_text": "A proposal sent for review is not how this works. I need to be part of building it, not reacting to it. Come back when you are ready to build together.",
           "close_type": "partial_context",
           "triggers_briefing": false,
-          "next_question_ids": []
+          "next_question_ids": [],
+          "rationale": "Low yield — handing over a proposal without an internal champion means it dies in an inbox. Nobody is carrying your story when you leave the room."
         }
       ]
     }

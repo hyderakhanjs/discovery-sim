@@ -128,15 +128,15 @@ export function processQuestionChoice(
   let insiderBriefing: string | null = null;
 
   if (isClose) {
+    // Always route through meeting_debrief after a close.
+    // Capture insider briefing if available — it will be shown inside the debrief.
     if (question.triggers_briefing) {
       const currentStakeholder = allStakeholders.find(
         (s) => s.id === state.currentStakeholderId
       );
       insiderBriefing = currentStakeholder?.insider_briefing_for_next ?? null;
-      nextPhase = insiderBriefing ? "briefing" : "handoff";
-    } else {
-      nextPhase = "handoff";
     }
+    nextPhase = "meeting_debrief";
   }
 
   // 6. Update access level
