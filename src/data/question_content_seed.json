@@ -16,7 +16,7 @@
             "identify_pain",
             "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "We lost visibility. That is the simplest way to put it. We had alerts firing from three different systems — Nagios, Datadog, and Splunk — and they were all telling us different things. By the time we correlated the signals manually and figured out what was actually broken, we had already lost 40 minutes of peak traffic. The root cause turned out to be a cascading failure in the search infrastructure that we could not have caught with the monitoring we had. In hindsight the signals were there but nobody could see the whole picture in real time.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -63,10 +63,10 @@
           "question_text": "You said you lost 40 minutes of peak traffic. Do you have a sense of what that cost the business in revenue?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "I do not have the exact number but the business team told us Black Friday peak hour was running at roughly 10 times our normal transaction volume. If you take our average revenue per hour and multiply by 10 and then by 40 minutes, you get into seven figures fast. I heard a number internally but it was not shared officially. What I know is that it was significant enough that the CFO was personally asking questions the following Monday.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -81,10 +81,9 @@
           "question_text": "You mentioned the root cause was in the search infrastructure. Was that a performance issue, a security event, or something else?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "competition"
+            "identify_pain"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "That is actually still not fully resolved. The immediate cause was a performance degradation in the search layer under load. But there were some anomalous access patterns in the logs around the same time that Linda's team flagged. We cannot definitively say it was a security event but we also cannot rule it out. That ambiguity is one of the things keeping leadership up at night. The lack of a unified view meant we could not do the forensics properly after the fact.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -102,7 +101,7 @@
             "decision_criteria",
             "identify_pain"
           ],
-          "points": 4,
+          "points": 3,
           "response_text": "A single pane of glass. I know that phrase gets overused but I mean it literally. Right now I have three dashboards open during any incident and I am mentally correlating between them. What I want is one place where I can see infrastructure health, application performance, and log anomalies together in context. If I had that on Black Friday I think we would have caught it in under 10 minutes instead of 40.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -117,8 +116,8 @@
           "question_text": "When incidents happen, how long does it typically take your team to identify root cause?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 3,
           "response_text": "For a simple single-system issue, maybe 15 minutes. For anything that crosses system boundaries, it can be an hour or more. Black Friday was the extreme end — 40 minutes just to understand what was broken, and we still do not have a fully clean root cause analysis three months later.",
@@ -135,9 +134,9 @@
           "question_text": "How many people are on your SRE team and how much of their time goes to reactive incident work versus proactive reliability work?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
+            "champion",
             "identify_pain",
-            "champion"
+            "metrics"
           ],
           "points": 3,
           "response_text": "We are a team of six. Honestly right now it is probably 70 percent reactive, 30 percent proactive on a good week. After Black Friday it got worse. We have been in incident review and remediation mode for months. The goal is to flip that ratio but we cannot do it with the tooling we have. We spend too much time manually correlating data that should be correlated automatically.",
@@ -171,16 +170,16 @@
           "question_text": "Has anyone put a formal number to what a repeat of Black Friday would cost — either in revenue, remediation, or regulatory exposure?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "economic_buyer"
+            "metrics"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "Not formally documented that I have seen. The CFO asked for that analysis but I do not think it has come back yet. What I know is that our PCI DSS compliance exposure is real — if we had a confirmed breach at our transaction volume the fines alone would be significant, not counting the customer trust damage. That analysis is something I think John Miller has been trying to build but he needs input from Linda's team on the security side.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -189,16 +188,16 @@
           "question_text": "You mentioned John Miller has been pushing for infrastructure modernization. What is his read on the current tooling situation?",
           "question_type": "good",
           "meddpicc_tags": [
-            "champion",
-            "decision_process"
+            "champion"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "John has been saying for two years that the tool sprawl is unsustainable. He tried to consolidate before but lost the budget argument because there was no compelling event. Black Friday was the compelling event. He has more support now than he has ever had but he needs a proposal that survives a CFO review, not just a technical recommendation. If you can help him build that case you will have a real ally.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -207,16 +206,17 @@
           "question_text": "What would have to be true about a new platform for you personally to advocate for it with your team?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
-            "champion"
+            "champion",
+            "decision_criteria"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "Three things. First, it would need to ingest from all our existing sources without a painful migration. Second, the correlation engine has to be fast enough to be useful during a live incident — not a 10-minute lag, real time or close to it. Third, my team needs to be able to operate it without becoming platform experts. We are SREs, not data engineers. If it requires a specialist to run queries, it will not get adopted.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -225,16 +225,17 @@
           "question_text": "The ambiguity about whether it was a security event — is Linda Chen's team actively investigating that or has it been deprioritized?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "champion"
+            "champion",
+            "identify_pain"
           ],
-          "points": 4,
+          "points": 3,
           "response_text": "Linda is still on it but they are limited by the fact that the logs they need are spread across three systems and the retention window on some of them has already closed. She is frustrated because she cannot do proper forensics with the tooling they have. I think she would have a lot to say to you if you talked to her.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -243,16 +244,17 @@
           "question_text": "If it did turn out to be a security event, what is the exposure from a compliance standpoint? Are we talking PCI DSS, GDPR, something else?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "PCI DSS primarily. We process a significant volume of card transactions and any confirmed breach would trigger mandatory notification and potential fines. I am not the compliance expert but I know the numbers are not small. Linda would know the specifics. The thing that concerns me is that we cannot definitively rule it out, which means we are sitting on an unquantified risk exposure right now.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -261,8 +263,8 @@
           "question_text": "You said the lack of a unified view meant you could not do the forensics properly. If you had done the forensics properly, what would the remediation have looked like?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_criteria"
+            "decision_criteria",
+            "identify_pain"
           ],
           "points": 3,
           "response_text": "We would have been able to isolate the affected systems faster, determine whether there was unauthorized access, and either confirm or rule out a breach in hours rather than weeks. Right now we are still operating in ambiguity three months later. That is the cost of not having proper visibility. It is not just the downtime — it is the tail of uncertainty that follows.",
@@ -270,7 +272,8 @@
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -279,16 +282,17 @@
           "question_text": "If you had that single pane of glass and you ran it through a Black Friday simulation today, how confident are you that your team could catch a similar issue in under 10 minutes?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "decision_criteria"
+            "decision_criteria",
+            "metrics"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "Highly confident, actually. The team knew what to look for. The problem was the time it took to look in the right places across different systems. If the correlation is automatic and the view is unified, the detection time drops dramatically. I would stake my reputation on the team's ability to respond — the tool is what slowed us down, not the people.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -306,7 +310,8 @@
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -315,16 +320,16 @@
           "question_text": "You are in the middle of a data center migration. How does the platform decision interact with that timeline? Is there a window where both decisions have to align?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
             "metrics"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "That is exactly the right question and not enough people are asking it. The migration has a hard June deadline. If we are going to make a platform change it has to happen inside that window, not after. Migrating to a new data center and simultaneously moving to a new observability platform during the migration is complex but doable. Making the platform change after the migration means doing it twice — once in the current environment and once in the new one. John Miller understands this. I am not sure everyone above him does.",
           "triggers_briefing": false,
           "next_question_ids": [
             "alex_t4_A",
             "alex_t4_B",
-            "alex_t4_C"
+            "alex_t4_C",
+            "alex_t4_D"
           ]
         },
         {
@@ -333,10 +338,10 @@
           "question_text": "Alex, you have given me a really clear picture of the technical reality here. If I could show you a platform that unified your observability and security data with real-time correlation and scaled into the migration, what would you need to see to feel confident recommending it to John?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
-            "champion"
+            "champion",
+            "decision_criteria"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "A proof of concept against our actual data. Not a demo environment. Real logs, real infrastructure, real search traffic. If the platform can ingest our sources and show me the Black Friday incident reconstructed with proper correlation, I will believe it works. I have seen a lot of vendor demos that look great on synthetic data and fall apart on ours. Show me it works on our data and I will carry that story to John myself.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -351,10 +356,9 @@
           "question_text": "Is there anything about the current situation that I should know before I talk to John Miller that you would not necessarily say in a group setting?",
           "question_type": "good",
           "meddpicc_tags": [
-            "champion",
-            "decision_process"
+            "champion"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "John is under real pressure right now. He has been the one defending the infrastructure decisions that led to Black Friday, even though the root cause was tool sprawl that predates him. He needs a win. If you walk in with a proposal that gives him a credible path forward, he will be an advocate. But he needs to be able to take it upstairs with confidence. The worst thing you could do is give him something technically interesting that he cannot defend to Sarah Patel. Make sure whatever you bring him has a business case, not just a technical case.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -369,8 +373,8 @@
           "question_text": "What does success look like for you personally in the next 12 months if the platform problem gets solved?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "champion"
+            "champion",
+            "identify_pain"
           ],
           "points": 3,
           "response_text": "Honestly? Fewer weekends. Right now my team is on high alert constantly because we do not trust the system to catch things we miss. If we had proper visibility I could actually implement a reasonable on-call rotation instead of everyone being informally on alert all the time. That is the thing nobody talks about in the business case — the human cost of running on anxiety instead of confidence.",
@@ -387,10 +391,9 @@
           "question_text": "Alex, this has been genuinely useful. Based on what you have told me, I think the right next step is to set up a conversation with John Miller. Would you be comfortable making that introduction and giving him a heads up on what we covered today?",
           "question_type": "good",
           "meddpicc_tags": [
-            "champion",
-            "decision_process"
+            "champion"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "Yes. I will send him a note today. I will tell him you understand the technical situation and that you asked the right questions. That will matter to him — he is tired of vendors who come in with a slide deck before they have done the work.",
           "close_type": "full_context",
           "triggers_briefing": true,
@@ -402,11 +405,10 @@
           "question_text": "Before I meet with John, I want to make sure I bring him something useful. If you were building the business case for platform consolidation, what number would you lead with?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "champion",
-            "economic_buyer"
+            "metrics"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "The MTTR improvement number. John loves operational metrics. If you can show him that a unified platform cuts mean time to resolution from 40 minutes to under 10 for a Black Friday-class incident, and then attach a revenue-per-minute number to that delta, you have a business case he can defend to anyone. The tool sprawl cost and the analyst time cost are supporting evidence. The MTTR story is the headline.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
@@ -423,6 +425,25 @@
           "close_type": "partial_context",
           "triggers_briefing": false,
           "next_question_ids": []
+        },
+        {
+          "id": "alex_t4_D",
+          "turn": 4,
+          "question_text": "You have been running Datadog through this migration. Where does it fall short for you specifically — and is that a view anyone above you has challenged, or is it shared across the team?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "decision_criteria",
+            "identify_pain"
+          ],
+          "points": 3,
+          "response_text": "Datadog works fine for what it was designed to do. The problem is that it was designed for cloud-native environments and we are running a hybrid stack during a migration. The correlation between on-prem and cloud events is weak and the log analytics costs are scaling in a way that is going to be a problem at renewal. John Miller has seen the projected cost curve and he is not happy. Nobody is defending Datadog on principle. The question is whether there is something better that does not require a rip-and-replace during an active migration. That is what I would want you to answer before I could advocate for a change.",
+          "triggers_briefing": false,
+          "next_question_ids": [
+            "alex_t5_A",
+            "alex_t5_B",
+            "alex_t5_C"
+          ]
         }
       ],
       "track": "observability",
@@ -452,7 +473,7 @@
             "identify_pain",
             "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "On a normal day I start with somewhere between 200 and 400 alerts. Of those, maybe 15 to 20 are worth investigating and maybe 2 or 3 turn out to be real. The rest are noise — misconfigured rules, known benign behaviors that never got whitelisted, things like that. The problem is you have to look at all of them because you cannot know which ones are real until you do. I spend probably 60 percent of my day on alerts that turn out to be nothing. The Black Friday anomalies got lost in that noise. In retrospect the signals were there but they were buried.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -499,10 +520,10 @@
           "question_text": "You said the Black Friday signals were there in retrospect. What would you have needed to see them in real time?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_criteria"
+            "decision_criteria",
+            "identify_pain"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "Context correlation in real time. The anomalous access patterns were in the application logs. The network anomalies were in a separate system. The infrastructure stress was in Datadog. None of those three things were connected in a single view. If they had been, the pattern would have been obvious — unusual access driving unusual load in an unusual network context. That is a textbook indicator. But it was invisible because the data was siloed.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -517,10 +538,10 @@
           "question_text": "20 minutes per alert times 200 alerts per day — that is a significant amount of analyst time. Has anyone put a cost figure to that?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "I have done the math for myself even if it has not gone upstream formally. Six analysts, 60 percent of time on noise triage, fully loaded analyst cost — you are talking about a significant six-figure annual waste just in labor. And that is before you count the cost of the real threats that get delayed because we are busy triaging noise. Linda has been trying to build that case for a budget conversation but she has not had the right venue for it.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -535,10 +556,10 @@
           "question_text": "You mentioned the Black Friday anomalies are still not fully resolved. Is Linda's team treating this as a live investigation or has it moved to a post-incident review?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "champion"
+            "champion",
+            "identify_pain"
           ],
-          "points": 4,
+          "points": 3,
           "response_text": "It is somewhere in between. Officially it is a post-incident review. Unofficially Linda is still treating it as potentially live because we cannot confirm it was not a breach. The log retention issue is real — some of the data we would need is gone. Linda is pushing for better log retention as part of any new platform conversation. She will not close this investigation until she has the visibility to do it properly.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -553,8 +574,8 @@
           "question_text": "When you do find a real threat, what does the investigation workflow look like? How long from detection to containment?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 3,
           "response_text": "For a well-understood threat type with good tooling support, maybe 30 minutes to an hour. For anything novel or cross-system, it can be a full day or more. The manual correlation is the bottleneck every time. We have gotten better at the known threat patterns. The unknown ones are where we are vulnerable.",
@@ -571,8 +592,8 @@
           "question_text": "Is the team big enough to handle the alert volume or are you stretched?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 3,
           "response_text": "We are stretched. Six analysts for the volume we handle is lean. The right answer is either more headcount or better tooling. Linda has been told headcount is not coming, which means tooling is the only lever. That is part of why the platform conversation matters to her.",
@@ -609,13 +630,14 @@
             "identify_pain",
             "metrics"
           ],
-          "points": 4,
+          "points": 3,
           "response_text": "Honestly, 30 to 40 percent probability of a malicious component. The access patterns were unusual enough that I would not dismiss it. The timing correlated with the load spike in a way that could be coincidental or could be intentional. We cannot know. That ambiguity is the worst-case scenario from a compliance standpoint because we cannot certify a clean bill of health.",
           "triggers_briefing": false,
           "next_question_ids": [
             "jordan_t4_A",
             "jordan_t4_B",
-            "jordan_t4_C"
+            "jordan_t4_C",
+            "jordan_t4_D"
           ]
         },
         {
@@ -624,16 +646,17 @@
           "question_text": "Has the potential breach disclosure obligation come up in any conversation? If it was a breach, what does Soha's notification obligation look like?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "Legal has been involved and I know they are watching the investigation closely. PCI DSS has specific notification timelines. GDPR applies to our European customers. If we confirm a breach we are in mandatory notification territory with significant potential fines. The fact that we cannot confirm or deny is actually a liability in itself because we cannot certify to customers or regulators that their data was not compromised. Linda is very aware of this.",
           "triggers_briefing": false,
           "next_question_ids": [
             "jordan_t4_A",
             "jordan_t4_B",
-            "jordan_t4_C"
+            "jordan_t4_C",
+            "jordan_t4_D"
           ]
         },
         {
@@ -642,16 +665,17 @@
           "question_text": "What would Linda need to see from a platform to feel confident closing the Black Friday investigation definitively?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
-            "champion"
+            "champion",
+            "decision_criteria"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "She would need to be able to reconstruct the full timeline across all data sources with enough context to make a definitive determination. Long-term log retention is essential — the current Splunk retention window is too short for a proper forensic investigation of an event this complex. She also needs the cross-source correlation capability so she is not manually piecing things together. If a platform could reopen this investigation with better data retention and better correlation, that would be meaningful to her.",
           "triggers_briefing": false,
           "next_question_ids": [
             "jordan_t4_A",
             "jordan_t4_B",
-            "jordan_t4_C"
+            "jordan_t4_C",
+            "jordan_t4_D"
           ]
         },
         {
@@ -660,11 +684,10 @@
           "question_text": "Jordan, what you have described is a situation where the risk exposure is real, the tooling is inadequate, and the investigation is still open. If I could help Linda quantify that risk in terms that would get budget attention, what data would be most useful to put in front of her?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "champion",
-            "economic_buyer"
+            "metrics"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "Three numbers. The analyst time cost — hours per day times analyst count times loaded cost, all going to noise triage. The regulatory exposure — potential PCI DSS and GDPR fine range if the Black Friday event turns out to be a breach. And the cost of a confirmed breach at our transaction volume based on industry benchmarks. Those three numbers together make a very compelling case for why the current situation is more expensive than fixing it.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -679,10 +702,9 @@
           "question_text": "Is there anyone else in the security team I should talk to before I meet with Linda? Anyone who has strong opinions about the tooling or the investigation?",
           "question_type": "good",
           "meddpicc_tags": [
-            "champion",
-            "decision_process"
+            "champion"
           ],
-          "points": 3,
+          "points": 2,
           "response_text": "There is a senior analyst named Marcus who has been doing the most detailed forensic work on Black Friday. He has the strongest technical opinion on what a better platform would have enabled. Linda will bring him into any serious evaluation. If you can get him on your side before the formal evaluation starts, that helps.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -697,8 +719,8 @@
           "question_text": "What would it mean for you personally if the tooling problem got solved and you were spending your time on real threats instead of noise?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "champion"
+            "champion",
+            "identify_pain"
           ],
           "points": 3,
           "response_text": "I went into security because I wanted to catch bad actors, not spend my days triaging benign alerts. Right now the ratio is deeply wrong. If I could spend 80 percent of my time on real investigations, this would feel like a completely different job. I would be better at it and I would be doing work that actually matters. That is not a small thing.",
@@ -717,7 +739,7 @@
           "meddpicc_tags": [
             "champion"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "Yes. I will tell her you spent real time understanding the investigation and the tooling gap. That will get her attention. She has had a lot of vendor conversations that go nowhere. A referral from someone on the team is different.",
           "close_type": "full_context",
           "triggers_briefing": true,
@@ -732,7 +754,7 @@
             "identify_pain",
             "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "Off the record — and I mean that — the probability estimate I gave you of 30 to 40 percent for malicious involvement is conservative. Some of the access patterns were very specific to high-value customer records. It may have been targeted. Linda knows this. She has not put that in writing because it changes the disclosure calculus dramatically. If you can help her close this investigation cleanly, you will have an ally for life.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
@@ -749,6 +771,25 @@
           "close_type": "partial_context",
           "triggers_briefing": false,
           "next_question_ids": []
+        },
+        {
+          "id": "jordan_t4_D",
+          "turn": 4,
+          "question_text": "You work in Splunk every day. Where does it create more work than it saves — and is that a view Linda shares, or does she see it differently from where she sits?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "champion",
+            "competition",
+            "identify_pain"
+          ],
+          "points": 3,
+          "response_text": "Splunk is powerful but the analyst experience is rough. Query language has a steep learning curve, the dashboards require constant maintenance, and every time we want to correlate across a new data source it is a project, not a configuration. Linda knows this — she has been in the SIEM evaluation conversation before and she knows what the alternatives look like. Her frustration is less with Splunk specifically and more with the fact that we are running Splunk for logs, Prisma for cloud posture, and CrowdStrike for endpoint and none of them share a data model. The tool is not the whole problem. The architecture is the problem.",
+          "triggers_briefing": false,
+          "next_question_ids": [
+            "jordan_t5_A",
+            "jordan_t5_B",
+            "jordan_t5_C"
+          ]
         }
       ],
       "track": "security",
@@ -778,7 +819,7 @@
             "identify_pain",
             "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "Relevance and scale, in that order. Relevance is the chronic problem — our search is keyword-based and it does not understand intent. A customer searching for 'running shoes for flat feet' gets results sorted by keyword match, not by what would actually help them. That means we surface the wrong products and the customer leaves. Scale is the acute problem — under Black Friday load the search index got hammered and response times degraded significantly. We went from sub-100ms responses to multi-second responses at peak. That is a conversion killer.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -825,10 +866,10 @@
           "question_text": "You mentioned response times going from sub-100ms to multi-second under Black Friday load. Do you have data on the conversion impact of that degradation?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 5,
+          "points": 3,
           "response_text": "Not official data but I know the rule of thumb in e-commerce: every 100ms of search latency costs roughly 1 percent of conversion. We were running 1500ms to 2000ms at peak instead of under 100ms. Do the math. Emily Rivera's team looked at the Black Friday search data after the fact and the drop-off rate on search result pages during the degradation period was significant. She has the business numbers. I have the technical numbers. Together they tell a pretty ugly story.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -843,10 +884,10 @@
           "question_text": "You said the search does not understand intent. What does that cost in terms of zero-result searches or customer drop-off?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 4,
+          "points": 3,
           "response_text": "Our zero-result rate is around 8 percent. Industry benchmark for a well-tuned retail search is under 2 percent. Every zero-result search is a lost sale. At our volume that is a meaningful number. And that does not count the searches that return results but wrong results — the customer sees the page, does not find what they want, and leaves. That is harder to measure but Emily's team estimates the relevance problem costs us several conversion points annually.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -864,7 +905,7 @@
             "decision_criteria",
             "identify_pain"
           ],
-          "points": 4,
+          "points": 3,
           "response_text": "Platform change. The version of Elasticsearch we are running predates native vector search support. We could theoretically upgrade but the amount of custom code we have built on top of the current version makes a straight upgrade extremely risky. The honest answer is that we built ourselves into a corner with years of customization and the path forward is a clean implementation on a modern stack that supports vector search natively. We have been trying to make that case internally for a while.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -879,10 +920,9 @@
           "question_text": "You mentioned you are on an older version of Elasticsearch. What would an upgrade or migration look like and what has been stopping it?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_process"
+            "identify_pain"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "The customization is the blocker. We have years of custom ranking logic, custom analyzers, and custom integrations baked into the current version. A straight upgrade would break most of that. The right move is a clean migration to a modern stack rather than an upgrade, but that requires budget and timeline that we have not been able to get approved. The business case has been hard to make because the pain is diffuse — a little lost here, a little lost there — rather than one dramatic number.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -897,10 +937,9 @@
           "question_text": "What does your roadmap look like for search improvement and what is blocking progress?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_process"
+            "identify_pain"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "The roadmap is ambitious on paper and stuck in reality. We want semantic search, better personalization, real-time product recommendations. All of that requires a modern vector-capable platform and clean data pipelines. What is blocking it is a combination of technical debt in the current stack, a third-party recommendations vendor that is underperforming and expensive, and a business case that has not been compelling enough to unlock the investment. Black Friday may have changed that equation.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -932,11 +971,10 @@
           "question_text": "You mentioned Emily Rivera has the business numbers from Black Friday. Is she connecting the search degradation to lost revenue in a way that is making it to leadership?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "champion",
             "metrics"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "She is trying to. I think she has the data but the framing has been hard because Black Friday had so many overlapping problems — the infrastructure failure, the potential security event, the search degradation — that it has been difficult to isolate the search contribution. If someone helped her build a clean analysis that separated the search revenue impact from the other factors, that would be a more compelling story. Right now it is all blended together in the incident review.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -951,10 +989,9 @@
           "question_text": "You have been trying to make the case for a modern search stack for a while. What has the reaction been from leadership when you have raised it?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
             "champion"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "The reaction has been sympathetic but not urgent. Search is one of many priorities. The argument I have been making is a good-to-better argument — current search is okay, modern search would be better. That is a hard argument to fund. What Black Friday gave me is a bad-to-acceptable argument — current search failed catastrophically at scale, modern search would not have. That is a different conversation. I just have not had the right audience for it yet.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -970,10 +1007,9 @@
           "question_type": "good",
           "meddpicc_tags": [
             "competition",
-            "metrics",
-            "decision_process"
+            "metrics"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "The contract renews in April. We have been unhappy with the performance for about a year. The results are not relevant enough and the integration latency adds overhead to every page load. Maria Torres has been asking questions about it because the personalization quality directly affects conversion. If there is an alternative that handles both search and personalization in a unified way, that is actually a more interesting conversation than just replacing the search stack. The recommendations vendor spend is significant.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -989,10 +1025,9 @@
           "question_type": "good",
           "meddpicc_tags": [
             "decision_criteria",
-            "economic_buyer",
             "metrics"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "No, and that is actually a really useful frame. Right now they are two separate budget lines and two separate conversations. If you combined the search modernization cost with the recommendations vendor replacement cost, the net investment might be smaller than people assume. And the combined story — unified search and personalization on a modern vector-capable platform — is a more compelling business case than either one alone. Emily would respond to that framing. Maria Torres definitely would.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1010,7 +1045,7 @@
             "decision_criteria",
             "metrics"
           ],
-          "points": 3,
+          "points": 2,
           "response_text": "Vector search with a dense retrieval model trained on our product catalog and customer behavior data. Unified with the recommendations layer so there is one relevance engine, not two competing systems. Real-time personalization using behavioral signals. I could have a meaningful improvement showing in 90 days if we had clean data pipelines and the right platform. The first 30 days would be catalog indexing and baseline testing. Days 30 to 60 would be model training and relevance tuning. Days 60 to 90 would be A/B testing against the current stack.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1025,10 +1060,9 @@
           "question_text": "What does Emily Rivera actually care about when it comes to search? Is it the technical architecture or the business outcomes?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "champion"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "Business outcomes entirely. She does not care how the search works, she cares about conversion rate, average order value, and session time. If you walk into her office and start talking about vector embeddings she will lose patience fast. If you walk in and say the current search stack is costing you X points of conversion and here is how we fix it, she will engage immediately. She is smart and she will ask hard questions but they will all be business questions.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1046,7 +1080,7 @@
             "champion",
             "metrics"
           ],
-          "points": 4,
+          "points": 2,
           "response_text": "Yes. I can help you build that translation. I know what the technical numbers are. You help me frame them in the language Emily responds to and I will be in that meeting with you if you want me there. Having a developer in the room who can answer the technical questions while you handle the business conversation would be useful.",
           "close_type": "full_context",
           "triggers_briefing": true,
@@ -1058,11 +1092,9 @@
           "question_text": "Before I meet with Emily, I want to make sure I understand the competitive landscape. You mentioned the recommendations vendor contract is up in April. Is there a formal evaluation process underway or is it a default renewal right now?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
-            "decision_process",
-            "economic_buyer"
+            "competition"
           ],
-          "points": 5,
+          "points": 2,
           "response_text": "It is a default renewal right now but Maria Torres has been asking questions. If someone put a compelling alternative in front of Emily before the renewal window closes, there is a real chance the evaluation gets opened. The vendor knows the contract is not locked and they have been pushing for early renewal. That is actually a signal that they are nervous. The window to insert yourself into that conversation is in the next 60 days.",
           "close_type": "full_context_exceptional",
           "triggers_briefing": true,
@@ -1105,9 +1137,9 @@
           "question_text": "Alex gave me a clear picture of what happened during the outage from the ground level. I would love to hear how you saw it from your seat and where your head is now on what needs to change.",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
             "champion",
-            "decision_process"
+            "decision_process",
+            "identify_pain"
           ],
           "points": 5,
           "response_text": "Alex is a good kid. He lived it more directly than I did that night but I will tell you what it looked like from my seat. I am watching three dashboards that are all telling me something different and my phone is going off from two directions at once. By the time we correlated what was actually happening, the damage was done. What frustrates me is that this was not a surprise. I had been making the case for a unified observability platform for two years. The ask kept getting deprioritized because we did not have a business case that landed at the right level. Now we have one. The outage is the business case. What I am trying to do now is make sure we use this moment to actually fix the architecture and not just put a band-aid on it. We have a data center migration with a hard deadline of mid-next year. That is my window. If I am going to change the observability stack, it has to happen inside that migration or it does not happen at all.",
@@ -1126,7 +1158,7 @@
           "meddpicc_tags": [
             "identify_pain"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Today we are running Datadog for infrastructure, Splunk for security logs, and Nagios for some legacy workloads we have not migrated yet. The goal is to consolidate. Priya Desai, our CIO, has been clear that tool sprawl is not acceptable going forward. We are in the middle of a data center migration so there is a natural window to make changes.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1174,8 +1206,8 @@
           "question_text": "You mentioned you had been making the case for two years and not getting traction. What was missing from that conversation that the outage changed?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_process",
+            "economic_buyer",
             "metrics"
           ],
           "points": 4,
@@ -1230,7 +1262,7 @@
           "meddpicc_tags": [
             "decision_criteria"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "She has been clear on the direction: fewer vendors, lower total cost, better integration. She has not dictated specific platforms. The definition of success is probably fewer than three monitoring and security tools instead of five or six. What that looks like in practice is still being worked out at the technical level.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1279,7 +1311,7 @@
           "meddpicc_tags": [
             "decision_criteria"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Real-time correlation across infrastructure, application, and security data. Scalability to handle the log volume we are generating, which is going to increase significantly after the migration. Ease of operation — my team are SREs, not data engineers. And total cost of ownership that fits inside a cost reduction mandate. Those are the criteria at a high level.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1347,7 +1379,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "It is mostly internal at this point. We have not put out a formal RFP. The conversations have been exploratory. You are one of a few vendors who have had any substantive conversation with the team. The timeline is real whether it has been communicated or not.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1362,8 +1394,8 @@
           "question_text": "If you had that business case today — a clear ROI tied to outage prevention and cost consolidation — do you think Sarah would move on it?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "champion"
+            "champion",
+            "economic_buyer"
           ],
           "points": 4,
           "response_text": "Yes, I think she would. Sarah has been waiting for me to come back with something that can survive a CFO review. The challenge has always been that I am better at the technical argument than the financial one. She has been supportive of the direction but she cannot take a technical vision document to Mark Reynolds. If someone helped me translate the MTTR improvement and the cost consolidation into a payback model she can defend, I think she moves quickly. She is motivated. She just needs the right ammunition.",
@@ -1398,7 +1430,7 @@
           "question_text": "Have you worked with any vendors who have helped you build that kind of business case before?",
           "question_type": "mediocre",
           "meddpicc_tags": [],
-          "points": 1,
+          "points": 2,
           "response_text": "Not really. Most vendors bring me a slide deck and a demo. The ones who offer to build a business case usually do it in a way that is obviously favorable to their product and Mark sees through it immediately. What I need is something built from our own data with transparent assumptions. If you help me build it using our numbers I own the narrative and Mark will take it more seriously.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1413,8 +1445,8 @@
           "question_text": "When you describe AI-assisted correlation, has your team defined what good looks like — a specific reduction in MTTR or alert noise that would count as success?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "decision_criteria"
+            "decision_criteria",
+            "metrics"
           ],
           "points": 4,
           "response_text": "Yes. Alex and I talked about this. Current MTTR for a cross-system incident is 40 minutes on a bad day, 15 minutes on a good one. The target is under 10 minutes for anything a unified platform would have visibility into. Alert noise is the other metric — right now maybe 70 percent of what my team investigates turns out to be a false positive or a known benign event. If a platform can get that below 30 percent that is a meaningful productivity gain. Those are the two numbers I would use to define success in a POC.",
@@ -1431,8 +1463,8 @@
           "question_text": "That vision you just described — has it been written down anywhere or is it still in your head waiting for the right moment?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
-            "champion"
+            "champion",
+            "decision_criteria"
           ],
           "points": 4,
           "response_text": "It is mostly in my head. I have a technical architecture diagram that is incomplete and a few notes from team discussions but nothing that would survive a steering committee review. Part of the problem is that I have been waiting for the right partner to help me formalize it. If I write the requirements document alone it reads like a technical wish list. What I need is something that connects the technical requirements to the business outcomes Sarah and Mark care about. If you can help me build that document we are in a much stronger position.",
@@ -1451,7 +1483,7 @@
           "meddpicc_tags": [
             "competition"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "We have had conversations with a couple of others but nothing formal yet. Splunk has been pushing hard for us to expand our relationship with them. Datadog is also in the mix. Neither of them has come in with a unified story that addresses both the observability and the security side. That is actually the gap in the market from where I sit.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1535,9 +1567,9 @@
           "question_text": "Before I talk to Sarah, I want to make sure I walk in with the right framing. From your perspective, what is the single most important thing she needs to hear to move this forward?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "champion",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "The thing Sarah needs to hear is that this is not a technology decision, it is a revenue protection decision. She thinks in terms of business outcomes. If you can connect the platform to outage prevention — which connects to revenue — and cost consolidation — which connects to Mark Reynolds' 20 percent cost reduction mandate — you will have her full attention. The migration deadline is your friend in that conversation too. It creates urgency without you having to manufacture it. And one more thing: do not come in with a pitch. Come in with questions. She will respect that a lot more.",
@@ -1582,8 +1614,8 @@
           "question_text": "Jordan gave me a really honest picture of what analyst life looks like day to day. I wanted to come to you to understand how you are seeing the bigger picture and where you are trying to take the team.",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
             "champion",
+            "identify_pain",
             "metrics"
           ],
           "points": 5,
@@ -1603,7 +1635,7 @@
           "meddpicc_tags": [
             "identify_pain"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "We run Splunk as our SIEM, Datadog handles some of the infrastructure side, and we have Nagios for legacy workloads. The main challenges are alert volume, false positive rate, and Splunk costs. The acquisition doubled our log volume and Splunk's pricing went up accordingly. We are evaluating options ahead of the February renewal.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1633,8 +1665,8 @@
           "question_text": "You said cost reduction and risk management are very different conversations. How have you been trying to reframe it and where has that gotten stuck?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_process",
+            "economic_buyer",
             "identify_pain"
           ],
           "points": 5,
@@ -1652,9 +1684,9 @@
           "question_text": "When you say the log volume doubled and costs went up proportionally, do you have a rough sense of what Splunk is costing you now versus two years ago?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "competition",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
           "points": 5,
           "response_text": "I do not have the exact renewal number in front of me but it has roughly doubled. We were paying somewhere around $400K a year before the acquisition. I expect the renewal to come in close to $800K, maybe higher depending on how they price the new log sources. Mark Reynolds already knows this number is coming and he is not happy. That is actually creating some openness to alternatives that did not exist before. The CFO's discomfort with the Splunk bill is working in my favor for once.",
@@ -1671,9 +1703,9 @@
           "question_text": "You said the Splunk renewal is your window. What happens if you go into that renewal without a credible alternative?",
           "question_type": "good",
           "meddpicc_tags": [
+            "competition",
             "decision_process",
-            "identify_pain",
-            "competition"
+            "identify_pain"
           ],
           "points": 4,
           "response_text": "We sign another three-year deal at double the cost and nothing changes. My analysts keep burning out, the false positive rate stays where it is, and the next time we have a near-miss we might not get lucky. The February renewal is the forcing function. If I do not have a credible alternative in front of the steering committee before then, the path of least resistance is to renew. And once we renew we are locked in for three more years. I cannot let that happen.",
@@ -1710,7 +1742,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "I have input on the technical evaluation. Procurement handles the commercial negotiation and Daniel Foster manages that process. But the decision to stay or switch starts with me. If I bring a credible alternative to Sarah with a recommendation to switch, that carries weight. If I just let the renewal happen by default, Daniel Foster will renew it without a second thought.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1760,7 +1792,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "It is my top priority outside of day-to-day operations. The renewal deadline makes it urgent and the near-miss made it critical. The challenge is that my team is still running at full capacity on the Black Friday investigation and the normal alert queue. I have limited bandwidth to run a formal vendor evaluation. I need a partner who can do a lot of the heavy lifting on the business case while I keep the lights on.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1808,8 +1840,8 @@
           "question_text": "When you say you need to connect platform cost to risk exposure in a way a CFO cannot dismiss — have you tried quantifying what a breach would actually cost Soha at this point?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
           "points": 5,
           "response_text": "I have started building it. The numbers are sobering. Average cost of a retail data breach is north of $3 million based on industry benchmarks, not counting regulatory exposure under PCI DSS which for a retailer of our size could be significant on top of that. If I can get those numbers in front of Mark Reynolds in the right context I think the Splunk renewal conversation changes completely. I just need the platform side of the equation to be credible.",
@@ -1844,8 +1876,8 @@
           "question_text": "You said Mark Reynolds' discomfort with the Splunk bill is working in your favor. Is he approaching the renewal as a cost reduction exercise or is he open to a different platform entirely?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "competition"
+            "competition",
+            "economic_buyer"
           ],
           "points": 4,
           "response_text": "He is approaching it as a cost reduction exercise first. His default assumption is that we can negotiate a better rate on Splunk rather than replace it. What will shift that is showing him that the total cost of Splunk — including analyst productivity loss and the risk exposure it leaves on the table — is actually higher than the sticker price. If I can show him that the alternative is both cheaper and reduces the risk he is carrying on his balance sheet, he becomes more open. He is not ideological about Splunk. He is ideological about numbers.",
@@ -1862,9 +1894,9 @@
           "question_text": "If an alternative platform could consolidate some of the Splunk and Datadog functions and come in at a lower total cost — is that a story that would get traction with the steering committee?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
+            "decision_criteria",
             "economic_buyer",
-            "decision_criteria"
+            "metrics"
           ],
           "points": 5,
           "response_text": "Yes, and I will tell you why. Mark Reynolds has a 20 percent cost reduction mandate and he is running out of places to find it without cutting headcount. If someone shows him that one platform can replace two or three contracts at a lower combined cost, that is a meaningful contribution to his mandate. Priya Desai also wants to reduce vendor complexity. The story that plays best in that room is: one platform, fewer contracts, lower total cost, better security posture. All four things together is a very strong case. The question is whether the platform can actually deliver all four.",
@@ -1883,7 +1915,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Daniel Foster manages the Splunk relationship and he typically starts renewal conversations 90 days before the contract end date. That window opens in November. If I have not put a credible alternative in front of the steering committee by then, Daniel will default to renewing and it will be very hard to stop.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -1916,8 +1948,8 @@
           "question_text": "If you had a credible alternative in front of the steering committee tomorrow, do you think you have the votes to move forward or is there a specific obstacle you are still navigating?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
-            "champion"
+            "champion",
+            "decision_process"
           ],
           "points": 4,
           "response_text": "Sarah is a yes if the business case is solid. Priya Desai has been clear about reducing vendor complexity so she is directionally aligned. The obstacle is Mark Reynolds. He will engage seriously only if the financial case is airtight. If I go in with a directional argument he will push back and we stall. If I go in with actual numbers — current Splunk cost, projected alternative cost, analyst productivity gain, risk reduction value — I think we can get him to a serious maybe that becomes a yes in the working session.",
@@ -1934,8 +1966,8 @@
           "question_text": "What would you need from a vendor to feel confident going into that steering committee presentation?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
-            "champion"
+            "champion",
+            "decision_criteria"
           ],
           "points": 4,
           "response_text": "Three things. A total cost of ownership comparison that is built from our actual numbers, not vendor-provided benchmarks — I need to own the methodology. A migration plan that fits inside the timeline we are working with. And a reference from a retailer of comparable size who has made a similar move and has the before-and-after numbers. Those three things together give me a steering committee presentation I can defend.",
@@ -1989,8 +2021,8 @@
           "question_text": "How burned out is your team right now — on a scale that you would be comfortable sharing?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "champion"
+            "champion",
+            "identify_pain"
           ],
           "points": 4,
           "response_text": "I have two analysts who I think are six months away from leaving if things do not change. One of them is the person who caught the lateral movement attempt. If she walks out the door we lose someone irreplaceable and nobody above me fully appreciates what that means until it happens. I have been pretty direct with Sarah about this but I do not think it has landed with the weight it deserves.",
@@ -2023,8 +2055,8 @@
           "question_type": "good",
           "meddpicc_tags": [
             "champion",
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "What has landed with Sarah is the near-miss story and the analyst retention risk. She took both of those seriously. What has not landed yet is the financial case. She keeps waiting for me to show her the numbers and I have not had the full picture to do that. The other thing to know about Sarah is that she is managing up to Mark Reynolds and Priya Desai simultaneously. Whatever you bring her needs to be something she can walk into the steering committee with confidence. She does not want to be surprised. If you can give her something that is already pressure-tested against the CFO's objections she will love you for it.",
@@ -2069,9 +2101,9 @@
           "question_text": "Dev walked me through the technical side of the search problem in detail. I wanted to come to you because I suspect you see the business impact of it more clearly than anyone. What does the search experience cost you in real terms?",
           "question_type": "good",
           "meddpicc_tags": [
+            "economic_buyer",
             "identify_pain",
-            "metrics",
-            "economic_buyer"
+            "metrics"
           ],
           "points": 5,
           "response_text": "Dev is great and I am glad he walked you through it. The honest answer to your question is that I do not have a precise number but I know it is significant. What I can tell you is that our mobile conversion rate is running about 40 percent below our desktop rate. Industry benchmarks say that gap should be around 15 to 20 percent for a retailer our size. The excess gap — that extra 20 percent or so — is what I attribute substantially to search. When customers cannot find what they want quickly on mobile they abandon. They do not call customer service and they do not try again later. They just leave. I have been trying to translate that into a dollar figure for Maria Torres but I have not had the analytical support to make it airtight. If our mobile conversion even partially closed that gap, we are talking about a meaningful eight-figure revenue opportunity annually. That is the number I need to be able to defend.",
@@ -2090,7 +2122,7 @@
           "meddpicc_tags": [
             "identify_pain"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "The vision is a seamless, personalized experience across every touchpoint. Search is central to that because it is how most customers navigate the catalog. Right now search is a weak point, especially on mobile. We are working on improving it but it is a priority and resource question at this point.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2120,9 +2152,9 @@
           "question_text": "You said eight-figure revenue opportunity. Have you taken that number to Maria Torres and if so how did she respond?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "champion",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "I have raised it but not with a number I was fully confident in. I told her search was underperforming on mobile and that I believed there was a significant revenue opportunity in fixing it. She was interested but she asked me for the quantified business case and I told her I was working on it. That was about six weeks ago and I have not gone back yet because I do not have the analysis done. Maria is data-driven and she will not prioritize something based on a directional argument. She needs a number she can take to David Lee. If I go back without the number I lose credibility. If I go back with the right number I think this moves fast.",
@@ -2139,8 +2171,8 @@
           "question_text": "You mentioned you have not had the analytical support to make the number airtight. What would a defensible version of that analysis need to look like for it to land with Maria?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_criteria",
+            "economic_buyer",
             "metrics"
           ],
           "points": 5,
@@ -2158,8 +2190,8 @@
           "question_text": "When customers cannot find what they want and leave — do you have any data on what repeat visit rates look like for customers who hit a zero results page?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 4,
           "response_text": "Our zero-result rate is around 8 percent of mobile queries. Industry standard is closer to 2 to 3 percent. But the more damaging metric is what I call the pogo effect — where a customer searches, does not find what they want, clicks on something irrelevant, immediately comes back, and then leaves entirely. That sequence is a strong predictor of cart abandonment and it happens more on mobile than any other channel. I have not been able to get a clean dollar figure on it but it is a real and measurable behavior.",
@@ -2176,8 +2208,8 @@
           "question_text": "You mentioned it is a priority and resource question. What would need to be true for search improvement to get prioritized and funded this quarter?",
           "question_type": "recovery",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 2,
           "response_text": "Maria Torres needs a quantified business case that she can take to David Lee. That has been the missing piece. I have been making the argument qualitatively — search is underperforming, customers are abandoning, we are leaving money on the table — but Maria runs on data. If I could walk in with a credible eight-figure revenue opportunity tied to a specific investment and timeline, this moves from the wishlist to the priority list immediately. That is the gap I have not been able to close on my own.",
@@ -2196,7 +2228,7 @@
           "meddpicc_tags": [
             "metrics"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Conversion rate and average order value are reviewed weekly. I track search-influenced conversion separately but it is not a top-line metric that Maria reviews directly. The Black Friday data brought it into sharper focus because the search degradation was visible in the conversion numbers. But connecting it to a specific investment case has been harder.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2240,13 +2272,15 @@
         {
           "id": "er_t2_C2",
           "turn": 2,
-          "question_text": "What search tools are you running today and how long have you been on them?",
-          "question_type": "mediocre",
+          "question_text": "The third-party recommendations vendor Dev mentioned — is that a separate evaluation from the search platform, or is there internal pressure to consolidate them into one decision?",
+          "question_type": "good",
           "meddpicc_tags": [
-            "competition"
+            "competition",
+            "decision_process",
+            "economic_buyer"
           ],
-          "points": 1,
-          "response_text": "We are on an older version of Elasticsearch that Dev's team has heavily customized, plus a third-party recommendations vendor that adds personalization on top of search. The recommendations vendor contract is up in April. We have been unhappy with the performance but we have not formally opened an evaluation. Maria Torres has been asking questions about it.",
+          "points": 4,
+          "response_text": "That is actually the right question and nobody has asked it that way yet. The recommendations vendor contract is up in April and there is real pressure from Maria to not just auto-renew it. She has been asking whether the search infrastructure and the recommendations engine should be the same platform or continue as separate tools. Dev has a strong view that they should be consolidated — he is the one who flagged the vendor contract. If a platform decision could address both, that changes the scope and the budget math significantly. It becomes an infrastructure consolidation and a revenue capability in the same decision.",
           "triggers_briefing": false,
           "next_question_ids": [
             "er_t3_A1a",
@@ -2293,8 +2327,8 @@
           "question_text": "When Maria asks for a quantified business case, does she have a specific ROI threshold or payback period she is looking for, or is it more about the story being credible?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_criteria"
+            "decision_criteria",
+            "economic_buyer"
           ],
           "points": 4,
           "response_text": "Maria has not given me a specific threshold but I know from watching her that she responds to payback periods under 18 months. If you can show her that the investment pays back in a year and then generates ongoing upside, that is her sweet spot. She is also influenced by competitive context. If I can show her that our mobile conversion gap versus industry benchmark represents X dollars, and that closing even half of it pays for the platform in 12 months, that is a compelling frame.",
@@ -2311,10 +2345,10 @@
           "question_text": "Has IT been looped into the search improvement conversation, or has it stayed on the business side?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
-            "champion"
+            "champion",
+            "decision_process"
           ],
-          "points": 3,
+          "points": 4,
           "response_text": "Mostly it has stayed on the business side which is probably a gap. Sarah Patel knows there is a search initiative but I do not think she has been pulled into the business case conversation. Dev's team is doing the technical work but they are not in the room when we talk about revenue impact. I have been meaning to bridge that but there are always more urgent things. If there is a natural way to connect those conversations I would welcome it.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2329,8 +2363,8 @@
           "question_text": "You mentioned the AI personalization angle and the CEO's earnings call comments. How seriously is the organization taking that as an initiative versus it being aspirational talk?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "It is serious but underfunded. David Lee committed publicly to AI-driven personalization as a growth lever and Priya Desai has been tasked with making it real. The challenge is that the data infrastructure required does not exist yet. The search platform and the recommendations layer are both preconditions for the AI personalization vision and neither is in a state to deliver it. If someone connected the search platform decision to the AI mandate in a credible way, that would accelerate things significantly. Maria presents to David Lee monthly and she needs something to put on that slide.",
@@ -2347,8 +2381,8 @@
           "question_text": "If you had the quantified business case ready today, how quickly do you think Maria would move?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 4,
           "response_text": "Fast. Maria is not someone who sits on decisions when the data is clear. She has been waiting for me to come back with the analysis for six weeks. If I walked in tomorrow with a defensible eight-figure revenue opportunity and a 12-month payback, she would put it on the agenda for her next steering committee conversation. The question is whether the analysis is credible enough to withstand David Lee's questions. He will push on the assumptions.",
@@ -2367,7 +2401,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "The Chief Product Officer would have input on the product experience side. Dev's team would have input on the technical implementation. Maria would also loop in Sarah Patel for the IT infrastructure conversation. It is not a simple decision but Maria is the one who drives it. If she is convinced, the others follow.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2385,7 +2419,7 @@
             "identify_pain",
             "metrics"
           ],
-          "points": 3,
+          "points": 4,
           "response_text": "I have used it with Maria informally and she responded to it. It is concrete and visual in a way that conversion rate alone is not. She understood immediately what it means for the customer experience and for revenue. I have not used it with David Lee. It might actually be a stronger frame in that room than conversion rate percentages because it describes a real customer behavior rather than an abstraction.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2420,7 +2454,7 @@
           "meddpicc_tags": [
             "metrics"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "I have mentioned it but in passing. I do not think it has landed as a concrete business problem. If I framed it as: our zero results rate is 4 times the industry benchmark and each zero result is a lost sale, and here is what that costs annually at our search volume — that would land differently than saying our zero results rate is 8 percent.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2435,9 +2469,9 @@
           "question_text": "Emily, if you could walk into Maria Torres' office tomorrow with one piece of analysis that would make her move on this immediately — what would that be?",
           "question_type": "good",
           "meddpicc_tags": [
+            "champion",
             "economic_buyer",
-            "metrics",
-            "champion"
+            "metrics"
           ],
           "points": 5,
           "response_text": "The one piece of analysis would be this: here is our mobile conversion gap versus industry benchmark, here is what closing half of that gap is worth in annual revenue, and here is a credible path to getting there in 12 months. If I walk in with that and the numbers are defensible, Maria moves. She has been waiting for me to come back with that for six weeks. The reason I have not is that I do not have the technical side of the equation. I know the revenue opportunity. I do not know what it costs to capture it and how long it takes. If you can help me build the cost and timeline side I think we have something that closes fast.",
@@ -2454,8 +2488,8 @@
           "question_text": "You mentioned the data center migration. Is there a view inside the business that the migration is an opportunity to modernize the search platform at the same time, or is search being treated as a separate track?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
-            "decision_criteria"
+            "decision_criteria",
+            "decision_process"
           ],
           "points": 4,
           "response_text": "It has been two separate conversations so far and I think that is a missed opportunity. The migration is creating a forcing function on the IT side anyway. If we are rebuilding infrastructure, rebuilding the search architecture at the same time makes sense from an integration standpoint. I have not had that conversation with Sarah or Priya but I suspect if someone connected those two tracks it would strengthen both cases. The migration deadline creates urgency that my search conversation currently lacks.",
@@ -2472,9 +2506,9 @@
           "question_text": "What would it mean for your loyalty program and repeat purchase rates if personalization actually worked the way the CEO described on the earnings call?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "economic_buyer",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 5,
           "response_text": "It would be significant. Our loyalty program is our most valuable asset. Members spend on average three times more than non-members and they have a much higher lifetime value. But right now when a loyalty member comes to the site the search experience does not know anything about them. We are treating a loyal customer who has been with us for five years the same way we treat a first-time visitor. If personalized search could increase repeat purchase rate by even a few percentage points across our loyalty base, the revenue impact compounds dramatically because those are our highest value customers.",
@@ -2506,9 +2540,9 @@
           "question_text": "Before I meet with Maria, I want to make sure I am walking in with a perspective she will find credible. How does she like to receive information and what would make her take this seriously from the first five minutes?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "champion",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "Maria is a visual thinker. She likes a one-page summary she can look at while you talk. Lead with the business outcome, not the problem. She already knows the problem. What she needs is the opportunity framed as a choice: here is what we capture if we act, here is what we leave on the table if we do not. She responds to that framing. And one more thing — connect it to David Lee's AI agenda. She presents to him monthly and if she can walk out of your meeting with something that connects to his strategic narrative she will be your champion. She has real influence with him.",
@@ -2554,8 +2588,8 @@
           "question_type": "good",
           "meddpicc_tags": [
             "economic_buyer",
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 5,
           "response_text": "It changes it significantly. David Lee has been public about AI-driven personalization as our next growth lever and right now I cannot show him progress on that front. The search platform is the foundation that makes personalization possible. If I can walk into my next monthly with a credible path to meaningful conversion improvement — tied to an AI-enabled search and personalization platform — that is the story he has been waiting for. Emily has the revenue analysis almost ready. What I have been waiting for is the cost and implementation side so I can do the full ROI picture.",
@@ -2574,7 +2608,7 @@
           "meddpicc_tags": [
             "economic_buyer"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Top priorities are conversion improvement, loyalty program growth, and delivering on the AI personalization vision David Lee has been talking about publicly. Search is central to all three but it has been harder to fund than it should be because the business case has been directional rather than quantified.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2607,7 +2641,7 @@
             "decision_process",
             "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Fast. I have a quarterly planning cycle and the next one is in six weeks. If the full business case is on my desk before then I can put it on the agenda. The decision to proceed would involve Sarah Patel on the IT side and ultimately Priya Desai and Mark Reynolds at the steering committee level. But the commercial case starts with me and I can move quickly when the numbers are right.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2641,10 +2675,10 @@
           "question_text": "When you present to David Lee monthly, what does the ecommerce section of that conversation look like and what question does he always ask?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "champion"
+            "champion",
+            "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "The ecommerce section focuses on conversion, average order value, and loyalty program growth. David always asks the same question at the end: what is the AI story? He has been asked about it by investors and analysts and he needs to show progress. Right now I do not have a concrete AI win to show him, only a roadmap. If I can walk in with a platform decision that enables personalized AI search and has a clear timeline to conversion improvement, that changes the nature of that conversation completely.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2662,7 +2696,7 @@
             "economic_buyer",
             "metrics"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "He wants to show measurable conversion improvement driven by AI personalization within 18 months. That is what he has committed publicly. I need to be able to demonstrate that we are on track for that when I present to the board in Q1. The search platform is the foundational piece. Without it the AI personalization work cannot happen at the scale he is describing.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2679,7 +2713,7 @@
           "meddpicc_tags": [
             "metrics"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Loyalty members are about 40 percent of our active customer base and they spend three times more than non-members. The program is strong on rewards but weak on personalization. We are not using what we know about loyalty members to surface relevant products in search. That is a significant missed opportunity — the customers we know best are getting the same generic search experience as first-time visitors.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2709,10 +2743,10 @@
           "question_text": "From Emily and Dev I learned that mobile conversion is running 40 percent below desktop when the gap should be closer to 20 percent — and that the excess gap is substantially driven by search quality. Does that match your understanding?",
           "question_type": "recovery",
           "meddpicc_tags": [
-            "metrics",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "That matches what I have heard directionally from Emily. The exact number I have been waiting for is the revenue value of closing that gap. If you can help me get from the percentage gap to an annual dollar figure that I can defend to David Lee, that is what I have been missing. Emily has been working on it but she said she needed the cost side of the equation to complete the analysis.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2729,7 +2763,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Revenue impact, payback period under 18 months, and strategic alignment. For anything material I bring it to the steering committee with Sarah Patel and the finance team. The commercial case starts with me but the investment decision is collaborative at the executive level.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2759,9 +2793,9 @@
           "question_text": "Maria, the IT side of this story — the migration, the observability platform, the security work — and the commercial side — search, personalization, conversion — are all pointing at the same data platform decision. Has anyone connected those two tracks explicitly?",
           "question_type": "good",
           "meddpicc_tags": [
+            "decision_criteria",
             "decision_process",
-            "economic_buyer",
-            "decision_criteria"
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "No, and that is exactly the right observation. Sarah Patel and I have been talking about the migration and we have been talking about ecommerce separately. Nobody has put those two conversations in the same room. If a unified data platform addresses both the IT resilience and observability requirements on Sarah's side and the search and personalization requirements on my side, the combined business case is much more powerful than either argument alone. And the combined investment might be more efficient than two separate platform decisions. I would like to have that conversation with Sarah.",
@@ -2778,10 +2812,10 @@
           "question_text": "If the search and personalization platform also needed to fit inside Sarah Patel's migration timeline, does that create a constraint or an opportunity from your perspective?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
-            "decision_criteria"
+            "decision_criteria",
+            "decision_process"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "An opportunity. Right now my search initiative lacks a hard deadline and that makes it easy to defer. If the migration creates a forcing function — a natural window where making the platform change is easier and cheaper than doing it separately — that is urgency I do not have to manufacture. Sarah's timeline becomes my timeline and that actually helps me get the investment approved faster. The migration makes this a now decision rather than a someday decision.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2799,7 +2833,7 @@
             "decision_process",
             "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "I would represent the commercial case. David Lee is not in the steering committee for operational decisions but he will hear about it from me and from Priya Desai. If the proposal shows progress on his AI personalization agenda, I will make sure he knows about it in my next monthly. That is actually a more effective path than trying to get him into a steering committee meeting — let the committee approve it and then let me connect it to his agenda.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2814,9 +2848,9 @@
           "question_text": "Maria, what is the single most important thing I can do to make this move from a good conversation to an actual decision?",
           "question_type": "good",
           "meddpicc_tags": [
+            "champion",
             "decision_process",
-            "economic_buyer",
-            "champion"
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "Connect the IT and commercial tracks in one business case and get it in front of Sarah Patel and me together. Right now I am running one conversation and Sarah is running another. If you can bring those together with a unified ROI story — search and personalization revenue upside plus IT cost consolidation plus risk reduction — and a migration-aligned timeline, I think this moves to a steering committee conversation within four weeks. That is the thing nobody has done yet.",
@@ -2836,7 +2870,7 @@
             "champion",
             "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "It means I delivered on the commitment he made publicly. That is not a small thing. David Lee does not forget when someone delivers what they said they would. And it opens the door to the next phase of the AI roadmap — supply chain optimization, dynamic pricing, demand prediction. If I can point to personalized search as proof that the AI vision is real and not just a talking point, the rest of the agenda gets a lot more traction.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2855,7 +2889,7 @@
             "decision_process",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "That is a real risk. The vendor has been pushing for early renewal and if we sign another multi-year deal we lose leverage and we lock in an underperforming system. The window to avoid that is the next 60 days. If we have a credible alternative in front of the steering committee before the April renewal window, I can instruct procurement to pause the renewal conversation. That timeline actually aligns well with the migration forcing function. Both decisions want to be made in the next two months.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2873,7 +2907,7 @@
             "champion",
             "decision_process"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Yes. I will reach out to Sarah and suggest we set up a joint session. Tell her I sent you and that I think the IT and commercial platform decisions should be looked at together. That framing will get her attention. She is always looking for ways to make the migration investment tell a bigger story.",
           "close_type": "full_context",
           "triggers_briefing": true,
@@ -2932,9 +2966,9 @@
           "question_text": "Sarah, I have spent time with John, Linda, and the teams below them. Rather than walk you through what I heard, I would rather ask: from your seat, what is the single most important thing that needs to change in the next 12 months for IT to be seen as a business enabler rather than a cost center?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
+            "decision_process",
             "economic_buyer",
-            "decision_process"
+            "identify_pain"
           ],
           "points": 5,
           "response_text": "That is the right question and I appreciate that you framed it that way. The honest answer is that IT needs to stop being the team that explains outages and start being the team that prevents them. What happened on Black Friday was a failure of visibility. Not a failure of people. My team did everything right given the tools they had. The tools were not good enough. That is on me for not winning the budget argument sooner. Now I have the business case I did not have before and I intend to use it. What I am managing right now is three things simultaneously: the migration which has a hard June deadline and cannot slip, the platform modernization which needs to happen inside the migration window or it does not happen at all, and a cost reduction mandate from Mark Reynolds that means every dollar I spend has to come with a clear ROI story. If you can help me connect those three things into a coherent case for the steering committee you will have my full attention.",
@@ -2953,7 +2987,7 @@
           "meddpicc_tags": [
             "identify_pain"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Right now the big three are the data center migration, the outage response and infrastructure resilience work, and the cost reduction mandate from the CFO. Everything else is subordinate to those. Oh and Splunk renewal is coming in February which is creating its own pressure.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -2983,8 +3017,8 @@
           "question_text": "You said you now have the business case you did not have before. How far along are you in building it and what is the piece that is still missing?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_process",
+            "economic_buyer",
             "metrics"
           ],
           "points": 5,
@@ -3042,7 +3076,7 @@
             "decision_criteria",
             "economic_buyer"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "That is the version I have been trying to build. The migration creates a natural window to make a platform change without doing it twice. The cost mandate means any new platform has to come in at a lower TCO than what we are currently paying for Splunk and Datadog combined. If those two conditions can be met simultaneously the story writes itself. The challenge is finding a platform that actually delivers on both without creating implementation risk that bleeds into the migration timeline.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3059,7 +3093,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Pre-proposal. We have been having exploratory conversations. No RFP issued. The decision timeline is tighter than the process might suggest — we need a vendor decision in roughly 60 days to fit inside the migration workstream. The formal process has not caught up to the actual urgency.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3095,7 +3129,7 @@
             "economic_buyer",
             "metrics"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "That is actually a very useful frame. The way you described it — three connected problems, one decision, migration window as the forcing function — is the structure I have been trying to build. What makes it airtight is numbers. Current state total cost, future state total cost, implementation plan that does not touch the critical path, and payback under 18 months. If those four things are in the document I can defend it to Mark Reynolds and he will engage.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3112,7 +3146,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Real decision deadline is about 60 days. The migration says June but the actual gate is end of this quarter. If we do not have a vendor selected by then we miss the window to run a pilot inside the Q1 migration workstream. That would mean making the platform decision after the migration is done, which is the worst possible time.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3161,8 +3195,8 @@
           "question_text": "When you say Mark Reynolds cannot dismiss it — what does his standard playbook look like when he pushes back on a technology investment?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "Mark has three standard moves. The first is: can we do this cheaper with what we have? His default assumption is that the problem can be solved with better configuration of existing tools. You need to pre-empt that with evidence that the problem is structural not configurational. The second move is: what is the payback period? He wants a number under 18 months and he will challenge the assumptions behind it. The third move is: what happens if we do nothing? He actually responds well to that question if you answer it with a dollar figure. The outage gave us that number. Seven figures in one day. That is the do nothing cost and it is very hard to argue against.",
@@ -3182,7 +3216,7 @@
             "decision_process",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "The real gate is before the end of this quarter. If we do not have a vendor decision by then we cannot get a pilot running inside the Q1 migration workstream, which means we miss the window entirely and end up making the decision after the migration is done, which is the worst possible time. So the calendar says June but the real decision deadline is closer to 60 days from now. John probably told you the same thing.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3200,7 +3234,7 @@
             "economic_buyer",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "He has softened somewhat. The $1.2M direct revenue impact from the outage is a number he calculated himself and he knows what another one would cost. He is also uncomfortable with the Splunk renewal estimate coming in near $900K. Those two things together have opened a door that was not open three months ago. He is not a yes — he is a serious listener right now. That is a meaningful change from where he was before Black Friday.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3218,7 +3252,7 @@
             "decision_criteria",
             "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Priya sees the AI agenda and the platform decision as the same thing. She has been saying for months that the AI roadmap requires a unified data platform as its foundation. If the observability and security platform also handles the search and data infrastructure the AI work needs, that is a much more compelling story for her than a pure infrastructure play. She will ask specifically whether the platform is AI-ready and what that means in concrete terms.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3235,7 +3269,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Pre-proposal. The steering committee knows the topic is on the agenda but we have not had a formal review. I have been waiting to bring it until I had something worth reviewing. A directional recommendation without numbers would not get a good reception from Mark.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3268,10 +3302,10 @@
           "question_text": "Is there anyone else in the organization who needs to be part of this conversation before it goes to the steering committee? I am thinking about whether the commercial side — Maria Torres, Emily Rivera — has been looped in.",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
-            "champion"
+            "champion",
+            "decision_process"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "That is actually something I have been meaning to address. Maria Torres and I have talked about the migration but not about the ecommerce and search angle. If the same platform that solves the IT problems also addresses the search and personalization opportunity Emily and Maria are working on, the combined business case is much stronger. I would want Maria in the room when this goes to the steering committee. She has influence with David Lee and that matters even at the steering committee level.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3288,7 +3322,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "The steering committee approves the direction first. Then Daniel Foster in procurement runs the commercial process. Given the timeline pressure, I want to move those in parallel rather than sequentially. If the steering committee gives a directional go I can have Daniel start the commercial process simultaneously rather than waiting for full approval. That saves three to four weeks which matters a lot given the 60-day window.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3303,8 +3337,8 @@
           "question_text": "Sarah, if this goes well and you are standing in front of the steering committee six weeks from now with a strong proposal — what is the version of that conversation you are most worried about and what is the version you feel best about?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
             "champion",
+            "decision_process",
             "economic_buyer"
           ],
           "points": 5,
@@ -3325,7 +3359,7 @@
             "champion",
             "identify_pain"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Honestly? It would mean that the outage becomes the turning point rather than the low point. Right now when people think about IT at Soha they think about Black Friday. I want them to think about this migration as the moment IT became a real strategic asset. That matters to me beyond the career stuff. I have a good team and they deserve to be known for what they build, not what broke.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3343,7 +3377,7 @@
             "decision_criteria",
             "decision_process"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "A reference customer would help. Specifically a retailer who has gone through a similar migration and platform consolidation. Mark Reynolds respects peer evidence. If I can point to a comparable company that made this move and has the numbers to prove it worked, that pre-empts a lot of his skepticism. It is not a requirement but it would strengthen the case.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3361,7 +3395,7 @@
             "champion",
             "decision_process"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Yes. Get me the business case in a form I can put in front of them and I will set it up. I want to review it before it goes to Mark so I can anticipate his questions and make sure the numbers are solid. Give me something I can defend and I will get you in the room.",
           "close_type": "full_context",
           "triggers_briefing": true,
@@ -3421,8 +3455,8 @@
           "question_text": "Priya, Sarah has given me a lot of context on the migration, the platform modernization, and the cost mandate. I want to use the time with you differently. I would love to understand the AI agenda you have been asked to deliver and how the platform decisions we are discussing connect to that.",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_criteria",
+            "economic_buyer",
             "identify_pain"
           ],
           "points": 5,
@@ -3442,7 +3476,7 @@
           "meddpicc_tags": [
             "decision_criteria"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "The vision is to transform IT from a cost center into a growth enabler. Three pillars: resilience and operational excellence, AI-driven business capabilities, and vendor consolidation to reduce complexity and cost. The migration is the foundation. Everything else builds on top of it.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3472,8 +3506,8 @@
           "question_text": "You said the AI vision and the platform modernization are the same problem. Has that connection been made in any formal proposal or planning document yet, or is it still in your head?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_process",
             "decision_criteria",
+            "decision_process",
             "economic_buyer"
           ],
           "points": 5,
@@ -3491,10 +3525,10 @@
           "question_text": "When you say a unified data platform that can ingest, index, and query at scale — are you thinking one platform that does everything or a best-of-breed approach with strong integration?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
-            "competition"
+            "competition",
+            "decision_criteria"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "My strong preference is a unified platform. Best of breed sounds good in theory but in practice it creates integration complexity, data latency, and vendor management overhead that a company in our situation cannot afford. If one platform can handle security data, infrastructure observability, and search and personalization at scale, that is a dramatically simpler architecture and a dramatically simpler vendor conversation. The question is whether a single platform can actually do all of that well enough.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3509,9 +3543,9 @@
           "question_text": "You mentioned three AI use cases. If you could only land one of them in the next 12 months, which one moves the needle most for David Lee's agenda?",
           "question_type": "good",
           "meddpicc_tags": [
+            "decision_criteria",
             "economic_buyer",
-            "metrics",
-            "decision_criteria"
+            "metrics"
           ],
           "points": 5,
           "response_text": "Personalized search. Without question. It connects directly to the revenue growth story David Lee tells every quarter. Conversion improvement is visible, measurable, and directly tied to shareholder value. The supply chain and security work is important but it is harder to put on a slide for the board. Search and personalization is the one that makes the CEO look like the AI vision is real and not just a talking point. If I can show meaningful conversion lift in the next 12 months the rest of the AI roadmap gets a lot easier to fund.",
@@ -3528,10 +3562,10 @@
           "question_text": "You mentioned AI-driven business capabilities as a pillar. What specifically has David Lee asked you to deliver on that front?",
           "question_type": "recovery",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_criteria"
+            "decision_criteria",
+            "economic_buyer"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "He wants measurable AI capabilities in production within 18 months. The three areas are personalized search, supply chain intelligence, and intelligent security operations. All three require the same foundational data platform. That is the connection I have been trying to make internally — we are not making three separate AI investments, we are making one platform investment that enables all three. If that framing gets made clearly enough in the business case it changes the ROI calculation completely.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3549,7 +3583,7 @@
             "decision_criteria",
             "metrics"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Both, in that order. Fewer contracts reduces complexity and management overhead. Lower total cost satisfies Mark Reynolds' mandate. If we can get to a state where one platform handles what three currently do and the combined cost is lower, that is the definition of success from my perspective.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3582,7 +3616,7 @@
             "decision_criteria",
             "economic_buyer"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "It has not been made explicitly and that is the gap. The migration workstream and the AI roadmap are running separately. If someone connected those two in a coherent document I could take to the board, the nature of the platform investment changes from an IT cost to a strategic enabler. That document does not exist yet. If you can help me build it, that is more valuable than any vendor evaluation.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3599,7 +3633,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Migration completes in June. Any platform decision that needs to run inside the migration workstream has to be decided in the next 60 days. After that the window closes and we end up doing the platform change after the migration, which means doing it twice effectively. That is a timeline constraint that vendors either fit into or they do not.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3648,9 +3682,9 @@
           "question_text": "If the platform decision and the AI roadmap were connected in one proposal — how does that change the conversation with Mark Reynolds? Does it make the financial case easier or more complex?",
           "question_type": "good",
           "meddpicc_tags": [
+            "decision_process",
             "economic_buyer",
-            "metrics",
-            "decision_process"
+            "metrics"
           ],
           "points": 5,
           "response_text": "It makes it easier actually. Mark's default frame is cost. If you show him a platform investment that reduces the Splunk and Datadog TCO and also enables AI capabilities that drive revenue growth, the ROI calculation changes completely. He is not just approving a cost reduction, he is approving a growth enabler. That is a much easier yes for him. The risk is that it makes the proposal bigger and more complex and Mark tends to scrutinize bigger proposals more carefully. You need the numbers to be airtight.",
@@ -3670,7 +3704,7 @@
             "champion",
             "decision_process"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "There is a program manager named David Okonkwo who has been sitting across both workstreams. He does not have authority but he has context. If you need someone to facilitate the internal alignment work between the migration team and the AI roadmap team, he is the person. Sarah knows him.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3688,7 +3722,7 @@
             "decision_criteria",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "A POC against our actual data across all three use cases: infrastructure observability, security operations, and search. Not in sequence. Simultaneously. The integration between those three data streams is where unified platforms typically fall down. If a platform can ingest all three sources, correlate across them in real time, and surface AI-assisted insights across all three domains in one interface, that is the proof I need. A demo environment will not convince me. Our data will.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3706,7 +3740,7 @@
             "competition",
             "decision_criteria"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "They are both claiming AI readiness but neither has shown me a coherent story for all three use cases. Splunk is strong on security but weak on search and personalization. Datadog is strong on infrastructure observability but it is not a security platform and has no commerce capabilities. They are both pushing for us to expand rather than consolidate, which is the opposite of what I am trying to do. The fact that no incumbent can tell a unified story is actually an opening.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3723,7 +3757,7 @@
           "meddpicc_tags": [
             "decision_process"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "The migration is on track so far. The primary risk is scope creep from parallel workstreams. Every add-on initiative creates potential dependencies on the critical path. I manage that tightly. The platform decision needs to run clean and parallel without creating blockers for the main migration.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3738,9 +3772,9 @@
           "question_text": "If personalized search is the AI win you need to show the board in 12 months — what does a credible timeline to meaningful conversion improvement look like?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "decision_criteria",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
           "points": 5,
           "response_text": "A platform decision in the next 60 days. Data migration and catalog indexing in Q1. Model training and relevance tuning in Q2. A/B testing against the current stack in Q3. Measurable conversion improvement by Q4. That is 12 months and it is tight but achievable if the platform decision happens now. Every month we delay is a month off the end of that timeline. The board conversation in six weeks is actually a useful forcing function — I can use it to drive urgency internally.",
@@ -3757,11 +3791,11 @@
           "question_text": "You mentioned the security operations use case as one of the three AI areas. How does that connect to the Splunk renewal conversation Linda and Sarah have been having?",
           "question_type": "good",
           "meddpicc_tags": [
-            "decision_criteria",
             "competition",
+            "decision_criteria",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "It is the same conversation. Intelligent security operations requires the same unified data platform as the other two AI use cases. If we replace Splunk with a platform that handles security data as part of a broader unified layer, we get the security capability we need, the AI-readiness we need, and we do not renew Splunk at $900K. Those three things happen in one decision. Linda Chen understands this but she has been making it as a security argument rather than as part of the AI agenda. Framing it as an AI infrastructure decision actually makes the security case stronger.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3778,7 +3812,7 @@
           "meddpicc_tags": [
             "competition"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "I have a few peer relationships I have tapped informally but I have not found someone who has made the exact move we are considering — consolidating observability, security, and search onto one platform in the context of a major migration. If you have a reference customer who has done something comparable I would want to talk to them.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3815,7 +3849,7 @@
             "champion",
             "identify_pain"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "The thing that keeps me up at night is the people dynamic. John Miller has been here for 15 years. Linda Chen has built a team that is deeply loyal to how they do things. Any platform change touches their daily work and their identity. If they do not feel like partners in the decision they will find ways to slow it down without ever explicitly opposing it. I have seen it happen before. The way you prevent it is to make sure the people who live with the platform every day feel like they helped choose it. John and Linda need to own this decision, not just accept it.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3830,10 +3864,10 @@
           "question_text": "You have moved fast since joining Soha. Is the pace of change creating any organizational friction that could affect a platform decision like this?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_process"
+            "decision_process",
+            "identify_pain"
           ],
-          "points": 3,
+          "points": 5,
           "response_text": "Yes, and I am managing it carefully. I came in with a change agenda and the team has been receptive but there is a pace-of-change tolerance that I have to respect. I am trying to sequence the changes so that each one delivers a visible win before the next one starts. The migration is the foundation. The platform consolidation is the next layer. The AI capabilities are the layer after that. If I try to do all three simultaneously I risk losing the team.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3852,7 +3886,7 @@
             "decision_process",
             "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Yes. That is exactly what I need. Let us work on that together. I want Sarah involved too because she owns the migration numbers. If the three of us can get aligned on the document before it goes to Mark, I think we go into that conversation in a very strong position. Set up the working session and let us get started.",
           "close_type": "full_context",
           "triggers_briefing": false,
@@ -3864,8 +3898,8 @@
           "question_text": "Before I meet with Mark Reynolds, I want to make sure I understand his world as well as I understand yours. From your perspective, what is the most important thing I need to appreciate about how he thinks and what will make him a yes?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
           "points": 5,
           "response_text": "Mark is a first principles thinker. He will ignore the narrative and go straight to the numbers. The questions he will ask in order are: what does the status quo cost us including the risk exposure, what does the proposed platform cost including implementation, what is the net delta, and what is the payback period. If you can answer those four questions with numbers that are well-sourced and clearly assumed, you have a chance. The thing that trips people up with Mark is vague assumptions. If you say approximately or roughly he will push until you have a real number or you lose credibility. Come in with a point estimate and a clear methodology, not a range.",
@@ -3910,9 +3944,9 @@
           "question_text": "Mark, I am going to skip the narrative and go straight to the numbers because I understand that is how you think about these decisions. I have been working with Sarah and Priya on a cost analysis and I want to pressure-test my assumptions with you before we formalize anything.",
           "question_type": "good",
           "meddpicc_tags": [
+            "decision_process",
             "economic_buyer",
-            "metrics",
-            "decision_process"
+            "metrics"
           ],
           "points": 5,
           "response_text": "Good. That is the right approach. What are the numbers?",
@@ -3931,7 +3965,7 @@
           "meddpicc_tags": [
             "economic_buyer"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "What specifically have you learned and what are you proposing?",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -3961,9 +3995,9 @@
           "question_text": "Current state cost first. Based on what I have learned from the team, you are looking at roughly $800K to $900K for the Splunk renewal, around $400K to $500K for Datadog, and a legacy Nagios footprint. Combined somewhere between $1.2M and $1.5M in annual platform spend, not counting the analyst time being consumed by manual triage. Does that picture match what you are seeing?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
+            "competition",
             "economic_buyer",
-            "competition"
+            "metrics"
           ],
           "points": 5,
           "response_text": "The Splunk number is going to be higher than $800K. I have seen the preliminary renewal estimate and it is closer to $900K based on the new log sources from the acquisition. Datadog is about right. The analyst time cost is something I have not fully quantified but I take Linda's estimate seriously. She does not exaggerate. So yes, you are in the right ballpark. What is the proposed alternative?",
@@ -3980,9 +4014,9 @@
           "question_text": "The outage cost somewhere in the seven figures in a single day. The root cause is still undetermined which means there is a non-zero probability it was a security event. The average cost of a retail breach at Soha's scale is north of $3M not counting PCI DSS regulatory exposure. I want to understand how you are thinking about that risk cost in the context of the platform investment.",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "economic_buyer",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 5,
           "response_text": "The outage number was $1.2M in direct revenue impact. We have not disclosed that publicly but that is the internal figure. The security ambiguity bothers me more than the direct cost. If we cannot definitively rule out a breach and we have a second incident, the regulatory and reputational cost could be multiples of that. PCI DSS non-compliance at our transaction volume is a meaningful exposure. I have been thinking about this more than I have let on. What does the platform cost?",
@@ -3999,9 +4033,9 @@
           "question_text": "Before I share a proposed future state cost, I want to make sure I understand your threshold. What does the payback period need to look like for this to be a serious conversation?",
           "question_type": "good",
           "meddpicc_tags": [
+            "decision_criteria",
             "economic_buyer",
-            "metrics",
-            "decision_criteria"
+            "metrics"
           ],
           "points": 5,
           "response_text": "Under 18 months. That is the threshold for a technology investment of this size. And I want to see the assumptions clearly laid out because I will challenge them. If the payback depends on a 20 percent MTTR improvement or a 5 percent conversion lift, I want to understand how confident you are in those numbers and what they are based on.",
@@ -4018,10 +4052,10 @@
           "question_text": "The current state cost — Splunk renewal near $900K, Datadog around $400K to $500K, plus analyst productivity loss — puts the status quo cost at over $1.3M annually in hard platform spend alone, before accounting for incident cost. Does that match your data?",
           "question_type": "recovery",
           "meddpicc_tags": [
-            "metrics",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "The Splunk number is accurate. Datadog is in the right range. I have not fully quantified the analyst cost but Linda's estimate of 20 percent of team time going to noise triage translates to a meaningful number at fully loaded analyst cost. Yes, the total is over $1.3M and that is before the incident risk exposure. What are you proposing as the alternative?",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4039,7 +4073,7 @@
             "economic_buyer",
             "metrics"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "I am not going to share the specific target publicly but the mandate is real and it applies to every proposal that comes across my desk. The question I ask every time is: does this investment contribute to the mandate or does it add to the cost base? A platform that replaces multiple existing contracts at lower total cost contributes. A new platform on top of existing ones does not.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4069,11 +4103,11 @@
           "question_text": "Let me start with the do-nothing cost. The outage cost $1.2M in direct revenue impact. The Splunk renewal is coming in near $900K — roughly double what you paid two years ago. And there is a non-zero security risk exposure that could be multiples of the outage cost if it materializes. Does that picture of the status quo match your internal view?",
           "question_type": "recovery",
           "meddpicc_tags": [
-            "metrics",
             "economic_buyer",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "The $1.2M is accurate. The Splunk renewal number is in the right range — I have seen the preliminary estimate. The security exposure is harder to quantify but I take it seriously. You are describing the problem accurately. What is the solution and what does it cost?",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4088,10 +4122,10 @@
           "question_text": "What would a compelling ROI story need to include for you to take it seriously?",
           "question_type": "mediocre",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_criteria"
+            "decision_criteria",
+            "economic_buyer"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Current state cost accurately represented, future state cost credibly estimated, implementation risk honestly assessed, and payback math that works under conservative assumptions. Four things. If all four are present and the numbers hold up to scrutiny, I will engage seriously.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4121,10 +4155,10 @@
           "question_text": "If the platform could consolidate Splunk, Datadog, and Nagios into one contract and come in at a lower total cost while also delivering the AI search capabilities the CEO has been talking about publicly — how does that change the conversation for you?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "economic_buyer",
+            "competition",
             "decision_criteria",
-            "competition"
+            "economic_buyer",
+            "metrics"
           ],
           "points": 5,
           "response_text": "It changes it significantly. The consolidation story is actually more compelling to me than the resilience story right now. Not because resilience does not matter, it does, but because consolidation is a direct cost reduction with a clear mechanism. If one platform replaces three and comes in at a lower TCO, that is a straightforward calculation. The AI angle is interesting but I will want to see a conservative estimate of the conversion impact, not an optimistic one. What is the proposed platform cost?",
@@ -4141,10 +4175,10 @@
           "question_text": "Linda estimates 20 percent of her team's time is lost to manual triage. At fully loaded analyst cost that is a meaningful number annually. Is analyst productivity something you factor into platform ROI calculations or do you keep it separate?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "I count it as a secondary benefit, not a primary one. The reason is that analyst productivity gains are real but they are hard to audit after the fact. I will include it as a supporting data point but the primary case needs to stand on hard costs: platform fees, renewal avoidance, and quantifiable risk reduction. Does the hard cost case work without the soft savings?",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4178,9 +4212,9 @@
           "question_text": "If we run the three-year status quo cost — Splunk at $900K, Datadog at $450K, analyst time loss, and one more Black Friday level incident — what is the number you are carrying on your balance sheet?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "economic_buyer",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 5,
           "response_text": "I have done that math. Three more years of Splunk at the new rate is roughly $2.7M. Datadog on top of that is another $1.5M. That is over $4M in platform spend that does not include the analyst productivity loss or the risk exposure. And that is assuming no more incidents. Another Black Friday level event changes that number dramatically. The status quo is expensive. I know that. What I need to know is whether the alternative is better and by how much.",
@@ -4197,11 +4231,11 @@
           "question_text": "The security ambiguity from the outage — if it turns out to be a confirmed breach, what is the exposure range you are carrying?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
+            "economic_buyer",
             "identify_pain",
-            "economic_buyer"
+            "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "PCI DSS fine range depends on the severity and duration of non-compliance but for a retailer of our transaction volume it is meaningful, potentially seven figures on its own. GDPR applies to our European customer records and the exposure there is a percentage of global revenue under a worst-case scenario. I do not want to put a specific number on it publicly but I can tell you that the ambiguity itself is a liability. I cannot certify to our auditors that there was no breach. That creates ongoing legal and regulatory exposure until the investigation is closed.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4216,10 +4250,10 @@
           "question_text": "On the search and personalization side, Emily Rivera estimates an eight-figure annual revenue opportunity from closing the mobile conversion gap. How does that factor into your ROI view?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "I want to see a conservative version of that estimate, not the upside case. Emily tends to be optimistic. If closing half the mobile conversion gap conservatively represents a meaningful revenue uplift with a credible mechanism, I will include it in the ROI calculation as an upside scenario. That changes the payback calculation materially. I would want the search revenue case and the IT cost case in the same model so I can see the total picture.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4234,9 +4268,9 @@
           "question_text": "Under 18 months means the case needs to work on cost avoidance alone before counting conversion improvement. If the platform replaces Splunk and Datadog at a lower combined cost and the implementation fits inside the migration budget, do those two conditions get you to 18 months?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
+            "decision_criteria",
             "economic_buyer",
-            "decision_criteria"
+            "metrics"
           ],
           "points": 5,
           "response_text": "In principle yes. If the platform comes in at less than the combined renewal cost of Splunk and Datadog and the implementation cost amortizes over three years at a manageable figure, the hard cost case can work on renewal avoidance alone. The conversion improvement becomes upside that shortens the payback further. That is the model I want to see. Show me it works on cost avoidance and the AI upside is bonus.",
@@ -4253,11 +4287,11 @@
           "question_text": "The assumption I want to pressure test is the implementation cost and migration risk. What is the budget tolerance for implementation and what happens to the payback if it overruns?",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "decision_process",
-            "economic_buyer"
+            "economic_buyer",
+            "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Implementation overruns are the thing that kill payback calculations most often. I want to see the implementation cost estimated with contingency built in, not the best case. And I want to understand the mitigation if the migration timeline slips — what does that cost and does the payback still work? Show me the case with a 20 percent implementation overrun and a 30-day migration delay and if it still works under those assumptions I will be comfortable.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4272,10 +4306,10 @@
           "question_text": "Is there a budget mechanism available for this — existing renewal budget being redirected, or does this require a new budget cycle?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "If the platform replaces Splunk and Datadog at a lower combined cost, the renewal budgets fund the switch. There is no new budget cycle required — it is a reallocation of existing spend. The implementation cost would need to come from the migration budget or from a separate capital allocation but that is a much smaller conversation than a full budget cycle. That is actually one of the more attractive aspects of this decision from a funding mechanics standpoint.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4290,8 +4324,8 @@
           "question_text": "Mark, you have been doing this long enough to know when a technology investment is real and when it is theater. What would make this one real in your mind?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_criteria",
+            "economic_buyer",
             "metrics"
           ],
           "points": 5,
@@ -4309,11 +4343,11 @@
           "question_text": "Is there a version of this where you and Priya are aligned and this moves quickly, and a version where you are not and it stalls? What is the difference between those two versions?",
           "question_type": "good",
           "meddpicc_tags": [
+            "champion",
             "decision_process",
-            "economic_buyer",
-            "champion"
+            "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Priya and I are generally aligned on the direction. Where we sometimes diverge is on pace and risk tolerance. She moves fast and I move carefully. The difference between the two versions is usually the quality of the financial case. When the numbers are solid we move together. When they are not she wants to proceed anyway and I want to wait. In this situation I think we both have enough motivation from the outage and the Splunk bill to move. The question is whether the proposal is good enough to move on.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4328,9 +4362,9 @@
           "question_text": "What is the cost of doing nothing? Not the outage cost — the full cost of running the same infrastructure with the same tool sprawl for another three years.",
           "question_type": "good",
           "meddpicc_tags": [
-            "metrics",
             "economic_buyer",
-            "identify_pain"
+            "identify_pain",
+            "metrics"
           ],
           "points": 5,
           "response_text": "I have done that math. Three more years of Splunk at the new rate is roughly $2.7M. Datadog on top of that is another $1.5M. That is over $4M in platform spend that does not include the analyst productivity loss or the risk exposure. And that is assuming no more incidents. Another Black Friday level event changes that number dramatically. The status quo is expensive. I know that. What I need to know is whether the alternative is better and by how much.",
@@ -4347,10 +4381,10 @@
           "question_text": "Mark, based on everything we have discussed, I want to propose a working session with you, Priya, and Sarah where we build the financial case together using the numbers we have developed in this conversation. The goal is to walk out with a proposal that you have already stress-tested so there are no surprises at the steering committee. Would that be a useful use of two hours?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
-            "decision_process"
+            "decision_process",
+            "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Yes. Set it up with Sarah. Two hours, numbers only, no slide decks. If we can get to a proposal that I have already reviewed the assumptions on before it goes to the steering committee, that is a much cleaner process. I will come in skeptical but I will come in engaged. That is the best I can offer.",
           "close_type": "full_context",
           "triggers_briefing": false,
@@ -4362,8 +4396,8 @@
           "question_text": "Before I put the formal proposal together, what are the three things I need to get right to make sure you are a yes at the steering committee?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "decision_criteria",
+            "economic_buyer",
             "metrics"
           ],
           "points": 5,
@@ -4420,8 +4454,8 @@
           "question_text": "Rachel, I have spent time with Jordan and Linda and I want to make sure I understand the security dimension beyond the tooling layer. From where you sit, what does the migration to AWS introduce in terms of security risk that your current stack was not designed to handle?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_criteria"
+            "decision_criteria",
+            "identify_pain"
           ],
           "points": 5,
           "response_text": "That is the right question and most people do not ask it that way. The migration expands our attack surface significantly. We are moving workloads to AWS incrementally over six months and during that window we have a hybrid environment that our current tools were not designed to monitor coherently. Our SIEM covers on-premise. Our cloud security posture tool covers AWS. They do not talk to each other and there is no unified view. The analyst team is doing manual correlation which is slow, error-prone, and frankly not sustainable during a migration that is moving fast. The Black Friday incident included an alert that Jordan flagged about unusual data exfiltration patterns. That alert sat unactioned for 19 hours because we could not determine whether it was a false positive without pulling logs from two separate systems and comparing them by hand. That is not a people problem. That is a tooling architecture problem.",
@@ -4440,7 +4474,7 @@
           "meddpicc_tags": [
             "identify_pain"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "Splunk for SIEM, Prisma Cloud for cloud security posture, and CrowdStrike for endpoint. Three separate tools, three separate consoles, no shared data model. The team spends a significant amount of time moving between them. It works in a steady state but during something like a migration or an incident it creates real gaps.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4470,9 +4504,9 @@
           "question_text": "That 19-hour gap on the exfiltration alert — if that had been a real incident rather than a potential false positive, what would the business impact have looked like?",
           "question_type": "good",
           "meddpicc_tags": [
+            "economic_buyer",
             "identify_pain",
-            "metrics",
-            "economic_buyer"
+            "metrics"
           ],
           "points": 5,
           "response_text": "If it had been a real exfiltration event we would be having a very different conversation right now. Customer PII, payment card data, and product catalog data all transit through that environment. A confirmed breach would trigger PCI DSS breach notification, likely SEC disclosure given our size, and customer notification under state privacy laws. We are talking about regulatory fines, legal exposure, and reputational damage that would dwarf what the Black Friday outage cost us. I have done a rough internal estimate. A significant breach during a migration event would carry a potential liability exposure in the eight-figure range depending on the scope. That number lives in a risk register that Mark Reynolds has seen. He understands the stakes.",
@@ -4489,8 +4523,8 @@
           "question_text": "When you present security risk to Priya or the board, what is the hardest part of that conversation and what happens when you cannot quantify it clearly?",
           "question_type": "good",
           "meddpicc_tags": [
-            "economic_buyer",
             "champion",
+            "economic_buyer",
             "metrics"
           ],
           "points": 5,
@@ -4508,11 +4542,11 @@
           "question_text": "You mentioned the hybrid window during the migration. Is there a specific phase of the migration where the security exposure is highest and how long does that window last?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
             "decision_process",
+            "identify_pain",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "The highest risk window is the four to six weeks around the primary workload cutover. That is when we have maximum data in motion between on-premise and AWS, the most configuration changes happening simultaneously, and the most people with elevated access credentials. It is also when the team is under the most operational pressure and least likely to catch something subtle. John Miller has that window scheduled for late Q1. That is the period I am most worried about and it is also the period where better tooling would matter most.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4527,11 +4561,11 @@
           "question_text": "You have three separate tools with no unified view. What has the conversation with Sarah been like about consolidating that stack and what has blocked it so far?",
           "question_type": "recovery",
           "meddpicc_tags": [
+            "champion",
             "decision_process",
-            "identify_pain",
-            "champion"
+            "identify_pain"
           ],
-          "points": 2,
+          "points": 3,
           "response_text": "Sarah understands the problem and agrees the consolidation needs to happen. What has blocked it is timing and budget. Every time I have tried to make the case the conversation has ended at the cost line. The Splunk contract still has runway, the business case has not been compelling enough to accelerate, and there has not been a forcing function. The migration and the outage together have changed that. Now there is a forcing function and the Splunk renewal is coming at the same time. I think the case is finally there to make.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4546,10 +4580,10 @@
           "question_text": "What compliance frameworks are you required to meet and where does your current stack create the most audit friction?",
           "question_type": "mediocre",
           "meddpicc_tags": [
-            "identify_pain",
-            "decision_criteria"
+            "decision_criteria",
+            "identify_pain"
           ],
-          "points": 1,
+          "points": 2,
           "response_text": "PCI DSS for card data, SOC 2 Type II for enterprise customers, and increasingly state privacy laws. The audit friction is mostly around evidence collection. Every audit requires pulling logs from multiple systems and correlating them manually. It is slow and it increases the risk of a finding due to a documentation gap rather than an actual control failure. That is an expensive way to fail an audit.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4579,9 +4613,9 @@
           "question_text": "If the platform consolidation goes through and the security and observability story lands with the steering committee — what does your team look like on the other side of the migration versus today?",
           "question_type": "good",
           "meddpicc_tags": [
+            "champion",
             "identify_pain",
-            "metrics",
-            "champion"
+            "metrics"
           ],
           "points": 5,
           "response_text": "Today my analysts spend somewhere between 30 and 40 percent of their time on manual correlation and triage that should be automated. That is time not spent on threat hunting, not spent on proactive posture work, not spent on the AI security framework that Priya is going to ask me to build as soon as the migration is done. On the other side of this, if we have a unified platform with a shared data model and real-time correlation, that time gets reclaimed. The team becomes a strategic function instead of a reactive one. That is the version of security I need to build here. The current state is not it.",
@@ -4598,11 +4632,11 @@
           "question_text": "You mentioned Priya is going to ask you to build an AI security framework. What does that conversation look like today and how ready do you feel for it?",
           "question_type": "good",
           "meddpicc_tags": [
-            "identify_pain",
+            "decision_criteria",
             "economic_buyer",
-            "decision_criteria"
+            "identify_pain"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Not very ready, honestly. The AI agenda is real and I am supportive of it. But nobody has asked me yet what it means for security and data governance. The models will train on customer data. Someone needs to be accountable for how that data is handled, what gets used, what does not, and what happens when a model makes a decision we cannot explain. That is a security and governance problem and I do not have the platform infrastructure to address it yet. I have been waiting for Priya to open that conversation. It has not happened yet.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4620,7 +4654,7 @@
             "economic_buyer",
             "metrics"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "It has changed the conversation somewhat. He no longer dismisses security investment outright. But he has not yet made the logical jump from risk exposure to investment case. He still frames it as: prove to me this specific investment reduces the likelihood of that specific event. That is not how security works and he knows it. What actually moves him is total cost of ownership. Show him what three tools cost versus one, show him the analyst hours, and then put the risk reduction on top. Lead with the numbers he can verify and trail with the ones he cannot.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4655,11 +4689,11 @@
           "question_text": "Is there a version of this where the security consolidation and the observability consolidation go to the steering committee as one story rather than two separate asks?",
           "question_type": "good",
           "meddpicc_tags": [
+            "champion",
             "decision_criteria",
-            "economic_buyer",
-            "champion"
+            "economic_buyer"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "That is the version I have been hoping someone would bring together. Sarah and I have talked about this but neither of us has had the bandwidth to connect the threads. If the same platform decision addresses the observability tooling problem and the security tooling problem simultaneously, the combined cost reduction story is significantly stronger than either one alone. And it means one vendor decision rather than two, which is what Mark would prefer. I would actively support that framing if someone builds it.",
           "triggers_briefing": false,
           "next_question_ids": [
@@ -4712,7 +4746,7 @@
             "champion",
             "decision_process"
           ],
-          "points": 4,
+          "points": 5,
           "response_text": "Yes, provided I have a TCO analysis I can stand behind and a clear answer to the implementation risk question. Get me those two things and I will carry the security case into that room.",
           "close_type": "full_context",
           "triggers_briefing": true,

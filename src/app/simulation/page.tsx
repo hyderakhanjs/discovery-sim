@@ -134,44 +134,79 @@ function StakeholderMap({
                 <div style={{ display: "flex", alignItems: "center", fontSize: "11px", fontWeight: 700, color: "var(--muted)" }}>
                   L{level}
                 </div>
-                {TRACKS.map((track) => {
-                  const stakeholdersInCell = STAKEHOLDERS.filter(
-                    (st) => st.level === level && st.track === track.id
-                  );
-                  if (stakeholdersInCell.length === 0) return <div key={`${level}-${track.id}`} />;
-                  return (
-                    <div key={`${level}-${track.id}`} style={{ display: "flex", gap: "4px" }}>
-                      {stakeholdersInCell.map((s) => {
-                        const isCompleted = completedIds.includes(s.id);
-                        const isCurrent = s.id === currentId && !isCompleted;
-                        const ctx = contextStates[s.id] ?? "cold";
-                        return (
-                          <button
-                            key={s.id}
-                            data-sid={s.id}
-                            onClick={() => !isCompleted && onChoose(s.id)}
-                            onMouseEnter={() => setHoveredId(s.id)}
-                            onMouseLeave={() => setHoveredId(null)}
-                            disabled={isCompleted}
-                            className="text-left rounded-lg border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
-                            style={{
-                              flex: 1, padding: "16px 14px",
-                              background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
-                              borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
-                              opacity: isCompleted ? 0.65 : 1,
-                            }}>
-                            <div style={{ fontSize: "14px", fontWeight: 600, lineHeight: 1.3, marginBottom: "4px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
-                              {s.name}{isCompleted && " ✓"}
-                            </div>
-                            <div style={{ fontSize: "12px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                              {s.title}
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  );
-                })}
+
+                {level === 4 ? (
+                  /* L4: single cell spanning all 4 track columns, boxes centered */
+                  <div style={{ gridColumn: "span 4", display: "flex", justifyContent: "center", gap: "16px" }}>
+                    {STAKEHOLDERS.filter((st) => st.level === 4).map((s) => {
+                      const isCompleted = completedIds.includes(s.id);
+                      const isCurrent = s.id === currentId && !isCompleted;
+                      const ctx = contextStates[s.id] ?? "cold";
+                      return (
+                        <button
+                          key={s.id}
+                          data-sid={s.id}
+                          onClick={() => !isCompleted && onChoose(s.id)}
+                          onMouseEnter={() => setHoveredId(s.id)}
+                          onMouseLeave={() => setHoveredId(null)}
+                          disabled={isCompleted}
+                          className="text-left rounded-lg border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
+                          style={{
+                            width: "140px", padding: "16px 14px",
+                            background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
+                            borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? "#F04E98" : "var(--border)",
+                            opacity: isCompleted ? 0.65 : 1,
+                          }}>
+                          <div style={{ fontSize: "14px", fontWeight: 600, lineHeight: 1.3, marginBottom: "4px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
+                            {s.name}{isCompleted && " ✓"}
+                          </div>
+                          <div style={{ fontSize: "12px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            {s.title}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  TRACKS.map((track) => {
+                    const stakeholdersInCell = STAKEHOLDERS.filter(
+                      (st) => st.level === level && st.track === track.id
+                    );
+                    if (stakeholdersInCell.length === 0) return <div key={`${level}-${track.id}`} />;
+                    return (
+                      <div key={`${level}-${track.id}`} style={{ display: "flex", gap: "4px" }}>
+                        {stakeholdersInCell.map((s) => {
+                          const isCompleted = completedIds.includes(s.id);
+                          const isCurrent = s.id === currentId && !isCompleted;
+                          const ctx = contextStates[s.id] ?? "cold";
+                          return (
+                            <button
+                              key={s.id}
+                              data-sid={s.id}
+                              onClick={() => !isCompleted && onChoose(s.id)}
+                              onMouseEnter={() => setHoveredId(s.id)}
+                              onMouseLeave={() => setHoveredId(null)}
+                              disabled={isCompleted}
+                              className="text-left rounded-lg border transition-all duration-200 disabled:cursor-default hover:scale-[1.02]"
+                              style={{
+                                flex: 1, padding: "16px 14px",
+                                background: isCompleted ? "rgba(0,191,179,0.08)" : isCurrent ? "rgba(240,78,152,0.1)" : "var(--card)",
+                                borderColor: isCompleted ? "#00BFB3" : isCurrent ? "#F04E98" : ctx === "primed" ? "#F04E98" : ctx === "warm" ? track.color : "var(--border)",
+                                opacity: isCompleted ? 0.65 : 1,
+                              }}>
+                              <div style={{ fontSize: "14px", fontWeight: 600, lineHeight: 1.3, marginBottom: "4px", color: isCompleted ? "#00BFB3" : "var(--text)" }}>
+                                {s.name}{isCompleted && " ✓"}
+                              </div>
+                              <div style={{ fontSize: "12px", color: "var(--muted)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                {s.title}
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    );
+                  })
+                )}
               </React.Fragment>
             ))}
           </div>
