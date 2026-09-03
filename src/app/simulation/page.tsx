@@ -53,7 +53,8 @@ const STAKEHOLDER_BACKGROUNDS: Record<string, string> = {
   linda_chen:     "Linda is building the case for a security platform consolidation. She's frustrated that three separate tools don't talk to each other.",
   emily_rivera:   "Emily owns revenue for digital channels. The Black Friday outage hit her P&L directly — she has the exact numbers and the board wants answers.",
   maria_torres:   "Maria is connecting search performance to customer lifetime value. She needs a story that resonates at the board level.",
-  sarah_patel:    "Sarah is the broker between engineering and the C-suite. She controls access to Priya and Mark — and she'll test you before she lets you in.",
+  sarah_patel:    "Sarah owns IT strategy and the data center migration. She is the person who has to connect the outage, the platform decision, and the cost mandate into one coherent story for the steering committee — and she needs a partner to build it with her.",
+  rachel_kim:     "Rachel is the CISO. She has a unified security risk number that Mark Reynolds has already seen, three fragmented tools that don't talk to each other, and a Splunk renewal deadline in February that makes this decision urgent. She also knows Priya's AI agenda has no security or governance framework underneath it yet.",
   priya_desai:    "Priya has an 18-month AI mandate and a migration to close. She needs one platform that can do it all — and she's already talking to competitors.",
   mark_reynolds:  "Mark is scrutinizing every vendor contract. He wants a 20% cost reduction and will push for a competitive bake-off if he doesn't see a clear ROI story.",
 };

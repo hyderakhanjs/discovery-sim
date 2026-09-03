@@ -85,7 +85,7 @@ export function calculateDQI(
   const totalEarned = Object.values(meddpiccScores).reduce((a, b) => a + b, 0);
   const meddpiccPct = totalEarned / totalMax;
   const narrativePct = narrativeScore / 100;
-  const dqi = meddpiccPct * 60 + narrativePct * 40;
+  const dqi = meddpiccPct * 50 + narrativePct * 50;
   return Math.round(dqi);
 }
 
