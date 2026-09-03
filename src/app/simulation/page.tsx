@@ -374,11 +374,13 @@ function MeetingDebrief({
   stakeholder,
   turnHistory,
   insiderBriefing,
+  earlyEnd,
   onContinue,
 }: {
   stakeholder: Stakeholder;
   turnHistory: GameState["turnHistory"];
   insiderBriefing: string | null;
+  earlyEnd: boolean;
   onContinue: () => void;
 }) {
   const myTurns = turnHistory.filter((t) => t.stakeholderId === stakeholder.id);
@@ -393,12 +395,20 @@ function MeetingDebrief({
           {stakeholder.name.charAt(0)}
         </div>
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: "var(--accent-blue)" }}>
-            Meeting Debrief
+          <div className="text-xs font-semibold uppercase tracking-wider mb-0.5"
+            style={{ color: earlyEnd ? "#FEC514" : "var(--accent-blue)" }}>
+            {earlyEnd ? "Call Ended Early" : "Meeting Debrief"}
           </div>
           <div className="font-semibold text-white">{stakeholder.name} · {stakeholder.title}</div>
         </div>
       </div>
+
+      {earlyEnd && (
+        <div className="rounded-xl border p-4 mb-5 text-sm leading-relaxed"
+          style={{ background: "rgba(254,197,20,0.06)", borderColor: "#FEC514", color: "var(--muted)" }}>
+          You ended this call before reaching a close. The questions you asked still count toward your discovery score, but no context was established for future conversations with this stakeholder.
+        </div>
+      )}
 
       {/* Question-by-question breakdown */}
       <div className="space-y-3 mb-5">
@@ -518,7 +528,12 @@ export default function Simulation() {
 
   function handleEndCall() {
     setLastCompletedName(undefined);
-    setState((s) => ({ ...s, phase: "handoff" }));
+    // Route through meeting_debrief so the player sees what they asked.
+    // If no questions were asked this call, skip straight to handoff.
+    const askedAnything = state.turnHistory.some(
+      (t) => t.stakeholderId === state.currentStakeholderId
+    );
+    setState((s) => ({ ...s, phase: askedAnything ? "meeting_debrief" : "handoff" }));
   }
 
   function handleEndSimulation(penalized: boolean) {
@@ -599,6 +614,7 @@ export default function Simulation() {
             stakeholder={currentStakeholder}
             turnHistory={state.turnHistory}
             insiderBriefing={state.insiderBriefing}
+            earlyEnd={!state.completedStakeholders.includes(currentStakeholder.id)}
             onContinue={handleMeetingDebriefContinue}
           />
         )}
