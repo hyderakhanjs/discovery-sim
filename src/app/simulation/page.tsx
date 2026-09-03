@@ -412,6 +412,12 @@ function MeetingDebrief({
 
       {/* Question-by-question breakdown */}
       <div className="space-y-3 mb-5">
+        {myTurns.length === 0 && (
+          <div className="rounded-xl border p-4 text-sm"
+            style={{ borderColor: "var(--border)", color: "var(--muted)", background: "var(--card)" }}>
+            No questions were asked. Ending a call without asking anything leaves the stakeholder cold — they have no reason to advocate for you internally.
+          </div>
+        )}
         {myTurns.map((t) => {
           const q = getQuestion(t.stakeholderId, t.questionId);
           const style = TURN_TYPE_STYLES[t.questionType] ?? TURN_TYPE_STYLES.mediocre;
@@ -528,12 +534,7 @@ export default function Simulation() {
 
   function handleEndCall() {
     setLastCompletedName(undefined);
-    // Route through meeting_debrief so the player sees what they asked.
-    // If no questions were asked this call, skip straight to handoff.
-    const askedAnything = state.turnHistory.some(
-      (t) => t.stakeholderId === state.currentStakeholderId
-    );
-    setState((s) => ({ ...s, phase: askedAnything ? "meeting_debrief" : "handoff" }));
+    setState((s) => ({ ...s, phase: "meeting_debrief" }));
   }
 
   function handleEndSimulation(penalized: boolean) {
