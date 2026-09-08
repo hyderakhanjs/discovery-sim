@@ -73,6 +73,7 @@ export function createInitialState(
     briefingText: null,
     insiderBriefing: null,
 
+    stakeholderCloseTypes: {},
     outcomeId: null,
     dqi: null,
   };
@@ -118,7 +119,7 @@ export function processQuestionChoice(
   // 4. Update momentum
   const newMomentum = isClose
     ? updateMomentum(state.momentum, question.close_type, false, recoveryUsed)
-    : question.question_type === "trap"
+    : question.question_type === "trap" || question.question_type === "irrelevant"
     ? updateMomentum(state.momentum, undefined, true, false)
     : state.momentum;
 
@@ -163,13 +164,26 @@ export function processQuestionChoice(
       newBlindSpots.push("economic_buyer_gap");
   }
 
-  // 8. Compute next question IDs
-  const nextQuestionIds = isClose ? [] : question.next_question_ids;
+  // 8. Compute next question IDs — flat pool: all questions for the next turn
+  // (ignores next_question_ids branching; every turn always shows the full type set)
+  const nextTurn = state.currentTurn + 1;
+  const nextQuestionIds = isClose
+    ? []
+    : (allStakeholders.find((s) => s.id === state.currentStakeholderId)?.questions ?? [])
+        .filter((q) => q.turn === nextTurn)
+        .map((q) => q.id);
 
-  // 9. Update completed stakeholders and recompute context states
+  // 9. Update completed stakeholders, close types, and recompute context states
   let completedStakeholders = [...state.completedStakeholders];
+  let stakeholderCloseTypes = { ...state.stakeholderCloseTypes };
   if (isClose) {
     completedStakeholders = [...completedStakeholders, state.currentStakeholderId];
+    if (question.close_type) {
+      stakeholderCloseTypes = {
+        ...stakeholderCloseTypes,
+        [state.currentStakeholderId]: question.close_type,
+      };
+    }
   }
   const newContextStates = computeContextStates(allStakeholders, completedStakeholders);
 
@@ -189,6 +203,7 @@ export function processQuestionChoice(
     availableQuestionIds: nextQuestionIds,
     currentTurn: isClose ? 1 : state.currentTurn + 1,
     completedStakeholders,
+    stakeholderCloseTypes,
     stakeholderContextStates: newContextStates,
     phase: nextPhase,
     lastResponseText: question.response_text,

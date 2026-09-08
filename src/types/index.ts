@@ -41,7 +41,7 @@ export const MEDDPICC_MAX: Record<MeddpiccElement, number> = {
 
 // ─── QUESTION CONTENT ────────────────────────────────────────────────────────
 
-export type QuestionType = "good" | "mediocre" | "trap" | "recovery";
+export type QuestionType = "good" | "mediocre" | "trap" | "recovery" | "irrelevant";
 export type CloseType = "full_context_exceptional" | "full_context" | "partial_context";
 
 // Context state for a stakeholder based on prior conversations
@@ -126,6 +126,9 @@ export interface GameState {
   lastQuestionType: QuestionType | null;
   briefingText: string | null;
   insiderBriefing: string | null;
+
+  // Per-stakeholder close type (populated when each stakeholder is completed)
+  stakeholderCloseTypes: Record<string, CloseType>;
 
   // Final outcome
   outcomeId: number | null;

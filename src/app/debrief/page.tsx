@@ -62,10 +62,11 @@ function lookupStakeholderName(id: string): string {
 // ─── TURN FEEDBACK ───────────────────────────────────────────────────────────
 
 const TYPE_STYLES: Record<string, { label: string; color: string; bg: string }> = {
-  good:     { label: "High Yield",  color: "#00BFB3", bg: "rgba(0,191,179,0.08)" },
-  mediocre: { label: "Mediocre",    color: "#FEC514", bg: "rgba(254,197,20,0.08)" },
-  trap:     { label: "Low Yield",   color: "#F04E98", bg: "rgba(240,78,152,0.08)" },
-  recovery: { label: "Recovery",    color: "#0077CC", bg: "rgba(0,119,204,0.08)" },
+  good:       { label: "High Yield",   color: "#00BFB3", bg: "rgba(0,191,179,0.08)"  },
+  mediocre:   { label: "Medium Yield", color: "#FEC514", bg: "rgba(254,197,20,0.08)" },
+  trap:       { label: "Low Yield",    color: "#F04E98", bg: "rgba(240,78,152,0.08)" },
+  recovery:   { label: "Recovery",     color: "#0077CC", bg: "rgba(0,119,204,0.08)"  },
+  irrelevant: { label: "Irrelevant",   color: "#6B7280", bg: "rgba(107,114,128,0.08)" },
 };
 
 function TurnFeedback({ history }: { history: TurnRecord[] }) {
@@ -144,18 +145,21 @@ function TurnFeedback({ history }: { history: TurnRecord[] }) {
 // ─── QUESTION TYPE SUMMARY ───────────────────────────────────────────────────
 
 function TurnSummary({ history }: { history: GameState["turnHistory"] }) {
-  const counts = { good: 0, mediocre: 0, trap: 0, recovery: 0 };
-  for (const t of history) counts[t.questionType]++;
+  const counts = { good: 0, mediocre: 0, trap: 0, recovery: 0, irrelevant: 0 };
+  for (const t of history) {
+    if (t.questionType in counts) counts[t.questionType as keyof typeof counts]++;
+  }
 
   const items = [
-    { type: "good", label: "Good questions", color: "#00BFB3" },
-    { type: "mediocre", label: "Mediocre questions", color: "#FEC514" },
-    { type: "trap", label: "Trap questions", color: "#F04E98" },
-    { type: "recovery", label: "Recoveries used", color: "#0077CC" },
+    { type: "good",       label: "High yield",        color: "#00BFB3" },
+    { type: "mediocre",   label: "Medium yield",       color: "#FEC514" },
+    { type: "trap",       label: "Low yield",          color: "#F04E98" },
+    { type: "irrelevant", label: "Irrelevant",         color: "#6B7280" },
+    { type: "recovery",   label: "Recoveries used",    color: "#0077CC" },
   ] as const;
 
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
       {items.map(({ type, label, color }) => (
         <div key={type} className="rounded-lg p-3 border"
           style={{ background: "var(--card)", borderColor: "var(--border)" }}>

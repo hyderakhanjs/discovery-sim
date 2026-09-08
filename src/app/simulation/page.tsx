@@ -303,18 +303,32 @@ function StakeholderHeader({ stakeholder, turn, contextState }: { stakeholder: S
 
 // ─── QUESTION OPTIONS ─────────────────────────────────────────────────────────
 
+// Shuffle an array using Fisher-Yates (used to randomise option order)
+function fisherYates<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function QuestionOptions({ questions, onChoose, disabled }: { questions: Question[]; onChoose: (q: Question) => void; disabled: boolean }) {
-  const letters = ["A", "B", "C"];
+  const letters = ["A", "B", "C", "D"];
+  // Shuffle so the high-yield option isn't always in the same position
+  const [shuffled] = React.useState(() => fisherYates(questions));
+  const displayed = shuffled.length > 0 ? shuffled : questions;
+
   return (
     <div className="space-y-3">
-      {questions.map((q, i) => (
+      {displayed.map((q, i) => (
         <button key={q.id} onClick={() => !disabled && onChoose(q)} disabled={disabled}
           className="w-full text-left rounded-xl p-4 border transition-all duration-200 hover:border-pink-500 hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ background: "var(--card)", borderColor: "var(--border)" }}>
           <div className="flex gap-3">
             <span className="w-6 h-6 rounded flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
               style={{ background: "var(--border)", color: "var(--muted)" }}>
-              {letters[i]}
+              {letters[i] ?? "?"}
             </span>
             <span className="text-sm leading-relaxed" style={{ color: "var(--text)" }}>{q.question_text}</span>
           </div>
@@ -364,10 +378,11 @@ function BriefingCard({ text, onContinue }: { text: string; onContinue: () => vo
 // ─── MEETING DEBRIEF ──────────────────────────────────────────────────────────
 
 const TURN_TYPE_STYLES: Record<string, { label: string; color: string; bg: string }> = {
-  good:     { label: "High Yield",  color: "#00BFB3", bg: "rgba(0,191,179,0.06)"  },
-  mediocre: { label: "Mediocre",    color: "#FEC514", bg: "rgba(254,197,20,0.06)" },
-  trap:     { label: "Low Yield",   color: "#F04E98", bg: "rgba(240,78,152,0.06)" },
-  recovery: { label: "Recovery",    color: "#0077CC", bg: "rgba(0,119,204,0.06)"  },
+  good:       { label: "High Yield",  color: "#00BFB3", bg: "rgba(0,191,179,0.06)"  },
+  mediocre:   { label: "Medium Yield",color: "#FEC514", bg: "rgba(254,197,20,0.06)" },
+  trap:       { label: "Low Yield",   color: "#F04E98", bg: "rgba(240,78,152,0.06)" },
+  recovery:   { label: "Recovery",    color: "#0077CC", bg: "rgba(0,119,204,0.06)"  },
+  irrelevant: { label: "Irrelevant",  color: "#6B7280", bg: "rgba(107,114,128,0.06)" },
 };
 
 function MeetingDebrief({
@@ -489,7 +504,7 @@ export default function Simulation() {
 
   useEffect(() => {
     const qs = getAvailableQuestions(state.currentStakeholderId, state.availableQuestionIds);
-    setShuffledQuestions(shuffleArray(qs));
+    setShuffledQuestions(qs); // QuestionOptions handles per-render shuffle internally
   }, [state.currentStakeholderId, state.availableQuestionIds]);
 
   // Route to debrief when complete
