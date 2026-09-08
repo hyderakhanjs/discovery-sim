@@ -108,8 +108,7 @@ export default function Briefing() {
         </h2>
         <ul className="space-y-2 text-sm" style={{ color: "var(--text)" }}>
           <li>Each conversation is <strong>5 turns</strong>. Use them well.</li>
-          <li>Every question is labeled as good, mediocre, or a trap — but <strong>you will not see the labels</strong> until the debrief.</li>
-          <li>If you go off track, one follow-up option is always a <strong>recovery question</strong> that costs you a turn but gets you back on the rich path.</li>
+          <li>Every turn, you choose from four question types — <strong>High Yield</strong>, <strong>Medium Yield</strong>, <strong>Low Yield</strong>, and one that is simply <strong>off-topic</strong> — but the labels are hidden until the debrief.</li>
           <li>How you close each conversation determines what <strong>context</strong> you carry into the next one.</li>
           <li>At the end, you receive a <strong>Discovery Quality Index</strong> and a narrative outcome describing what deal you ended up in.</li>
         </ul>
