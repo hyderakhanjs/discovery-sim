@@ -596,6 +596,21 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving without a proper close means Alex has no reason to help you once you walk out. You may have information but you have no champion. A proper close would have established a specific next step and confirmed Alex's willingness to co-develop the story going into John's meeting."
+        },
+        {
+          "id": "alex_t2_comp",
+          "turn": 2,
+          "question_text": "You have been running Datadog for three years. Are there things you cannot do in Datadog that you have seen handled better \u2014 either at a previous job or from talking to peers?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "identify_pain"
+          ],
+          "points": 2,
+          "response_text": "The correlated view across logs, metrics, and traces is theoretically there in Datadog but the cost of actually keeping all three pillars fully ingested is prohibitive. We ended up sampling our traces to keep the bill manageable, which means when we need the trace for a specific request during an incident it is often not there. A colleague at another company \u2014 she is an SRE at a fintech \u2014 moved to Elastic a year ago and said the sampling issue went away because the storage cost model is different. I have looked at it a few times but we have never had the organizational will to evaluate a switch.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield for L1 \u2014 Alex knows the technical gap firsthand: trace sampling to control costs means missing the exact signal you need during an incident. He surfaces peer competitive intelligence organically. This is practitioner-domain competition intelligence: capability + cost, not contract strategy."
         }
       ],
       "track": "observability",
@@ -1087,6 +1102,21 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving without asking Jordan to actively broker the Linda introduction means you go in with a name-drop rather than a warm hand-off. Jordan just told you Linda respects specifics \u2014 you missed the opportunity to build the bridge properly."
+        },
+        {
+          "id": "jordan_t2_comp",
+          "turn": 2,
+          "question_text": "You work in Splunk every day. What is the one thing you wish it could do that it does not \u2014 something that slows you down on every investigation?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "identify_pain"
+          ],
+          "points": 2,
+          "response_text": "Search speed on large date ranges. When I need to go back more than 60 days the query times out or I have to break it into smaller windows and stitch the results manually. The 90-day hot retention is a real constraint \u2014 anything older goes to a cold tier and retrieval takes minutes, not seconds. During Black Friday I needed to correlate events from two weeks prior and it took most of the day to pull the data I needed. I have heard that some SIEMs handle the data tiering better but I have never personally used anything other than Splunk in a production SOC environment.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield for L1 \u2014 Jordan knows the daily friction intimately: slow search on cold data, 90-day retention wall, manual stitching. She surfaces this from practitioner experience, not vendor strategy. The Black Friday context makes the gap concrete and timed."
         }
       ],
       "track": "security",
@@ -2182,6 +2212,21 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving without a clear commitment from John means he has no reason to champion whatever you send him. A proper close at this stage would have established a specific next step \u2014 what you are bringing back, what he will do with it, and when."
+        },
+        {
+          "id": "jm_t2_comp",
+          "turn": 2,
+          "question_text": "Have any of your engineering leads pushed to evaluate alternatives to Datadog, or has the cost just been absorbed as a line item nobody wants to touch?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "decision_process"
+          ],
+          "points": 3,
+          "response_text": "Alex has raised it twice, and honestly I agree with him more than I have let on. The cost per host has gone up 18% over two years and we are adding hosts as part of the AWS migration. If I project forward the Datadog bill at current growth it gets uncomfortable by Q3. But my concern has always been timing \u2014 switching observability tooling during a migration is exactly the kind of risk that turns a six-month project into a twelve-month one. What I have not been able to answer is whether there is a way to run both in parallel through the migration rather than doing a hard cutover. If there is a path that does not force a choice between migration risk and tooling cost, I want to hear it.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield \u2014 John surfaces the internal competitive conversation (Alex has pushed twice), quantifies the cost growth (18%), and identifies his specific objection (migration timing risk). The parallel run question is an opening for a structured proof of value. This is L2 competitive intelligence: vendor economics + decision risk, not feature comparison."
         }
       ],
       "track": "observability",
@@ -3461,6 +3506,21 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving without asking Emily to help bridge technical numbers to commercial impact wastes one of the most valuable things she can offer. She explicitly offers to help in the response \u2014 you get the offer because you are leaving, not because you asked."
+        },
+        {
+          "id": "er_t3_comp",
+          "turn": 3,
+          "question_text": "The recommendations vendor has been lobbying to renew early. What would make you sign with them again versus using the April deadline as a forcing function to change direction?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "decision_criteria"
+          ],
+          "points": 3,
+          "response_text": "They offered a 20% discount for an early renewal. But the problem is I cannot debug what they are doing \u2014 when the recommendations quality drops I can see the symptom in the click-through rate but I cannot see why it happened or what changed. They tell me it was a model update. I have no way to verify that. The Black Friday situation made it worse \u2014 Dev's team spent hours trying to isolate whether the performance issue was in our search layer or their recommendation layer and we never got a clean answer. What I want is recommendations I can explain and debug. If their platform gave me that I would probably renew. If I can get the same quality with full visibility into what is happening I would switch even if it cost more initially.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield \u2014 Emily articulates her decision criteria directly: debuggability and explainability matter more than the 20% discount. This is competitive intelligence from a buyer's perspective \u2014 she knows what would make her stay and what would make her switch, and both answers are useful for positioning."
         }
       ],
       "track": "search",
@@ -4628,6 +4688,37 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving without establishing a specific next step with Sarah means you rejoin the noise. A proper close at this level would have established a co-development relationship \u2014 Sarah helping frame the story for Priya \u2014 not a vendor-client arrangement."
+        },
+        {
+          "id": "sp_t2_comp",
+          "turn": 2,
+          "question_text": "Sarah, you are managing renewals with Datadog and Splunk at the same time as a major migration. Is the vendor landscape stable in your mind, or is there an opening to rethink what you are running?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "decision_criteria"
+          ],
+          "points": 3,
+          "response_text": "I have been thinking about this more than people realize. We have three separate tools doing three partially overlapping jobs. Datadog for infrastructure monitoring, Splunk for security and logs, Nagios for alerting \u2014 and none of them share a data model. During Black Friday we had three dashboards open and still could not see the full picture. The migration to AWS is actually forcing the question: do I lift and shift three separate tools into cloud, or do I use this moment to consolidate? Consolidating is harder short-term but the operational overhead of running three separate systems long-term is not something I can justify to Mark. I just have not found the right path yet.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield \u2014 Sarah is the VP who controls the IT budget and vendor decisions. This question surfaces her strategic frustration with fragmented tooling and uses the AWS migration as a natural opening to consolidation. Her answer positions a platform conversation rather than a point-tool sale."
+        },
+        {
+          "id": "sp_t3_comp",
+          "turn": 3,
+          "question_text": "If you could consolidate onto a single platform that covered observability and security analytics, what would you need to see to justify the migration risk to Mark Reynolds?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "decision_criteria",
+            "metrics"
+          ],
+          "points": 3,
+          "response_text": "Three things. First, a cost story that is better than renewing all three vendors separately \u2014 I need a number, not a narrative. Second, a migration path that does not require a hard cutover during the AWS move \u2014 parallel run with a defined off-ramp. Third, a reference customer in a similar migration context, not just a happy logo. Mark will ask all three questions in the first five minutes of any steering committee presentation and I need answers before I walk in the room.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield \u2014 Sarah articulates exactly what decision criteria she needs to build an internal business case. The three requirements map to: (1) economic value, (2) risk mitigation, (3) social proof. This is the vendor evaluation checklist from the person who controls the decision."
         }
       ],
       "track": "observability",
@@ -6426,6 +6517,52 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving Rachel without establishing her as an active champion for the board conversation means you rejoin the vendor queue. A proper close at this level would have established Rachel's specific role in building the business case \u2014 not promised a proposal she has already told you will not land."
+        },
+        {
+          "id": "rk_t2_comp",
+          "turn": 2,
+          "question_text": "Rachel, you own the Splunk renewal conversation. Have you done any evaluation of alternatives, or has the assumption been to renew unless something changes dramatically?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "decision_process"
+          ],
+          "points": 3,
+          "response_text": "I have done more listening than formal evaluation. The renewal is in February and I know the number is going up \u2014 Splunk's pricing model is data-volume based and our log volume has grown 40% since we signed the last deal. I have had two conversations with peer CISOs in the last six months where Elastic came up. One of them moved their SIEM workload off Splunk two years ago and said they cut their annual spend by a third while actually improving their retention window. That conversation stuck with me. But I have not kicked off a formal RFP and honestly I am not sure I want to \u2014 a migration mid-incident is the last thing I need. What I am trying to understand is whether there is a path that does not require a full rip-and-replace.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield \u2014 Rachel is the economic decision-maker for the Splunk renewal. This question surfaces competitive intelligence she has already gathered, her pricing pressure, and her key objection (migration risk). All three are critical to positioning."
+        },
+        {
+          "id": "rk_t3_comp",
+          "turn": 3,
+          "question_text": "The CISO who moved off Splunk \u2014 what specifically did she say made it worth the disruption? Was it cost, capability, or something else?",
+          "question_type": "good",
+          "meddpicc_tags": [
+            "competition",
+            "metrics",
+            "decision_criteria"
+          ],
+          "points": 3,
+          "response_text": "It was both, but the capability piece surprised me. She said they were retaining 12 months of raw logs in Elasticsearch at roughly the same cost as 90 days in Splunk. That changes the threat hunting posture entirely \u2014 you can go back and look at whether an indicator of compromise from today was present six months ago. In Splunk at their previous volume that would have been a six-figure archive bill. The cost was the door opener but the retention depth was what actually changed how her team operated. She also said the migration took four months with a parallel run period, which was harder than expected but not catastrophic.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "High yield \u2014 forces Rachel to translate secondhand peer intelligence into concrete decision criteria. The 90-day vs 12-month retention gap is a quantified capability miss that maps directly to her threat hunting concern. This is MEDDPICC gold: competition + metrics + decision criteria in one answer."
+        },
+        {
+          "id": "rk_t4_comp",
+          "turn": 4,
+          "question_text": "Has Splunk come back to you with anything proactive ahead of the renewal, or are they waiting for you to start the negotiation?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "competition",
+            "decision_process"
+          ],
+          "points": 1,
+          "response_text": "They sent their account team in last month. The conversation was mostly about their cloud migration path and some new AI features they are launching. They did not address the pricing issue directly \u2014 I think they expect to negotiate at renewal time. Nothing they showed me changed the fundamental cost model.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Mediocre \u2014 useful context about Splunk's defensive posture but does not advance discovery. A stronger move would be to ask what it would take for her to sign without a competing option, or to pressure-test the migration objection."
         }
       ]
     }
