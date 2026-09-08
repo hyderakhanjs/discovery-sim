@@ -518,6 +518,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Jumping to a solution artifact before understanding the root problem. Alex just told you the data fragmentation story \u2014 this question shows you weren't listening."
+        },
+        {
+          "id": "alex_t2_med",
+          "turn": 2,
+          "question_text": "How long have you been running your current monitoring stack and who made the original decision to go with those tools?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Datadog came in about three years ago under the previous infrastructure lead. The decision was made before my time so I inherited it. I have made it work but I would not say it was a considered choice for our current scale.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Tool history questions are useful background but not discovery. You are learning procurement context rather than deepening the incident story. Alex has more valuable things to tell you than who bought the contract."
+        },
+        {
+          "id": "alex_t2_trap",
+          "turn": 2,
+          "question_text": "Based on what you are describing, it sounds like you need a unified observability platform. We have a solution that addresses exactly this \u2014 would it be worth setting up a demo with your team?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "I would want to understand what that actually looks like before committing time to a demo. We have had a lot of vendors come through here. What I need is someone who actually understands the problem first \u2014 the fragmentation, the MTTR, the migration window. A demo does not give me any of that.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Jumping to a demo offer at turn 2 signals you stopped listening. Alex is still mid-story \u2014 you do not know the full scope of the incident or what a solution needs to do. This closes the conversation down precisely when it should be opening up."
+        },
+        {
+          "id": "alex_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal process for flagging infrastructure risks to leadership or does it depend on who you know?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Mostly depends on who you know. There is a weekly SRE review but it is operational, not strategic. Anything that needs investment goes through John Miller. There is not a formal risk register that feeds directly into the steering committee \u2014 it is more informal than that.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Process questions give you structural context but not urgency. You are mapping escalation paths rather than deepening the pain picture. The better questions at turn 3 surface the incident forensics and the migration constraint that make this a now problem."
+        },
+        {
+          "id": "alex_t3_trap",
+          "turn": 3,
+          "question_text": "I think I have a pretty good picture of the situation. Would it make sense for me to put together a proposal for how we would approach this?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "We are not at the proposal stage. I am also not the right person to receive a proposal \u2014 that goes to John at minimum, probably Sarah Patel. What I can tell you is that a proposal without a clear problem statement behind it will not go anywhere in this organisation.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A proposal offer at turn 3 with an SRE means you have stopped doing discovery and started selling to the wrong person. Alex is not the decision maker. This move also forfeits the deeper questions at turn 4 that would have established Alex as a champion."
+        },
+        {
+          "id": "alex_t4_med",
+          "turn": 4,
+          "question_text": "Is there anything else I should know before I go talk to John Miller?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "John appreciates specifics. Do not go in with vague statements about modernisation. Have the MTTR numbers, the migration timeline constraint, and the cost of the current tool sprawl ready. He will ask for them.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A catch-all question at turn 4 puts the burden on Alex to fill your preparation gaps. You are asking for coaching rather than earning it through the conversation. The better close questions position Alex as an active champion \u2014 not a pre-meeting briefer."
+        },
+        {
+          "id": "alex_t4_trap",
+          "turn": 4,
+          "question_text": "This has been really helpful Alex. I think I understand the situation well enough. Let me talk to John and get back to you with something.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Okay. I would just say \u2014 be specific with John. He will see through anything vague pretty quickly.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without a proper close means Alex has no reason to help you once you walk out. You may have information but you have no champion. A proper close would have established a specific next step and confirmed Alex's willingness to co-develop the story going into John's meeting."
         }
       ],
       "track": "observability",
@@ -931,6 +1009,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "DR belongs to infrastructure and IT leadership. Jordan just signalled there are active, unactioned security threats \u2014 that's where the conversation should be."
+        },
+        {
+          "id": "jordan_t2_med",
+          "turn": 2,
+          "question_text": "How long have you been in this SOC and have you seen this level of alert noise at previous organisations too?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "About three years here, two at a previous company. The fragmentation problem is common \u2014 most mid-size SOCs I have talked to are juggling three or four tools. It is an industry problem as much as a company problem. That does not make it less painful here.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Biographical and industry framing questions are background. Jordan is sitting on a live unresolved investigation with specific operational gaps. Tool history context does not advance your understanding of the urgency."
+        },
+        {
+          "id": "jordan_t2_trap",
+          "turn": 2,
+          "question_text": "We have a SIEM solution that uses machine learning to reduce false positive rates significantly. Would it be worth setting up a time with your team to walk through how it works?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "I have heard that claim from a few vendors. The false positive problem is not a model problem \u2014 it is a data correlation problem. A better model over the same fragmented data gives you a better wrong answer, not a right one. I am more interested in the data layer than the detection layer.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leading with a product capability claim before understanding the root cause tells Jordan you are running a standard pitch, not a discovery conversation. Her correction \u2014 that the problem is the data layer, not the model \u2014 is a key technical insight you get despite the trap, not because of it."
+        },
+        {
+          "id": "jordan_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal security risk register that captures the tooling gap you have been describing, or is it living in Linda's head?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "There is a risk register that Linda maintains. The tooling fragmentation is on it. Whether it has been formally escalated to the steering committee level \u2014 I honestly do not know. Linda would know better than I would.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Risk register questions are process background. You are learning how the organisation documents risk rather than understanding the operational urgency Jordan is experiencing. The Black Friday investigation is still open \u2014 that thread is more valuable than the documentation trail."
+        },
+        {
+          "id": "jordan_t3_trap",
+          "turn": 3,
+          "question_text": "Given what you have told me, I think the right next step is to arrange a technical evaluation with your team. I can have our security team put together a demo environment.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Linda would need to be involved in any evaluation. I am not in a position to green-light a technical evaluation \u2014 that is her decision. I would also want to understand more about what you are actually proposing before we get to a demo.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A demo arrangement with a SOC analyst before completing discovery with the SOC Lead is a significant premature move. Jordan cannot approve anything and you have not yet earned the Linda conversation. This signals impatience and ends discovery before it is finished."
+        },
+        {
+          "id": "jordan_t4_med",
+          "turn": 4,
+          "question_text": "Is there anything I should know about the team dynamics before I talk to Linda?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Linda is direct. She will ask you what you know about the Black Friday investigation and she will expect a specific answer. If you cannot tell her something concrete about what happened and why the tooling could not resolve it, the meeting will be short.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Asking Jordan to coach you for Linda's meeting at turn 4 is putting the burden on her to fill preparation gaps you should have filled through the conversation. Better questions at this stage earn a specific commitment from Jordan as a champion rather than general advice."
+        },
+        {
+          "id": "jordan_t4_trap",
+          "turn": 4,
+          "question_text": "Thanks Jordan, this has been really helpful. I will reach out to Linda and mention I spoke with you.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Sure. She is pretty busy. I would make sure you have something specific to say about the investigation before you reach out. A warm intro only gets you so far.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without asking Jordan to actively broker the Linda introduction means you go in with a name-drop rather than a warm hand-off. Jordan just told you Linda respects specifics \u2014 you missed the opportunity to build the bridge properly."
         }
       ],
       "track": "security",
@@ -1318,6 +1474,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Compliance is a CISO and legal domain. Dev just told you exactly how search failures translate to revenue loss \u2014 this question walks away from the most important thing he said."
+        },
+        {
+          "id": "dev_t2_med",
+          "turn": 2,
+          "question_text": "How long have you been working with this version of Elasticsearch and are you the main person who understands the custom layer on top of it?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "About four years, and unfortunately yes \u2014 I am the primary person who knows how the custom ranking logic works. That is part of the problem. The tribal knowledge is concentrated and that makes any migration harder regardless of what platform we move to.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Tool tenure and knowledge concentration questions are useful context but not discovery. Dev's real pain is the version ceiling and the technical debt blocking the roadmap \u2014 that thread is more valuable than how long he has been on the platform."
+        },
+        {
+          "id": "dev_t2_trap",
+          "turn": 2,
+          "question_text": "It sounds like you need a modern search platform. We have helped several e-commerce companies in exactly this situation \u2014 can I connect you with one of our search specialists?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "I would want to understand what you are proposing before introducing another person into the conversation. And honestly, this is not a decision I can make \u2014 Emily Rivera owns the budget for the ecommerce experience and this is her call as much as mine.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Routing to a specialist before you understand the problem signals you are in a sales motion, not a discovery conversation. Dev also gives you a useful redirect \u2014 Emily Rivera is the budget owner \u2014 but he gives it as a correction, not as something you uncovered."
+        },
+        {
+          "id": "dev_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal evaluation process for selecting new search vendors, or is this more of an informal technical decision?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Both in practice. I would do a technical evaluation. Emily would do a commercial evaluation. Maria Torres would care about the strategic angle. Whoever can tell the most compelling story to all three of us at once has an advantage over whoever tells a different story to each of us separately.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Process questions are useful background but you are asking about the buying structure rather than deepening the pain picture. Dev's answer actually maps the evaluation committee \u2014 useful information that came from a mediocre question."
+        },
+        {
+          "id": "dev_t3_trap",
+          "turn": 3,
+          "question_text": "Based on what you have told me, I think we should set up a proof of concept. I can have our team deploy a demo search environment against your catalog data.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "I would need Emily's buy-in before we went to a POC. And to be honest, I would want to understand more about how you handle the migration of custom ranking logic before we set anything up. A demo against clean data is not the same as production with five years of customisation on top of it.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A POC offer at turn 3 tells Dev you think the sale is further along than it is. He surfaces a real technical concern you have not yet addressed \u2014 the custom layer migration risk. You get this information as a correction, not as something your questions surfaced."
+        },
+        {
+          "id": "dev_t4_med",
+          "turn": 4,
+          "question_text": "Is there anything specific I should know before I talk to Emily Rivera?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Emily is commercial. She does not care about query latency or recall rates in isolation \u2014 she cares about conversion rate and average order value. If you walk in with technical benchmarks without connecting them to revenue impact, she will not stay engaged for long.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Asking Dev to prepare you for Emily at turn 4 puts the burden on him to fill gaps you should have closed through the conversation. The better close questions ask Dev to actively co-develop the technical-to-commercial translation \u2014 not just give you a heads-up."
+        },
+        {
+          "id": "dev_t4_trap",
+          "turn": 4,
+          "question_text": "Thanks Dev, this has been really helpful. I have what I need. I will reach out to Emily directly.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Sure. She is pretty busy. Good luck getting on her calendar.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without any commitment from Dev means you have no warm introduction to Emily. You also have not asked him to help bridge the technical numbers to Emily's commercial language \u2014 which he would have done if you had asked. The parting tone of the response reflects low confidence in your next step."
         }
       ],
       "track": "search",
@@ -1870,6 +2104,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Recommendation engine details belong to the search/product team. John just told you he has a 60-day decision window and a cost mandate \u2014 that's where the conversation should go."
+        },
+        {
+          "id": "john_t2_med",
+          "turn": 2,
+          "question_text": "How long has the migration programme been in flight and who owns the programme management side of it?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "About 14 months. I own the infrastructure execution. IT programme management owns the timeline and reporting. Sarah Patel is the executive sponsor. It is a well-run programme but the scope keeps expanding as people add requirements \u2014 which is part of my problem right now.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Programme history and ownership questions are useful background but miss the urgency. John is dealing with a hard deadline, a cost mandate, and a platform decision that has to fit inside both. Background context does not advance that story."
+        },
+        {
+          "id": "john_t2_trap",
+          "turn": 2,
+          "question_text": "Based on what you are telling me, the migration could be a natural forcing function for a platform change. We have helped other companies consolidate during migrations \u2014 can I set up a call with our professional services team?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Professional services conversations happen later. Right now I need to understand whether a platform change can actually fit inside the migration window, not whether your PS team is available. Get me confident on the technical and timeline fit first.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Routing to professional services at turn 2 signals you are moving to implementation before you have finished discovery. John gives you an important signal \u2014 he needs fit confirmed before any implementation conversation \u2014 but gives it as a correction to an impatient move."
+        },
+        {
+          "id": "john_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal technical steering committee that reviews infrastructure decisions at this scale, or does this come through you directly?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Significant platform decisions go through a technical steering committee. Sarah Patel chairs it. I would present the recommendation but the approval sits above me. The committee meets monthly so timing matters \u2014 miss a meeting and you lose a month.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Process questions give useful structural information but at turn 3 with John you should be building the cost consolidation story and the migration window constraint, not mapping the approval process. The monthly committee timing is a useful detail but it came from a mediocre question."
+        },
+        {
+          "id": "john_t3_trap",
+          "turn": 3,
+          "question_text": "I think we have a strong case for a platform consolidation during the migration. Would you be open to a proposal from us before the next steering committee meeting?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A proposal without a technical assessment is not something I can take to the committee. I need data \u2014 migration complexity, integration requirements, timeline fit \u2014 before anything goes to Sarah. We are not at the proposal stage and moving too fast here would actually set us back.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A proposal offer at turn 3 signals you have stopped doing discovery. John tells you exactly what he needs \u2014 a technical assessment first \u2014 but gives it as a correction to an impatient move, not as something your questions surfaced."
+        },
+        {
+          "id": "john_t4_med",
+          "turn": 4,
+          "question_text": "What would you need to see from a vendor to feel confident recommending them to Sarah Patel?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Specifics. A clear assessment of what migration to their platform looks like inside our existing timeline. A cost model with the consolidation savings quantified. And a reference from a company that did something similar during a cloud migration. Generic capability presentations will not move Sarah.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A generic vendor criteria question at turn 4 puts the burden on John to tell you what you should already know from the conversation. His answer is useful but you got it from a formulaic question rather than from a discovery exchange that earned it."
+        },
+        {
+          "id": "john_t4_trap",
+          "turn": 4,
+          "question_text": "This has been really useful John. I have a good sense of what you need. Let me put something together and come back to you.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Make sure it is specific to our situation. What I have described here is a fairly particular set of constraints \u2014 migration timeline, cost mandate, the fact that we cannot do this twice. Anything generic will land in a stack with the other decks I have received.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without a clear commitment from John means he has no reason to champion whatever you send him. A proper close at this stage would have established a specific next step \u2014 what you are bringing back, what he will do with it, and when."
         }
       ],
       "track": "observability",
@@ -2432,6 +2744,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "CI/CD pipeline belongs to the DevOps team. Linda has given you a clear picture of fragmented security tooling and correlation failures \u2014 this question abandons that thread."
+        },
+        {
+          "id": "linda_t2_med",
+          "turn": 2,
+          "question_text": "How large is your security team and how is it split between analysis and engineering?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Six analysts including Jordan, two senior analysts, and two security engineers who handle tooling and integration. Small for our transaction volume but that is the budget reality. Better tooling would let the team do more \u2014 the headcount and the tooling problem are linked.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Team structure questions give context but do not advance the discovery of the Black Friday investigation or the consolidation pain. The tooling-headcount link Linda mentions is actually an important insight \u2014 but it came from a background question rather than a discovery question."
+        },
+        {
+          "id": "linda_t2_trap",
+          "turn": 2,
+          "question_text": "It sounds like you have a real platform consolidation opportunity here. We have a unified security solution that covers exactly this \u2014 can I arrange a demo for your team?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Demos are premature. I have been through security platform migrations before \u2014 the data migration and the tuning period are the hard parts, not the capability demo. A demo does not tell me anything useful at this stage. I need to understand the migration complexity before I look at the capability story.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A demo offer at turn 2 with a SOC Lead signals you are not taking the technical complexity seriously. Linda tells you exactly where the real risk is \u2014 migration and tuning, not platform features \u2014 but gives it as a correction to a premature move."
+        },
+        {
+          "id": "linda_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal security programme roadmap that includes the consolidation as a line item, or is it still in informal discussion?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "I have a 12-month roadmap that includes the consolidation. It has been presented to Rachel Kim and she has approved the direction. The question is timing and cost \u2014 the Splunk renewal in February is the forcing function we have been working around.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Roadmap status questions give you a planning snapshot but miss the urgency. The Splunk renewal forcing function and the Black Friday investigation are the live threads \u2014 formal roadmap status is a step away from what actually creates pressure."
+        },
+        {
+          "id": "linda_t3_trap",
+          "turn": 3,
+          "question_text": "Given the Splunk renewal timeline, I think we should move quickly on a technical evaluation. I can set up a proof of concept environment for your team.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A POC requires sign-off from Rachel Kim and a defined scope. We are not at the point where we have agreed on requirements. Moving quickly without scope is how you end up with a failed POC that damages the evaluation for everyone involved.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A POC offer without scope tells Linda you are trying to move her timeline rather than help her manage it. She corrects you with a real concern \u2014 scope before speed \u2014 but gives it as a response to impatience. Rachel Kim's sign-off requirement is also a useful signal you could have surfaced through better questions."
+        },
+        {
+          "id": "linda_t4_med",
+          "turn": 4,
+          "question_text": "Is there anything I should know about how Rachel Kim makes decisions on security tooling before I meet with her?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Rachel is evidence-driven. She will want to see the risk quantification, not just the capability story. And she will ask about the Splunk renewal early \u2014 she knows that timeline creates pressure and she will want to know whether you are trying to exploit it or actually help her manage it.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Coaching questions at turn 4 are reasonable preparation but put the burden on Linda to fill gaps you should have addressed through discovery. Better close questions at this stage earn a specific commitment from Linda as a champion \u2014 not just a pre-meeting briefing."
+        },
+        {
+          "id": "linda_t4_trap",
+          "turn": 4,
+          "question_text": "Linda, I think I have what I need. Let me go talk to Rachel and come back with a proposal.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Make sure you have more than I gave you before you go to Rachel. She will probe much harder than I did and she will expect specific answers about the investigation timeline and the platform capability gaps. A proposal without that groundwork will not survive the first question.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without a formal close or commitment from Linda means you walk into Rachel's meeting without an internal advocate. A proper close would have established whether Linda is willing to support the conversation with Rachel proactively \u2014 not just let you drop her name."
         }
       ],
       "track": "security",
@@ -2993,6 +3383,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Zero-trust is a CISO conversation. Emily has given you clear commercial pain and board-level visibility \u2014 this question signals you stopped listening."
+        },
+        {
+          "id": "emily_t2_med",
+          "turn": 2,
+          "question_text": "How long has the current search platform been in place and was it originally an IT decision or a commercial one?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "The search platform has been in place for about five years. It was an IT decision originally, but the ecommerce team has been living with the consequences. I have been trying to get more influence over the search roadmap for two years. It is a recurring conversation.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Platform history and ownership questions are background. Emily is sitting on specific Black Friday revenue numbers and a clear commercial case \u2014 surface-level history questions miss the opportunity to go deeper on the urgency she is managing."
+        },
+        {
+          "id": "emily_t2_trap",
+          "turn": 2,
+          "question_text": "We have helped several retail companies improve their search conversion rates significantly. Can I arrange a meeting with our retail solutions team to walk through some case studies?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Case studies are easy to find. What I need is someone who actually understands our situation \u2014 the specific numbers, the personalisation gap, the fact that I have a Black Friday data set that shows exactly what the problem costs. Generic retail benchmarks are not interesting to me.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Defaulting to case studies signals standard sales motion rather than a discovery conversation. Emily gives you an important signal \u2014 she has specific numbers and wants engagement with them \u2014 but gives it as a correction, not as discovery."
+        },
+        {
+          "id": "emily_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal process for approving a new ecommerce technology, or does this go through IT procurement?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Significant technology decisions go through IT with commercial sign-off from me. Anything with a material budget impact also needs Maria Torres involved. The process is manageable \u2014 the harder part is making the case compelling enough that it does not get deprioritised against other initiatives.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Procurement process questions give structural information but at turn 3 with Emily you should be using the revenue numbers she has shared to build the urgency story, not mapping the buying process. The deprioritisation risk she mentions is actually a more important signal than the formal approval path."
+        },
+        {
+          "id": "emily_t3_trap",
+          "turn": 3,
+          "question_text": "I think we have a compelling case here. Can we set up a proof of concept to demonstrate what better search would look like on your product catalog?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A proof of concept needs Dev Patel on the technical side and budget approval from Maria. I cannot commit to a POC independently. And before any POC, I need a clear picture of what the migration looks like \u2014 I cannot disrupt the search experience during peak trading periods.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A POC offer at turn 3 with Emily shows you are moving to implementation before understanding the operational risk she is managing. She corrects you with a real constraint \u2014 migration risk during peak trading \u2014 that you should have surfaced through discovery."
+        },
+        {
+          "id": "emily_t4_med",
+          "turn": 4,
+          "question_text": "Is there anything specific I should know about Maria Torres before I meet with her?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Maria thinks at the board level. She will not engage with feature comparisons or technical benchmarks. The story she needs is customer lifetime value and revenue per search \u2014 connect to those and you have her attention. Miss those and the meeting will be polite but short.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Coaching questions at turn 4 put the burden on Emily to fill your preparation gaps. Better close questions ask Emily to actively co-develop the Maria conversation with you \u2014 to become a champion who helps shape the board-level narrative rather than a briefing source."
+        },
+        {
+          "id": "emily_t4_trap",
+          "turn": 4,
+          "question_text": "This has been very useful Emily. I think I have what I need to put together a commercial case. Let me come back to you with something.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Make sure what you put together connects the technical numbers to revenue impact. Dev Patel can give you the latency data but translating that to dollars is something I can help with if you want. Do not make me do that translation work on my own after the fact.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without asking Emily to help bridge technical numbers to commercial impact wastes one of the most valuable things she can offer. She explicitly offers to help in the response \u2014 you get the offer because you are leaving, not because you asked."
         }
       ],
       "track": "search",
@@ -3441,6 +3909,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Open source evaluation is an IT and procurement decision, not a CCO decision. Maria is focused on the board-level revenue story \u2014 this question signals you've lost the thread."
+        },
+        {
+          "id": "maria_t2_med",
+          "turn": 2,
+          "question_text": "How long have you been in this CCO role and how has the relationship between commercial and technology evolved since you joined?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Three years. The relationship has improved under Priya's leadership \u2014 there is more alignment on technology as a commercial enabler than there used to be. The challenge is that technology capacity is constrained and my commercial priorities compete with engineering priorities.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Biographical and relationship questions are background. Maria is sitting on a specific connection between search performance and customer lifetime value \u2014 a board-level story. Org relationship history does not advance that."
+        },
+        {
+          "id": "maria_t2_trap",
+          "turn": 2,
+          "question_text": "Based on what you have shared, I can see a clear commercial case for better search. Can I introduce you to our retail practice team who work specifically with ecommerce leaders?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "I speak to a lot of retail practice teams. What I need is someone who understands our specific situation \u2014 the personalisation gap, the lifetime value data, the fact that our search experience is a competitive disadvantage right now. Vertical practice benchmarks are not interesting to me.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Defaulting to a specialist introduction signals you are following a sales playbook. Maria tells you what she needs \u2014 engagement with her specific data, not industry benchmarks \u2014 but gives it as a correction, not as discovery."
+        },
+        {
+          "id": "maria_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal commercial technology roadmap that includes search modernisation as a line item?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "There is a roadmap but search modernisation is listed as a dependency of the AI platform initiative rather than as a standalone commercial priority. That framing actually makes the case harder \u2014 it becomes a technology decision rather than a commercial imperative. I have been trying to change that framing.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Roadmap status questions are useful background but the framing tension Maria describes is a more important insight \u2014 search is being treated as a tech dependency rather than a commercial imperative. You got that insight from a process question rather than from one that surfaced the commercial urgency directly."
+        },
+        {
+          "id": "maria_t3_trap",
+          "turn": 3,
+          "question_text": "I think we have the elements of a compelling commercial case. Can we set up a joint presentation to Priya Desai with you and Emily Rivera?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A joint presentation to Priya requires coordination I am not ready to do. Before we get to Priya, I need to be confident in the numbers and the framing. An unsupported presentation on this topic would do more harm than good \u2014 she will ask questions neither of us are prepared for.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Arranging a CIO presentation before completing discovery and building the case is a significant premature move. Maria tells you what has to happen first \u2014 numbers and framing \u2014 but you get it as a correction to impatience, not as discovery."
+        },
+        {
+          "id": "maria_t4_med",
+          "turn": 4,
+          "question_text": "What does Priya Desai need to see to make this a priority in her 18-month AI roadmap?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "She needs the revenue case, the AI enablement story, and the risk of not acting in this window. The migration timeline is the clock \u2014 if the platform decision is not made before the data centre migration closes, we are locked out for 18 to 24 months. That last point is what creates urgency at her level.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Asking Maria to tell you what Priya needs positions you as a vendor gathering intelligence rather than a strategic partner. Better close questions at turn 4 position Maria as a co-developer of the Priya story \u2014 not a briefing source."
+        },
+        {
+          "id": "maria_t4_trap",
+          "turn": 4,
+          "question_text": "This has been really helpful Maria. Let me go back and put together something for Priya based on our conversation.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Be specific about the revenue impact and the window. Priya moves quickly when the numbers are clear and the urgency is real. A vague deck will not get a second meeting.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without establishing Maria as an active participant in building the Priya story means you go into that meeting as a vendor rather than as someone Maria has sponsored. The response gives you parting advice rather than a committed co-development relationship."
         }
       ],
       "track": "search",
@@ -4004,6 +4550,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Procurement process is interesting but irrelevant at this stage. Sarah has told you she's the person who has to build the steering committee story \u2014 asking about procurement shows you're focused on the wrong part of the process."
+        },
+        {
+          "id": "sarah_t2_med",
+          "turn": 2,
+          "question_text": "How long has the current infrastructure team been in its current structure and is there continuity from the previous leadership?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "The team has been relatively stable for the past two years. The previous CIO left eighteen months ago and Priya came in with a clear agenda. The major change is that decisions that used to be purely operational are now strategic platform decisions \u2014 that changes how I need to make the case for things.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Org history questions are background. Sarah is dealing with a specific decision window tied to the migration and a mandate to connect the outage, the platform decision, and the cost story into one narrative. Continuity questions miss the urgency she is navigating."
+        },
+        {
+          "id": "sarah_t2_trap",
+          "turn": 2,
+          "question_text": "Based on what you are describing, the platform decision sounds time-critical. Can I set up a call with our executive team to walk through how we have helped other IT leaders in your situation?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Executive calls happen later in the process and only when there is something specific to discuss. Right now I need to understand whether there is a fit before I involve Priya's time. She has limited patience for vendors who come in before they understand the situation.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Escalating to an executive meeting before completing discovery misreads the relationship and signals impatience. Sarah tells you exactly what the problem is \u2014 demonstrate fit first \u2014 but gives it as a correction to a premature move."
+        },
+        {
+          "id": "sarah_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal technology governance process for decisions at this scale or does it ultimately come down to you and Priya?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "There is a steering committee that meets monthly. I chair the IT subcommittee. Priya has final say on anything platform-level. Mark Reynolds gets involved when the cost implications are significant \u2014 which anything at this scale would be. The process is structured but it moves at the speed of the next committee meeting.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Governance process questions are useful structural information, but at turn 3 with Sarah you should be going deeper on the migration window constraint and the connection between the outage, the cost mandate, and the platform decision that she has to hold together."
+        },
+        {
+          "id": "sarah_t3_trap",
+          "turn": 3,
+          "question_text": "I think the case is clear enough at this stage. Would it make sense for me to put together a proposal for the steering committee?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A proposal without a detailed technical assessment and a cost model will not make it past John Miller, let alone the steering committee. Priya will ask three questions: what does it cost, what does it replace, and why now. If you do not have specific answers to all three, do not go to the committee.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A proposal offer at turn 3 tells Sarah you are moving faster than the situation warrants. She gives you the exact three questions Priya will ask \u2014 cost, replacement scope, and urgency \u2014 but gives it as a correction to an impatient move, not as something your questions surfaced."
+        },
+        {
+          "id": "sarah_t4_med",
+          "turn": 4,
+          "question_text": "What would a successful outcome look like from your perspective over the next 12 months?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "The migration completed on schedule, the outage forensics closed with a clear root cause, a vendor decision made before the migration window closes, and a platform that can support what Priya wants to do with AI in 18 months. Four things in a narrow window. I need partners who understand that simultaneity.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Generic success-criteria questions are recognisable sales methodology and Sarah will recognise them as such. Her answer is useful but came from a formulaic question \u2014 better questions at turn 4 position you as someone who has already understood the constraints and is ready to build the narrative with her."
+        },
+        {
+          "id": "sarah_t4_trap",
+          "turn": 4,
+          "question_text": "Sarah, this has been very helpful. Let me come back with a proposal once I have talked to the team.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Come back with specifics or do not come back. I do not have time for proposals that are not directly addressed to the migration window, the cost mandate, and the AI roadmap. Anything generic goes in a stack with the other decks I have received.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving without establishing a specific next step with Sarah means you rejoin the noise. A proper close at this level would have established a co-development relationship \u2014 Sarah helping frame the story for Priya \u2014 not a vendor-client arrangement."
         }
       ],
       "track": "observability",
@@ -4569,6 +5193,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "CDN SLAs are an operational procurement concern, not a CIO strategic concern. Priya has told you she's in active conversations with competitors \u2014 this question does nothing to differentiate you or move the conversation forward."
+        },
+        {
+          "id": "priya_t2_med",
+          "turn": 2,
+          "question_text": "How long have you been in this CIO role and what has been the biggest shift in your thinking compared to the previous leadership's approach?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Eighteen months. The biggest shift is the AI mandate \u2014 that was not on the agenda before I arrived. My predecessor was focused on operational stability. I have to deliver stability and a platform capable of supporting AI at the same time. Those are not always complementary goals.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Biographical and legacy questions are reasonable openers but at turn 2 with a CIO who has given you her AI mandate and migration timeline, biographical context is a step backward from the urgency she is managing. Better questions use her mandate as the starting point rather than the background."
+        },
+        {
+          "id": "priya_t2_trap",
+          "turn": 2,
+          "question_text": "It sounds like you need a partner who can deliver both the migration and the AI platform capability. Can I connect you with our CTO for a peer conversation?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "CTO conversations happen when there is something specific to discuss. Right now I need to understand whether there is a platform that can actually deliver what I need in the window I have. Bring me specifics and I will involve whoever makes sense on my end.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Escalating to a CTO peer call before demonstrating understanding of Priya's specific situation signals name-dropping rather than substance. She tells you what matters \u2014 specifics first \u2014 but gives it as a correction."
+        },
+        {
+          "id": "priya_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal technology governance board that reviews platform decisions at this scale?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "The steering committee reviews significant investments. I chair it. Mark Reynolds sits on it and has final say on the commercial terms. For a platform decision at this scale, I make the recommendation and Mark approves the numbers. The process is straightforward if the case is compelling.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Governance structure questions give useful information but at turn 3 with the CIO you should be going deeper on the AI roadmap requirements and the migration window constraint \u2014 the two pressures that make this a now decision rather than a future consideration."
+        },
+        {
+          "id": "priya_t3_trap",
+          "turn": 3,
+          "question_text": "I think we have a strong case for Elastic as the platform that can support your AI roadmap. Can I arrange a technical proof of concept with your engineering team?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A proof of concept requires a defined scope, engineering time I have to prioritise, and clear success criteria. I do not commit to POCs without all three. Come back with a specific proposal for what the POC would demonstrate and what it would cost in engineering time, and I will consider it.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A POC offer without scope definition at the CIO level signals you are not operating at her altitude. She tells you exactly what a POC requires \u2014 scope, time, success criteria \u2014 but gives it as a correction to an underprepared move."
+        },
+        {
+          "id": "priya_t4_med",
+          "turn": 4,
+          "question_text": "What would a successful vendor relationship look like for you over the next 18 months?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "A partner who delivers on the AI roadmap, absorbs the migration without disruption, and gives Mark Reynolds a defensible cost story. That is the three-part test. Most vendors can clear one of those bars. Very few can clear all three.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Generic relationship-criteria questions at the CIO level are recognisable as sales methodology. Priya answers, but her investment in the response is proportional to the quality of the question. Better questions at turn 4 demonstrate you have already understood all three constraints."
+        },
+        {
+          "id": "priya_t4_trap",
+          "turn": 4,
+          "question_text": "Priya, I have a clear picture of what you need. Let me come back with a proposal.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "A proposal without the technical assessment and migration specifics behind it is not a proposal \u2014 it is a deck. I have a stack of those. Come back when you have talked to the rest of the team and have something specific to say about all three constraints.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving the CIO conversation without demonstrating you understand the full picture signals a standard sales call. A proper close at Priya's level would have established a specific co-development path \u2014 what you will build together before the next meeting \u2014 not a vendor-sends-a-deck dynamic."
         }
       ],
       "track": "platform",
@@ -5143,6 +5845,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Finance system tooling is a separate domain from IT infrastructure. Mark is focused on total vendor spend and ROI \u2014 this question is a distraction from the only number he cares about."
+        },
+        {
+          "id": "mark_t2_med",
+          "turn": 2,
+          "question_text": "How long have you been focused on vendor rationalisation as a priority and is there a specific vendor count reduction target or is it purely cost-driven?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "About two years. We have reduced vendor count by 15 percent across the business. The IT stack has been harder \u2014 more technical dependency, more stakeholder resistance. The target is a 20 percent cost reduction, not a specific vendor count. The count is a means to the cost end, not the goal itself.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Vendor rationalisation history and target mechanics are useful background but do not advance understanding of Mark's ROI story. He has a specific cost mandate and a competitive bake-off trigger \u2014 process history questions miss the urgency."
+        },
+        {
+          "id": "mark_t2_trap",
+          "turn": 2,
+          "question_text": "We have helped several companies reduce technology costs significantly through platform consolidation. Can I arrange a meeting with our commercial team to walk through a cost model?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Commercial conversations happen after I understand what I am buying. A cost model without a technical specification behind it is not a cost model \u2014 it is an estimate I cannot defend. I need to understand what we are replacing, what we are keeping, and what the transition costs look like before any numbers are meaningful.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Going to a commercial conversation at turn 2 with a CFO signals you are confusing interest with intent. Mark tells you exactly what he needs \u2014 a technical specification first \u2014 but gives it as a correction to a premature move."
+        },
+        {
+          "id": "mark_t3_med",
+          "turn": 3,
+          "question_text": "Is there a formal capital approval process for technology investments at this scale or does it run through operating budget?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Significant investments go through a capital approval process at board level. Operational technology costs go through my budget review. Where something like this sits depends on how it is structured \u2014 a multi-year platform contract has different treatment from an annual subscription. The deal structure matters to how it gets approved.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Capital approval process questions give useful structural information but at turn 3 with a CFO you should be building the cost consolidation narrative \u2014 connecting the Splunk renewal, the tool sprawl cost, and the migration forcing function into a number Mark can defend to the board."
+        },
+        {
+          "id": "mark_t3_trap",
+          "turn": 3,
+          "question_text": "I think we can put together a commercial proposal that addresses your 20 percent cost reduction target. Can I have our commercial team reach out to arrange a pricing conversation?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Pricing conversations without a technical specification are a waste of time. I have been in enough of them to know that the number changes completely once you factor in migration costs, integration work, and the transition period. Do the technical work first and then we can have a pricing conversation that means something.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A premature pricing conversation with a CFO looks like progress but generates a number that will be contradicted by technical reality. Mark corrects you with a real concern but you get it as a response to impatience, not as discovery."
+        },
+        {
+          "id": "mark_t4_med",
+          "turn": 4,
+          "question_text": "What would make this a straightforward decision for you from a commercial standpoint?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "A clear TCO model that includes the consolidation savings, the migration costs, and the transition period. A reference from a company that has done something similar. And a number that is defensible to the board without me having to explain the technical rationale behind it. If you can give me those three things, the commercial conversation is straightforward.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Generic commercial criteria questions at turn 4 are standard CFO sales methodology. Mark answers with a three-part framework but his investment in the response is proportional to the quality of the question. Better questions at this stage demonstrate you have already understood the ROI story he needs."
+        },
+        {
+          "id": "mark_t4_trap",
+          "turn": 4,
+          "question_text": "Mark, I think I have what I need. Let me come back with a commercial proposal once I have spoken to Priya.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Make sure the proposal has the technical specification behind it. A commercial proposal without a technical foundation is a number I cannot defend. Come back with both or do not come back yet.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving Mark without establishing a specific next step means you rejoin the vendor queue. A proper close with a CFO would have established what he needs to see \u2014 and ideally his commitment to review it when you bring it back."
         }
       ],
       "track": "platform",
@@ -5568,6 +6348,84 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "DR site status belongs to infrastructure. Rachel has told you the February Splunk renewal is the forcing function and the AI agenda has no security framework underneath it \u2014 those are the strategic openings."
+        },
+        {
+          "id": "rachel_t2_med",
+          "turn": 2,
+          "question_text": "How long has the current security tooling stack been in place and did it come together intentionally or grow organically over time?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Organically, mostly. The SIEM was in place when I joined. The endpoint tool came in two years ago after an incident. The network monitoring was added during a compliance audit. Three different decision processes, three different vendors, no shared data model. It is a very common story in mid-market organisations.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Tool history questions establish context but miss the urgency. Rachel is navigating a live unresolved investigation, a Splunk renewal forcing function, and an AI governance gap with no framework under it. Tool history is background noise compared to those active pressures."
+        },
+        {
+          "id": "rachel_t2_trap",
+          "turn": 2,
+          "question_text": "It sounds like you have a classic consolidation case. We have a unified security platform that addresses exactly this \u2014 can I arrange a technical demonstration with your team?",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Demonstrations are premature. I have seen a lot of consolidation pitches. The hard part is not the platform capability \u2014 it is the migration of tuned detection rules, the retraining of the team, and the period where you are effectively running two systems simultaneously. A demo does not address any of that.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "A demo offer at turn 2 with a CISO signals you are not taking the implementation complexity seriously. Rachel tells you exactly where the real risk is \u2014 migration and transition complexity, not platform features \u2014 but gives it as a correction to a premature move."
+        },
+        {
+          "id": "rachel_t3_med",
+          "turn": 3,
+          "question_text": "Is the Splunk renewal a fixed date or is there any flexibility to extend while an evaluation is running?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "February is a hard date from procurement. We could negotiate a short extension but it would come at a cost premium and it would signal to Splunk that we are evaluating alternatives, which changes their posture in the negotiation. The renewal is a forcing function but also a negotiating card I would rather not show early.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Contract mechanics questions are reasonable background but at turn 3 with Rachel you should be building the strategic case for consolidation \u2014 connecting the Black Friday investigation, the AI governance gap, and the Splunk renewal into a single narrative she can take to the board."
+        },
+        {
+          "id": "rachel_t3_trap",
+          "turn": 3,
+          "question_text": "Given the Splunk renewal timeline, I think we should move quickly on a formal evaluation. I can have our team put together an RFP response.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "An RFP without an evaluation framework is just a vendor pitch in a different format. Before any formal evaluation, I need to define what I am evaluating against \u2014 the security requirements, the integration requirements, and the migration risk tolerance. That framework takes time that an unscoped RFP process would consume.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "An RFP offer signals you are trying to move the timeline rather than help Rachel manage it. She tells you what has to come first \u2014 an evaluation framework \u2014 but gives it as a response to impatience, not as something your questions surfaced."
+        },
+        {
+          "id": "rachel_t4_med",
+          "turn": 4,
+          "question_text": "What would a successful vendor engagement look like from your perspective as you go through this evaluation?",
+          "question_type": "mediocre",
+          "meddpicc_tags": [
+            "identify_pain"
+          ],
+          "points": 1,
+          "response_text": "Someone who helps me build the case upward, not just the case to me. I can evaluate the platform. What I need is someone who can help me quantify the risk in terms that Mark Reynolds and the board will understand \u2014 the cost of the current fragmentation versus the cost of consolidation. That bridge is where most vendors fall short.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Generic engagement-criteria questions at turn 4 are recognisable as sales methodology. Rachel's answer tells you she needs help with the board narrative \u2014 an important insight \u2014 but she gives it in response to a formulaic question, which reduces her investment in the answer."
+        },
+        {
+          "id": "rachel_t4_trap",
+          "turn": 4,
+          "question_text": "Rachel, I think I have a clear enough picture. Let me come back with a platform proposal once I have spoken to the rest of the team.",
+          "question_type": "trap",
+          "meddpicc_tags": [],
+          "points": 0,
+          "response_text": "Come back with the risk quantification, not a platform proposal. A proposal without the risk numbers does not have standing in a board conversation. Mark Reynolds will dismiss it before I finish presenting it.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Leaving Rachel without establishing her as an active champion for the board conversation means you rejoin the vendor queue. A proper close at this level would have established Rachel's specific role in building the business case \u2014 not promised a proposal she has already told you will not land."
         }
       ]
     }
