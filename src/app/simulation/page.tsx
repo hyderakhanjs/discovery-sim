@@ -504,8 +504,30 @@ export default function Simulation() {
 
   useEffect(() => {
     const qs = getAvailableQuestions(state.currentStakeholderId, state.availableQuestionIds);
-    setShuffledQuestions(qs); // QuestionOptions handles per-render shuffle internally
-  }, [state.currentStakeholderId, state.availableQuestionIds]);
+
+    // Turn 5 is the close — show all available options unfiltered.
+    // Turns 1–4: enforce exactly one question per type (good / mediocre / trap / irrelevant).
+    // When multiple good questions exist (old tree data), pick one at random so variety is preserved.
+    if (state.currentTurn === 5) {
+      setShuffledQuestions(qs);
+      return;
+    }
+
+    const byType: Record<string, Question[]> = {};
+    for (const q of qs) {
+      if (!byType[q.question_type]) byType[q.question_type] = [];
+      byType[q.question_type].push(q);
+    }
+    const pickOne = (type: string): Question | undefined => {
+      const pool = byType[type];
+      if (!pool || pool.length === 0) return undefined;
+      return pool[Math.floor(Math.random() * pool.length)];
+    };
+    const selected = (["good", "mediocre", "trap", "irrelevant"] as const)
+      .map((t) => pickOne(t))
+      .filter((q): q is Question => q !== undefined);
+    setShuffledQuestions(selected);
+  }, [state.currentStakeholderId, state.availableQuestionIds, state.currentTurn]);
 
   // Route to debrief when complete
   useEffect(() => {
