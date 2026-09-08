@@ -14,22 +14,11 @@ function DebriefBar({ element, score }: { element: MeddpiccElement; score: numbe
   const pct = meddpiccCoverage(element, score);
   const color =
     pct >= 80 ? "#00BFB3" : pct >= 50 ? "#0077CC" : pct >= 25 ? "#FEC514" : "#F04E98";
-  const flag = pct < 25 ? "⚠ Critical miss" : pct < 50 ? "Needs work" : "";
 
   return (
     <div className="mb-4">
       <div className="flex justify-between items-center mb-1">
         <span className="text-sm font-medium text-white">{MEDDPICC_LABELS[element]}</span>
-        <div className="flex items-center gap-3">
-          {flag && (
-            <span className="text-xs" style={{ color: pct < 25 ? "#F04E98" : "#FEC514" }}>
-              {flag}
-            </span>
-          )}
-          <span className="text-sm font-mono font-bold" style={{ color }}>
-            {pct}%
-          </span>
-        </div>
       </div>
       <div className="h-3 rounded-full overflow-hidden"
         style={{ background: "var(--border)" }}>

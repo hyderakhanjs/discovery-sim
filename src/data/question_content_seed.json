@@ -3620,7 +3620,6 @@
           "question_text": "The recommendations vendor contract is up in April. Is that a separate decision from the search platform or are you thinking about them together?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_process",
             "metrics"
           ],
@@ -3862,7 +3861,6 @@
           "question_text": "How does the recommendations vendor renewal in April interact with this timeline? Is there a risk that renewal locks you in before a better decision gets made?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_process",
             "metrics"
           ],
@@ -4222,9 +4220,7 @@
           "turn": 2,
           "question_text": "Which vendors are you currently evaluating?",
           "question_type": "trap",
-          "meddpicc_tags": [
-            "competition"
-          ],
+          "meddpicc_tags": [],
           "points": 0,
           "response_text": "We have had conversations with a few but nothing formal. Splunk and Datadog are the incumbents and they are both angling for expanded relationships. I am not going to run an evaluation of the obvious choices without pressure-testing whether there is a better option. That is why I am having this conversation.",
           "triggers_briefing": false,
@@ -4688,37 +4684,6 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving without establishing a specific next step with Sarah means you rejoin the noise. A proper close at this level would have established a co-development relationship \u2014 Sarah helping frame the story for Priya \u2014 not a vendor-client arrangement."
-        },
-        {
-          "id": "sp_t2_comp",
-          "turn": 2,
-          "question_text": "Sarah, you are managing renewals with Datadog and Splunk at the same time as a major migration. Is the vendor landscape stable in your mind, or is there an opening to rethink what you are running?",
-          "question_type": "good",
-          "meddpicc_tags": [
-            "competition",
-            "decision_criteria"
-          ],
-          "points": 3,
-          "response_text": "I have been thinking about this more than people realize. We have three separate tools doing three partially overlapping jobs. Datadog for infrastructure monitoring, Splunk for security and logs, Nagios for alerting \u2014 and none of them share a data model. During Black Friday we had three dashboards open and still could not see the full picture. The migration to AWS is actually forcing the question: do I lift and shift three separate tools into cloud, or do I use this moment to consolidate? Consolidating is harder short-term but the operational overhead of running three separate systems long-term is not something I can justify to Mark. I just have not found the right path yet.",
-          "triggers_briefing": false,
-          "next_question_ids": [],
-          "rationale": "High yield \u2014 Sarah is the VP who controls the IT budget and vendor decisions. This question surfaces her strategic frustration with fragmented tooling and uses the AWS migration as a natural opening to consolidation. Her answer positions a platform conversation rather than a point-tool sale."
-        },
-        {
-          "id": "sp_t3_comp",
-          "turn": 3,
-          "question_text": "If you could consolidate onto a single platform that covered observability and security analytics, what would you need to see to justify the migration risk to Mark Reynolds?",
-          "question_type": "good",
-          "meddpicc_tags": [
-            "competition",
-            "decision_criteria",
-            "metrics"
-          ],
-          "points": 3,
-          "response_text": "Three things. First, a cost story that is better than renewing all three vendors separately \u2014 I need a number, not a narrative. Second, a migration path that does not require a hard cutover during the AWS move \u2014 parallel run with a defined off-ramp. Third, a reference customer in a similar migration context, not just a happy logo. Mark will ask all three questions in the first five minutes of any steering committee presentation and I need answers before I walk in the room.",
-          "triggers_briefing": false,
-          "next_question_ids": [],
-          "rationale": "High yield \u2014 Sarah articulates exactly what decision criteria she needs to build an internal business case. The three requirements map to: (1) economic value, (2) risk mitigation, (3) social proof. This is the vendor evaluation checklist from the person who controls the decision."
         }
       ],
       "track": "observability",
@@ -4820,7 +4785,6 @@
           "question_text": "When you say a unified data platform that can ingest, index, and query at scale \u2014 are you thinking one platform that does everything or a best-of-breed approach with strong integration?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_criteria"
           ],
           "points": 5,
@@ -5044,7 +5008,6 @@
           "question_text": "Are the incumbents \u2014 Splunk, Datadog \u2014 positioning themselves as the AI-ready platform or are they still selling the same story?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_criteria"
           ],
           "points": 5,
@@ -5101,7 +5064,6 @@
           "question_text": "You mentioned the security operations use case as one of the three AI areas. How does that connect to the Splunk renewal conversation Linda and Sarah have been having?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_criteria",
             "metrics"
           ],
@@ -5120,9 +5082,7 @@
           "turn": 3,
           "question_text": "Are there other CIOs or technology leaders you have talked to who have made a similar platform consolidation move?",
           "question_type": "mediocre",
-          "meddpicc_tags": [
-            "competition"
-          ],
+          "meddpicc_tags": [],
           "points": 2,
           "response_text": "I have a few peer relationships I have tapped informally but I have not found someone who has made the exact move we are considering \u2014 consolidating observability, security, and search onto one platform in the context of a major migration. If you have a reference customer who has done something comparable I would want to talk to them.",
           "triggers_briefing": false,
@@ -5442,7 +5402,6 @@
           "question_text": "Current state cost first. Based on what I have learned from the team, you are looking at roughly $800K to $900K for the Splunk renewal, around $400K to $500K for Datadog, and a legacy Nagios footprint. Combined somewhere between $1.2M and $1.5M in annual platform spend, not counting the analyst time being consumed by manual triage. Does that picture match what you are seeing?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "economic_buyer",
             "metrics"
           ],
@@ -5611,7 +5570,6 @@
           "question_text": "If the platform could consolidate Splunk, Datadog, and Nagios into one contract and come in at a lower total cost while also delivering the AI search capabilities the CEO has been talking about publicly \u2014 how does that change the conversation for you?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_criteria",
             "economic_buyer",
             "metrics"
@@ -5651,7 +5609,6 @@
           "question_text": "The Datadog renewal is in April and Splunk is in February. If we could get a decision before the February renewal window, what does that do to the negotiating position on the Splunk contract?",
           "question_type": "good",
           "meddpicc_tags": [
-            "competition",
             "decision_process",
             "metrics"
           ],
@@ -6517,52 +6474,6 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Leaving Rachel without establishing her as an active champion for the board conversation means you rejoin the vendor queue. A proper close at this level would have established Rachel's specific role in building the business case \u2014 not promised a proposal she has already told you will not land."
-        },
-        {
-          "id": "rk_t2_comp",
-          "turn": 2,
-          "question_text": "Rachel, you own the Splunk renewal conversation. Have you done any evaluation of alternatives, or has the assumption been to renew unless something changes dramatically?",
-          "question_type": "good",
-          "meddpicc_tags": [
-            "competition",
-            "decision_process"
-          ],
-          "points": 3,
-          "response_text": "I have done more listening than formal evaluation. The renewal is in February and I know the number is going up \u2014 Splunk's pricing model is data-volume based and our log volume has grown 40% since we signed the last deal. I have had two conversations with peer CISOs in the last six months where Elastic came up. One of them moved their SIEM workload off Splunk two years ago and said they cut their annual spend by a third while actually improving their retention window. That conversation stuck with me. But I have not kicked off a formal RFP and honestly I am not sure I want to \u2014 a migration mid-incident is the last thing I need. What I am trying to understand is whether there is a path that does not require a full rip-and-replace.",
-          "triggers_briefing": false,
-          "next_question_ids": [],
-          "rationale": "High yield \u2014 Rachel is the economic decision-maker for the Splunk renewal. This question surfaces competitive intelligence she has already gathered, her pricing pressure, and her key objection (migration risk). All three are critical to positioning."
-        },
-        {
-          "id": "rk_t3_comp",
-          "turn": 3,
-          "question_text": "The CISO who moved off Splunk \u2014 what specifically did she say made it worth the disruption? Was it cost, capability, or something else?",
-          "question_type": "good",
-          "meddpicc_tags": [
-            "competition",
-            "metrics",
-            "decision_criteria"
-          ],
-          "points": 3,
-          "response_text": "It was both, but the capability piece surprised me. She said they were retaining 12 months of raw logs in Elasticsearch at roughly the same cost as 90 days in Splunk. That changes the threat hunting posture entirely \u2014 you can go back and look at whether an indicator of compromise from today was present six months ago. In Splunk at their previous volume that would have been a six-figure archive bill. The cost was the door opener but the retention depth was what actually changed how her team operated. She also said the migration took four months with a parallel run period, which was harder than expected but not catastrophic.",
-          "triggers_briefing": false,
-          "next_question_ids": [],
-          "rationale": "High yield \u2014 forces Rachel to translate secondhand peer intelligence into concrete decision criteria. The 90-day vs 12-month retention gap is a quantified capability miss that maps directly to her threat hunting concern. This is MEDDPICC gold: competition + metrics + decision criteria in one answer."
-        },
-        {
-          "id": "rk_t4_comp",
-          "turn": 4,
-          "question_text": "Has Splunk come back to you with anything proactive ahead of the renewal, or are they waiting for you to start the negotiation?",
-          "question_type": "mediocre",
-          "meddpicc_tags": [
-            "competition",
-            "decision_process"
-          ],
-          "points": 1,
-          "response_text": "They sent their account team in last month. The conversation was mostly about their cloud migration path and some new AI features they are launching. They did not address the pricing issue directly \u2014 I think they expect to negotiate at renewal time. Nothing they showed me changed the fundamental cost model.",
-          "triggers_briefing": false,
-          "next_question_ids": [],
-          "rationale": "Mediocre \u2014 useful context about Splunk's defensive posture but does not advance discovery. A stronger move would be to ask what it would take for her to sign without a competing option, or to pressure-test the migration objection."
         }
       ]
     }
