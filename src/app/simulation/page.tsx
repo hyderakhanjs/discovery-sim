@@ -265,7 +265,6 @@ function MeddpiccBar({ element, score }: { element: typeof MEDDPICC_ELEMENTS[num
     <div className="mb-2">
       <div className="flex justify-between items-center mb-1">
         <span className="text-xs" style={{ color: "var(--muted)" }}>{MEDDPICC_LABELS[element]}</span>
-        <span className="text-xs font-mono" style={{ color }}>{pct}%</span>
       </div>
       <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "var(--border)" }}>
         <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, background: color }} />
