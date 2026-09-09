@@ -626,7 +626,7 @@ export default function Simulation() {
         {state.phase === "question" && (
           <div className="fade-in">
             <div className="text-sm mb-5" style={{ color: "var(--muted)" }}>Choose your next question:</div>
-            <QuestionOptions questions={shuffledQuestions} onChoose={handleQuestionChoice} disabled={false} />
+            <QuestionOptions key={`${state.currentStakeholderId}-${state.currentTurn}`} questions={shuffledQuestions} onChoose={handleQuestionChoice} disabled={false} />
             <div className="mt-5">
               <button
                 onClick={handleEndCall}
