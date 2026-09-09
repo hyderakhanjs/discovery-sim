@@ -98,28 +98,73 @@ function TurnFeedback({ history }: { history: TurnRecord[] }) {
           {open === stakeholderId && (
             <div className="divide-y" style={{ borderColor: "var(--border)" }}>
               {turns.map((t) => {
-                const q = lookupQuestion(t.stakeholderId, t.questionId);
-                const style = TYPE_STYLES[t.questionType] ?? TYPE_STYLES.mediocre;
+                const chosenQ = lookupQuestion(t.stakeholderId, t.questionId);
+                const chosenStyle = TYPE_STYLES[t.questionType] ?? TYPE_STYLES.mediocre;
+
+                // Collect all options shown this turn (chosen + unchosen)
+                const shownIds = t.shownQuestionIds ?? [t.questionId];
+                const allShown = shownIds
+                  .map((id) => lookupQuestion(t.stakeholderId, id))
+                  .filter(Boolean);
+                // Sort: chosen first, then by type order
+                const typeOrder = ["good", "mediocre", "trap", "irrelevant", "recovery"];
+                const sorted = [...allShown].sort((a, b) => {
+                  if (a!.id === t.questionId) return -1;
+                  if (b!.id === t.questionId) return 1;
+                  return typeOrder.indexOf(a!.question_type) - typeOrder.indexOf(b!.question_type);
+                });
+
                 return (
                   <div key={t.questionId} className="px-4 py-4"
-                    style={{ background: style.bg }}>
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                        style={{ background: "var(--card)", color: style.color, border: `1px solid ${style.color}` }}>
-                        {style.label}
+                    style={{ background: chosenStyle.bg }}>
+                    {/* Turn header */}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-semibold uppercase tracking-wider"
+                        style={{ color: "var(--muted)" }}>
+                        Turn {t.turnNumber}
                       </span>
-                      <span className="text-xs font-mono" style={{ color: style.color }}>
-                        +{t.pointsEarned} pts
+                      <span className="text-xs font-mono" style={{ color: chosenStyle.color }}>
+                        You chose: {chosenStyle.label} · +{t.pointsEarned} pts
                       </span>
                     </div>
-                    <p className="text-sm mb-2" style={{ color: "var(--text)" }}>
-                      &ldquo;{q?.question_text ?? t.questionId}&rdquo;
-                    </p>
-                    {q?.rationale && (
-                      <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
-                        {q.rationale}
-                      </p>
-                    )}
+
+                    {/* All options shown this turn */}
+                    <div className="space-y-3">
+                      {sorted.map((sq) => {
+                        if (!sq) return null;
+                        const isChosen = sq.id === t.questionId;
+                        const sqStyle = TYPE_STYLES[sq.question_type] ?? TYPE_STYLES.mediocre;
+                        return (
+                          <div key={sq.id}
+                            className="rounded-lg p-3"
+                            style={{
+                              background: isChosen ? sqStyle.bg : "var(--card)",
+                              border: `1px solid ${isChosen ? sqStyle.color : "var(--border)"}`,
+                              opacity: isChosen ? 1 : 0.75,
+                            }}>
+                            <div className="flex items-center gap-2 mb-1.5">
+                              <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                                style={{ background: "var(--bg)", color: sqStyle.color, border: `1px solid ${sqStyle.color}` }}>
+                                {sqStyle.label}
+                              </span>
+                              {isChosen && (
+                                <span className="text-xs font-semibold" style={{ color: sqStyle.color }}>
+                                  ← you chose this
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-sm mb-1.5" style={{ color: "var(--text)" }}>
+                              &ldquo;{sq.question_text}&rdquo;
+                            </p>
+                            {sq.rationale && (
+                              <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>
+                                {sq.rationale}
+                              </p>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 );
               })}

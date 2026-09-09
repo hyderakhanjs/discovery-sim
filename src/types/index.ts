@@ -95,6 +95,7 @@ export interface TurnRecord {
   questionType: QuestionType;
   meddpiccTags: MeddpiccElement[];
   pointsEarned: number;
+  shownQuestionIds: string[]; // all 4 options presented this turn
 }
 
 export interface GameState {

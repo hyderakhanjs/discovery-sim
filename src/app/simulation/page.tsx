@@ -541,7 +541,7 @@ export default function Simulation() {
   const currentContextState = state.stakeholderContextStates[state.currentStakeholderId] ?? "cold";
 
   function handleQuestionChoice(question: Question) {
-    const next = processQuestionChoice(state, question, STAKEHOLDERS);
+    const next = processQuestionChoice(state, question, STAKEHOLDERS, shuffledQuestions.map((q) => q.id));
     setState(next);
   }
 

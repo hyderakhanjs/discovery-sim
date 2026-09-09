@@ -84,7 +84,8 @@ export function createInitialState(
 export function processQuestionChoice(
   state: GameState,
   question: Question,
-  allStakeholders: Stakeholder[]
+  allStakeholders: Stakeholder[],
+  shownQuestionIds: string[] = []
 ): GameState {
   // 1. Apply MEDDPICC points with context multiplier
   const contextState = state.stakeholderContextStates[state.currentStakeholderId] ?? "cold";
@@ -103,6 +104,7 @@ export function processQuestionChoice(
     questionType: question.question_type,
     meddpiccTags: question.meddpicc_tags,
     pointsEarned: scaledQuestion.points,
+    shownQuestionIds: shownQuestionIds.length > 0 ? shownQuestionIds : [question.id],
   };
 
   // 3. Update narrative score if this is a close (turn 5)
