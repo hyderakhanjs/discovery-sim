@@ -611,6 +611,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "High yield for L1 — Alex knows the technical gap firsthand: trace sampling to control costs means missing the exact signal you need during an incident. He surfaces peer competitive intelligence organically. This is practitioner-domain competition intelligence: capability + cost, not contract strategy."
+        },
+        {
+          "id": "alex_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Alex, this has been helpful. Let me pull together some information about how Elastic can help and follow up with you directly by end of week.",
+          "response_text": "Sure, send it over. I will take a look when I get a chance.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — closes the meeting but without committing to a specific next step or action. Sending materials is a weak signal; the stakeholder has no reason to respond and momentum stalls. Scores partial context because the meeting happened but no real commitment was made."
+        },
+        {
+          "id": "alex_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "One last thing before I go — do you have any plans to introduce SRE principles like error budgets or SLO-based alerting into the team?",
+          "response_text": "We have been thinking about SLOs but it is not a priority right now. Was that relevant to what we were discussing?",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — off-topic right at the close. Error budgets and SLOs are real SRE concepts but asking about future methodology at the end of a discovery conversation wastes the final moment. The stakeholder leaves with no clarity on next steps."
         }
       ],
       "track": "observability",
@@ -1117,6 +1143,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "High yield for L1 — Jordan knows the daily friction intimately: slow search on cold data, 90-day retention wall, manual stitching. She surfaces this from practitioner experience, not vendor strategy. The Black Friday context makes the gap concrete and timed."
+        },
+        {
+          "id": "jordan_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Jordan, thanks for the walkthrough. Let me put together a short summary of how Elastic handles SIEM and alert correlation and send it over for you to review.",
+          "response_text": "OK, send it over. I will review it when things quiet down.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — sends materials but leaves no clear next step. The SOC is busy and \"when things quiet down\" is not a commitment. Scores partial context because the meeting happened but no mutual action was agreed."
+        },
+        {
+          "id": "jordan_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "Before I go — how does the team handle security awareness training for the rest of the organisation? Is that something the SOC is involved in?",
+          "response_text": "We do some awareness training but it is handled by HR, not the SOC. Was that related to what we were discussing?",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — security awareness training is not connected to the tooling, alert triage, or detection quality conversation. The stakeholder is left confused about the purpose of the question and there is no clear next step."
         }
       ],
       "track": "security",
@@ -1582,6 +1634,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — using Dev as a forwarding mechanism rather than earning access to Emily through a proper introduction. Dev's response signals that he expects to be more than a conduit and will not send on material he has not evaluated."
+        },
+        {
+          "id": "dev_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Dev, I appreciate your time. Let me put together some technical materials on Elastic's search capabilities and send them across — I will be in touch.",
+          "response_text": "Sure, send it through. I will take a look.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — politely closes but without a concrete next step. A developer receiving vendor materials without a clear ask has no reason to act. Scores partial context."
+        },
+        {
+          "id": "dev_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "Before I leave — are there any plans to introduce a GraphQL layer over your existing APIs? That is becoming more common in ecommerce search.",
+          "response_text": "No GraphQL plans that I know of. I am not sure that was relevant to what we were discussing.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — GraphQL is a real engineering topic but has nothing to do with the search relevance, performance, or third-party vendor problems Dev raised. Ends the meeting on an unrelated tangent with no agreed next step."
         }
       ],
       "track": "search",
@@ -2227,6 +2305,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "High yield — John surfaces the internal competitive conversation (Alex has pushed twice), quantifies the cost growth (18%), and identifies his specific objection (migration timing risk). The parallel run question is an opening for a structured proof of value. This is L2 competitive intelligence: vendor economics + decision risk, not feature comparison."
+        },
+        {
+          "id": "john_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "John, there is clearly a lot here. Let me put together a high-level overview of what a consolidation could look like commercially and send it over for your review before we go further.",
+          "response_text": "OK, that works. Send it over and we can take it from there.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — closes but outsources the next step entirely to an unsolicited document. No date, no mutual commitment, no clarity on who else needs to be involved. Scores partial context."
+        },
+        {
+          "id": "john_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "One last thought — is there any appetite at the board level for bringing in a fractional CTO or external technical advisor to support the migration work?",
+          "response_text": "Not that I am aware of. I am not sure that was where I expected this conversation to go.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — the board's appetite for external advisors has no bearing on the observability and infrastructure consolidation problem. Ends the conversation on a tangent with no next step agreed."
         }
       ],
       "track": "observability",
@@ -2867,6 +2971,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — attempting to bypass Linda's role as gatekeeper to Rachel. Her response is clear: she controls the introduction and any engagement with Rachel needs her involvement."
+        },
+        {
+          "id": "lc_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Linda, thanks for everything. Let me put together a short summary of what we discussed and some initial thoughts on how we might help — I will send that over by end of week.",
+          "response_text": "That works. Send it over and I will share it with Sarah if it looks relevant.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — closes without a specific next step. The commitment to \"share with Sarah if it looks relevant\" signals low conviction. Scores partial context."
+        },
+        {
+          "id": "lc_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "Before I go — is the SOC team currently hiring? I am always curious about how security teams are scaling.",
+          "response_text": "We are not actively hiring right now. I am not sure that was related to the tooling discussion.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — asking about headcount plans is not connected to the platform cost, alert triage, or Splunk problems Linda raised. Ends the conversation on a topic that signals the FE ran out of substantive questions."
         }
       ],
       "track": "security",
@@ -3521,6 +3651,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "High yield — Emily articulates her decision criteria directly: debuggability and explainability matter more than the 20% discount. This is competitive intelligence from a buyer's perspective — she knows what would make her stay and what would make her switch, and both answers are useful for positioning."
+        },
+        {
+          "id": "er_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Emily, this has been really useful. I will send over some materials on how Elastic can help with personalisation and search quality, and we can reconnect once you have had a chance to look.",
+          "response_text": "Fine, send it over. I will review when I have time.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — a generic materials close with no timeline or mutual commitment. \"When I have time\" from a director is not a commitment. Scores partial context."
+        },
+        {
+          "id": "er_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "One last question — are there any plans to introduce a subscription or loyalty tier model alongside the personalisation improvements?",
+          "response_text": "There are some internal conversations about it but nothing confirmed. I am not sure that was relevant to what we were covering.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — loyalty tier strategy is a commercial product decision, not connected to the search infrastructure and third-party vendor problems Emily described. Ends on a tangent with no next step."
         }
       ],
       "track": "search",
@@ -4045,6 +4201,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — claiming sponsorship from Maria that she has not granted. Her response is a clear warning that interest in the conversation is not the same as endorsement of a proposal."
+        },
+        {
+          "id": "mt_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Maria, thanks for your time. Let me put together some commercial framing around what we discussed and send it over — we can take it from there.",
+          "response_text": "Sure, send it over. We can discuss once I have had a chance to look.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — vague next step with no timeline or agreed action. A CCO receiving unsolicited commercial framing without a specific ask is unlikely to prioritise it. Scores partial context."
+        },
+        {
+          "id": "mt_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "Before I go — are there any plans to introduce a brand repositioning or new campaign in the next year? That would obviously affect the commercial targets.",
+          "response_text": "There are internal conversations but nothing I can share externally. I am not sure that was where I expected this meeting to go.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — brand strategy and campaign planning have no bearing on the search relevance and recommendation engine problems Maria raised. Signals a loss of focus at the worst possible moment."
         }
       ],
       "track": "search",
@@ -4685,6 +4867,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — expressing premature confidence in a proposal when the key prerequisites Sarah outlined (technical inputs, commercial context, evaluation criteria) have not been addressed."
+        },
+        {
+          "id": "sp_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Sarah, I think there is a clear case to explore here. Let me put together an initial scope and we can review it together when the timing works for you.",
+          "response_text": "Fine, send it over. I can have a look and circle back with you.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — \"when the timing works\" is not a commitment from a VP managing steering committee pressure. No date, no next meeting, no identified action. Scores partial context."
+        },
+        {
+          "id": "sp_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "One last thing — how does your IT governance model work with the business units? Do they run shadow IT or is everything centralised under you?",
+          "response_text": "We have a federated model — some shadow IT exists. I am not sure that was relevant to the platform decision discussion.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — IT governance structure and shadow IT policy are not connected to the observability consolidation, steering committee deadline, or AWS migration timeline Sarah described. Ends on an administrative tangent."
         }
       ],
       "track": "observability",
@@ -5323,6 +5531,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — using the 'easier to react to something concrete' rationalisation to bypass the evaluation process. Priya's response is firm: unsolicited proposals outside the process are not reviewed."
+        },
+        {
+          "id": "pd_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Priya, there is a lot of potential here. Let me put together an initial framework for what an AI platform roadmap with Elastic could look like and share it with you and Mark.",
+          "response_text": "Fine, send it over. I will look at it and loop in Mark if it seems worth pursuing.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — outsources the next step to an unsolicited document with no date or agreed review meeting. \"If it seems worth pursuing\" signals Priya is not yet committed to the next step. Scores partial context."
+        },
+        {
+          "id": "pd_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "One last thought — are there any other CIOs in your network who have been through a similar AI platform transformation that you think we should speak with?",
+          "response_text": "I know a few people. I am not sure that was the most useful direction for this conversation at this point.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — asking for peer referrals at the close of a first discovery meeting with the CIO is premature and signals you are not focused on closing this deal. Ends without a concrete next step between you and Priya."
         }
       ],
       "track": "platform",
@@ -5974,6 +6208,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — attempting to leave with a to-do that sounds like progress but is actually an incomplete action. Mark's response identifies exactly what is missing before a credible cost model can be built."
+        },
+        {
+          "id": "mr_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Mark, the financial case is compelling. Let me work up a preliminary model and share it with you for review before we involve the wider group.",
+          "response_text": "OK, send it over. I will review it when I have a chance.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — closes but with no agreed date or mutual commitment. A CFO receiving an unsolicited model \"when I have a chance\" is not a next step. Scores partial context."
+        },
+        {
+          "id": "mr_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "Before I go — are there any refinancing plans or capital structure changes in the next 18 months that might affect the technology investment timeline?",
+          "response_text": "There is nothing I can speak to externally. I am not sure that was the direction I expected this conversation to go.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — asking a CFO about refinancing plans is both inappropriate in a first vendor meeting and has nothing to do with the technology investment decision. Ends the conversation on a note that damages credibility."
         }
       ],
       "track": "platform",
@@ -6477,6 +6737,32 @@
           "triggers_briefing": false,
           "next_question_ids": [],
           "rationale": "Low yield — conflating information gathered in discovery with an invitation to propose. Rachel's response corrects this directly: interest in the conversation is not equivalent to readiness to receive a proposal."
+        },
+        {
+          "id": "rk_t5_med",
+          "turn": 5,
+          "question_type": "mediocre",
+          "meddpicc_tags": [],
+          "points": 2,
+          "close_type": "partial_context",
+          "question_text": "Rachel, there is clearly a compelling case here. Let me put together some initial thinking on a security consolidation approach and timeline and send it over for your review.",
+          "response_text": "OK, send it over. I will review it and let you know if it looks relevant for the steering committee.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Medium yield — closes without a specific next step or agreed date. \"If it looks relevant\" signals Rachel is not yet sold on bringing this to the steering committee. Scores partial context."
+        },
+        {
+          "id": "rk_t5_irr",
+          "turn": 5,
+          "question_type": "irrelevant",
+          "meddpicc_tags": [],
+          "points": 0,
+          "close_type": "partial_context",
+          "question_text": "Before I leave — is there a cybersecurity insurance policy in place and does the Black Friday incident affect your renewal premium?",
+          "response_text": "We do have cyber insurance. That is an interesting question but I am not sure it was where I expected this to go.",
+          "triggers_briefing": false,
+          "next_question_ids": [],
+          "rationale": "Irrelevant — cyber insurance is a real CISO concern but raising it at the end of a discovery conversation about platform consolidation signals a loss of focus. The meeting ends without a clear next step on the actual problem."
         }
       ]
     }
