@@ -16,15 +16,16 @@ Built for use by Nick (Global Head of FE) and Johnny. Intended for FE training: 
 src/
   app/
     page.tsx              — Home / landing page (start screen)
+    briefing/page.tsx     — Pre-game briefing ("How it Works" + case study context)
     simulation/page.tsx   — Main game UI (all phases)
     debrief/page.tsx      — End-of-game results page
   lib/
     gameState.ts          — State machine, context computation, turn processing
     scoring.ts            — DQI formula, MEDDPICC points, momentum, narrative score
-    narrative.ts          — 6 outcome definitions + resolveOutcome() routing
+    narrative.ts          — 9 outcome definitions + resolveOutcome() routing
   types/index.ts          — All shared TypeScript types
   data/
-    question_content_seed.json — All 11 stakeholders + 264 questions with full content
+    question_content_seed.json — All 11 stakeholders + questions with full content
 ```
 
 ---
@@ -83,12 +84,39 @@ handoff (map) → question → response → meeting_debrief → handoff (map) �
 ```
 
 - **handoff:** 2D org chart. Player picks next stakeholder.
-- **question:** 3 question options (shuffled). Turn 1–5.
+- **question:** 4 question options per turn (one of each type: good/mediocre/trap/irrelevant), shuffled. Turn 1–4. Turn 5 is always a close (all close options shown).
 - **response:** Stakeholder responds. Player reads, hits Continue.
-- **meeting_debrief:** Shows every question asked in the just-completed conversation with rationale (high yield / mediocre / low yield) and insider briefing if unlocked. Triggered by both Close and End Call. If End Call with zero questions asked, still shows (with empty-state message).
+- **meeting_debrief:** Shows every question asked in the just-completed conversation with rationale (High Yield / Medium Yield / Low Yield / Irrelevant) and insider briefing if unlocked. Shows ALL 4 options that were presented that turn (not just the chosen one), with type labels and rationale for each. Triggered by both Close and End Call.
 - **complete:** Triggers finalizeGame() → sessionStorage → redirect to /debrief.
 
 **End Call mid-conversation:** Returns to meeting_debrief (not handoff). Stakeholder not marked completed. −20 narrative penalty applied if player exits without completing any vertical branch.
+
+---
+
+## 4-Type Question Model
+
+Every turn 1–4 presents exactly **4 options**, one of each type. Labels are hidden during gameplay and revealed only in the debrief.
+
+| Type | Label in Debrief | Points | Purpose |
+|------|-----------------|--------|---------|
+| `good` | High Yield | 3–5 pts (varies by level) | The ideal question for this moment |
+| `mediocre` | Medium Yield | 1–2 pts | Surface-level but plausible — safe but weak |
+| `trap` | Low Yield | 0 pts | Looks reasonable, actively harmful (e.g. premature pitch) |
+| `irrelevant` | Irrelevant | 0 pts | Off-topic for this stakeholder/moment |
+
+Turn 5 is a close — all options are close variants (`close_type` field), no type labelling. Player picks one.
+
+**Implementation note:** `QuestionOptions` component gets a `key={`${state.currentStakeholderId}-${state.currentTurn}`}` prop to force remount on every turn/stakeholder change. This is critical — without it, the internal `useState(() => fisherYates(questions))` only initialises on mount and the shuffle goes stale.
+
+---
+
+## Competition Questions: Scope Rules
+
+Competition (`competition` MEDDPICC tag) is scoped to **L1 and L2 only**.
+
+- **L1 (practitioners):** Ask about tool frustrations and what peers at other companies used. Grounded in personal experience, not vendor strategy.
+- **L2 (directors/managers):** Ask about vendor renewal timelines, cost growth, and alternatives considered at programme level.
+- **L3/L4:** Competition tag is stripped. These stakeholders discuss strategy, budget, and platform — not competitive tooling. Any pre-existing competition-tagged questions at L3/L4 have had the tag removed (questions kept, tag deleted).
 
 ---
 
@@ -107,10 +135,13 @@ handoff (map) → question → response → meeting_debrief → handoff (map) �
 | **Total** | **115** |
 
 ### Level-Based Tag Rules
-- **L1 (practitioners):** Tags limited to `identify_pain`, `metrics`, `decision_criteria`, `champion`, `competition`. NO `economic_buyer` or `decision_process`. Good questions: 3–5 pts (5 for pure identify_pain, 3 for pain+secondary, 2 for secondary only). Mediocre: 1pt. Recovery: 2pt.
-- **L2 (directors):** All tags valid. Good: 4–5 pts. Mediocre: 2pt. Recovery: 2pt.
-- **L3 (VPs):** All tags valid. Good: 5 pts. Mediocre: 2pt. Recovery: 3pt.
-- **L4 (C-suite):** All tags valid. Good: 5 pts. Mediocre: 2pt. Recovery: 3pt.
+- **L1 (practitioners):** Tags limited to `identify_pain`, `metrics`, `decision_criteria`, `champion`, `competition`. NO `economic_buyer` or `decision_process`. Good: 3–5 pts. Mediocre: 1 pt. Trap: 0 pts. Irrelevant: 0 pts. Recovery: 2 pts.
+- **L2 (managers/directors):** All tags valid. Good: 4–5 pts. Mediocre: 2 pts. Trap: 0 pts. Irrelevant: 0 pts. Recovery: 2 pts.
+- **L3 (VPs):** All tags valid. Good: 5 pts. Mediocre: 2 pts. Trap: 0 pts. Irrelevant: 0 pts. Recovery: 3 pts.
+- **L4 (C-suite):** All tags valid. Good: 5 pts. Mediocre: 2 pts. Trap: 0 pts. Irrelevant: 0 pts. Recovery: 3 pts.
+
+### MEDDPICC Bars
+Bars show fill colour + `score / max pts` only. **No percentage label** — removed from both the sidebar during simulation and the debrief page.
 
 ### DQI Formula
 ```
@@ -139,28 +170,41 @@ max DQI = 100
 ## Question Rationale System
 
 Every question in the seed JSON has a `rationale` field explaining why it scores the way it does. This surfaces in:
-1. **Meeting debrief** (after each conversation) — shown inline per question
-2. **Final debrief** (/debrief) — collapsible section per stakeholder with full turn history + rationale
 
-Question types: `good` (high yield) · `mediocre` · `trap` (low yield / 0 pts) · `recovery`
+1. **Meeting debrief** (after each conversation) — all 4 options shown per turn, each with its type label, "← you chose this" marker if chosen, question text, and rationale.
+2. **Final debrief** (`/debrief`) — collapsible section per stakeholder showing full turn history. Same 4-option-per-turn layout with rationale.
+
+### TurnRecord (tracks shown options)
+
+```typescript
+export interface TurnRecord {
+  stakeholderId: string;
+  turnNumber: number;
+  questionId: string;         // the question the player chose
+  questionType: QuestionType;
+  meddpiccTags: MeddpiccElement[];
+  pointsEarned: number;
+  shownQuestionIds: string[]; // all 4 options presented this turn
+}
+```
+
+`shownQuestionIds` is populated in `simulation/page.tsx` by passing `shuffledQuestions.map(q => q.id)` into `processQuestionChoice`.
 
 ---
 
-## Outcomes (6 total — in `src/lib/narrative.ts`)
+## Outcomes (9 total — in `src/lib/narrative.ts`)
 
-Current routing logic uses `accessLevel`, `blindSpots`, `momentum`, and `completedStakeholders`. This routing is **pending a full rebuild** based on the track-coverage model below.
+Routing uses `accessLevel`, `blindSpots`, `momentum`, and `completedStakeholders`. Nine outcomes cover the full range of discovery quality and track coverage.
 
-### Planned Outcome Model (NOT YET IMPLEMENTED)
+### Outcome Model
 **Tier 1 — All 4 tracks adequately covered:** Full platform win.
-**Tier 2 — Any 2 tracks adequately covered:** Partial deal (3–4 outcome variants by which tracks).
+**Tier 2 — Any 2+ tracks adequately covered:** Partial deal (variants by which tracks).
 **Tier 3 — Any 1 track adequately covered:** Point solution.
 **Tier 4 — No track adequately covered:** Deal fails.
 
-**"Adequately covered" definition (pending):**
+**"Adequately covered" definition:**
 - Observability / Security / Search: ≥3 stakeholders completed + senior stakeholder with `full_context` or better
 - Platform: both Priya AND Mark completed with `full_context` or better
-
-This rebuild is the **next major task**.
 
 ---
 
@@ -179,17 +223,31 @@ Case study link opens a modal (`showCaseStudy` state). Modal contains full Soha 
 
 ---
 
+## Design Reference Document
+
+`/outputs/build_design_doc.js` — Node.js script that generates `discovery_sim_design_reference.docx` from the seed JSON. Run it with:
+
+```bash
+cd /tmp/docbuild   # needs docx npm package; set up there
+cp <outputs>/build_design_doc.js .
+cp -r <outputs>/discovery-sim/src/data ./discovery-sim/src/
+node build_design_doc.js
+```
+
+Section 7 of the doc pulls **all questions** from `question_content_seed.json` per stakeholder, grouped by turn and type, with full rationale. Regenerate the doc whenever seed data changes.
+
+---
+
 ## Pending Work (priority order)
 
-1. **Outcome routing rebuild** — implement track-coverage model (see above). Requires updating `src/lib/narrative.ts` and possibly `src/lib/gameState.ts`.
-2. **Vercel KV integration** — user confirmed Vercel KV for persistence.
+1. **Vercel KV integration** — user confirmed Vercel KV for persistence.
    - Name/email capture form on home page (`src/app/page.tsx`)
    - Store name/email in `sessionStorage` through to debrief
    - API route `POST /api/results` → save to KV, `GET /api/results` → fetch all
    - `/admin` page — table of all completions (DQI, outcome, MEDDPICC gaps, name, email, timestamp)
    - Requires: `npx vercel env pull .env.local` after connecting KV in Vercel dashboard
-3. **T5 trap question rewrites** — currently too similar across stakeholders (all variations of "let me put together a proposal"). Need to be more stakeholder-specific to be genuine temptations.
-4. **Competition question audit** — Sarah Patel T2 still has a trap tagged `competition` that should be reviewed.
+2. **T5 trap question rewrites** — currently too similar across stakeholders (all variations of "let me put together a proposal"). Need to be more stakeholder-specific to be genuine temptations.
+3. **CLAUDE.md sync with seed** — after any bulk seed change, regenerate the design doc and verify question counts.
 
 ---
 
@@ -218,9 +276,14 @@ Case study link opens a modal (`showCaseStudy` state). Modal contains full Soha 
 | Context multipliers not shown to player | Surfacing cold/warm/primed labels felt gamey. The mechanic works without the UI label. |
 | DQI 50/50 MEDDPICC vs narrative | Equal weight because asking the right questions AND closing well both matter equally for FEs. |
 | Meeting debrief after every call | Learning happens in the moment. Waiting until the end debrief is too late to connect feedback to behaviour. |
+| All 4 options shown in debrief | Players should see what they missed — not just what they chose. Comparing options is where the learning happens. |
+| Labels hidden during gameplay | Showing "High Yield / Trap" during play removes the decision challenge. Revealing after is the pedagogical moment. |
+| Competition scoped to L1/L2 | Practitioners and managers encounter competitive tools. VPs and C-suite discuss strategy and budget — competition emerges from context, not direct questions. |
+| No percentage on MEDDPICC bars | Percentage creates false precision and distracts. Score vs cap is sufficient. |
 | L4 centred below grid | Priya and Mark are platform-track but represent the executive layer the whole org reports into. Visual positioning reflects organisational reality. |
 | No rigid level progression | FEs encounter senior stakeholders early. The sim should reward preparation, not punish curiosity. |
 | FE not "rep" language throughout | This is for Field Engineers. Sales language was specifically removed from case study and outcomes. |
+| key prop on QuestionOptions | Forces remount on turn/stakeholder change so fisherYates shuffle re-runs. Without this, the internal useState only initialises on mount and questions go stale. |
 
 ---
 
