@@ -511,23 +511,21 @@ export default function Simulation() {
   if (selectionKey !== selectionKeyRef.current) {
     selectionKeyRef.current = selectionKey;
     const qs = getAvailableQuestions(state.currentStakeholderId, state.availableQuestionIds);
-    if (state.currentTurn === 5) {
-      shuffledQuestionsRef.current = qs;
-    } else {
-      const byType: Record<string, Question[]> = {};
-      for (const q of qs) {
-        if (!byType[q.question_type]) byType[q.question_type] = [];
-        byType[q.question_type].push(q);
-      }
-      const pickOne = (type: string): Question | undefined => {
-        const pool = byType[type];
-        if (!pool || pool.length === 0) return undefined;
-        return pool[Math.floor(Math.random() * pool.length)];
-      };
-      shuffledQuestionsRef.current = (["good", "mediocre", "trap", "irrelevant"] as const)
-        .map((t) => pickOne(t))
-        .filter((q): q is Question => q !== undefined);
+    // All turns (including T5 close): enforce exactly one question per type.
+    // Multiple good variants exist for replayability — one is picked at random each play.
+    const byType: Record<string, Question[]> = {};
+    for (const q of qs) {
+      if (!byType[q.question_type]) byType[q.question_type] = [];
+      byType[q.question_type].push(q);
     }
+    const pickOne = (type: string): Question | undefined => {
+      const pool = byType[type];
+      if (!pool || pool.length === 0) return undefined;
+      return pool[Math.floor(Math.random() * pool.length)];
+    };
+    shuffledQuestionsRef.current = (["good", "mediocre", "trap", "irrelevant"] as const)
+      .map((t) => pickOne(t))
+      .filter((q): q is Question => q !== undefined);
   }
   const shuffledQuestions = shuffledQuestionsRef.current;
 
